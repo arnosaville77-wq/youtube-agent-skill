@@ -108,9 +108,69 @@ function sportsarena_time_html( $timestamp, $format = 'H:i' ) {
 }
 
 /**
- * Team crest. Provider logos are only shown when the site owner confirms the
- * data plan licenses them ("allow_logos"); otherwise a generic shield with
- * the team's initial is rendered.
+ * Country flag image (bundled, flag-icons MIT). '' when the country is
+ * unknown or "World".
+ *
+ * @param string $country Country name (English from the provider, or a known Arabic name).
+ * @param int    $width   Pixel width (height is 3/4).
+ * @return string
+ */
+function sportsarena_flag( $country, $width = 20 ) {
+	$code = SportsArena\Core\Data\Countries::code( (string) $country );
+	if ( '' === $code ) {
+		return '';
+	}
+	$width = (int) $width;
+	return sprintf(
+		'<img class="sa-flag" src="%1$s" width="%2$d" height="%3$d" alt="%4$s" loading="lazy" decoding="async">',
+		esc_url( SPORTSARENA_CORE_URL . 'assets/flags/' . $code . '.png' ),
+		$width,
+		(int) round( $width * 0.75 ),
+		esc_attr( (string) $country )
+	);
+}
+
+/**
+ * Country (English provider name) of a team or competition.
+ *
+ * @param int $post_id Team or competition ID.
+ * @return string
+ */
+function sportsarena_country_of( $post_id ) {
+	$country = (string) get_post_meta( $post_id, '_sa_country_en', true );
+	if ( '' === $country ) {
+		$terms   = get_the_terms( $post_id, 'country' );
+		$country = $terms && ! is_wp_error( $terms ) ? $terms[0]->name : '';
+	}
+	return $country;
+}
+
+/**
+ * Provider logo URL when logos are allowed: the local cached copy first
+ * (see SportsArena\Core\Logo_Cache), the provider URL otherwise.
+ *
+ * @param int $post_id Team or competition ID.
+ * @return string
+ */
+function sportsarena_provider_logo_url( $post_id ) {
+	if ( ! $post_id || ! Options::get( 'allow_logos' ) ) {
+		return '';
+	}
+	$local = (string) get_post_meta( $post_id, '_sa_logo_local', true );
+	if ( '' !== $local ) {
+		$uploads = wp_upload_dir( null, false );
+		return trailingslashit( $uploads['baseurl'] ) . ltrim( $local, '/' );
+	}
+	return (string) get_post_meta( $post_id, '_sa_logo_url', true );
+}
+
+/**
+ * Team crest, in this order:
+ * 1. The team's featured image (a logo the site owner uploaded).
+ * 2. The provider logo, only when "allow_logos" is enabled (the data plan
+ *    licenses them), served from the local cache when available.
+ * 3. The country flag for national teams and individual athletes (tennis, MMA...).
+ * 4. A generic shield with the team's initial.
  *
  * @param int $team_id Team ID.
  * @param int $size    Pixel size.
@@ -130,14 +190,23 @@ function sportsarena_team_logo( $team_id, $size = 32 ) {
 			)
 		);
 	}
-	$logo = $team_id ? (string) get_post_meta( $team_id, '_sa_logo_url', true ) : '';
-	if ( $logo && Options::get( 'allow_logos' ) ) {
+	$logo = sportsarena_provider_logo_url( $team_id );
+	if ( $logo ) {
 		return sprintf(
 			'<img class="sa-logo" src="%1$s" width="%2$d" height="%2$d" alt="%3$s" loading="lazy" decoding="async">',
 			esc_url( $logo ),
 			$size,
 			esc_attr( $title )
 		);
+	}
+	if ( $team_id ) {
+		$english    = (string) get_post_meta( $team_id, '_sa_name_en', true );
+		$individual = has_term( array( 'tennis', 'mma', 'formula-1' ), 'sport', $team_id );
+		$country    = SportsArena\Core\Data\Countries::code( $english ) ? $english : ( $individual ? sportsarena_country_of( $team_id ) : '' );
+		$flag       = $country ? sportsarena_flag( $country, $size ) : '';
+		if ( $flag ) {
+			return str_replace( 'class="sa-flag"', 'class="sa-logo sa-logo--flag"', $flag );
+		}
 	}
 	$initial = $title ? mb_substr( $title, 0, 1 ) : '?';
 	$hue     = $team_id ? ( (int) $team_id * 47 ) % 360 : 210;
@@ -147,6 +216,52 @@ function sportsarena_team_logo( $team_id, $size = 32 ) {
 		esc_attr( $title ),
 		(int) $hue,
 		esc_html( $initial )
+	);
+}
+
+/**
+ * Competition emblem: featured image, then provider logo (when allowed),
+ * then the country flag, then a neutral globe for international events.
+ *
+ * @param int $competition_id Competition ID.
+ * @param int $size           Pixel size.
+ * @return string
+ */
+function sportsarena_competition_logo( $competition_id, $size = 24 ) {
+	$size  = (int) $size;
+	$title = $competition_id ? get_the_title( $competition_id ) : '';
+	if ( ! $competition_id ) {
+		return '';
+	}
+	if ( has_post_thumbnail( $competition_id ) ) {
+		return get_the_post_thumbnail(
+			$competition_id,
+			array( $size, $size ),
+			array(
+				'class'   => 'sa-logo sa-logo--comp',
+				'loading' => 'lazy',
+				'alt'     => $title,
+			)
+		);
+	}
+	$logo = sportsarena_provider_logo_url( $competition_id );
+	if ( $logo ) {
+		return sprintf(
+			'<img class="sa-logo sa-logo--comp" src="%1$s" width="%2$d" height="%2$d" alt="%3$s" loading="lazy" decoding="async">',
+			esc_url( $logo ),
+			$size,
+			esc_attr( $title )
+		);
+	}
+	$flag = sportsarena_flag( sportsarena_country_of( $competition_id ), $size );
+	if ( $flag ) {
+		return $flag;
+	}
+	return sprintf(
+		'<svg class="sa-flag sa-flag--world" width="%1$d" height="%2$d" viewBox="0 0 24 18" role="img" aria-label="%3$s"><rect width="24" height="18" rx="2" fill="#1d4ed8"/><circle cx="12" cy="9" r="6" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M6 9h12M12 3c-2.5 3.4-2.5 8.6 0 12M12 3c2.5 3.4 2.5 8.6 0 12" fill="none" stroke="#fff" stroke-width="1"/></svg>',
+		$size,
+		(int) round( $size * 0.75 ),
+		esc_attr( $title )
 	);
 }
 
@@ -267,6 +382,7 @@ function sportsarena_related_news( array $team_ids, array $competition_ids, $lim
  * @return array<string,int>
  */
 function sportsarena_create_required_pages() {
+	SportsArena\Core\News_Sections::create();
 	return SportsArena\Core\Pages::create_required_pages();
 }
 

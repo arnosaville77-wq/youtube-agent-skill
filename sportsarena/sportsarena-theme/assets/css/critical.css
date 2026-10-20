@@ -83,7 +83,12 @@ h1,h2,h3,h4{line-height:1.35;margin:0 0 .5em}
 .sa-group{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);margin-bottom:12px;overflow:hidden}
 .sa-group[hidden]{display:none}
 .sa-group__title{font-size:1rem;margin:0;padding:10px 14px;border-bottom:1px solid var(--border);background:color-mix(in srgb,var(--surface) 92%,var(--text))}
-.sa-group__title a{text-decoration:none}
+.sa-group__title a{text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.sa-flag{flex:none;border-radius:2px;box-shadow:0 0 0 1px var(--border);vertical-align:-2px;object-fit:cover}
+.sa-logo--flag{border-radius:4px;object-fit:cover;height:auto;aspect-ratio:4/3}
+.sa-logo--comp{object-fit:contain}
+.sa-country{display:inline-flex;align-items:center;gap:6px}
+.sa-links__logo{display:flex!important;align-items:center;gap:8px}
 .sa-matches{list-style:none;margin:0;padding:0}
 .sa-content>.sa-matches,.sa-section>.sa-matches,.sa-box>.sa-matches{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
 .sa-row+.sa-row{border-top:1px solid var(--border)}
@@ -135,6 +140,7 @@ h1,h2,h3,h4{line-height:1.35;margin:0 0 .5em}
 .sa-card__title{font-size:1.02rem;margin:0 0 4px}
 .sa-card__title a{text-decoration:none}
 .sa-card__excerpt{margin:6px 0 0;color:var(--muted);font-size:.92rem}
+.sa-cards>.sa-ad{grid-column:1/-1}
 .sa-cards--compact .sa-card{flex-direction:row}
 .sa-cards--compact .sa-card__media{flex:0 0 38%;aspect-ratio:16/10}
 /* Ads: reserved height (no CLS), label, spacing from clickable elements */

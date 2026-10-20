@@ -50,12 +50,12 @@ msgstr ""
 msgid "مباريات اليوم"
 msgstr "Matchs du jour"
 
-#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:122
-#: taxonomy-sport.php:58
+#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:130
+#: taxonomy-sport.php:58 template-news.php:46
 msgid "آخر الأخبار"
 msgstr "Dernières actualités"
 
-#: archive.php:40 index.php:40
+#: archive.php:49 index.php:49
 msgid "لا توجد مقالات بعد."
 msgstr "Aucun article pour le moment."
 
@@ -107,7 +107,7 @@ msgstr "Aucun match prévu aujourd’hui. Consultez les matchs de demain."
 msgid "أحدث الأخبار"
 msgstr "Dernières actualités"
 
-#: front-page.php:63
+#: front-page.php:63 template-news.php:84
 msgid "المزيد"
 msgstr "Plus"
 
@@ -246,43 +246,43 @@ msgstr "Matchs"
 msgid "الترتيب"
 msgstr "Classement"
 
-#: single-competition.php:21 single-competition.php:75
+#: single-competition.php:21 single-competition.php:83
 msgid "الهدافون"
 msgstr "Buteurs"
 
-#: single-competition.php:38
+#: single-competition.php:39
 msgid "الموسم:"
 msgstr "Saison :"
 
-#: single-competition.php:43
+#: single-competition.php:51
 msgid "أقسام البطولة"
 msgstr "Sections de la compétition"
 
-#: single-competition.php:54 single-team.php:44
+#: single-competition.php:62 single-team.php:44
 msgid "المباريات القادمة"
 msgstr "Prochains matchs"
 
-#: single-competition.php:55
+#: single-competition.php:63
 msgid "لا توجد مباريات قادمة."
 msgstr "Aucun match à venir."
 
-#: single-competition.php:59 single-match.php:252
+#: single-competition.php:67 single-match.php:252
 msgid "جدول الترتيب"
 msgstr "Classement"
 
-#: single-competition.php:60
+#: single-competition.php:68
 msgid "الجدول كاملاً"
 msgstr "Classement complet"
 
-#: single-competition.php:76
+#: single-competition.php:84
 msgid "القائمة كاملة"
 msgstr "Liste complète"
 
-#: single-competition.php:102
+#: single-competition.php:110
 msgid "لا توجد مباريات مسجلة."
 msgstr "Aucun match enregistré."
 
-#: single-competition.php:107
+#: single-competition.php:115
 msgid "مباريات"
 msgstr "Matchs"
 
@@ -394,17 +394,22 @@ msgstr "Aucun résultat précédent enregistré."
 msgid "آخر أخبار %s"
 msgstr "Dernières actualités de %s"
 
-#: single.php:54
+#: single.php:56
 msgid "مرتبط بهذا الخبر"
 msgstr "Lié à cet article"
 
-#: single.php:79
+#: single.php:81
 msgid "أخبار ذات صلة"
 msgstr "Articles similaires"
 
 #: taxonomy-sport.php:26
 msgid "لا توجد مباريات اليوم في هذه الرياضة."
 msgstr "Aucun match aujourd’hui dans ce sport."
+
+#. Template Name of the theme
+#: template-news.php:3
+msgid "الأخبار (حسب الرياضة)"
+msgstr "Actualités (par sport)"
 
 #: template-parts/date-picker.php:15
 msgid "أمس"
@@ -437,6 +442,10 @@ msgstr "En direct"
 #: template-parts/match-list.php:30
 msgid "مباريات أخرى"
 msgstr "Autres matchs"
+
+#: template-parts/news-sections-nav.php:25
+msgid "أقسام الأخبار"
+msgstr "Rubriques d’actualité"
 
 #: template-parts/quick-search.php:11
 msgid "ابحث عن فريق أو بطولة"

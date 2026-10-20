@@ -230,3 +230,19 @@ function sportsarena_theme_language_switcher() {
 		echo '</ul>';
 	}
 }
+
+/**
+ * ID of the news hub page (plugin-created "news" page, or the WordPress
+ * posts page), 0 when none.
+ *
+ * @return int
+ */
+function sportsarena_theme_news_page() {
+	if ( function_exists( 'sportsarena_required_pages' ) ) {
+		$pages = sportsarena_required_pages();
+		if ( ! empty( $pages['news'] ) && 'publish' === get_post_status( $pages['news'] ) ) {
+			return (int) $pages['news'];
+		}
+	}
+	return (int) get_option( 'page_for_posts' );
+}

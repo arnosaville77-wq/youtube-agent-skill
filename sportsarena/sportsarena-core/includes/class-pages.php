@@ -118,6 +118,7 @@ final class Pages {
 			);
 			if ( $page_id && ! is_wp_error( $page_id ) ) {
 				$ids[ $key ] = (int) $page_id;
+				self::set_template( (int) $page_id, $page );
 			}
 		}
 		update_option( Options::PAGES, $ids );
@@ -163,6 +164,7 @@ final class Pages {
 					restore_previous_locale();
 				}
 				if ( $page_id && ! is_wp_error( $page_id ) ) {
+					self::set_template( (int) $page_id, $page );
 					pll_set_post_language( $page_id, $lang );
 					$translations[ $lang ] = (int) $page_id;
 				}
@@ -177,6 +179,19 @@ final class Pages {
 			update_option( 'wp_page_for_privacy_policy', $ids['privacy'] );
 		}
 		return $ids;
+	}
+
+	/**
+	 * Assign the page template of a definition (e.g. the news hub).
+	 *
+	 * @param int   $page_id Page ID.
+	 * @param array $page    Definition.
+	 * @return void
+	 */
+	private static function set_template( $page_id, array $page ) {
+		if ( ! empty( $page['template'] ) ) {
+			update_post_meta( $page_id, '_wp_page_template', $page['template'] );
+		}
 	}
 
 	/**
@@ -203,7 +218,7 @@ final class Pages {
 	 * current site language. Placeholders: {site} = site name, {domain} =
 	 * domain, {email} = admin email, {date} = today's date.
 	 *
-	 * @return array<string,array{title:string,slug:string,content:string}>
+	 * @return array<string,array{title:string,slug:string,content:string,template?:string}>
 	 */
 	public static function definitions() {
 		$p  = static function ( $text ) {
@@ -221,6 +236,12 @@ final class Pages {
 		};
 
 		return array(
+			'news'       => array(
+				'title'    => __( 'الأخبار', 'sportsarena-core' ),
+				'slug'     => 'news',
+				'template' => 'template-news.php',
+				'content'  => $p( __( 'آخر الأخبار والتحليلات من عالم كرة القدم وباقي الرياضات، مقسّمة حسب الرياضة.', 'sportsarena-core' ) ),
+			),
 			'about'      => array(
 				'title'   => __( 'من نحن', 'sportsarena-core' ),
 				'slug'    => 'about',

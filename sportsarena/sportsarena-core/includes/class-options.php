@@ -39,6 +39,7 @@ final class Options {
 			'minute_limit'           => 10,
 			'live_interval'          => 60,
 			'allow_logos'            => 0,
+			'cache_logos'            => 1,
 			'timezone_label'         => '',
 			'news_sitemap'           => 1,
 			'alternate_sites'        => '',
@@ -88,31 +89,49 @@ final class Options {
 	 */
 	public static function ad_slots() {
 		return array(
-			'header'        => array(
+			'header'         => array(
 				'label'   => __( 'أسفل الهيدر', 'sportsarena-core' ),
 				'mobile'  => 100,
 				'desktop' => 90,
 				'format'  => 'horizontal',
 			),
-			'in_article'    => array(
+			'in_article'     => array(
 				'label'   => __( 'داخل المقال (بعد الفقرة الثانية)', 'sportsarena-core' ),
 				'mobile'  => 280,
 				'desktop' => 280,
 				'format'  => 'rectangle',
 			),
-			'sidebar'       => array(
+			'in_article_2'   => array(
+				'label'   => __( 'داخل المقال الطويل (بعد الفقرة السادسة)', 'sportsarena-core' ),
+				'mobile'  => 280,
+				'desktop' => 280,
+				'format'  => 'rectangle',
+			),
+			'article_bottom' => array(
+				'label'   => __( 'أسفل المقال', 'sportsarena-core' ),
+				'mobile'  => 280,
+				'desktop' => 250,
+				'format'  => 'rectangle',
+			),
+			'in_feed'        => array(
+				'label'   => __( 'بين بطاقات الأخبار (كل 6 أخبار)', 'sportsarena-core' ),
+				'mobile'  => 280,
+				'desktop' => 250,
+				'format'  => 'rectangle',
+			),
+			'sidebar'        => array(
 				'label'   => __( 'الشريط الجانبي (ثابت على الديسكتوب)', 'sportsarena-core' ),
 				'mobile'  => 280,
 				'desktop' => 600,
 				'format'  => 'vertical',
 			),
-			'between_lists' => array(
+			'between_lists'  => array(
 				'label'   => __( 'بين مجموعات البطولات (كل 3 بطولات)', 'sportsarena-core' ),
 				'mobile'  => 280,
 				'desktop' => 250,
 				'format'  => 'rectangle',
 			),
-			'match_bottom'  => array(
+			'match_bottom'   => array(
 				'label'   => __( 'أسفل صفحة المباراة', 'sportsarena-core' ),
 				'mobile'  => 280,
 				'desktop' => 250,

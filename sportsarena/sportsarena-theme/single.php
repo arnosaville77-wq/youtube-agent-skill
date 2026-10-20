@@ -49,6 +49,8 @@ while ( have_posts() ) :
 			?>
 		</div>
 
+		<?php sportsarena_theme_ad( 'article_bottom' ); ?>
+
 		<?php if ( $sportsarena_teams || $sportsarena_comps ) : ?>
 			<section class="sa-section">
 				<h2 class="sa-section__title"><?php esc_html_e( 'مرتبط بهذا الخبر', 'sportsarena-theme' ); ?></h2>

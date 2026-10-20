@@ -51,7 +51,7 @@ defined( 'ABSPATH' ) || exit;
 					echo '<li><a href="' . esc_url( sportsarena_day_url( 'tomorrow' ) ) . '">' . esc_html__( 'مباريات الغد', 'sportsarena-theme' ) . '</a></li>';
 					echo '<li><a href="' . esc_url( (string) get_post_type_archive_link( 'competition' ) ) . '">' . esc_html__( 'البطولات', 'sportsarena-theme' ) . '</a></li>';
 				}
-				$sportsarena_news = (int) get_option( 'page_for_posts' );
+				$sportsarena_news = sportsarena_theme_news_page();
 				if ( $sportsarena_news ) {
 					echo '<li><a href="' . esc_url( get_permalink( $sportsarena_news ) ) . '">' . esc_html__( 'الأخبار', 'sportsarena-theme' ) . '</a></li>';
 				}

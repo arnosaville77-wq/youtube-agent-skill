@@ -7,3 +7,8 @@
 .sa-admin .sa-log-warning td { background: #fcf9e8; }
 .sa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0 16px; }
 .sa-grid select, .sa-grid input { width: 100%; }
+.sa-check-summary { font-size: 15px; font-weight: 600; }
+.sa-check td { vertical-align: top; }
+.sa-check__group th { background: #f0f0f1; font-weight: 700; }
+.sa-check--fail td { background: #fcf0f1; }
+.sa-check--warn td { background: #fcf9e8; }

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-20T02:09:32+00:00\n"
+"POT-Creation-Date: 2026-10-20T02:39:02+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sportsarena-theme\n"
@@ -50,13 +50,14 @@ msgstr ""
 #: archive.php:22
 #: index.php:22
 #: sidebar.php:39
-#: single-competition.php:122
+#: single-competition.php:130
 #: taxonomy-sport.php:58
+#: template-news.php:46
 msgid "آخر الأخبار"
 msgstr ""
 
-#: archive.php:40
-#: index.php:40
+#: archive.php:49
+#: index.php:49
 msgid "لا توجد مقالات بعد."
 msgstr ""
 
@@ -107,6 +108,7 @@ msgid "أحدث الأخبار"
 msgstr ""
 
 #: front-page.php:63
+#: template-news.php:84
 msgid "المزيد"
 msgstr ""
 
@@ -248,45 +250,45 @@ msgid "الترتيب"
 msgstr ""
 
 #: single-competition.php:21
-#: single-competition.php:75
+#: single-competition.php:83
 msgid "الهدافون"
 msgstr ""
 
-#: single-competition.php:38
+#: single-competition.php:39
 msgid "الموسم:"
 msgstr ""
 
-#: single-competition.php:43
+#: single-competition.php:51
 msgid "أقسام البطولة"
 msgstr ""
 
-#: single-competition.php:54
+#: single-competition.php:62
 #: single-team.php:44
 msgid "المباريات القادمة"
 msgstr ""
 
-#: single-competition.php:55
+#: single-competition.php:63
 msgid "لا توجد مباريات قادمة."
 msgstr ""
 
-#: single-competition.php:59
+#: single-competition.php:67
 #: single-match.php:252
 msgid "جدول الترتيب"
 msgstr ""
 
-#: single-competition.php:60
+#: single-competition.php:68
 msgid "الجدول كاملاً"
 msgstr ""
 
-#: single-competition.php:76
+#: single-competition.php:84
 msgid "القائمة كاملة"
 msgstr ""
 
-#: single-competition.php:102
+#: single-competition.php:110
 msgid "لا توجد مباريات مسجلة."
 msgstr ""
 
-#: single-competition.php:107
+#: single-competition.php:115
 msgid "مباريات"
 msgstr ""
 
@@ -404,16 +406,21 @@ msgstr ""
 msgid "آخر أخبار %s"
 msgstr ""
 
-#: single.php:54
+#: single.php:56
 msgid "مرتبط بهذا الخبر"
 msgstr ""
 
-#: single.php:79
+#: single.php:81
 msgid "أخبار ذات صلة"
 msgstr ""
 
 #: taxonomy-sport.php:26
 msgid "لا توجد مباريات اليوم في هذه الرياضة."
+msgstr ""
+
+#. Template Name of the theme
+#: template-news.php:3
+msgid "الأخبار (حسب الرياضة)"
 msgstr ""
 
 #: template-parts/date-picker.php:15
@@ -446,6 +453,10 @@ msgstr ""
 
 #: template-parts/match-list.php:30
 msgid "مباريات أخرى"
+msgstr ""
+
+#: template-parts/news-sections-nav.php:25
+msgid "أقسام الأخبار"
 msgstr ""
 
 #: template-parts/quick-search.php:11

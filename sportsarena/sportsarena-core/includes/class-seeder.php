@@ -40,6 +40,29 @@ final class Seeder {
 	}
 
 	/**
+	 * Real country of demo teams / athletes (competition country otherwise).
+	 *
+	 * @param string $name     Team name.
+	 * @param string $fallback Competition country.
+	 * @return string
+	 */
+	private static function team_country( $name, $fallback ) {
+		$map = array(
+			'Real Madrid'         => 'Spain',
+			'Manchester City'     => 'England',
+			'Bayern Munich'       => 'Germany',
+			'Paris Saint Germain' => 'France',
+			'Inter'               => 'Italy',
+			'Arsenal'             => 'England',
+			'Carlos Alcaraz'      => 'Spain',
+			'Jannik Sinner'       => 'Italy',
+			'Novak Djokovic'      => 'Serbia',
+			'Alexander Zverev'    => 'Germany',
+		);
+		return $map[ $name ] ?? $fallback;
+	}
+
+	/**
 	 * Fictional player names for demo lineups and scorers, in the site's script.
 	 *
 	 * @return string[]
@@ -79,13 +102,13 @@ final class Seeder {
 						'external_id' => 'demo-team-' . sanitize_title( $home ),
 						'name'        => $home,
 						'logo'        => '',
-						'country'     => $c[1],
+						'country'     => self::team_country( $home, $c[1] ),
 					),
 					'away'        => array(
 						'external_id' => 'demo-team-' . sanitize_title( $away ),
 						'name'        => $away,
 						'logo'        => '',
-						'country'     => $c[1],
+						'country'     => self::team_country( $away, $c[1] ),
 					),
 					'score'       => array(
 						'home' => null,
@@ -562,20 +585,19 @@ final class Seeder {
 	 * @return void
 	 */
 	private static function seed_news( Importer $importer ) {
-		$football = get_term_by( 'slug', 'football', Post_Types::TAX_SPORT );
-		$category = term_exists( 'football-news', 'category' );
-		if ( ! $category ) {
-			$category = wp_insert_term( __( 'كرة القدم', 'sportsarena-core' ), 'category', array( 'slug' => 'football-news' ) );
-		}
-		$category_id = is_array( $category ) ? (int) $category['term_id'] : (int) $category;
+		$sections = News_Sections::create();
 
 		$news = array(
-			array( __( 'ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة', 'sportsarena-core' ), array( 'Real Madrid', 'Barcelona' ), 'laliga' ),
-			array( __( 'ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي', 'sportsarena-core' ), array( 'Liverpool', 'Chelsea' ), 'pl' ),
-			array( __( 'الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن', 'sportsarena-core' ), array( 'Al-Hilal Saudi FC', 'Al-Ittihad FC' ), 'spl' ),
-			array( __( 'تعادل مثير بين الأهلي وبيراميدز في الدوري المصري', 'sportsarena-core' ), array( 'Al Ahly', 'Pyramids FC' ), 'egy' ),
-			array( __( 'بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال', 'sportsarena-core' ), array( 'Bayern Munich', 'Paris Saint Germain' ), 'ucl' ),
-			array( __( 'ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية', 'sportsarena-core' ), array( 'Wydad AC', 'Raja Casablanca' ), 'botola' ),
+			array( __( 'ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة', 'sportsarena-core' ), array( 'Real Madrid', 'Barcelona' ), 'laliga', 'football-news' ),
+			array( __( 'ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي', 'sportsarena-core' ), array( 'Liverpool', 'Chelsea' ), 'pl', 'football-news' ),
+			array( __( 'الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن', 'sportsarena-core' ), array( 'Al-Hilal Saudi FC', 'Al-Ittihad FC' ), 'spl', 'football-news' ),
+			array( __( 'تعادل مثير بين الأهلي وبيراميدز في الدوري المصري', 'sportsarena-core' ), array( 'Al Ahly', 'Pyramids FC' ), 'egy', 'football-news' ),
+			array( __( 'بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال', 'sportsarena-core' ), array( 'Bayern Munich', 'Paris Saint Germain' ), 'ucl', 'football-news' ),
+			array( __( 'ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية', 'sportsarena-core' ), array( 'Wydad AC', 'Raja Casablanca' ), 'botola', 'football-news' ),
+			array( __( 'ليكرز يتفوق على سلتيكس في قمة مثيرة بالدوري الأمريكي', 'sportsarena-core' ), array( 'Los Angeles Lakers', 'Boston Celtics' ), 'nba', 'basketball-news' ),
+			array( __( 'ألكاراز وسينر في مواجهة جديدة بالبطولة الختامية', 'sportsarena-core' ), array( 'Carlos Alcaraz', 'Jannik Sinner' ), 'atp', 'tennis-news' ),
+			array( __( 'الهلال يقترب من حسم صفقة جديدة في الميركاتو الشتوي', 'sportsarena-core' ), array( 'Al-Hilal Saudi FC', 'Al-Nassr' ), 'spl', 'transfers' ),
+			array( __( 'تحليل: كيف يحسم خط الوسط مباريات الكلاسيكو؟', 'sportsarena-core' ), array( 'Real Madrid', 'Barcelona' ), 'laliga', 'analysis' ),
 		);
 
 		foreach ( $news as $i => $item ) {
@@ -591,8 +613,9 @@ final class Seeder {
 			if ( $existing ) {
 				continue;
 			}
-			$teams   = array_map( array( Names::class, 'localize' ), $item[1] );
-			$content = '';
+			$teams      = array_map( array( Names::class, 'localize' ), $item[1] );
+			$content    = '';
+			$paragraphs = array();
 			foreach (
 				array(
 					/* translators: 1: first team, 2: second team. */
@@ -605,6 +628,16 @@ final class Seeder {
 					__( 'هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > SportsArena > الأدوات.', 'sportsarena-core' ),
 				) as $paragraph
 			) {
+				$paragraphs[] = $paragraph;
+			}
+			if ( 'analysis' === $item[3] ) {
+				// A longer article (shows the second in-article ad slot).
+				$paragraphs[] = __( 'تكتيكياً، يميل الفريقان إلى الضغط العالي في الدقائق الأولى، ما يجعل الكرات الثانية والتحولات السريعة عاملاً حاسماً.', 'sportsarena-core' );
+				$paragraphs[] = __( 'وتشير الأرقام إلى أن الفريق الذي يسجل أولاً في هذه المواجهة فاز في أغلب المباريات الأخيرة بينهما.', 'sportsarena-core' );
+				$paragraphs[] = __( 'أما بدنياً، فقد يكون عمق دكة البدلاء هو الفارق في آخر عشرين دقيقة.', 'sportsarena-core' );
+				$paragraphs[] = __( 'في المحصلة، تبقى التفاصيل الصغيرة وتركيز اللاعبين في الكرات الثابتة مفتاح الحسم.', 'sportsarena-core' );
+			}
+			foreach ( $paragraphs as $paragraph ) {
 				$content .= "<!-- wp:paragraph -->\n<p>" . esc_html( $paragraph ) . "</p>\n<!-- /wp:paragraph -->\n\n";
 			}
 			$post_id = wp_insert_post(
@@ -615,7 +648,7 @@ final class Seeder {
 					'post_content'  => $content,
 					/* translators: 1: first team, 2: second team. */
 					'post_excerpt'  => sprintf( __( 'آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة.', 'sportsarena-core' ), $teams[0], $teams[1] ),
-					'post_category' => $category_id ? array( $category_id ) : array(),
+					'post_category' => ! empty( $sections[ $item[3] ] ) ? array( $sections[ $item[3] ] ) : array(),
 					'post_date'     => wp_date( 'Y-m-d H:i:s', time() - ( $i * 3 + 1 ) * HOUR_IN_SECONDS ),
 				)
 			);
@@ -623,9 +656,7 @@ final class Seeder {
 				continue;
 			}
 			update_post_meta( $post_id, '_sa_demo', 1 );
-			if ( $football ) {
-				wp_set_object_terms( $post_id, array( (int) $football->term_id ), Post_Types::TAX_SPORT );
-			}
+			// Category => sport sync ran on save (News_Sections::sync_terms).
 			foreach ( $item[1] as $team_name ) {
 				$team_id = $importer->find( Post_Types::TEAM, 'demo-team-' . sanitize_title( $team_name ) );
 				if ( $team_id ) {

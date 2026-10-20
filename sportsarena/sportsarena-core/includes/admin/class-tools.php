@@ -28,7 +28,7 @@ final class Tools {
 	 * @return void
 	 */
 	public function register_hooks() {
-		foreach ( array( 'seed', 'unseed', 'sync_now', 'create_pages', 'write_ads_txt', 'flush', 'clear_log' ) as $tool ) {
+		foreach ( array( 'seed', 'unseed', 'sync_now', 'create_pages', 'write_ads_txt', 'flush', 'clear_log', 'cache_logos' ) as $tool ) {
 			add_action( 'admin_post_sportsarena_' . $tool, array( $this, $tool ) );
 		}
 		add_action( 'admin_post_sportsarena_refresh_match', array( $this, 'refresh_match' ) );
@@ -110,6 +110,7 @@ final class Tools {
 	 */
 	public function create_pages() {
 		$this->verify( 'sportsarena_create_pages' );
+		\SportsArena\Core\News_Sections::create();
 		Pages::create_required_pages();
 		$this->back();
 	}
@@ -134,6 +135,17 @@ final class Tools {
 		$this->verify( 'sportsarena_flush' );
 		flush_rewrite_rules();
 		Repository::bump_version();
+		$this->back();
+	}
+
+	/**
+	 * Download a batch of provider logos now.
+	 *
+	 * @return void
+	 */
+	public function cache_logos() {
+		$this->verify( 'sportsarena_cache_logos' );
+		\SportsArena\Core\Logo_Cache::run( 60 );
 		$this->back();
 	}
 

@@ -59,11 +59,14 @@ final class Plugin {
 		( new Ads\Ads() )->register_hooks();
 		( new Ads\Consent() )->register_hooks();
 		( new Linking() )->register_hooks();
+		( new Logo_Cache() )->register_hooks();
+		( new News_Sections() )->register_hooks();
 
 		if ( is_admin() ) {
 			( new Admin\Settings() )->register_hooks();
 			( new Admin\Meta_Boxes() )->register_hooks();
 			( new Admin\Tools() )->register_hooks();
+			( new Admin\Adsense_Check() )->register_hooks();
 		}
 
 		if ( defined( 'WP_CLI' ) && WP_CLI ) {

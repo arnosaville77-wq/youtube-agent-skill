@@ -25,6 +25,7 @@ while ( have_posts() ) :
 <div class="sa-container sa-layout">
 	<article class="sa-content">
 		<header class="sa-entity">
+			<?php echo sportsarena_competition_logo( $sportsarena_id, 56 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 			<div>
 				<h1 class="sa-page-title">
 					<?php
@@ -36,6 +37,13 @@ while ( have_posts() ) :
 				</h1>
 				<?php if ( $sportsarena_season ) : ?>
 					<p class="sa-entity__meta"><span><?php esc_html_e( 'الموسم:', 'sportsarena-theme' ); ?> <?php echo esc_html( $sportsarena_season ); ?></span></p>
+				<?php endif; ?>
+				<?php
+				$sportsarena_country = get_the_terms( $sportsarena_id, 'country' );
+				// Only real countries (international events like "World" have no flag).
+				if ( $sportsarena_country && ! is_wp_error( $sportsarena_country ) && sportsarena_flag( sportsarena_country_of( $sportsarena_id ) ) ) :
+					?>
+					<p class="sa-entity__meta"><span class="sa-country"><?php echo sportsarena_flag( sportsarena_country_of( $sportsarena_id ), 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?> <?php echo esc_html( $sportsarena_country[0]->name ); ?></span></p>
 				<?php endif; ?>
 			</div>
 		</header>

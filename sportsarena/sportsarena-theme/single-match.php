@@ -29,7 +29,7 @@ while ( have_posts() ) :
 		<header class="sa-scoreboard sa-scoreboard--<?php echo esc_attr( $sportsarena_m['status'] ); ?>">
 			<?php if ( $sportsarena_comp ) : ?>
 				<p class="sa-scoreboard__comp">
-					<a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></a>
+					<a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo sportsarena_competition_logo( $sportsarena_comp, 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?> <?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></a>
 					<?php if ( $sportsarena_m['round'] ) : ?>
 						<span> · <?php echo esc_html( sportsarena_round_label( $sportsarena_m['round'] ) ); ?></span>
 					<?php endif; ?>

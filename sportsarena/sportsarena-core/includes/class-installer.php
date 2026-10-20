@@ -31,6 +31,7 @@ final class Installer {
 		( new Post_Types() )->register();
 		( new Rewrites() )->add_rules();
 		Data\Sync::schedule_events();
+		News_Sections::create();
 		Pages::create_required_pages();
 		flush_rewrite_rules();
 	}
@@ -42,6 +43,7 @@ final class Installer {
 	 */
 	public static function deactivate() {
 		Data\Sync::unschedule_events();
+		wp_clear_scheduled_hook( Logo_Cache::HOOK );
 		flush_rewrite_rules();
 	}
 

@@ -25,7 +25,7 @@ foreach ( $sportsarena_groups as $sportsarena_i => $sportsarena_group ) :
 	<section class="sa-group" data-sa-sport="<?php echo esc_attr( $sportsarena_slug ); ?>">
 		<h2 class="sa-group__title">
 			<?php if ( $sportsarena_comp ) : ?>
-				<a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></a>
+				<a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo sportsarena_competition_logo( $sportsarena_comp, 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?><span><?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></span></a>
 			<?php else : ?>
 				<?php esc_html_e( 'مباريات أخرى', 'sportsarena-theme' ); ?>
 			<?php endif; ?>

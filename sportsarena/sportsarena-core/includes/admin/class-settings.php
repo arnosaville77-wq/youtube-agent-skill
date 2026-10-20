@@ -138,7 +138,7 @@ final class Settings {
 			}
 		}
 		$out['alternate_sites'] = implode( "\n", $alternates );
-		foreach ( array( 'sync_enabled', 'allow_logos', 'news_sitemap', 'delete_on_uninstall' ) as $flag ) {
+		foreach ( array( 'sync_enabled', 'allow_logos', 'cache_logos', 'news_sitemap', 'delete_on_uninstall' ) as $flag ) {
 			$out[ $flag ] = empty( $input[ $flag ] ) ? 0 : 1;
 		}
 		Provider_Registry::reset();
@@ -301,7 +301,8 @@ final class Settings {
 				<h2><?php esc_html_e( 'خيارات أخرى', 'sportsarena-core' ); ?></h2>
 				<table class="form-table" role="presentation">
 					<?php
-					$this->row( $n, 'allow_logos', __( 'عرض شعارات المزوّد', 'sportsarena-core' ), $o['allow_logos'], __( 'فعّل فقط إذا كانت خطة مزوّد البيانات تمنحك ترخيص عرض الشعارات. وإلا تُعرض صورة بديلة عامة.', 'sportsarena-core' ), 'checkbox' );
+					$this->row( $n, 'allow_logos', __( 'عرض شعارات المزوّد', 'sportsarena-core' ), $o['allow_logos'], __( 'شعارات الأندية والبطولات من المزوّد في كل أماكنها (المباريات، الترتيب، الفرق، البطولات). الشعارات علامات تجارية لأصحابها: فعّلها إذا كانت خطة المزوّد تسمح بعرضها. أعلام الدول تظهر دائماً.', 'sportsarena-core' ), 'checkbox' );
+					$this->row( $n, 'cache_logos', __( 'حفظ الشعارات على موقعك', 'sportsarena-core' ), $o['cache_logos'], __( 'تنزيل شعارات المزوّد إلى مجلد الرفع (128px، WebP) بدفعات كل ساعة بدلاً من تحميلها من خادم المزوّد. أسرع وأكثر استقراراً.', 'sportsarena-core' ), 'checkbox' );
 					$this->row( $n, 'news_sitemap', __( 'Google News Sitemap', 'sportsarena-core' ), $o['news_sitemap'], __( 'إنشاء /news-sitemap.xml لأخبار آخر 48 ساعة.', 'sportsarena-core' ), 'checkbox' );
 					?>
 					<tr>
@@ -566,7 +567,8 @@ final class Settings {
 			?>
 			<h2><?php esc_html_e( 'الصفحات والملفات', 'sportsarena-core' ); ?></h2>
 			<?php
-			$tool( 'sportsarena_create_pages', __( 'إنشاء الصفحات الإلزامية', 'sportsarena-core' ), __( 'من نحن، اتصل بنا، الخصوصية، الشروط، إخلاء المسؤولية (لا يستبدل الموجود).', 'sportsarena-core' ) );
+			$tool( 'sportsarena_create_pages', __( 'إنشاء الصفحات الإلزامية وأقسام الأخبار', 'sportsarena-core' ), __( 'صفحة الأخبار، أقسام الأخبار لكل رياضة، من نحن، اتصل بنا، الخصوصية، الشروط، إخلاء المسؤولية (لا يستبدل الموجود).', 'sportsarena-core' ) );
+			$tool( 'sportsarena_cache_logos', __( 'تنزيل الشعارات الآن', 'sportsarena-core' ), __( 'يحفظ شعارات المزوّد على موقعك (يتطلب تفعيل عرض الشعارات).', 'sportsarena-core' ) );
 			$tool( 'sportsarena_write_ads_txt', __( 'إعادة إنشاء ads.txt', 'sportsarena-core' ), __( 'يكتب الملف في جذر الموقع إن أمكن.', 'sportsarena-core' ) );
 			$tool( 'sportsarena_flush', __( 'تحديث الروابط الدائمة والكاش', 'sportsarena-core' ), __( 'استخدمه إذا ظهرت صفحة 404 لروابط المباريات.', 'sportsarena-core' ) );
 			?>

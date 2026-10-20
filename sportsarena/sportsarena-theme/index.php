@@ -25,6 +25,11 @@ get_header();
 			</h1>
 			<?php the_archive_description( '<div class="sa-page-desc">', '</div>' ); ?>
 		</header>
+		<?php
+		if ( is_category() || is_home() ) {
+			get_template_part( 'template-parts/news-sections-nav' );
+		}
+		?>
 		<?php if ( have_posts() ) : ?>
 			<div class="sa-cards">
 				<?php
@@ -32,6 +37,10 @@ get_header();
 				while ( have_posts() ) :
 					the_post();
 					get_template_part( 'template-parts/post-card', null, array( 'eager' => 0 === $sportsarena_i++ ) );
+					// In-feed ad after every 6 cards (not after the last one).
+					if ( 0 === $sportsarena_i % 6 && $sportsarena_i < $wp_query->post_count ) {
+						sportsarena_theme_ad( 'in_feed' );
+					}
 				endwhile;
 				?>
 			</div>

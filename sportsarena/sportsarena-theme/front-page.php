@@ -54,7 +54,7 @@ foreach ( $sportsarena_groups as $sportsarena_group ) {
 			)
 		);
 		if ( $sportsarena_news->have_posts() ) :
-			$sportsarena_news_page = (int) get_option( 'page_for_posts' );
+			$sportsarena_news_page = sportsarena_theme_news_page();
 			?>
 			<section class="sa-section" aria-labelledby="sa-news-title">
 				<div class="sa-section__head">
@@ -63,12 +63,16 @@ foreach ( $sportsarena_groups as $sportsarena_group ) {
 						<a class="sa-more" href="<?php echo esc_url( get_permalink( $sportsarena_news_page ) ); ?>"><?php esc_html_e( 'المزيد', 'sportsarena-theme' ); ?></a>
 					<?php endif; ?>
 				</div>
+				<?php get_template_part( 'template-parts/news-sections-nav' ); ?>
 				<div class="sa-cards">
 					<?php
 					$sportsarena_i = 0;
 					while ( $sportsarena_news->have_posts() ) :
 						$sportsarena_news->the_post();
 						get_template_part( 'template-parts/post-card', null, array( 'eager' => 0 === $sportsarena_i++ && ! $sportsarena_groups ) );
+						if ( 6 === $sportsarena_i && $sportsarena_news->post_count > 6 ) {
+							sportsarena_theme_ad( 'in_feed' );
+						}
 					endwhile;
 					wp_reset_postdata();
 					?>

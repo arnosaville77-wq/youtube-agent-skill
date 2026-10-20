@@ -50,12 +50,12 @@ msgstr ""
 msgid "مباريات اليوم"
 msgstr "Bugünün maçları"
 
-#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:122
-#: taxonomy-sport.php:58
+#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:130
+#: taxonomy-sport.php:58 template-news.php:46
 msgid "آخر الأخبار"
 msgstr "Son haberler"
 
-#: archive.php:40 index.php:40
+#: archive.php:49 index.php:49
 msgid "لا توجد مقالات بعد."
 msgstr "Henüz yazı yok."
 
@@ -107,7 +107,7 @@ msgstr "Bugün planlanmış maç yok. Yarının maçlarına göz atın."
 msgid "أحدث الأخبار"
 msgstr "En yeni haberler"
 
-#: front-page.php:63
+#: front-page.php:63 template-news.php:84
 msgid "المزيد"
 msgstr "Daha fazla"
 
@@ -246,43 +246,43 @@ msgstr "Maçlar"
 msgid "الترتيب"
 msgstr "Puan durumu"
 
-#: single-competition.php:21 single-competition.php:75
+#: single-competition.php:21 single-competition.php:83
 msgid "الهدافون"
 msgstr "Gol krallığı"
 
-#: single-competition.php:38
+#: single-competition.php:39
 msgid "الموسم:"
 msgstr "Sezon:"
 
-#: single-competition.php:43
+#: single-competition.php:51
 msgid "أقسام البطولة"
 msgstr "Turnuva bölümleri"
 
-#: single-competition.php:54 single-team.php:44
+#: single-competition.php:62 single-team.php:44
 msgid "المباريات القادمة"
 msgstr "Yaklaşan maçlar"
 
-#: single-competition.php:55
+#: single-competition.php:63
 msgid "لا توجد مباريات قادمة."
 msgstr "Yaklaşan maç yok."
 
-#: single-competition.php:59 single-match.php:252
+#: single-competition.php:67 single-match.php:252
 msgid "جدول الترتيب"
 msgstr "Puan durumu"
 
-#: single-competition.php:60
+#: single-competition.php:68
 msgid "الجدول كاملاً"
 msgstr "Tablonun tamamı"
 
-#: single-competition.php:76
+#: single-competition.php:84
 msgid "القائمة كاملة"
 msgstr "Listenin tamamı"
 
-#: single-competition.php:102
+#: single-competition.php:110
 msgid "لا توجد مباريات مسجلة."
 msgstr "Kayıtlı maç yok."
 
-#: single-competition.php:107
+#: single-competition.php:115
 msgid "مباريات"
 msgstr "Maçlar"
 
@@ -394,17 +394,22 @@ msgstr "Kayıtlı geçmiş sonuç yok."
 msgid "آخر أخبار %s"
 msgstr "%s son haberleri"
 
-#: single.php:54
+#: single.php:56
 msgid "مرتبط بهذا الخبر"
 msgstr "Bu haberle ilgili"
 
-#: single.php:79
+#: single.php:81
 msgid "أخبار ذات صلة"
 msgstr "İlgili haberler"
 
 #: taxonomy-sport.php:26
 msgid "لا توجد مباريات اليوم في هذه الرياضة."
 msgstr "Bugün bu sporda maç yok."
+
+#. Template Name of the theme
+#: template-news.php:3
+msgid "الأخبار (حسب الرياضة)"
+msgstr "Haberler (spora göre)"
 
 #: template-parts/date-picker.php:15
 msgid "أمس"
@@ -437,6 +442,10 @@ msgstr "Canlı"
 #: template-parts/match-list.php:30
 msgid "مباريات أخرى"
 msgstr "Diğer maçlar"
+
+#: template-parts/news-sections-nav.php:25
+msgid "أقسام الأخبار"
+msgstr "Haber bölümleri"
 
 #: template-parts/quick-search.php:11
 msgid "ابحث عن فريق أو بطولة"

@@ -24,7 +24,7 @@ while ( have_posts() ) :
 				<h1 class="sa-page-title"><?php the_title(); ?></h1>
 				<p class="sa-entity__meta">
 					<?php if ( $sportsarena_country && ! is_wp_error( $sportsarena_country ) ) : ?>
-						<span><?php echo esc_html( $sportsarena_country[0]->name ); ?></span>
+						<span class="sa-country"><?php echo sportsarena_flag( sportsarena_country_of( $sportsarena_id ), 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?> <?php echo esc_html( $sportsarena_country[0]->name ); ?></span>
 					<?php endif; ?>
 					<?php if ( $sportsarena_venue ) : ?>
 						<span><?php esc_html_e( 'الملعب:', 'sportsarena-theme' ); ?> <?php echo esc_html( $sportsarena_venue ); ?></span>

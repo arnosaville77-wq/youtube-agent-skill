@@ -18,7 +18,7 @@ defined( 'ABSPATH' ) || exit;
 					<h2 class="sa-widget__title"><?php esc_html_e( 'البطولات', 'sportsarena-theme' ); ?></h2>
 					<ul class="sa-links">
 						<?php foreach ( $sportsarena_comps as $sportsarena_comp ) : ?>
-							<li><a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></a></li>
+							<li><a class="sa-links__logo" href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo sportsarena_competition_logo( $sportsarena_comp, 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?><span><?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></span></a></li>
 						<?php endforeach; ?>
 					</ul>
 				</section>

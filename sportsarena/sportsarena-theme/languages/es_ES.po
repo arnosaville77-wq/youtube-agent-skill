@@ -50,12 +50,12 @@ msgstr ""
 msgid "مباريات اليوم"
 msgstr "Partidos de hoy"
 
-#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:122
-#: taxonomy-sport.php:58
+#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:130
+#: taxonomy-sport.php:58 template-news.php:46
 msgid "آخر الأخبار"
 msgstr "Últimas noticias"
 
-#: archive.php:40 index.php:40
+#: archive.php:49 index.php:49
 msgid "لا توجد مقالات بعد."
 msgstr "Todavía no hay artículos."
 
@@ -107,7 +107,7 @@ msgstr "No hay partidos programados hoy. Consulta los partidos de mañana."
 msgid "أحدث الأخبار"
 msgstr "Últimas noticias"
 
-#: front-page.php:63
+#: front-page.php:63 template-news.php:84
 msgid "المزيد"
 msgstr "Más"
 
@@ -246,43 +246,43 @@ msgstr "Partidos"
 msgid "الترتيب"
 msgstr "Clasificación"
 
-#: single-competition.php:21 single-competition.php:75
+#: single-competition.php:21 single-competition.php:83
 msgid "الهدافون"
 msgstr "Goleadores"
 
-#: single-competition.php:38
+#: single-competition.php:39
 msgid "الموسم:"
 msgstr "Temporada:"
 
-#: single-competition.php:43
+#: single-competition.php:51
 msgid "أقسام البطولة"
 msgstr "Secciones de la competición"
 
-#: single-competition.php:54 single-team.php:44
+#: single-competition.php:62 single-team.php:44
 msgid "المباريات القادمة"
 msgstr "Próximos partidos"
 
-#: single-competition.php:55
+#: single-competition.php:63
 msgid "لا توجد مباريات قادمة."
 msgstr "No hay próximos partidos."
 
-#: single-competition.php:59 single-match.php:252
+#: single-competition.php:67 single-match.php:252
 msgid "جدول الترتيب"
 msgstr "Clasificación"
 
-#: single-competition.php:60
+#: single-competition.php:68
 msgid "الجدول كاملاً"
 msgstr "Clasificación completa"
 
-#: single-competition.php:76
+#: single-competition.php:84
 msgid "القائمة كاملة"
 msgstr "Lista completa"
 
-#: single-competition.php:102
+#: single-competition.php:110
 msgid "لا توجد مباريات مسجلة."
 msgstr "No hay partidos registrados."
 
-#: single-competition.php:107
+#: single-competition.php:115
 msgid "مباريات"
 msgstr "Partidos"
 
@@ -394,17 +394,22 @@ msgstr "No hay resultados anteriores registrados."
 msgid "آخر أخبار %s"
 msgstr "Últimas noticias de %s"
 
-#: single.php:54
+#: single.php:56
 msgid "مرتبط بهذا الخبر"
 msgstr "Relacionado con esta noticia"
 
-#: single.php:79
+#: single.php:81
 msgid "أخبار ذات صلة"
 msgstr "Noticias relacionadas"
 
 #: taxonomy-sport.php:26
 msgid "لا توجد مباريات اليوم في هذه الرياضة."
 msgstr "No hay partidos hoy en este deporte."
+
+#. Template Name of the theme
+#: template-news.php:3
+msgid "الأخبار (حسب الرياضة)"
+msgstr "Noticias (por deporte)"
 
 #: template-parts/date-picker.php:15
 msgid "أمس"
@@ -437,6 +442,10 @@ msgstr "En directo"
 #: template-parts/match-list.php:30
 msgid "مباريات أخرى"
 msgstr "Otros partidos"
+
+#: template-parts/news-sections-nav.php:25
+msgid "أقسام الأخبار"
+msgstr "Secciones de noticias"
 
 #: template-parts/quick-search.php:11
 msgid "ابحث عن فريق أو بطولة"

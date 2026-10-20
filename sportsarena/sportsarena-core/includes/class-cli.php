@@ -73,11 +73,29 @@ final class Cli {
 	}
 
 	/**
+	 * Run the AdSense readiness check.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     wp sportsarena adsense-check
+	 *
+	 * @subcommand adsense-check
+	 * @return void
+	 */
+	public function adsense_check() {
+		$rows = Admin\Adsense_Check::run();
+		\WP_CLI\Utils\format_items( 'table', $rows, array( 'status', 'group', 'label', 'message', 'fix' ) );
+		$fails = count( wp_list_filter( $rows, array( 'status' => Admin\Adsense_Check::FAIL ) ) );
+		\WP_CLI::log( sprintf( '%d checks, %d to fix.', count( $rows ), $fails ) );
+	}
+
+	/**
 	 * Create the required pages (about, contact, privacy, terms, disclaimer).
 	 *
 	 * @return void
 	 */
 	public function pages() {
+		News_Sections::create();
 		$ids = Pages::create_required_pages();
 		\WP_CLI::success( 'Pages: ' . wp_json_encode( $ids ) );
 	}

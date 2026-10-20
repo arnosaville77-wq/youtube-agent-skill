@@ -157,8 +157,8 @@ final class Ads {
 				esc_attr( $config['slot_id'] ),
 				esc_attr( 'vertical' === $def['format'] ? 'vertical' : ( 'horizontal' === $def['format'] ? 'horizontal' : 'rectangle' ) )
 			);
-		} elseif ( current_user_can( 'manage_options' ) ) {
-			// Admin-only placeholder so the layout can be checked before approval.
+		} elseif ( apply_filters( 'sportsarena_ad_placeholders', current_user_can( 'manage_options' ) ) ) {
+			// Placeholder (admins only by default) so the layout can be checked before approval.
 			$inner = '<div class="sa-ad__placeholder">' . esc_html( $def['label'] ) . '</div>';
 		}
 		if ( '' === $inner ) {
@@ -176,7 +176,7 @@ final class Ads {
 	}
 
 	/**
-	 * Insert the in-article slot after the second paragraph of single posts.
+	 * Insert the in-article slots (after paragraphs 2 and 6) in single posts.
 	 *
 	 * @param string $content Content.
 	 * @return string
@@ -185,23 +185,38 @@ final class Ads {
 		if ( ! is_singular( 'post' ) || ! in_the_loop() || ! is_main_query() ) {
 			return $content;
 		}
-		$ad = self::render( 'in_article' );
-		if ( '' === $ad ) {
-			return $content;
-		}
-		$offset = 0;
-		for ( $i = 0; $i < 2; $i++ ) {
-			$found = strpos( $content, '</p>', $offset );
-			if ( false === $found ) {
-				return $content;
+		// After paragraph 2 (needs at least 3 paragraphs) and, for long
+		// articles, after paragraph 6 (needs at least 8). Never at the very end.
+		foreach ( array(
+			6 => 'in_article_2',
+			2 => 'in_article',
+		) as $after => $slot ) {
+			$ad = self::render( $slot );
+			if ( '' === $ad ) {
+				continue;
 			}
+			$positions = self::paragraph_ends( $content );
+			if ( count( $positions ) >= $after + ( 'in_article_2' === $slot ? 2 : 1 ) ) {
+				$content = substr_replace( $content, $ad, $positions[ $after - 1 ], 0 );
+			}
+		}
+		return $content;
+	}
+
+	/**
+	 * Offsets right after each closing paragraph tag.
+	 *
+	 * @param string $content HTML.
+	 * @return int[]
+	 */
+	private static function paragraph_ends( $content ) {
+		$ends   = array();
+		$offset = 0;
+		while ( false !== ( $found = strpos( $content, '</p>', $offset ) ) ) { // phpcs:ignore Generic.CodeAnalysis.AssignmentInCondition.FoundInWhileCondition -- Simple scan.
 			$offset = $found + 4;
+			$ends[] = $offset;
 		}
-		// Only when at least one more paragraph follows (never at the very end).
-		if ( false === strpos( $content, '</p>', $offset ) ) {
-			return $content;
-		}
-		return substr_replace( $content, $ad, $offset, 0 );
+		return $ends;
 	}
 
 	/**

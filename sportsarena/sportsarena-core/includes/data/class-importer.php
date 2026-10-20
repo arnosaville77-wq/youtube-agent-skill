@@ -291,6 +291,7 @@ final class Importer {
 		update_post_meta( $post_id, '_sa_season', sanitize_text_field( $c['season'] ) );
 		update_post_meta( $post_id, '_sa_type', sanitize_text_field( $c['type'] ) );
 		update_post_meta( $post_id, '_sa_logo_url', esc_url_raw( $c['logo'] ) );
+		update_post_meta( $post_id, '_sa_country_en', sanitize_text_field( $c['country'] ) );
 		update_post_meta( $post_id, '_sa_priority', 50 );
 		$sport_term = $this->ensure_sport( $sport );
 		if ( $sport_term ) {
@@ -314,6 +315,14 @@ final class Importer {
 		$external_id = '' !== (string) $t['external_id'] ? (string) $t['external_id'] : 'name:' . sanitize_title( $t['name'] );
 		$post_id     = $this->find( Post_Types::TEAM, $external_id );
 		if ( $post_id ) {
+			// A team first seen in an international cup gets its real country later.
+			$known = (string) get_post_meta( $post_id, '_sa_country_en', true );
+			if ( ! empty( $t['country'] ) && ( '' === $known || '' === Countries::code( $known ) ) && '' !== Countries::code( $t['country'] ) ) {
+				update_post_meta( $post_id, '_sa_country_en', sanitize_text_field( $t['country'] ) );
+			}
+			if ( ! empty( $t['logo'] ) && '' === (string) get_post_meta( $post_id, '_sa_logo_url', true ) ) {
+				update_post_meta( $post_id, '_sa_logo_url', esc_url_raw( $t['logo'] ) );
+			}
 			return $post_id;
 		}
 		$slug = sanitize_title( $t['name'] );
@@ -335,6 +344,7 @@ final class Importer {
 		update_post_meta( $post_id, '_sa_external_id', $external_id );
 		update_post_meta( $post_id, '_sa_name_en', sanitize_text_field( $t['name'] ) );
 		update_post_meta( $post_id, '_sa_logo_url', esc_url_raw( $t['logo'] ) );
+		update_post_meta( $post_id, '_sa_country_en', sanitize_text_field( $t['country'] ) );
 		$sport_term = $this->ensure_sport( $sport );
 		if ( $sport_term ) {
 			wp_set_object_terms( $post_id, array( $sport_term ), Post_Types::TAX_SPORT );
