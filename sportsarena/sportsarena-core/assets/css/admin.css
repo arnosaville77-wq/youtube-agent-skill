@@ -1,0 +1,9 @@
+/* SportsArena admin */
+.sa-admin .sa-status { max-width: 900px; margin: 12px 0; }
+.sa-admin .sa-slots input[type="text"] { width: 140px; }
+.sa-admin .sa-tool { margin: 10px 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.sa-admin .sa-pre { background: #f6f7f7; padding: 10px; max-width: 700px; }
+.sa-admin .sa-log-error td { background: #fcf0f1; }
+.sa-admin .sa-log-warning td { background: #fcf9e8; }
+.sa-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0 16px; }
+.sa-grid select, .sa-grid input { width: 100%; }

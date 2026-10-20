@@ -1,0 +1,17 @@
+/*
+Theme Name: SportsArena
+Theme URI: https://example.com/
+Author: SportsArena
+Description: قالب رياضي عربي خفيف (RTL) لنتائج المباريات والأخبار، مهيأ لمحركات البحث وGoogle AdSense وCore Web Vitals. يعمل مع إضافة SportsArena Core.
+Version: 1.0.0
+Requires at least: 6.5
+Tested up to: 6.6
+Requires PHP: 8.1
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sportsarena-theme
+Domain Path: /languages
+Tags: rtl-language-support, news, blog, two-columns, right-sidebar, custom-logo, custom-menu, featured-images, translation-ready, accessibility-ready
+*/
+
+/* Styles live in assets/css/critical.css (inlined) and assets/css/main.css (deferred). */

@@ -1,0 +1,20 @@
+{
+	"name": "sportsarena/wordpress",
+	"description": "SportsArena theme + companion plugin (development tooling only).",
+	"type": "project",
+	"license": "GPL-2.0-or-later",
+	"require-dev": {
+		"wp-coding-standards/wpcs": "^3.1",
+		"phpcompatibility/phpcompatibility-wp": "*"
+	},
+	"config": {
+		"allow-plugins": {
+			"dealerdirect/phpcodesniffer-composer-installer": true
+		}
+	},
+	"scripts": {
+		"lint": "vendor/bin/phpcs --standard=phpcs.xml.dist",
+		"lint:fix": "vendor/bin/phpcbf --standard=phpcs.xml.dist",
+		"build": "bin/build.sh"
+	}
+}
