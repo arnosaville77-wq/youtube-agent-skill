@@ -45,6 +45,7 @@ final class Plugin {
 		Installer::maybe_upgrade();
 
 		( new Locale_Fallback() )->register_hooks();
+		( new Localized_Names() )->register_hooks();
 		( new Post_Types() )->register_hooks();
 		( new Rewrites() )->register_hooks();
 		( new Data\Sync() )->register_hooks();

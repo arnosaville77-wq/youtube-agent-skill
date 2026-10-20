@@ -11,6 +11,7 @@
 
 namespace SportsArena\Core\Seo;
 
+use SportsArena\Core\Options;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
 use SportsArena\Core\Rewrites;
@@ -55,6 +56,7 @@ final class Seo {
 		if ( is_admin() ) {
 			return;
 		}
+		add_action( 'wp_head', array( $this, 'print_hreflang' ), 4 );
 		switch ( self::seo_plugin() ) {
 			case 'yoast':
 				add_filter( 'wpseo_title', array( $this, 'filter_plugin_title' ) );
@@ -215,9 +217,10 @@ final class Seo {
 			if ( has_excerpt( $id ) ) {
 				return wp_strip_all_tags( get_the_excerpt( $id ) );
 			}
-			$home  = $m['home'] ? get_the_title( $m['home'] ) : get_the_title( $id );
-			$away  = $m['away'] ? get_the_title( $m['away'] ) : '';
-			$teams = $away ? $home . ' ضد ' . $away : $home;
+			$home = $m['home'] ? get_the_title( $m['home'] ) : get_the_title( $id );
+			$away = $m['away'] ? get_the_title( $m['away'] ) : '';
+			/* translators: 1: home team, 2: away team. */
+			$teams = $away ? sprintf( __( '%1$s ضد %2$s', 'sportsarena-core' ), $home, $away ) : $home;
 			$comp  = $m['competition'] ? get_the_title( $m['competition'] ) : '';
 			$when  = wp_date( 'l j F Y', $m['kickoff'] ) . ' ' . __( 'الساعة', 'sportsarena-core' ) . ' ' . wp_date( 'H:i', $m['kickoff'] );
 			$venue = $m['venue'] ? ' ' . __( 'على ملعب', 'sportsarena-core' ) . ' ' . $m['venue'] : '';
@@ -462,6 +465,56 @@ final class Seo {
 			printf( '<meta name="twitter:image" content="%s">' . "\n", esc_url( $image ) );
 		}
 		echo "<!-- /SportsArena SEO -->\n";
+	}
+
+	/**
+	 * Alternate language sites from the settings: array( hreflang => home URL ).
+	 *
+	 * @return array<string,string>
+	 */
+	public static function alternate_sites() {
+		$sites = array();
+		foreach ( preg_split( '/\r\n|\r|\n/', (string) Options::get( 'alternate_sites' ) ) as $line ) {
+			$parts = array_map( 'trim', explode( '=', $line, 2 ) );
+			if ( 2 === count( $parts ) && '' !== $parts[0] && '' !== $parts[1] ) {
+				$sites[ $parts[0] ] = untrailingslashit( $parts[1] );
+			}
+		}
+		return $sites;
+	}
+
+	/**
+	 * Hreflang links between separate language sites (one site per language,
+	 * e.g. example.com in Arabic and en.example.com in English). Sports pages
+	 * share the same path on every site because slugs come from the
+	 * provider's English names, so the alternate URL is the same path on the
+	 * other site. News and pages are skipped (their slugs differ).
+	 *
+	 * @return void
+	 */
+	public function print_hreflang() {
+		$sites = self::alternate_sites();
+		if ( ! $sites || self::is_noindex() ) {
+			return;
+		}
+		$shared = is_front_page() || get_query_var( 'sa_day' ) || is_tax( Post_Types::TAX_SPORT )
+			|| is_singular( array( Post_Types::MATCH, Post_Types::TEAM, Post_Types::COMPETITION ) );
+		if ( ! $shared ) {
+			return;
+		}
+		$canonical = self::canonical();
+		$home      = untrailingslashit( home_url() );
+		if ( '' === $canonical || ! str_starts_with( $canonical, $home ) ) {
+			return;
+		}
+		$path  = substr( $canonical, strlen( $home ) );
+		$links = array( get_bloginfo( 'language' ) => $canonical );
+		foreach ( $sites as $lang => $base ) {
+			$links[ $lang ] = $base . $path;
+		}
+		foreach ( $links as $lang => $url ) {
+			printf( '<link rel="alternate" hreflang="%1$s" href="%2$s">' . "\n", esc_attr( $lang ), esc_url( $url ) );
+		}
 	}
 
 	/*

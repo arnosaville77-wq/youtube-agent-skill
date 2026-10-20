@@ -1,0 +1,24 @@
+<wpml-config>
+	<!--
+		Read by WPML and Polylang. Sports data (matches, teams, competitions)
+		is language-neutral: one post serves every language and names are
+		localized on display (see includes/class-localized-names.php).
+		News posts and pages are translated normally.
+	-->
+	<custom-types>
+		<custom-type translate="0">match</custom-type>
+		<custom-type translate="0">team</custom-type>
+		<custom-type translate="0">competition</custom-type>
+		<custom-type translate="0">player</custom-type>
+	</custom-types>
+	<taxonomies>
+		<taxonomy translate="0">sport</taxonomy>
+		<taxonomy translate="0">season</taxonomy>
+		<taxonomy translate="0">country</taxonomy>
+	</taxonomies>
+	<custom-fields>
+		<custom-field action="copy">_sa_team_id</custom-field>
+		<custom-field action="copy">_sa_competition_id</custom-field>
+		<custom-field action="ignore">_sa_demo</custom-field>
+	</custom-fields>
+</wpml-config>

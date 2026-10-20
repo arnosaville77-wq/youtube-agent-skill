@@ -130,6 +130,14 @@ final class Settings {
 		$out['minute_limit']       = max( 0, absint( $input['minute_limit'] ?? 10 ) );
 		$out['live_interval']      = max( 60, absint( $input['live_interval'] ?? 60 ) );
 		$out['timezone_label']     = sanitize_text_field( $input['timezone_label'] ?? '' );
+		$alternates                = array();
+		foreach ( preg_split( '/\r\n|\r|\n/', (string) ( $input['alternate_sites'] ?? '' ) ) as $line ) {
+			$parts = array_map( 'trim', explode( '=', $line, 2 ) );
+			if ( 2 === count( $parts ) && preg_match( '/^([a-z]{2,3}(-[A-Za-z]{2,4})?|x-default)$/', $parts[0] ) && wp_http_validate_url( $parts[1] ) ) {
+				$alternates[] = $parts[0] . '=' . esc_url_raw( $parts[1] );
+			}
+		}
+		$out['alternate_sites'] = implode( "\n", $alternates );
 		foreach ( array( 'sync_enabled', 'allow_logos', 'news_sitemap', 'delete_on_uninstall' ) as $flag ) {
 			$out[ $flag ] = empty( $input[ $flag ] ) ? 0 : 1;
 		}
@@ -295,6 +303,15 @@ final class Settings {
 					<?php
 					$this->row( $n, 'allow_logos', __( 'عرض شعارات المزوّد', 'sportsarena-core' ), $o['allow_logos'], __( 'فعّل فقط إذا كانت خطة مزوّد البيانات تمنحك ترخيص عرض الشعارات. وإلا تُعرض صورة بديلة عامة.', 'sportsarena-core' ), 'checkbox' );
 					$this->row( $n, 'news_sitemap', __( 'Google News Sitemap', 'sportsarena-core' ), $o['news_sitemap'], __( 'إنشاء /news-sitemap.xml لأخبار آخر 48 ساعة.', 'sportsarena-core' ), 'checkbox' );
+					?>
+					<tr>
+						<th scope="row"><label for="sa-alternate-sites"><?php esc_html_e( 'مواقع اللغات الأخرى (hreflang)', 'sportsarena-core' ); ?></label></th>
+						<td>
+							<textarea id="sa-alternate-sites" class="large-text code" rows="4" dir="ltr" name="<?php echo esc_attr( $n . '[alternate_sites]' ); ?>" placeholder="en=https://en.example.com&#10;fr=https://fr.example.com&#10;x-default=https://en.example.com"><?php echo esc_textarea( (string) $o['alternate_sites'] ); ?></textarea>
+							<p class="description"><?php esc_html_e( 'سطر لكل لغة: رمز اللغة=رابط الموقع. يضيف وسوم hreflang لصفحات المباريات والفرق والبطولات والأيام بين نسخ الموقع بلغات مختلفة.', 'sportsarena-core' ); ?></p>
+						</td>
+					</tr>
+					<?php
 					$this->row( $n, 'delete_on_uninstall', __( 'حذف الإعدادات عند الحذف', 'sportsarena-core' ), $o['delete_on_uninstall'], __( 'حذف الإعدادات والجداول عند حذف الإضافة (المحتوى نفسه لا يُحذف).', 'sportsarena-core' ), 'checkbox' );
 					?>
 				</table>

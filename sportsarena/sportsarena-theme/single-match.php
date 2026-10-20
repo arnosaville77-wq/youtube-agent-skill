@@ -71,7 +71,7 @@ while ( have_posts() ) :
 					</dd>
 				</div>
 				<?php if ( $sportsarena_m['venue'] ) : ?>
-					<div><dt><?php esc_html_e( 'الملعب', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( trim( $sportsarena_m['venue'] . ( $sportsarena_m['city'] ? '، ' . $sportsarena_m['city'] : '' ) ) ); ?></dd></div>
+					<div><dt><?php esc_html_e( 'الملعب', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( trim( $sportsarena_m['venue'] . ( $sportsarena_m['city'] ? wp_get_list_item_separator() . $sportsarena_m['city'] : '' ) ) ); ?></dd></div>
 				<?php endif; ?>
 				<?php if ( $sportsarena_m['referee'] ) : ?>
 					<div><dt><?php esc_html_e( 'الحكم', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( $sportsarena_m['referee'] ); ?></dd></div>

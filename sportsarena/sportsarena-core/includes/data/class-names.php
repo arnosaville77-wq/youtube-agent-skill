@@ -1,8 +1,9 @@
 <?php
 /**
- * Arabic names for common teams, competitions and sports. Providers return
- * English names; new posts get the Arabic title when known (editors can
- * rename any post afterwards, the importer never overwrites titles).
+ * Localized names for common teams, competitions and sports. Providers
+ * return English names; on an Arabic site new posts get the Arabic title
+ * when known, on any other language they keep the provider's name (editors
+ * can rename any post afterwards, the importer never overwrites titles).
  *
  * @package SportsArena\Core
  */
@@ -23,14 +24,33 @@ final class Names {
 	 */
 	public static function sports() {
 		return array(
-			'football'   => 'كرة القدم',
-			'basketball' => 'كرة السلة',
-			'tennis'     => 'التنس',
-			'formula-1'  => 'الفورمولا 1',
-			'handball'   => 'كرة اليد',
-			'volleyball' => 'الكرة الطائرة',
-			'mma'        => 'الملاكمة والفنون القتالية',
+			'football'   => __( 'كرة القدم', 'sportsarena-core' ),
+			'basketball' => __( 'كرة السلة', 'sportsarena-core' ),
+			'tennis'     => __( 'التنس', 'sportsarena-core' ),
+			'formula-1'  => __( 'الفورمولا 1', 'sportsarena-core' ),
+			'handball'   => __( 'كرة اليد', 'sportsarena-core' ),
+			'volleyball' => __( 'الكرة الطائرة', 'sportsarena-core' ),
+			'mma'        => __( 'الملاكمة والفنون القتالية', 'sportsarena-core' ),
 		);
+	}
+
+	/**
+	 * Whether the current locale is Arabic.
+	 *
+	 * @return bool
+	 */
+	public static function is_arabic() {
+		return str_starts_with( determine_locale(), 'ar' );
+	}
+
+	/**
+	 * Whether a string contains Arabic letters.
+	 *
+	 * @param string $text Text.
+	 * @return bool
+	 */
+	public static function has_arabic( $text ) {
+		return (bool) preg_match( '/[\x{0600}-\x{06FF}]/u', (string) $text );
 	}
 
 	/**
@@ -140,7 +160,22 @@ final class Names {
 	}
 
 	/**
-	 * Translate an English name if known.
+	 * Name in the site language: Arabic from the dictionary on Arabic sites,
+	 * the provider's (English) name otherwise.
+	 *
+	 * @param string $name English name.
+	 * @return string
+	 */
+	public static function localize( $name ) {
+		if ( ! self::is_arabic() ) {
+			return $name;
+		}
+		$dictionary = self::dictionary();
+		return $dictionary[ $name ] ?? $name;
+	}
+
+	/**
+	 * Arabic name if known (regardless of the site language).
 	 *
 	 * @param string $name English name.
 	 * @return string

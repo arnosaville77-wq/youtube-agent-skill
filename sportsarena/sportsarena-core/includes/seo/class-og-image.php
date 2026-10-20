@@ -8,6 +8,7 @@
 
 namespace SportsArena\Core\Seo;
 
+use SportsArena\Core\Data\Names;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
 
@@ -83,7 +84,7 @@ final class Og_Image {
 			return null;
 		}
 		$lines = self::lines( $post_id );
-		$hash  = substr( md5( wp_json_encode( $lines ) . '|v2' ), 0, 10 );
+		$hash  = substr( md5( wp_json_encode( $lines ) . '|v3|' . determine_locale() ), 0, 10 );
 		$name  = 'match-' . (int) $post_id . '-' . $hash . '.jpg';
 		return array(
 			'path' => trailingslashit( $uploads['basedir'] ) . self::DIR . '/' . $name,
@@ -185,10 +186,12 @@ final class Og_Image {
 		}
 
 		if ( $lines['away'] ) {
-			// RTL layout: home team on the right, away team on the left.
-			self::text_fit( $img, $lines['home'], $font, 56, 320, self::WIDTH * 0.75, 460, $white );
-			self::text_center( $img, 'ضد', $font, 36, 330, $muted );
-			self::text_fit( $img, $lines['away'], $font, 56, 320, self::WIDTH * 0.25, 460, $white );
+			// Home team on the reading-start side (right in RTL, left in LTR).
+			$rtl = is_rtl() || Names::is_arabic();
+			self::text_fit( $img, $lines['home'], $font, 56, 320, self::WIDTH * ( $rtl ? 0.75 : 0.25 ), 460, $white );
+			/* translators: Short word between two team names on the share image. */
+			self::text_center( $img, __( 'ضد', 'sportsarena-core' ), $font, 36, 330, $muted );
+			self::text_fit( $img, $lines['away'], $font, 56, 320, self::WIDTH * ( $rtl ? 0.25 : 0.75 ), 460, $white );
 		} else {
 			self::text_fit( $img, $lines['home'], $font, 60, 330, self::WIDTH / 2, 1000, $white );
 		}
@@ -231,7 +234,8 @@ final class Og_Image {
 	 * @return void
 	 */
 	private static function text_fit( $img, $text, $font, $size, $y, $cx, $max_width, $color ) {
-		$shaped = Arabic_Shaper::shape( $text );
+		// Only Arabic lines need shaping and RTL reordering.
+		$shaped = Names::has_arabic( $text ) ? Arabic_Shaper::shape( $text ) : $text;
 		do {
 			$box   = imagettfbbox( $size, 0, $font, $shaped );
 			$width = abs( $box[2] - $box[0] );

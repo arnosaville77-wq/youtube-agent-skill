@@ -262,7 +262,12 @@ final class Importer {
 		}
 		$dictionary = Names::dictionary();
 		$keyed      = $c['name'] . ' (' . $c['country'] . ')';
-		$title      = $dictionary[ $keyed ] ?? Names::arabic( $c['name'] );
+		// Same-named leagues (Premier League England / Egypt) get the country in their title.
+		if ( isset( $dictionary[ $keyed ] ) ) {
+			$title = Names::is_arabic() ? $dictionary[ $keyed ] : $keyed;
+		} else {
+			$title = Names::localize( $c['name'] );
+		}
 		// Avoid slug clashes between same-named leagues (Premier League England / Egypt).
 		$slug = sanitize_title( $c['name'] );
 		if ( get_page_by_path( $slug, OBJECT, Post_Types::COMPETITION ) && ! empty( $c['country'] ) ) {
@@ -292,7 +297,7 @@ final class Importer {
 			wp_set_object_terms( $post_id, array( $sport_term ), Post_Types::TAX_SPORT );
 		}
 		if ( ! empty( $c['country'] ) ) {
-			wp_set_object_terms( $post_id, array( Names::arabic( $c['country'] ) ), Post_Types::TAX_COUNTRY );
+			wp_set_object_terms( $post_id, array( Names::localize( $c['country'] ) ), Post_Types::TAX_COUNTRY );
 		}
 		$this->lookup[ Post_Types::COMPETITION . '|' . $this->provider . '|' . $c['external_id'] ] = (int) $post_id;
 		return (int) $post_id;
@@ -319,7 +324,7 @@ final class Importer {
 			array(
 				'post_type'   => Post_Types::TEAM,
 				'post_status' => 'publish',
-				'post_title'  => Names::arabic( $t['name'] ),
+				'post_title'  => Names::localize( $t['name'] ),
 				'post_name'   => $slug,
 			)
 		);
@@ -335,7 +340,7 @@ final class Importer {
 			wp_set_object_terms( $post_id, array( $sport_term ), Post_Types::TAX_SPORT );
 		}
 		if ( ! empty( $t['country'] ) ) {
-			wp_set_object_terms( $post_id, array( Names::arabic( $t['country'] ) ), Post_Types::TAX_COUNTRY );
+			wp_set_object_terms( $post_id, array( Names::localize( $t['country'] ) ), Post_Types::TAX_COUNTRY );
 		}
 		$this->lookup[ Post_Types::TEAM . '|' . $this->provider . '|' . $external_id ] = (int) $post_id;
 		return (int) $post_id;

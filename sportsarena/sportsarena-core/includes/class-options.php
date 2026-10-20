@@ -41,6 +41,7 @@ final class Options {
 			'allow_logos'            => 0,
 			'timezone_label'         => '',
 			'news_sitemap'           => 1,
+			'alternate_sites'        => '',
 			'delete_on_uninstall'    => 0,
 		);
 	}

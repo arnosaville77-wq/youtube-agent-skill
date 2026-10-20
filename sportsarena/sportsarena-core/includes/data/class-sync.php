@@ -419,10 +419,10 @@ final class Sync {
 				foreach ( $h2h as $game ) {
 					$rows[] = array(
 						'date'  => (int) $game['kickoff'],
-						'home'  => Names::arabic( $game['home']['name'] ),
-						'away'  => Names::arabic( $game['away']['name'] ),
+						'home'  => Names::localize( $game['home']['name'] ),
+						'away'  => Names::localize( $game['away']['name'] ),
 						'score' => $game['score']['home'] . ' - ' . $game['score']['away'],
-						'comp'  => Names::arabic( $game['competition']['name'] ),
+						'comp'  => Names::localize( $game['competition']['name'] ),
 					);
 				}
 				update_post_meta( $post_id, '_sa_h2h', wp_slash( wp_json_encode( Importer::clean_deep( $rows ) ) ) );

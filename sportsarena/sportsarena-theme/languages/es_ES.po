@@ -1,0 +1,519 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SportsArena 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/sportsarena-theme\n"
+"PO-Revision-Date: 2026-10-20 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: es_ES\n"
+"Language: es_ES\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Domain: sportsarena-theme\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Theme Name of the theme
+#. Author of the theme
+#: style.css:2 style.css:4
+msgid "SportsArena"
+msgstr "SportsArena"
+
+#. Theme URI of the theme
+#: style.css:3
+msgid "https://example.com/"
+msgstr "https://example.com/"
+
+#. Description of the theme
+#: style.css:5
+msgid ""
+"قالب رياضي عربي خفيف (RTL) لنتائج المباريات والأخبار، مهيأ لمحركات البحث "
+"وGoogle AdSense وCore Web Vitals. يعمل مع إضافة SportsArena Core."
+msgstr ""
+"Tema deportivo ligero (compatible con RTL) para resultados y noticias, "
+"optimizado para buscadores, Google AdSense y Core Web Vitals. Funciona con "
+"el plugin SportsArena Core."
+
+#: 404.php:14
+msgid "الصفحة غير موجودة"
+msgstr "Página no encontrada"
+
+#: 404.php:15
+msgid "ربما نُقلت الصفحة أو حُذفت. يمكنك البحث أو العودة إلى مباريات اليوم."
+msgstr ""
+"Puede que la página se haya movido o eliminado. Puedes buscar o volver a los"
+" partidos de hoy."
+
+#: 404.php:18 front-page.php:28 header.php:50 matches-day.php:17
+#: taxonomy-sport.php:25
+msgid "مباريات اليوم"
+msgstr "Partidos de hoy"
+
+#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:122
+#: taxonomy-sport.php:58
+msgid "آخر الأخبار"
+msgstr "Últimas noticias"
+
+#: archive.php:40 index.php:40
+msgid "لا توجد مقالات بعد."
+msgstr "Todavía no hay artículos."
+
+#. translators: %s: number of comments.
+#: comments.php:19
+msgid "%s تعليق"
+msgid_plural "%s تعليقات"
+msgstr[0] "%s comentario"
+msgstr[1] "%s comentarios"
+
+#: footer.php:19
+msgid ""
+"نعرض النتائج والمواعيد والإحصائيات والأخبار فقط، ولا نقدّم أي بث مباشر أو "
+"روابط بث للمباريات."
+msgstr ""
+"Mostramos solo resultados, calendario, estadísticas y noticias, y nunca "
+"ofrecemos retransmisiones en directo ni enlaces de streaming."
+
+#: footer.php:21
+msgid "روابط الموقع"
+msgstr "Enlaces del sitio"
+
+#: footer.php:37
+msgid "إعدادات الخصوصية"
+msgstr "Ajustes de privacidad"
+
+#. translators: 1: year, 2: site name.
+#: footer.php:44
+msgid "© %1$s %2$s. جميع الحقوق محفوظة."
+msgstr "© %1$s %2$s. Todos los derechos reservados."
+
+#: front-page.php:29
+msgid "كل المباريات"
+msgstr "Todos los partidos"
+
+#: front-page.php:34
+msgid "تصفية حسب الرياضة"
+msgstr "Filtrar por deporte"
+
+#: front-page.php:35
+msgid "الكل"
+msgstr "Todo"
+
+#: front-page.php:43
+msgid "لا توجد مباريات مسجلة اليوم. تصفح مباريات الغد."
+msgstr "No hay partidos programados hoy. Consulta los partidos de mañana."
+
+#: front-page.php:61
+msgid "أحدث الأخبار"
+msgstr "Últimas noticias"
+
+#: front-page.php:63
+msgid "المزيد"
+msgstr "Más"
+
+#: header.php:18
+msgid "تخطَّ إلى المحتوى"
+msgstr "Saltar al contenido"
+
+#: header.php:31
+msgid "القائمة"
+msgstr "Menú"
+
+#: header.php:35 inc/setup.php:40
+msgid "القائمة الرئيسية"
+msgstr "Menú principal"
+
+#: header.php:48
+msgid "الرئيسية"
+msgstr "Inicio"
+
+#: header.php:51 matches-day.php:18
+msgid "مباريات الغد"
+msgstr "Partidos de mañana"
+
+#: header.php:52 sidebar.php:18 taxonomy-sport.php:31
+msgid "البطولات"
+msgstr "Competiciones"
+
+#: header.php:56
+msgid "الأخبار"
+msgstr "Noticias"
+
+#: header.php:67
+msgid "تبديل الوضع الداكن"
+msgstr "Cambiar modo oscuro"
+
+#: header.php:78
+msgid "الرياضات"
+msgstr "Deportes"
+
+#: inc/assets.php:78
+msgid "بتوقيتك"
+msgstr "tu hora"
+
+#: inc/assets.php:79
+msgid "لا توجد نتائج"
+msgstr "Sin resultados"
+
+#: inc/assets.php:80
+msgid "فريق"
+msgstr "Equipo"
+
+#: inc/setup.php:41
+msgid "قائمة الفوتر"
+msgstr "Menú del pie de página"
+
+#: inc/setup.php:86 sidebar.php:10
+msgid "الشريط الجانبي"
+msgstr "Barra lateral"
+
+#: inc/setup.php:88
+msgid "يظهر بجانب المحتوى على الشاشات الكبيرة."
+msgstr "Se muestra junto al contenido en pantallas grandes."
+
+#: inc/setup.php:121
+msgid ""
+"قالب SportsArena يحتاج إلى إضافة «SportsArena Core» لعرض المباريات والفرق "
+"والبطولات. ارفعها وفعّلها من صفحة الإضافات."
+msgstr ""
+"El tema SportsArena necesita el plugin «SportsArena Core» para mostrar "
+"partidos, equipos y competiciones. Súbelo y actívalo desde la página de "
+"Plugins."
+
+#: inc/template-tags.php:113
+msgid "السابق"
+msgstr "Anterior"
+
+#: inc/template-tags.php:114
+msgid "التالي"
+msgstr "Siguiente"
+
+#: inc/template-tags.php:115
+msgid "التنقل بين الصفحات"
+msgstr "Navegación de entradas"
+
+#: inc/template-tags.php:214 inc/template-tags.php:220
+msgid "اللغة"
+msgstr "Idioma"
+
+#: matches-day.php:19
+msgid "مباريات الأمس"
+msgstr "Partidos de ayer"
+
+#. translators: %s: date.
+#: matches-day.php:23
+msgid "مباريات يوم %s"
+msgstr "Partidos del %s"
+
+#. translators: %s: date.
+#: matches-day.php:32
+msgid ""
+"مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً."
+msgstr ""
+"Horarios y resultados de los partidos del %s en todas las competiciones. Las"
+" horas se muestran automáticamente en la zona horaria de tu dispositivo."
+
+#: matches-day.php:37
+msgid "لا توجد مباريات في هذا اليوم."
+msgstr "No hay partidos este día."
+
+#. translators: %s: search query.
+#: search.php:18
+msgid "نتائج البحث عن: %s"
+msgstr "Resultados de búsqueda de: %s"
+
+#: search.php:38
+msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."
+msgstr "No hay resultados que coincidan. Prueba con otras palabras."
+
+#: searchform.php:13 searchform.php:15
+msgid "بحث"
+msgstr "Buscar"
+
+#: searchform.php:14
+msgid "ابحث في الموقع…"
+msgstr "Buscar en el sitio…"
+
+#: single-competition.php:18
+msgid "نظرة عامة"
+msgstr "Resumen"
+
+#: single-competition.php:19
+msgid "المباريات"
+msgstr "Partidos"
+
+#: single-competition.php:20
+msgid "الترتيب"
+msgstr "Clasificación"
+
+#: single-competition.php:21 single-competition.php:75
+msgid "الهدافون"
+msgstr "Goleadores"
+
+#: single-competition.php:38
+msgid "الموسم:"
+msgstr "Temporada:"
+
+#: single-competition.php:43
+msgid "أقسام البطولة"
+msgstr "Secciones de la competición"
+
+#: single-competition.php:54 single-team.php:44
+msgid "المباريات القادمة"
+msgstr "Próximos partidos"
+
+#: single-competition.php:55
+msgid "لا توجد مباريات قادمة."
+msgstr "No hay próximos partidos."
+
+#: single-competition.php:59 single-match.php:252
+msgid "جدول الترتيب"
+msgstr "Clasificación"
+
+#: single-competition.php:60
+msgid "الجدول كاملاً"
+msgstr "Clasificación completa"
+
+#: single-competition.php:76
+msgid "القائمة كاملة"
+msgstr "Lista completa"
+
+#: single-competition.php:102
+msgid "لا توجد مباريات مسجلة."
+msgstr "No hay partidos registrados."
+
+#: single-competition.php:107
+msgid "مباريات"
+msgstr "Partidos"
+
+#: single-match.php:62
+msgid "الموعد"
+msgstr "Hora"
+
+#. translators: 1: time, 2: timezone label.
+#: single-match.php:68
+msgid "التوقيت الأصلي: %1$s %2$s"
+msgstr "Hora original: %1$s %2$s"
+
+#: single-match.php:74
+msgid "الملعب"
+msgstr "Estadio"
+
+#: single-match.php:77
+msgid "الحكم"
+msgstr "Árbitro"
+
+#: single-match.php:80
+msgid "القناة الناقلة"
+msgstr "Canal de TV"
+
+#: single-match.php:85
+msgid "أقسام الصفحة"
+msgstr "Secciones de la página"
+
+#: single-match.php:89
+msgid "الأحداث"
+msgstr "Eventos"
+
+#: single-match.php:93 single-match.php:138
+msgid "التشكيلة"
+msgstr "Alineaciones"
+
+#: single-match.php:97
+msgid "الإحصائيات"
+msgstr "Estadísticas"
+
+#: single-match.php:98 single-match.php:189
+msgid "المواجهات السابقة"
+msgstr "Enfrentamientos"
+
+#: single-match.php:102
+msgid "المعاينة"
+msgstr "Previa"
+
+#: single-match.php:107
+msgid "الأهداف والبطاقات"
+msgstr "Goles y tarjetas"
+
+#. translators: %s: player.
+#: single-match.php:125
+msgid "صناعة: %s"
+msgstr "Asistencia: %s"
+
+#: single-match.php:150
+msgid "البدلاء"
+msgstr "Suplentes"
+
+#: single-match.php:158
+msgid "المدرب:"
+msgstr "Entrenador:"
+
+#: single-match.php:168
+msgid "إحصائيات المباراة"
+msgstr "Estadísticas del partido"
+
+#: single-match.php:205
+msgid "لا توجد مواجهات سابقة مسجلة بين الفريقين."
+msgstr "No hay enfrentamientos anteriores registrados entre estos equipos."
+
+#: single-match.php:212
+msgid "معاينة وتحليل"
+msgstr "Previa y análisis"
+
+#: single-match.php:224
+msgid "أخبار مرتبطة"
+msgstr "Noticias relacionadas"
+
+#. translators: %s: competition.
+#: single-match.php:248
+msgid "مباريات قادمة في %s"
+msgstr "Próximos partidos de %s"
+
+#: single-team.php:30
+msgid "الملعب:"
+msgstr "Estadio:"
+
+#: single-team.php:33
+msgid "التأسيس:"
+msgstr "Fundación:"
+
+#: single-team.php:45
+msgid "لا توجد مباريات قادمة مسجلة."
+msgstr "No hay próximos partidos registrados."
+
+#: single-team.php:49
+msgid "نتائج المباريات السابقة"
+msgstr "Resultados anteriores"
+
+#: single-team.php:50
+msgid "لا توجد نتائج سابقة مسجلة."
+msgstr "No hay resultados anteriores registrados."
+
+#. translators: %s: team.
+#: single-team.php:61
+msgid "آخر أخبار %s"
+msgstr "Últimas noticias de %s"
+
+#: single.php:54
+msgid "مرتبط بهذا الخبر"
+msgstr "Relacionado con esta noticia"
+
+#: single.php:79
+msgid "أخبار ذات صلة"
+msgstr "Noticias relacionadas"
+
+#: taxonomy-sport.php:26
+msgid "لا توجد مباريات اليوم في هذه الرياضة."
+msgstr "No hay partidos hoy en este deporte."
+
+#: template-parts/date-picker.php:15
+msgid "أمس"
+msgstr "Ayer"
+
+#: template-parts/date-picker.php:16
+msgid "اليوم"
+msgstr "Hoy"
+
+#: template-parts/date-picker.php:17
+msgid "غداً"
+msgstr "Mañana"
+
+#: template-parts/date-picker.php:20
+msgid "اختيار اليوم"
+msgstr "Elegir el día"
+
+#: template-parts/date-picker.php:35
+msgid "اختر تاريخاً"
+msgstr "Elegir una fecha"
+
+#: template-parts/live-ticker.php:15
+msgid "المباريات الجارية الآن"
+msgstr "Partidos en juego"
+
+#: template-parts/live-ticker.php:17
+msgid "مباشر"
+msgstr "En directo"
+
+#: template-parts/match-list.php:30
+msgid "مباريات أخرى"
+msgstr "Otros partidos"
+
+#: template-parts/quick-search.php:11
+msgid "ابحث عن فريق أو بطولة"
+msgstr "Buscar un equipo o competición"
+
+#: template-parts/quick-search.php:12
+msgid "ابحث عن فريق أو بطولة…"
+msgstr "Buscar un equipo o competición…"
+
+#: template-parts/scorers-table.php:15
+msgid "قائمة الهدافين غير متوفرة حالياً."
+msgstr "La lista de goleadores aún no está disponible."
+
+#: template-parts/scorers-table.php:24
+msgid "اللاعب"
+msgstr "Jugador"
+
+#: template-parts/scorers-table.php:25 template-parts/standings-table.php:33
+msgid "الفريق"
+msgstr "Equipo"
+
+#: template-parts/scorers-table.php:26
+msgid "الأهداف"
+msgstr "Goles"
+
+#: template-parts/scorers-table.php:27
+msgid "صناعة"
+msgstr "Asist."
+
+#: template-parts/standings-table.php:13
+msgid "جدول الترتيب غير متوفر حالياً."
+msgstr "La clasificación aún no está disponible."
+
+#: template-parts/standings-table.php:34
+msgid "لعب"
+msgstr "Jugados"
+
+#: template-parts/standings-table.php:34
+msgid "ل"
+msgstr "PJ"
+
+#: template-parts/standings-table.php:35
+msgid "فاز"
+msgstr "Ganados"
+
+#: template-parts/standings-table.php:35
+msgid "ف"
+msgstr "G"
+
+#: template-parts/standings-table.php:36
+msgid "تعادل"
+msgstr "Empatados"
+
+#: template-parts/standings-table.php:36
+msgid "ت"
+msgstr "E"
+
+#: template-parts/standings-table.php:37
+msgid "خسر"
+msgstr "Perdidos"
+
+#: template-parts/standings-table.php:37
+msgid "خ"
+msgstr "P"
+
+#: template-parts/standings-table.php:38
+msgid "له / عليه"
+msgstr "A favor / en contra"
+
+#: template-parts/standings-table.php:39
+msgid "فارق الأهداف"
+msgstr "Diferencia de goles"
+
+#: template-parts/standings-table.php:39
+msgid "فارق"
+msgstr "Dif."
+
+#: template-parts/standings-table.php:40
+msgid "النقاط"
+msgstr "Puntos"

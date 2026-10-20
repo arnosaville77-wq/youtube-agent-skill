@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-20T01:53:57+00:00\n"
+"POT-Creation-Date: 2026-10-20T02:09:32+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sportsarena-theme\n"
@@ -142,11 +142,11 @@ msgstr ""
 msgid "الأخبار"
 msgstr ""
 
-#: header.php:66
+#: header.php:67
 msgid "تبديل الوضع الداكن"
 msgstr ""
 
-#: header.php:77
+#: header.php:78
 msgid "الرياضات"
 msgstr ""
 
@@ -189,6 +189,11 @@ msgstr ""
 
 #: inc/template-tags.php:115
 msgid "التنقل بين الصفحات"
+msgstr ""
+
+#: inc/template-tags.php:214
+#: inc/template-tags.php:220
+msgid "اللغة"
 msgstr ""
 
 #: matches-day.php:19

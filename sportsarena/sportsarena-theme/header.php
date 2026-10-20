@@ -62,6 +62,7 @@ defined( 'ABSPATH' ) || exit;
 
 		<div class="sa-header__tools">
 			<?php get_template_part( 'template-parts/quick-search' ); ?>
+			<?php sportsarena_theme_language_switcher(); ?>
 			<button class="sa-icon-btn sa-theme-toggle" type="button" aria-pressed="false">
 				<span class="screen-reader-text"><?php esc_html_e( 'تبديل الوضع الداكن', 'sportsarena-theme' ); ?></span>
 				<svg class="sa-i-moon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/></svg>

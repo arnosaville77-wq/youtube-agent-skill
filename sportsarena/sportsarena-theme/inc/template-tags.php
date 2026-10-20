@@ -97,7 +97,7 @@ function sportsarena_theme_posted_on() {
 		'<span class="sa-meta"><time datetime="%1$s">%2$s</time>%3$s</span>',
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
-		has_category() ? ' · ' . get_the_category_list( '، ' ) : '' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core escaped list.
+		has_category() ? ' · ' . get_the_category_list( wp_get_list_item_separator() ) : '' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Core escaped list.
 	);
 }
 
@@ -192,4 +192,41 @@ function sportsarena_theme_should_poll( array $m ) {
 		return true;
 	}
 	return 'scheduled' === $m['status'] && $m['kickoff'] && $m['kickoff'] - time() < 15 * MINUTE_IN_SECONDS && time() - $m['kickoff'] < 3 * HOUR_IN_SECONDS;
+}
+
+/**
+ * Language switcher (Polylang or WPML), shown only when a multilingual
+ * plugin is active and more than one language exists.
+ *
+ * @return void
+ */
+function sportsarena_theme_language_switcher() {
+	if ( function_exists( 'pll_the_languages' ) ) {
+		$items = pll_the_languages(
+			array(
+				'echo'                   => 0,
+				'show_flags'             => 0,
+				'display_names_as'       => 'slug',
+				'hide_if_no_translation' => 0,
+			)
+		);
+		if ( $items ) {
+			echo '<ul class="sa-langs" aria-label="' . esc_attr__( 'اللغة', 'sportsarena-theme' ) . '">' . $items . '</ul>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Markup built and escaped by Polylang.
+		}
+		return;
+	}
+	$languages = apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML API.
+	if ( is_array( $languages ) && count( $languages ) > 1 ) {
+		echo '<ul class="sa-langs" aria-label="' . esc_attr__( 'اللغة', 'sportsarena-theme' ) . '">';
+		foreach ( $languages as $language ) {
+			printf(
+				'<li><a href="%1$s" hreflang="%2$s" lang="%2$s"%3$s>%4$s</a></li>',
+				esc_url( $language['url'] ),
+				esc_attr( $language['language_code'] ),
+				! empty( $language['active'] ) ? ' aria-current="true"' : '',
+				esc_html( $language['language_code'] )
+			);
+		}
+		echo '</ul>';
+	}
 }

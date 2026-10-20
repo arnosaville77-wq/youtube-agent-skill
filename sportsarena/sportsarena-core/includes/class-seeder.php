@@ -40,6 +40,18 @@ final class Seeder {
 	}
 
 	/**
+	 * Fictional player names for demo lineups and scorers, in the site's script.
+	 *
+	 * @return string[]
+	 */
+	private static function player_names() {
+		if ( Names::is_arabic() ) {
+			return array( 'أحمد سالم', 'يوسف العلي', 'محمد حسن', 'عمر خالد', 'كريم ناصر', 'سامي فؤاد', 'زياد منصور', 'ماجد عادل', 'هشام رضا', 'طارق جمال', 'نبيل فارس', 'رامي سعيد', 'باسل مراد', 'وليد كمال', 'فيصل نادر', 'جمال عيسى' );
+		}
+		return array( 'Ahmed Salem', 'Youssef Ali', 'Mohamed Hassan', 'Omar Khaled', 'Karim Nasser', 'Sami Fouad', 'Ziad Mansour', 'Majed Adel', 'Hisham Reda', 'Tarek Gamal', 'Nabil Fares', 'Rami Saeed', 'Basel Mourad', 'Walid Kamal', 'Faisal Nader', 'Gamal Issa' );
+	}
+
+	/**
 	 * Create the demo data (idempotent: existing demo posts are reused).
 	 *
 	 * @return int Number of matches created/updated.
@@ -132,7 +144,7 @@ final class Seeder {
 			);
 		};
 
-		$players = array( 'أحمد سالم', 'يوسف العلي', 'محمد حسن', 'عمر خالد', 'كريم ناصر', 'سامي فؤاد', 'زياد منصور', 'ماجد عادل', 'هشام رضا', 'طارق جمال', 'نبيل فارس', 'رامي سعيد', 'باسل مراد', 'وليد كمال', 'فيصل نادر', 'جمال عيسى' );
+		$players = self::player_names();
 		$events  = static function ( array $goals_home, array $goals_away ) use ( $players ) {
 			$list = array();
 			foreach ( $goals_home as $i => $minute ) {
@@ -180,7 +192,7 @@ final class Seeder {
 			return array(
 				'team'      => $side,
 				'formation' => 'home' === $side ? '4-3-3' : '4-2-3-1',
-				'coach'     => 'home' === $side ? 'مدرب الفريق المضيف' : 'مدرب الفريق الضيف',
+				'coach'     => 'home' === $side ? __( 'مدرب الفريق المضيف', 'sportsarena-core' ) : __( 'مدرب الفريق الضيف', 'sportsarena-core' ),
 				'start'     => $start,
 				'subs'      => array( '12 ' . $players[ ( 11 + $offset ) % 16 ], '14 ' . $players[ ( 12 + $offset ) % 16 ], '20 ' . $players[ ( 13 + $offset ) % 16 ] ),
 			);
@@ -394,7 +406,7 @@ final class Seeder {
 			++$count;
 			update_post_meta( $post_id, '_sa_demo', 1 );
 			if ( 'football' === $match['sport'] ) {
-				update_post_meta( $post_id, '_sa_tv', 'beIN Sports (مثال)' );
+				update_post_meta( $post_id, '_sa_tv', __( 'beIN Sports (مثال)', 'sportsarena-core' ) );
 			}
 		}
 
@@ -404,7 +416,7 @@ final class Seeder {
 			wp_update_post(
 				array(
 					'ID'           => $featured_id,
-					'post_content' => "<!-- wp:paragraph -->\n<p>معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة.</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة، ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم «المعاينة/التحليل» الذي يكتبه المحرر من لوحة التحكم.</p>\n<!-- /wp:paragraph -->",
+					'post_content' => "<!-- wp:paragraph -->\n<p>" . esc_html__( 'معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة.', 'sportsarena-core' ) . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>" . esc_html__( 'يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة، ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم «المعاينة/التحليل» الذي يكتبه المحرر من لوحة التحكم.', 'sportsarena-core' ) . "</p>\n<!-- /wp:paragraph -->",
 				)
 			);
 		}
@@ -426,7 +438,7 @@ final class Seeder {
 	 * @return void
 	 */
 	private static function seed_tables( Importer $importer, array $comps ) {
-		$players = array( 'خالد يوسف', 'سعيد مراد', 'إبراهيم نور', 'حسام عادل', 'مازن فهد', 'أنس رشيد', 'علي سمير', 'نادر حمدي' );
+		$players = array_slice( self::player_names(), 8, 8 );
 		foreach ( array( 'pl', 'laliga', 'spl', 'egy', 'botola' ) as $key ) {
 			$teams = $comps[ $key ][4];
 			$rows  = array();
@@ -498,7 +510,7 @@ final class Seeder {
 				$scorers[] = array(
 					'rank'    => $i + 1,
 					'player'  => $player,
-					'team'    => Names::arabic( $teams[ $i % count( $teams ) ] ),
+					'team'    => Names::localize( $teams[ $i % count( $teams ) ] ),
 					'goals'   => 12 - $i,
 					'assists' => 3 + ( $i % 4 ),
 					'played'  => 10,
@@ -551,19 +563,19 @@ final class Seeder {
 	 */
 	private static function seed_news( Importer $importer ) {
 		$football = get_term_by( 'slug', 'football', Post_Types::TAX_SPORT );
-		$category = term_exists( 'كرة القدم', 'category' );
+		$category = term_exists( 'football-news', 'category' );
 		if ( ! $category ) {
-			$category = wp_insert_term( 'كرة القدم', 'category', array( 'slug' => 'football-news' ) );
+			$category = wp_insert_term( __( 'كرة القدم', 'sportsarena-core' ), 'category', array( 'slug' => 'football-news' ) );
 		}
 		$category_id = is_array( $category ) ? (int) $category['term_id'] : (int) $category;
 
 		$news = array(
-			array( 'ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة', array( 'Real Madrid', 'Barcelona' ), 'laliga' ),
-			array( 'ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي', array( 'Liverpool', 'Chelsea' ), 'pl' ),
-			array( 'الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن', array( 'Al-Hilal Saudi FC', 'Al-Ittihad FC' ), 'spl' ),
-			array( 'تعادل مثير بين الأهلي وبيراميدز في الدوري المصري', array( 'Al Ahly', 'Pyramids FC' ), 'egy' ),
-			array( 'بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال', array( 'Bayern Munich', 'Paris Saint Germain' ), 'ucl' ),
-			array( 'ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية', array( 'Wydad AC', 'Raja Casablanca' ), 'botola' ),
+			array( __( 'ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة', 'sportsarena-core' ), array( 'Real Madrid', 'Barcelona' ), 'laliga' ),
+			array( __( 'ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي', 'sportsarena-core' ), array( 'Liverpool', 'Chelsea' ), 'pl' ),
+			array( __( 'الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن', 'sportsarena-core' ), array( 'Al-Hilal Saudi FC', 'Al-Ittihad FC' ), 'spl' ),
+			array( __( 'تعادل مثير بين الأهلي وبيراميدز في الدوري المصري', 'sportsarena-core' ), array( 'Al Ahly', 'Pyramids FC' ), 'egy' ),
+			array( __( 'بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال', 'sportsarena-core' ), array( 'Bayern Munich', 'Paris Saint Germain' ), 'ucl' ),
+			array( __( 'ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية', 'sportsarena-core' ), array( 'Wydad AC', 'Raja Casablanca' ), 'botola' ),
 		);
 
 		foreach ( $news as $i => $item ) {
@@ -579,15 +591,18 @@ final class Seeder {
 			if ( $existing ) {
 				continue;
 			}
-			$teams   = array_map( array( Names::class, 'arabic' ), $item[1] );
+			$teams   = array_map( array( Names::class, 'localize' ), $item[1] );
 			$content = '';
 			foreach (
 				array(
-					sprintf( 'خبر تجريبي: تتجه الأنظار إلى مواجهة %1$s و%2$s، حيث يسعى كل فريق إلى تحقيق نتيجة إيجابية تعزز حظوظه هذا الموسم.', $teams[0], $teams[1] ),
-					sprintf( 'وأكد الجهاز الفني لفريق %s جاهزية اللاعبين بعد سلسلة من الحصص التدريبية المكثفة، مع عودة بعض العناصر الأساسية من الإصابة.', $teams[0] ),
-					sprintf( 'في المقابل، يدخل %s اللقاء بطموح كبير، معتمداً على الانضباط الدفاعي والهجمات المرتدة السريعة.', $teams[1] ),
-					'ويرى المحللون أن خط الوسط سيكون مفتاح المباراة، وأن الفريق الأكثر استحواذاً على الكرة سيملك الأفضلية في الشوط الثاني.',
-					'هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > SportsArena > الأدوات.',
+					/* translators: 1: first team, 2: second team. */
+					sprintf( __( 'خبر تجريبي: تتجه الأنظار إلى مواجهة %1$s و%2$s، حيث يسعى كل فريق إلى تحقيق نتيجة إيجابية تعزز حظوظه هذا الموسم.', 'sportsarena-core' ), $teams[0], $teams[1] ),
+					/* translators: %s: team. */
+					sprintf( __( 'وأكد الجهاز الفني لفريق %s جاهزية اللاعبين بعد سلسلة من الحصص التدريبية المكثفة، مع عودة بعض العناصر الأساسية من الإصابة.', 'sportsarena-core' ), $teams[0] ),
+					/* translators: %s: team. */
+					sprintf( __( 'في المقابل، يدخل %s اللقاء بطموح كبير، معتمداً على الانضباط الدفاعي والهجمات المرتدة السريعة.', 'sportsarena-core' ), $teams[1] ),
+					__( 'ويرى المحللون أن خط الوسط سيكون مفتاح المباراة، وأن الفريق الأكثر استحواذاً على الكرة سيملك الأفضلية في الشوط الثاني.', 'sportsarena-core' ),
+					__( 'هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > SportsArena > الأدوات.', 'sportsarena-core' ),
 				) as $paragraph
 			) {
 				$content .= "<!-- wp:paragraph -->\n<p>" . esc_html( $paragraph ) . "</p>\n<!-- /wp:paragraph -->\n\n";
@@ -598,7 +613,8 @@ final class Seeder {
 					'post_status'   => 'publish',
 					'post_title'    => $item[0],
 					'post_content'  => $content,
-					'post_excerpt'  => sprintf( 'آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة.', $teams[0], $teams[1] ),
+					/* translators: 1: first team, 2: second team. */
+					'post_excerpt'  => sprintf( __( 'آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة.', 'sportsarena-core' ), $teams[0], $teams[1] ),
 					'post_category' => $category_id ? array( $category_id ) : array(),
 					'post_date'     => wp_date( 'Y-m-d H:i:s', time() - ( $i * 3 + 1 ) * HOUR_IN_SECONDS ),
 				)
