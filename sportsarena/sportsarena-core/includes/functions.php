@@ -254,23 +254,36 @@ function sportsarena_competition_logo( $competition_id, $size = 24 ) {
 	}
 	$logo = sportsarena_provider_logo_url( $competition_id );
 	if ( $logo ) {
+		// The theme swaps in the country flag (or the globe for international
+		// competitions) if the emblem cannot be loaded.
+		$code     = SportsArena\Core\Data\Countries::code( sportsarena_country_of( $competition_id ) );
+		$fallback = $code ? SPORTSARENA_CORE_URL . 'assets/flags/' . $code . '.png' : 'data:image/svg+xml,' . rawurlencode( sportsarena_globe_svg() );
 		return sprintf(
-			'<img class="sa-logo sa-logo--comp" src="%1$s" width="%2$d" height="%2$d" alt="%3$s" loading="lazy" decoding="async">',
+			'<img class="sa-logo sa-logo--comp" src="%1$s" width="%2$d" height="%2$d" alt="%3$s" loading="lazy" decoding="async" data-sa-fallback="%4$s">',
 			esc_url( $logo ),
 			$size,
-			esc_attr( $title )
+			esc_attr( $title ),
+			esc_attr( $fallback )
 		);
 	}
 	$flag = sportsarena_flag( sportsarena_country_of( $competition_id ), $size );
 	if ( $flag ) {
 		return $flag;
 	}
-	return sprintf(
-		'<svg class="sa-flag sa-flag--world" width="%1$d" height="%2$d" viewBox="0 0 24 18" role="img" aria-label="%3$s"><rect width="24" height="18" rx="2" fill="#1d4ed8"/><circle cx="12" cy="9" r="6" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M6 9h12M12 3c-2.5 3.4-2.5 8.6 0 12M12 3c2.5 3.4 2.5 8.6 0 12" fill="none" stroke="#fff" stroke-width="1"/></svg>',
-		$size,
-		(int) round( $size * 0.75 ),
-		esc_attr( $title )
+	return str_replace(
+		'<svg ',
+		sprintf( '<svg class="sa-flag sa-flag--world" width="%1$d" height="%2$d" role="img" aria-label="%3$s" ', $size, (int) round( $size * 0.75 ), esc_attr( $title ) ),
+		sportsarena_globe_svg()
 	);
+}
+
+/**
+ * Neutral globe emblem for international competitions (no country flag).
+ *
+ * @return string SVG markup.
+ */
+function sportsarena_globe_svg() {
+	return '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 18"><rect width="24" height="18" rx="2" fill="#1d4ed8"/><circle cx="12" cy="9" r="6" fill="none" stroke="#fff" stroke-width="1.2"/><path d="M6 9h12M12 3c-2.5 3.4-2.5 8.6 0 12M12 3c2.5 3.4 2.5 8.6 0 12" fill="none" stroke="#fff" stroke-width="1"/></svg>';
 }
 
 /**

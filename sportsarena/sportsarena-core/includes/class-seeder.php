@@ -34,6 +34,9 @@ final class Seeder {
 			'spl'    => array( 'Pro League', 'Saudi Arabia', 'football', 4, array( 'Al-Hilal Saudi FC', 'Al-Nassr', 'Al-Ittihad FC', 'Al-Ahli Jeddah', 'Al-Shabab', 'Al-Taawoun' ) ),
 			'egy'    => array( 'Premier League', 'Egypt', 'football', 5, array( 'Al Ahly', 'Zamalek SC', 'Pyramids FC', 'Al Masry' ) ),
 			'botola' => array( 'Botola Pro', 'Morocco', 'football', 6, array( 'Wydad AC', 'Raja Casablanca', 'AS FAR', 'RS Berkane' ) ),
+			'ligue1' => array( 'Ligue 1', 'France', 'football', 7, array( 'Paris Saint Germain', 'Marseille', 'Monaco', 'Lyon' ) ),
+			'seriea' => array( 'Serie A', 'Italy', 'football', 8, array( 'Inter', 'Napoli', 'Juventus', 'AC Milan' ) ),
+			'bund'   => array( 'Bundesliga', 'Germany', 'football', 9, array( 'Bayern Munich', 'Bayer Leverkusen', 'Borussia Dortmund', 'RB Leipzig' ) ),
 			'nba'    => array( 'NBA', 'USA', 'basketball', 10, array( 'Los Angeles Lakers', 'Boston Celtics', 'Golden State Warriors', 'Denver Nuggets' ) ),
 			'atp'    => array( 'ATP Finals', 'World', 'tennis', 12, array( 'Carlos Alcaraz', 'Jannik Sinner', 'Novak Djokovic', 'Alexander Zverev' ) ),
 		);
@@ -94,6 +97,15 @@ final class Seeder {
 			'Bayern Munich'       => 157,
 			'Paris Saint Germain' => 85,
 			'Inter'               => 505,
+			'Marseille'           => 81,
+			'Lyon'                => 80,
+			'Monaco'              => 91,
+			'Juventus'            => 496,
+			'AC Milan'            => 489,
+			'Napoli'              => 492,
+			'Borussia Dortmund'   => 165,
+			'Bayer Leverkusen'    => 168,
+			'RB Leipzig'          => 173,
 			'Al-Hilal Saudi FC'   => 2932,
 			'Al-Nassr'            => 2939,
 			'Al-Ittihad FC'       => 2938,
@@ -128,6 +140,9 @@ final class Seeder {
 			'spl'    => 'football/leagues/307',
 			'egy'    => 'football/leagues/233',
 			'botola' => 'football/leagues/200',
+			'ligue1' => 'football/leagues/61',
+			'seriea' => 'football/leagues/135',
+			'bund'   => 'football/leagues/78',
 			'nba'    => 'basketball/leagues/12',
 		);
 		return isset( $ids[ $key ] ) ? 'https://media.api-sports.io/' . $ids[ $key ] . '.png' : '';
@@ -412,6 +427,9 @@ final class Seeder {
 			array( 'egy', 'Zamalek SC', 'Al Masry', '19:00', 1, 0 ),
 			array( 'botola', 'Wydad AC', 'Raja Casablanca', '20:00', 1, 1 ),
 			array( 'ucl', 'Bayern Munich', 'Paris Saint Germain', '21:00', 3, 2 ),
+			array( 'ligue1', 'Marseille', 'Lyon', '19:45', 2, 2 ),
+			array( 'seriea', 'Juventus', 'AC Milan', '18:45', 1, 0 ),
+			array( 'bund', 'Borussia Dortmund', 'RB Leipzig', '16:30', 3, 1 ),
 		);
 		foreach ( $today_set as $row ) {
 			$kickoff   = $at( $today, $row[3] );
@@ -461,6 +479,9 @@ final class Seeder {
 			array( 'laliga', 'Villarreal', 'Real Betis', '19:00' ),
 			array( 'spl', 'Al-Shabab', 'Al-Taawoun', '17:00' ),
 			array( 'nba', 'Golden State Warriors', 'Denver Nuggets', '04:30' ),
+			array( 'ligue1', 'Monaco', 'Paris Saint Germain', '20:00' ),
+			array( 'seriea', 'Napoli', 'Inter', '19:45' ),
+			array( 'bund', 'Bayer Leverkusen', 'Bayern Munich', '18:30' ),
 		);
 		foreach ( $tomorrow_set as $row ) {
 			$matches[] = $make( $row[0], $row[1], $row[2], $at( $tomorrow, $row[3] ), 'Regular Season - 11' );
@@ -533,7 +554,7 @@ final class Seeder {
 	 */
 	private static function seed_tables( Importer $importer, array $comps ) {
 		$players = array_slice( self::player_names(), 8, 8 );
-		foreach ( array( 'pl', 'laliga', 'spl', 'egy', 'botola' ) as $key ) {
+		foreach ( array( 'pl', 'laliga', 'spl', 'egy', 'botola', 'ligue1', 'seriea', 'bund' ) as $key ) {
 			$teams = $comps[ $key ][4];
 			$rows  = array();
 			foreach ( $teams as $i => $name ) {

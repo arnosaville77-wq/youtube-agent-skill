@@ -34,10 +34,16 @@
 	}
 
 	/* ---------- Logo fallback ---------- */
-	// A provider logo that fails to load becomes a neutral shield (same size, no layout shift).
+	// A provider logo that fails to load becomes the country flag when one is
+	// given (competitions), otherwise a neutral shield (same size, no layout shift).
 	var shield = 'data:image/svg+xml,' + encodeURIComponent( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 1 3 6v9c0 8 5.6 13.6 13 16 7.4-2.4 13-8 13-16V6z" fill="#94a3b8"/></svg>' );
 	var logoFallback = function ( img ) {
-		if ( img.src !== shield ) {
+		var flag = img.getAttribute( 'data-sa-fallback' );
+		if ( flag ) {
+			img.removeAttribute( 'data-sa-fallback' );
+			img.classList.add( 'sa-logo--flag' );
+			img.src = flag;
+		} else if ( img.src !== shield ) {
 			img.src = shield;
 		}
 	};
