@@ -43,7 +43,7 @@ final class Repository {
 	 * @return mixed
 	 */
 	private static function remember( $key, $ttl, callable $callback ) {
-		$transient = 'sa_q_' . md5( $key . '|' . self::version() );
+		$transient = 'sa_q_' . md5( $key . '|' . self::version() . '|' . Languages::current() );
 		$value     = get_transient( $transient );
 		if ( false === $value ) {
 			$value = $callback();

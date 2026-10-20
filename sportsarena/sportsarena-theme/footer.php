@@ -37,6 +37,7 @@ $sportsarena_consent = get_option( 'sportsarena_consent', array() );
 				<p><a href="#" class="sa-consent-open"><?php esc_html_e( 'إعدادات الخصوصية', 'sportsarena-theme' ); ?></a></p>
 			<?php endif; ?>
 		</nav>
+		<?php sportsarena_theme_language_list(); ?>
 	</div>
 	<div class="sa-container sa-footer__copy">
 		<?php

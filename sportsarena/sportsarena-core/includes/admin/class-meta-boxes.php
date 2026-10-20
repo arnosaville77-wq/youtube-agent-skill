@@ -9,6 +9,7 @@
 namespace SportsArena\Core\Admin;
 
 use SportsArena\Core\Big_Matches;
+use SportsArena\Core\Languages;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
 
@@ -219,7 +220,16 @@ final class Meta_Boxes {
 			}
 			echo '</select></label></p>';
 		}
-		echo '<p class="description">' . esc_html__( 'إن تُركت فارغة تُكتشف الفرق والبطولات المذكورة في الخبر تلقائياً عند النشر.', 'sportsarena-core' ) . '</p>';
+		echo '<p class="description">' . esc_html__( 'إن تُركت فارغة تُكتشف الفرق والبطولات المذكورة في الخبر تلقائياً عند النشر.', 'sportsarena-core' ) . '</p>';      if ( Languages::multilingual() ) {
+			$current = Languages::post_language( $post->ID );
+			$current = '' !== $current ? $current : Languages::default_code();
+			printf( '<p><label><strong>%s</strong><br><select name="sa_lang" style="width:100%%">', esc_html__( 'لغة الخبر', 'sportsarena-core' ) );
+			foreach ( Languages::enabled() as $code ) {
+				printf( '<option value="%1$s" %2$s>%3$s</option>', esc_attr( $code ), selected( $code, $current, false ), esc_html( Languages::supported()[ $code ][1] ) );
+			}
+			echo '</select></label></p>';
+			echo '<p class="description">' . esc_html__( 'يظهر الخبر في صفحات هذه اللغة فقط.', 'sportsarena-core' ) . '</p>';
+		}
 	}
 
 	/**
@@ -279,6 +289,10 @@ final class Meta_Boxes {
 					foreach ( array_unique( array_filter( array_map( 'absint', (array) ( $rel[ $type ] ?? array() ) ) ) ) as $id ) {
 						add_post_meta( $post_id, $key, $id );
 					}
+				}
+				$lang = isset( $_POST['sa_lang'] ) ? sanitize_key( wp_unslash( $_POST['sa_lang'] ) ) : '';
+				if ( in_array( $lang, Languages::enabled(), true ) ) {
+					update_post_meta( $post_id, Languages::META, $lang );
 				}
 				break;
 		}

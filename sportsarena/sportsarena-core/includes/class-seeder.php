@@ -271,14 +271,12 @@ final class Seeder {
 	}
 
 	/**
-	 * Fictional player names for demo lineups and scorers, in the site's script.
+	 * Fictional player names for demo lineups and scorers.
 	 *
 	 * @return string[]
 	 */
 	private static function player_names() {
-		if ( Names::is_arabic() ) {
-			return array( 'أحمد سالم', 'يوسف العلي', 'محمد حسن', 'عمر خالد', 'كريم ناصر', 'سامي فؤاد', 'زياد منصور', 'ماجد عادل', 'هشام رضا', 'طارق جمال', 'نبيل فارس', 'رامي سعيد', 'باسل مراد', 'وليد كمال', 'فيصل نادر', 'جمال عيسى' );
-		}
+		// Stored in Latin script like provider data; shown in Arabic on Arabic pages (see Languages::text()).
 		return array( 'Ahmed Salem', 'Youssef Ali', 'Mohamed Hassan', 'Omar Khaled', 'Karim Nasser', 'Sami Fouad', 'Ziad Mansour', 'Majed Adel', 'Hisham Reda', 'Tarek Gamal', 'Nabil Fares', 'Rami Saeed', 'Basel Mourad', 'Walid Kamal', 'Faisal Nader', 'Gamal Issa' );
 	}
 
@@ -423,7 +421,7 @@ final class Seeder {
 			return array(
 				'team'      => $side,
 				'formation' => 'home' === $side ? '4-3-3' : '4-2-3-1',
-				'coach'     => 'home' === $side ? __( 'مدرب الفريق المضيف', 'sportsarena-core' ) : __( 'مدرب الفريق الضيف', 'sportsarena-core' ),
+				'coach'     => 'home' === $side ? 'Khalid Mansouri' : 'Adel Ramzi',
 				'start'     => $start,
 				'subs'      => array( '12 ' . $players[ ( 11 + $offset ) % 16 ], '14 ' . $players[ ( 12 + $offset ) % 16 ], '20 ' . $players[ ( 13 + $offset ) % 16 ] ),
 			);
@@ -569,7 +567,7 @@ final class Seeder {
 				array(
 					'venue'      => 'Santiago Bernabéu',
 					'city'       => 'Madrid',
-					'referee'    => Names::is_arabic() ? 'حكم تجريبي' : 'Demo Referee',
+					'referee'    => 'Hassan Idrissi',
 					'lineups'    => array( $lineup( 'home', 0 ), $lineup( 'away', 5 ) ),
 					'statistics' => $stats,
 				)
@@ -643,19 +641,14 @@ final class Seeder {
 			++$count;
 			update_post_meta( $post_id, '_sa_demo', 1 );
 			if ( 'football' === $match['sport'] ) {
-				update_post_meta( $post_id, '_sa_tv', __( 'beIN Sports (مثال)', 'sportsarena-core' ) );
+				update_post_meta( $post_id, '_sa_tv', 'beIN Sports' );
 			}
 		}
 
 		// Featured match preview text written "by the editor".
 		$featured_id = $importer->find( Post_Types::MATCH, 'demo-laliga-real-madrid-barcelona-' . gmdate( 'Ymd', $featured ) );
 		if ( $featured_id && '' === get_post_field( 'post_content', $featured_id ) ) {
-			wp_update_post(
-				array(
-					'ID'           => $featured_id,
-					'post_content' => "<!-- wp:paragraph -->\n<p>" . esc_html__( 'معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة.', 'sportsarena-core' ) . "</p>\n<!-- /wp:paragraph -->\n\n<!-- wp:paragraph -->\n<p>" . esc_html__( 'يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة، ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم «المعاينة/التحليل» الذي يكتبه المحرر من لوحة التحكم.', 'sportsarena-core' ) . "</p>\n<!-- /wp:paragraph -->",
-				)
-			);
+			self::set_demo_text( $featured_id, 'preview' );
 		}
 
 		self::seed_tables( $importer, $comps );
@@ -752,7 +745,7 @@ final class Seeder {
 				$scorers[] = array(
 					'rank'    => $i + 1,
 					'player'  => $player,
-					'team'    => Names::localize( $teams[ $i % count( $teams ) ] ),
+					'team'    => $teams[ $i % count( $teams ) ],
 					'goals'   => 12 - $i,
 					'assists' => 3 + ( $i % 4 ),
 					'played'  => 10,
@@ -764,13 +757,7 @@ final class Seeder {
 			if ( $comp_id ) {
 				update_post_meta( $comp_id, '_sa_priority', $comps[ $key ][3] );
 				if ( '' === get_post_field( 'post_excerpt', $comp_id ) ) {
-					wp_update_post(
-						array(
-							'ID'           => $comp_id,
-							/* translators: %s: competition. */
-							'post_content' => '<!-- wp:paragraph --><p>' . sprintf( esc_html__( 'صفحة %s: تابع جدول الترتيب ومواعيد المباريات ونتائجها وقائمة الهدافين. (محتوى تجريبي يمكن تعديله من لوحة التحكم.)', 'sportsarena-core' ), get_the_title( $comp_id ) ) . '</p><!-- /wp:paragraph -->',
-						)
-					);
+					self::set_demo_text( $comp_id, 'intro' );
 				}
 			}
 		}
@@ -798,14 +785,92 @@ final class Seeder {
 	}
 
 	/**
-	 * Demo news posts linked to teams / competitions.
+	 * Demo text of a match preview or competition introduction, in the
+	 * current language.
+	 *
+	 * @param string $key     preview|intro.
+	 * @param int    $post_id Post ID.
+	 * @return string Block markup.
+	 */
+	private static function demo_html( $key, $post_id ) {
+		if ( 'preview' === $key ) {
+			$paragraphs = array(
+				__( 'معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة.', 'sportsarena-core' ),
+				__( 'يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة، ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم «المعاينة/التحليل» الذي يكتبه المحرر من لوحة التحكم.', 'sportsarena-core' ),
+			);
+		} else {
+			/* translators: %s: competition. */
+			$paragraphs = array( sprintf( __( 'صفحة %s: تابع جدول الترتيب ومواعيد المباريات ونتائجها وقائمة الهدافين. (محتوى تجريبي يمكن تعديله من لوحة التحكم.)', 'sportsarena-core' ), get_the_title( $post_id ) ) );
+		}
+		$html = '';
+		foreach ( $paragraphs as $paragraph ) {
+			$html .= "<!-- wp:paragraph -->\n<p>" . esc_html( $paragraph ) . "</p>\n<!-- /wp:paragraph -->\n\n";
+		}
+		return trim( $html );
+	}
+
+	/**
+	 * Store a generated demo text and remember it, so other languages can
+	 * show it translated until the editor changes it.
+	 *
+	 * @param int    $post_id Post ID.
+	 * @param string $key     preview|intro.
+	 * @return void
+	 */
+	private static function set_demo_text( $post_id, $key ) {
+		wp_update_post(
+			array(
+				'ID'           => $post_id,
+				'post_content' => self::demo_html( $key, $post_id ),
+			)
+		);
+		update_post_meta( $post_id, '_sa_demo_text', $key );
+		update_post_meta( $post_id, '_sa_demo_hash', md5( (string) get_post_field( 'post_content', $post_id ) ) );
+	}
+
+	/**
+	 * Demo text of a post in the current language, null when the post has
+	 * none or the editor changed it.
+	 *
+	 * @param \WP_Post $post Post.
+	 * @return string|null
+	 */
+	public static function demo_text( $post ) {
+		$key = (string) get_post_meta( $post->ID, '_sa_demo_text', true );
+		if ( '' === $key || md5( $post->post_content ) !== get_post_meta( $post->ID, '_sa_demo_hash', true ) ) {
+			return null;
+		}
+		return self::demo_html( $key, $post->ID );
+	}
+
+	/**
+	 * Demo news in every enabled language, linked as translations.
 	 *
 	 * @param Importer $importer Importer.
 	 * @return void
 	 */
 	private static function seed_news( Importer $importer ) {
 		$sections = News_Sections::create();
+		$codes    = Languages::multilingual() ? Languages::enabled() : array( Languages::default_code() );
+		foreach ( $codes as $code ) {
+			Languages::run_in(
+				$code,
+				static function () use ( $importer, $sections, $code ) {
+					self::seed_news_in( $importer, $sections, $code );
+				}
+			);
+		}
+	}
 
+	/**
+	 * Demo news posts in one language, linked to teams / competitions.
+	 *
+	 * @param Importer $importer Importer.
+	 * @param array    $sections Section slug => category ID.
+	 * @param string   $code     Language code.
+	 * @return void
+	 */
+	private static function seed_news_in( Importer $importer, array $sections, $code ) {
 		$news = array(
 			array( __( 'ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة', 'sportsarena-core' ), array( 'Real Madrid', 'Barcelona' ), 'laliga', 'football-news' ),
 			array( __( 'ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي', 'sportsarena-core' ), array( 'Liverpool', 'Chelsea' ), 'pl', 'football-news' ),
@@ -875,6 +940,8 @@ final class Seeder {
 				continue;
 			}
 			update_post_meta( $post_id, '_sa_demo', 1 );
+			update_post_meta( $post_id, Languages::META, $code );
+			update_post_meta( $post_id, Languages::GROUP, $i + 1 );
 			// Category => sport sync ran on save (News_Sections::sync_terms).
 			foreach ( $item[1] as $team_name ) {
 				$team_id = $importer->find( Post_Types::TEAM, 'demo-team-' . sanitize_title( $team_name ) );

@@ -44,6 +44,7 @@ final class Plugin {
 
 		Installer::maybe_upgrade();
 
+		( new Languages() )->register_hooks();
 		( new Time_Display() )->register_hooks();
 		( new Locale_Fallback() )->register_hooks();
 		( new Localized_Names() )->register_hooks();

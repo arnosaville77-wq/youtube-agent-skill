@@ -119,6 +119,10 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .sa-footer__menu{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:4px 16px}
 .sa-footer__menu a,.sa-footer a{text-decoration:none}
 .sa-footer__menu a{display:inline-block;padding:8px 0}
+.sa-footer__title{display:flex;align-items:center;gap:6px;font-size:1rem;margin:0 0 4px}
+.sa-footer__langlist a{padding:8px 12px;border:1px solid rgba(255,255,255,.22);border-radius:999px}
+.sa-footer__langlist a[aria-current]{background:rgba(255,255,255,.16);font-weight:700}
+.sa-footer__langlist{gap:8px}
 .sa-footer__copy{border-top:1px solid rgba(255,255,255,.12);padding-block:12px;font-size:.85rem;opacity:.8}
 
 /* Consent banner */
@@ -131,6 +135,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 @media (min-width:640px){
 	.sa-lineups{grid-template-columns:repeat(2,minmax(0,1fr))}
 	.sa-footer__inner{grid-template-columns:2fr 3fr}
+	.sa-footer__langs{grid-column:1/-1}
+}
+@media (min-width:1000px){
+	.sa-footer__inner{grid-template-columns:2fr 2fr 2fr}
+	.sa-footer__langs{grid-column:auto}
 }
 @media (max-width:639px){
 	.sa-hide-sm{display:none}

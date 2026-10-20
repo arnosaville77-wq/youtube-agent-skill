@@ -56,6 +56,11 @@ final class Installer {
 		if ( get_option( self::DB_VERSION_OPTION ) !== self::DB_VERSION ) {
 			self::create_tables();
 		}
+		if ( ! get_option( 'sportsarena_posts_language' ) ) {
+			// News written before multilingual mode belong to the site language.
+			Languages::tag_existing_posts();
+			update_option( 'sportsarena_posts_language', 1, false );
+		}
 	}
 
 	/**

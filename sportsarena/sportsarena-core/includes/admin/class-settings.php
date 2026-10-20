@@ -8,6 +8,7 @@
 namespace SportsArena\Core\Admin;
 
 use SportsArena\Core\Big_Matches;
+use SportsArena\Core\Languages;
 use SportsArena\Core\Data\Http_Client;
 use SportsArena\Core\Data\Provider_Registry;
 use SportsArena\Core\Logger;
@@ -142,6 +143,17 @@ final class Settings {
 		$out['alternate_sites'] = implode( "\n", $alternates );
 		$clubs                  = array_filter( array_map( 'sanitize_text_field', preg_split( '/\r\n|\r|\n/', (string) ( $input['big_clubs'] ?? '' ) ) ) );
 		$out['big_clubs']       = implode( "\n", array_unique( $clubs ) );
+		$languages              = array_map( 'sanitize_key', (array) ( $input['languages'] ?? array() ) );
+		$out['languages']       = array_values( array_intersect( array_keys( Languages::supported() ), $languages ) );
+		$names                  = array();
+		foreach ( preg_split( '/\r\n|\r|\n/', (string) ( $input['site_names'] ?? '' ) ) as $line ) {
+			$parts = array_map( 'trim', explode( '=', $line, 2 ) );
+			if ( 2 === count( $parts ) && isset( Languages::supported()[ $parts[0] ] ) && '' !== $parts[1] ) {
+				$pair    = array_map( 'sanitize_text_field', explode( '|', $parts[1], 2 ) );
+				$names[] = $parts[0] . '=' . implode( '|', $pair );
+			}
+		}
+		$out['site_names'] = implode( "\n", $names );
 		foreach ( array( 'sync_enabled', 'allow_logos', 'cache_logos', 'news_sitemap', 'delete_on_uninstall' ) as $flag ) {
 			$out[ $flag ] = empty( $input[ $flag ] ) ? 0 : 1;
 		}
@@ -314,6 +326,35 @@ final class Settings {
 					$this->row( $n, 'timezone_label', __( 'اسم التوقيت الأصلي', 'sportsarena-core' ), $o['timezone_label'], __( 'يظهر بجانب التوقيت الأصلي، مثال: «بتوقيت مكة». المنطقة الزمنية نفسها من الإعدادات > عام.', 'sportsarena-core' ) );
 					?>
 				</table>
+				<h2><?php esc_html_e( 'لغات الموقع', 'sportsarena-core' ); ?></h2>
+				<?php if ( Languages::external() ) : ?>
+					<p><?php esc_html_e( 'إضافة Polylang أو WPML مفعّلة: هي التي تدير اللغات ومبدّل اللغة.', 'sportsarena-core' ); ?></p>
+				<?php else : ?>
+				<table class="form-table" role="presentation">
+					<tr>
+						<th scope="row"><?php esc_html_e( 'لغات إضافية للزوار', 'sportsarena-core' ); ?></th>
+						<td>
+							<fieldset>
+								<?php foreach ( Languages::supported() as $sportsarena_code => $sportsarena_lang ) : ?>
+									<?php if ( Languages::default_code() === $sportsarena_code ) : ?>
+										<label><input type="checkbox" checked disabled> <?php echo esc_html( $sportsarena_lang[1] ); ?> <code>/</code> — <?php esc_html_e( 'لغة الموقع', 'sportsarena-core' ); ?></label><br>
+									<?php else : ?>
+										<label><input type="checkbox" name="<?php echo esc_attr( $n . '[languages][]' ); ?>" value="<?php echo esc_attr( $sportsarena_code ); ?>" <?php checked( in_array( $sportsarena_code, (array) $o['languages'], true ) ); ?>> <?php echo esc_html( $sportsarena_lang[1] ); ?> <code dir="ltr">/<?php echo esc_html( $sportsarena_code ); ?>/</code></label><br>
+									<?php endif; ?>
+								<?php endforeach; ?>
+							</fieldset>
+							<p class="description"><?php esc_html_e( 'يظهر مبدّل اللغة في رأس الموقع وتذييله. لغة الموقع (الإعدادات > عام) على الرابط الرئيسي وكل لغة إضافية تحت رمزها، مثل /en/. المباريات والفرق والبطولات مشتركة بين اللغات وتُترجم أسماؤها تلقائياً، أما الأخبار فلكل لغة أخبارها: اختر لغة الخبر من صفحة تعديله.', 'sportsarena-core' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="sa-site-names"><?php esc_html_e( 'اسم الموقع بكل لغة', 'sportsarena-core' ); ?></label></th>
+						<td>
+							<textarea id="sa-site-names" class="large-text code" rows="3" dir="ltr" name="<?php echo esc_attr( $n . '[site_names]' ); ?>" placeholder="en=Sports Arena|Live scores and fixtures&#10;fr=Sports Arena|Résultats et calendrier"><?php echo esc_textarea( (string) $o['site_names'] ); ?></textarea>
+							<p class="description"><?php esc_html_e( 'اختياري. سطر لكل لغة: الرمز=الاسم|الوصف المختصر.', 'sportsarena-core' ); ?></p>
+						</td>
+					</tr>
+				</table>
+				<?php endif; ?>
 				<h2><?php esc_html_e( 'خيارات أخرى', 'sportsarena-core' ); ?></h2>
 				<table class="form-table" role="presentation">
 					<?php

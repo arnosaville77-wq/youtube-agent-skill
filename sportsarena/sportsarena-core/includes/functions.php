@@ -433,3 +433,22 @@ function sportsarena_big_matches_url() {
 function sportsarena_champions_league_id() {
 	return SportsArena\Core\Big_Matches::champions_league();
 }
+
+/**
+ * Player, venue or referee name in the language of the page.
+ *
+ * @param string $text Name as stored.
+ * @return string
+ */
+function sportsarena_text( $text ) {
+	return SportsArena\Core\Languages::text( (string) $text );
+}
+
+/**
+ * Language switcher links for the current page (built-in multilingual mode).
+ *
+ * @return array<int,array{code:string,name:string,locale:string,url:string,current:bool}>
+ */
+function sportsarena_language_links() {
+	return SportsArena\Core\Languages::links();
+}

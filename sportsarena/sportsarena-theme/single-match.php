@@ -73,10 +73,10 @@ while ( have_posts() ) :
 					</dd>
 				</div>
 				<?php if ( $sportsarena_m['venue'] ) : ?>
-					<div><dt><?php esc_html_e( 'الملعب', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( trim( $sportsarena_m['venue'] . ( $sportsarena_m['city'] ? wp_get_list_item_separator() . $sportsarena_m['city'] : '' ) ) ); ?></dd></div>
+					<div><dt><?php esc_html_e( 'الملعب', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( trim( sportsarena_text( $sportsarena_m['venue'] ) . ( $sportsarena_m['city'] ? wp_get_list_item_separator() . sportsarena_text( $sportsarena_m['city'] ) : '' ) ) ); ?></dd></div>
 				<?php endif; ?>
 				<?php if ( $sportsarena_m['referee'] ) : ?>
-					<div><dt><?php esc_html_e( 'الحكم', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( $sportsarena_m['referee'] ); ?></dd></div>
+					<div><dt><?php esc_html_e( 'الحكم', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( sportsarena_text( $sportsarena_m['referee'] ) ); ?></dd></div>
 				<?php endif; ?>
 				<?php if ( $sportsarena_m['tv'] ) : ?>
 					<div><dt><?php esc_html_e( 'القناة الناقلة', 'sportsarena-theme' ); ?></dt><dd><?php echo esc_html( $sportsarena_m['tv'] ); ?></dd></div>
@@ -118,13 +118,13 @@ while ( have_posts() ) :
 							<span class="sa-event__min"><?php echo esc_html( ( $sportsarena_event['minute'] ?? '' ) . "'" ); ?></span>
 							<span class="sa-event__icon" aria-hidden="true"></span>
 							<span class="sa-event__text">
-								<strong><?php echo esc_html( $sportsarena_event['player'] ?? '' ); ?></strong>
+								<strong><?php echo esc_html( sportsarena_text( $sportsarena_event['player'] ?? '' ) ); ?></strong>
 								<span class="sa-event__type"><?php echo esc_html( sportsarena_event_label( $sportsarena_event['type'] ?? '' ) ); ?></span>
 								<?php if ( ! empty( $sportsarena_event['assist'] ) && in_array( $sportsarena_event['type'], array( 'goal', 'penalty' ), true ) ) : ?>
 									<span class="sa-event__assist">
 										<?php
 										/* translators: %s: player. */
-										echo esc_html( sprintf( __( 'صناعة: %s', 'sportsarena-theme' ), $sportsarena_event['assist'] ) );
+										echo esc_html( sprintf( __( 'صناعة: %s', 'sportsarena-theme' ), sportsarena_text( $sportsarena_event['assist'] ) ) );
 										?>
 									</span>
 								<?php endif; ?>
@@ -145,19 +145,19 @@ while ( have_posts() ) :
 							<h3><?php echo esc_html( get_the_title( $sportsarena_team_id ) ); ?> <small dir="ltr"><?php echo esc_html( $sportsarena_lineup['formation'] ?? '' ); ?></small></h3>
 							<ol class="sa-lineup__list">
 								<?php foreach ( (array) ( $sportsarena_lineup['start'] ?? array() ) as $sportsarena_player ) : ?>
-									<li><?php echo esc_html( $sportsarena_player ); ?></li>
+									<li><?php echo esc_html( sportsarena_text( $sportsarena_player ) ); ?></li>
 								<?php endforeach; ?>
 							</ol>
 							<?php if ( ! empty( $sportsarena_lineup['subs'] ) ) : ?>
 								<h4><?php esc_html_e( 'البدلاء', 'sportsarena-theme' ); ?></h4>
 								<ul class="sa-lineup__list sa-lineup__list--subs">
 									<?php foreach ( (array) $sportsarena_lineup['subs'] as $sportsarena_player ) : ?>
-										<li><?php echo esc_html( $sportsarena_player ); ?></li>
+										<li><?php echo esc_html( sportsarena_text( $sportsarena_player ) ); ?></li>
 									<?php endforeach; ?>
 								</ul>
 							<?php endif; ?>
 							<?php if ( ! empty( $sportsarena_lineup['coach'] ) ) : ?>
-								<p class="sa-lineup__coach"><?php esc_html_e( 'المدرب:', 'sportsarena-theme' ); ?> <?php echo esc_html( $sportsarena_lineup['coach'] ); ?></p>
+								<p class="sa-lineup__coach"><?php esc_html_e( 'المدرب:', 'sportsarena-theme' ); ?> <?php echo esc_html( sportsarena_text( $sportsarena_lineup['coach'] ) ); ?></p>
 							<?php endif; ?>
 						</div>
 					<?php endforeach; ?>

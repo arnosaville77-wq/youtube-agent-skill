@@ -42,6 +42,8 @@ final class Options {
 			'cache_logos'            => 1,
 			'time_display'           => 'gmt',
 			'big_clubs'              => '',
+			'languages'              => array( 'en', 'fr' ),
+			'site_names'             => '',
 			'timezone_label'         => '',
 			'news_sitemap'           => 1,
 			'alternate_sites'        => '',

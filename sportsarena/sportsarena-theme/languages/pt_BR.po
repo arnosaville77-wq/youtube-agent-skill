@@ -173,7 +173,7 @@ msgid "إعدادات الخصوصية"
 msgstr "Configurações de privacidade"
 
 #. translators: 1: year, 2: site name.
-#: footer.php:44
+#: footer.php:45
 msgid "© %1$s %2$s. جميع الحقوق محفوظة."
 msgstr "© %1$s %2$s. Todos os direitos reservados."
 
@@ -294,7 +294,8 @@ msgstr "Próximo"
 msgid "التنقل بين الصفحات"
 msgstr "Navegação de posts"
 
-#: inc/template-tags.php:214 inc/template-tags.php:220
+#: inc/template-tags.php:278 inc/template-tags.php:296
+#: inc/template-tags.php:299
 msgid "اللغة"
 msgstr "Idioma"
 

@@ -31,8 +31,8 @@ if ( ! $sportsarena_rows ) {
 		<?php foreach ( $sportsarena_rows as $sportsarena_row ) : ?>
 			<tr>
 				<td><?php echo esc_html( (string) $sportsarena_row['rank'] ); ?></td>
-				<td class="sa-table__team"><?php echo esc_html( $sportsarena_row['player'] ); ?></td>
-				<td class="sa-table__team"><?php echo esc_html( $sportsarena_row['team'] ); ?></td>
+				<td class="sa-table__team"><?php echo esc_html( sportsarena_text( $sportsarena_row['player'] ) ); ?></td>
+				<td class="sa-table__team"><?php echo esc_html( sportsarena_text( $sportsarena_row['team'] ) ); ?></td>
 				<td><strong><?php echo esc_html( (string) $sportsarena_row['goals'] ); ?></strong></td>
 				<td class="sa-hide-sm"><?php echo esc_html( (string) $sportsarena_row['assists'] ); ?></td>
 			</tr>

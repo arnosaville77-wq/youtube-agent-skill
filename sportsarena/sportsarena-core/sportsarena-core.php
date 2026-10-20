@@ -53,6 +53,9 @@ spl_autoload_register(
 
 require_once SPORTSARENA_CORE_DIR . 'includes/functions.php';
 
+// Language prefix (/en/, /fr/ ...) must be read before WordPress parses the request.
+SportsArena\Core\Languages::boot_early();
+
 register_activation_hook( __FILE__, array( 'SportsArena\\Core\\Installer', 'activate' ) );
 register_deactivation_hook( __FILE__, array( 'SportsArena\\Core\\Installer', 'deactivate' ) );
 

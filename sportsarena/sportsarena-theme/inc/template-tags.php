@@ -195,40 +195,112 @@ function sportsarena_theme_should_poll( array $m ) {
 }
 
 /**
- * Language switcher (Polylang or WPML), shown only when a multilingual
- * plugin is active and more than one language exists.
+ * Languages a visitor can switch to, from the plugin's built-in mode,
+ * Polylang or WPML.
+ *
+ * @return array<int,array{code:string,name:string,url:string,current:bool}>
+ */
+function sportsarena_theme_languages() {
+	$list = array();
+	if ( function_exists( 'pll_the_languages' ) ) {
+		$raw = pll_the_languages(
+			array(
+				'raw'                    => 1,
+				'hide_if_no_translation' => 0,
+			)
+		);
+		foreach ( (array) $raw as $language ) {
+			$list[] = array(
+				'code'    => (string) $language['slug'],
+				'name'    => (string) $language['name'],
+				'url'     => (string) $language['url'],
+				'current' => ! empty( $language['current_lang'] ),
+			);
+		}
+	} elseif ( defined( 'ICL_SITEPRESS_VERSION' ) ) {
+		$raw = apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML API.
+		foreach ( (array) $raw as $language ) {
+			$list[] = array(
+				'code'    => (string) $language['language_code'],
+				'name'    => (string) $language['native_name'],
+				'url'     => (string) $language['url'],
+				'current' => ! empty( $language['active'] ),
+			);
+		}
+	} elseif ( function_exists( 'sportsarena_language_links' ) ) {
+		$list = sportsarena_language_links();
+	}
+	return count( $list ) > 1 ? $list : array();
+}
+
+/**
+ * Language links (shared by the header menu and the footer list).
+ *
+ * @param array  $languages  Languages from sportsarena_theme_languages().
+ * @param string $list_class List class.
+ * @return void
+ */
+function sportsarena_theme_language_items( array $languages, $list_class ) {
+	echo '<ul class="' . esc_attr( $list_class ) . '" role="list">';
+	foreach ( $languages as $language ) {
+		printf(
+			'<li><a href="%1$s" hreflang="%2$s" lang="%2$s" dir="auto"%3$s>%4$s</a></li>',
+			esc_url( $language['url'] ),
+			esc_attr( $language['code'] ),
+			$language['current'] ? ' aria-current="true"' : '',
+			esc_html( $language['name'] )
+		);
+	}
+	echo '</ul>';
+}
+
+/**
+ * Language menu in the header: a globe button opening the list of languages.
  *
  * @return void
  */
 function sportsarena_theme_language_switcher() {
-	if ( function_exists( 'pll_the_languages' ) ) {
-		$items = pll_the_languages(
-			array(
-				'echo'                   => 0,
-				'show_flags'             => 0,
-				'display_names_as'       => 'slug',
-				'hide_if_no_translation' => 0,
-			)
-		);
-		if ( $items ) {
-			echo '<ul class="sa-langs" aria-label="' . esc_attr__( 'اللغة', 'sportsarena-theme' ) . '">' . $items . '</ul>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Markup built and escaped by Polylang.
-		}
+	$languages = sportsarena_theme_languages();
+	if ( ! $languages ) {
 		return;
 	}
-	$languages = apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WPML API.
-	if ( is_array( $languages ) && count( $languages ) > 1 ) {
-		echo '<ul class="sa-langs" aria-label="' . esc_attr__( 'اللغة', 'sportsarena-theme' ) . '">';
-		foreach ( $languages as $language ) {
-			printf(
-				'<li><a href="%1$s" hreflang="%2$s" lang="%2$s"%3$s>%4$s</a></li>',
-				esc_url( $language['url'] ),
-				esc_attr( $language['language_code'] ),
-				! empty( $language['active'] ) ? ' aria-current="true"' : '',
-				esc_html( $language['language_code'] )
-			);
+	$current = '';
+	foreach ( $languages as $language ) {
+		if ( $language['current'] ) {
+			$current = $language['code'];
 		}
-		echo '</ul>';
 	}
+	?>
+	<details class="sa-lang">
+		<summary class="sa-icon-btn sa-lang__toggle">
+			<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+			<span class="sa-lang__code" aria-hidden="true"><?php echo esc_html( strtoupper( $current ) ); ?></span>
+			<span class="screen-reader-text"><?php esc_html_e( 'اللغة', 'sportsarena-theme' ); ?></span>
+		</summary>
+		<?php sportsarena_theme_language_items( $languages, 'sa-lang__menu' ); ?>
+	</details>
+	<?php
+}
+
+/**
+ * Language list in the footer.
+ *
+ * @return void
+ */
+function sportsarena_theme_language_list() {
+	$languages = sportsarena_theme_languages();
+	if ( ! $languages ) {
+		return;
+	}
+	?>
+	<nav class="sa-footer__langs" aria-label="<?php esc_attr_e( 'اللغة', 'sportsarena-theme' ); ?>">
+		<h2 class="sa-footer__title">
+			<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+			<?php esc_html_e( 'اللغة', 'sportsarena-theme' ); ?>
+		</h2>
+		<?php sportsarena_theme_language_items( $languages, 'sa-footer__menu sa-footer__langlist' ); ?>
+	</nav>
+	<?php
 }
 
 /**
