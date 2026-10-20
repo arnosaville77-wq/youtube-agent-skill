@@ -63,6 +63,77 @@ final class Seeder {
 	}
 
 	/**
+	 * Provider (API-Sports) logo URL of a demo team, when its provider ID is
+	 * known. Shown only when the site enables provider logos.
+	 *
+	 * @param string $name Team name.
+	 * @return string
+	 */
+	private static function team_logo( $name ) {
+		$football   = array(
+			'Arsenal'             => 42,
+			'Manchester United'   => 33,
+			'Manchester City'     => 50,
+			'Liverpool'           => 40,
+			'Chelsea'             => 49,
+			'Tottenham'           => 47,
+			'Newcastle'           => 34,
+			'Aston Villa'         => 66,
+			'Brighton'            => 51,
+			'West Ham'            => 48,
+			'Barcelona'           => 529,
+			'Real Madrid'         => 541,
+			'Atletico Madrid'     => 530,
+			'Sevilla'             => 536,
+			'Valencia'            => 532,
+			'Villarreal'          => 533,
+			'Real Betis'          => 543,
+			'Real Sociedad'       => 548,
+			'Athletic Club'       => 531,
+			'Girona'              => 547,
+			'Bayern Munich'       => 157,
+			'Paris Saint Germain' => 85,
+			'Inter'               => 505,
+			'Al-Hilal Saudi FC'   => 2932,
+			'Al-Nassr'            => 2939,
+			'Al-Ittihad FC'       => 2938,
+			'Al-Ahli Jeddah'      => 2929,
+		);
+		$basketball = array(
+			'Boston Celtics'        => 133,
+			'Denver Nuggets'        => 139,
+			'Golden State Warriors' => 141,
+			'Los Angeles Lakers'    => 145,
+		);
+		if ( isset( $football[ $name ] ) ) {
+			return 'https://media.api-sports.io/football/teams/' . $football[ $name ] . '.png';
+		}
+		if ( isset( $basketball[ $name ] ) ) {
+			return 'https://media.api-sports.io/basketball/teams/' . $basketball[ $name ] . '.png';
+		}
+		return '';
+	}
+
+	/**
+	 * Provider (API-Sports) logo URL of a demo competition.
+	 *
+	 * @param string $key Competition key.
+	 * @return string
+	 */
+	private static function competition_logo( $key ) {
+		$ids = array(
+			'ucl'    => 'football/leagues/2',
+			'pl'     => 'football/leagues/39',
+			'laliga' => 'football/leagues/140',
+			'spl'    => 'football/leagues/307',
+			'egy'    => 'football/leagues/233',
+			'botola' => 'football/leagues/200',
+			'nba'    => 'basketball/leagues/12',
+		);
+		return isset( $ids[ $key ] ) ? 'https://media.api-sports.io/' . $ids[ $key ] . '.png' : '';
+	}
+
+	/**
 	 * Fictional player names for demo lineups and scorers, in the site's script.
 	 *
 	 * @return string[]
@@ -101,13 +172,13 @@ final class Seeder {
 					'home'        => array(
 						'external_id' => 'demo-team-' . sanitize_title( $home ),
 						'name'        => $home,
-						'logo'        => '',
+						'logo'        => self::team_logo( $home ),
 						'country'     => self::team_country( $home, $c[1] ),
 					),
 					'away'        => array(
 						'external_id' => 'demo-team-' . sanitize_title( $away ),
 						'name'        => $away,
-						'logo'        => '',
+						'logo'        => self::team_logo( $away ),
 						'country'     => self::team_country( $away, $c[1] ),
 					),
 					'score'       => array(
@@ -118,7 +189,7 @@ final class Seeder {
 						'external_id' => 'demo-comp-' . $comp_key,
 						'name'        => $c[0],
 						'country'     => $c[1],
-						'logo'        => '',
+						'logo'        => self::competition_logo( $comp_key ),
 						'season'      => '2026',
 						'round'       => $round,
 						'type'        => 'league',
@@ -478,7 +549,7 @@ final class Seeder {
 					'team'          => array(
 						'external_id' => 'demo-team-' . sanitize_title( $name ),
 						'name'        => $name,
-						'logo'        => '',
+						'logo'        => self::team_logo( $name ),
 					),
 					'played'        => $played,
 					'win'           => $win,
@@ -503,7 +574,7 @@ final class Seeder {
 						'away'        => array(
 							'external_id' => 'demo-team-' . sanitize_title( $teams[ ( $i + 1 ) % count( $teams ) ] ),
 							'name'        => $teams[ ( $i + 1 ) % count( $teams ) ],
-							'logo'        => '',
+							'logo'        => self::team_logo( $teams[ ( $i + 1 ) % count( $teams ) ] ),
 							'country'     => $comps[ $key ][1],
 						),
 						'score'       => array(
@@ -514,7 +585,7 @@ final class Seeder {
 							'external_id' => 'demo-comp-' . $key,
 							'name'        => $comps[ $key ][0],
 							'country'     => $comps[ $key ][1],
-							'logo'        => '',
+							'logo'        => self::competition_logo( $key ),
 							'season'      => '2026',
 							'round'       => 'Regular Season - ' . ( 9 - min( 8, $i ) ),
 							'type'        => 'league',

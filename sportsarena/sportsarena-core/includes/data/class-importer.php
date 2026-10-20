@@ -258,6 +258,9 @@ final class Importer {
 		}
 		$post_id = $this->find( Post_Types::COMPETITION, $c['external_id'] );
 		if ( $post_id ) {
+			if ( ! empty( $c['logo'] ) && '' === (string) get_post_meta( $post_id, '_sa_logo_url', true ) ) {
+				update_post_meta( $post_id, '_sa_logo_url', esc_url_raw( $c['logo'] ) );
+			}
 			return $post_id;
 		}
 		$dictionary = Names::dictionary();

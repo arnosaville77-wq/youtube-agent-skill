@@ -3,6 +3,7 @@
  *
  * - Dark / light toggle.
  * - Mobile navigation.
+ * - Broken provider logos fall back to a neutral shield.
  * - Converts kickoff times to the visitor's timezone (original kept as tooltip).
  * - Sport filter tabs, date picker, quick search.
  * - Live scores: polls the REST endpoint and updates ONLY the score/status
@@ -31,6 +32,25 @@
 			sync();
 		} );
 	}
+
+	/* ---------- Logo fallback ---------- */
+	// A provider logo that fails to load becomes a neutral shield (same size, no layout shift).
+	var shield = 'data:image/svg+xml,' + encodeURIComponent( '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><path d="M16 1 3 6v9c0 8 5.6 13.6 13 16 7.4-2.4 13-8 13-16V6z" fill="#94a3b8"/></svg>' );
+	var logoFallback = function ( img ) {
+		if ( img.src !== shield ) {
+			img.src = shield;
+		}
+	};
+	document.addEventListener( 'error', function ( e ) {
+		if ( e.target && e.target.matches && e.target.matches( 'img.sa-logo' ) ) {
+			logoFallback( e.target );
+		}
+	}, true );
+	document.querySelectorAll( 'img.sa-logo' ).forEach( function ( img ) {
+		if ( img.complete && ! img.naturalWidth && img.src ) {
+			logoFallback( img );
+		}
+	} );
 
 	/* ---------- Mobile navigation ---------- */
 	var navToggle = document.querySelector( '.sa-nav-toggle' );
