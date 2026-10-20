@@ -28,8 +28,13 @@ $sportsarena_title = $sportsarena_titles[ $sportsarena_day ] ?? sprintf( __( 'م
 			<h1 class="sa-page-title"><?php echo esc_html( $sportsarena_title ); ?></h1>
 			<p class="sa-page-desc">
 				<?php
-				/* translators: %s: date. */
-				echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً.', 'sportsarena-theme' ), $sportsarena_pretty ) );
+				if ( sportsarena_theme_time_is_gmt() ) {
+					/* translators: %s: date. */
+					echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. كل الأوقات بتوقيت جرينتش (GMT).', 'sportsarena-theme' ), $sportsarena_pretty ) );
+				} else {
+					/* translators: %s: date. */
+					echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً.', 'sportsarena-theme' ), $sportsarena_pretty ) );
+				}
 				?>
 			</p>
 		</header>

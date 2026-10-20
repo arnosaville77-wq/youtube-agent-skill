@@ -141,24 +141,24 @@ msgstr "La descripción corta está vacía o es la predeterminada."
 msgid "اكتب اسماً ووصفاً واضحين في الإعدادات > عام."
 msgstr "Escribe un título y una descripción claros en Ajustes > Generales."
 
-#: includes/admin/class-adsense-check.php:97 includes/class-pages.php:246
+#: includes/admin/class-adsense-check.php:97 includes/class-pages.php:248
 msgid "من نحن"
 msgstr "Quiénes somos"
 
-#: includes/admin/class-adsense-check.php:98 includes/class-pages.php:264
+#: includes/admin/class-adsense-check.php:98 includes/class-pages.php:266
 msgid "اتصل بنا"
 msgstr "Contacto"
 
 #: includes/admin/class-adsense-check.php:99
-#: includes/ads/class-consent.php:103 includes/class-pages.php:271
+#: includes/ads/class-consent.php:103 includes/class-pages.php:273
 msgid "سياسة الخصوصية"
 msgstr "Política de privacidad"
 
-#: includes/admin/class-adsense-check.php:100 includes/class-pages.php:311
+#: includes/admin/class-adsense-check.php:100 includes/class-pages.php:313
 msgid "الشروط والأحكام"
 msgstr "Términos y condiciones"
 
-#: includes/admin/class-adsense-check.php:101 includes/class-pages.php:332
+#: includes/admin/class-adsense-check.php:101 includes/class-pages.php:334
 msgid "إخلاء المسؤولية"
 msgstr "Aviso legal"
 
@@ -294,7 +294,7 @@ msgstr ""
 "resultado se consideran contenido pobre."
 
 #: includes/admin/class-adsense-check.php:168
-#: includes/admin/class-settings.php:560
+#: includes/admin/class-settings.php:573
 msgid "حذف البيانات التجريبية"
 msgstr "Eliminar datos de demostración"
 
@@ -496,7 +496,7 @@ msgstr ""
 "Consentimiento de cookies."
 
 #: includes/admin/class-adsense-check.php:260
-#: includes/admin/class-settings.php:465
+#: includes/admin/class-settings.php:478
 msgid "Google Consent Mode v2"
 msgstr "Google Consent Mode v2"
 
@@ -626,7 +626,7 @@ msgstr ""
 
 #: includes/admin/class-adsense-check.php:447
 #: includes/admin/class-meta-boxes.php:98
-#: includes/admin/class-settings.php:336
+#: includes/admin/class-settings.php:349
 msgid "الحالة"
 msgstr "Estado"
 
@@ -840,40 +840,40 @@ msgstr "Herramientas"
 msgid "الإعدادات"
 msgstr "Ajustes"
 
-#: includes/admin/class-settings.php:162
+#: includes/admin/class-settings.php:163
 msgid "معرّف الناشر غير صالح. الصيغة الصحيحة: ca-pub-1234567890123456"
 msgstr "ID de editor no válido. Formato esperado: ca-pub-1234567890123456"
 
-#: includes/admin/class-settings.php:249
+#: includes/admin/class-settings.php:250
 msgid "معرّف عبر ثابت في wp-config.php."
 msgstr "Definido mediante una constante en wp-config.php."
 
-#: includes/admin/class-settings.php:253
+#: includes/admin/class-settings.php:254
 msgid "حذف المفتاح المحفوظ"
 msgstr "Eliminar la clave guardada"
 
-#: includes/admin/class-settings.php:275
+#: includes/admin/class-settings.php:276
 msgid "SportsArena: البيانات والمزامنة"
 msgstr "SportsArena: datos y sincronización"
 
-#: includes/admin/class-settings.php:280
+#: includes/admin/class-settings.php:281
 msgid "مزوّدو البيانات"
 msgstr "Proveedores de datos"
 
-#: includes/admin/class-settings.php:283
+#: includes/admin/class-settings.php:284
 msgid "تفعيل المزامنة"
 msgstr "Activar sincronización"
 
-#: includes/admin/class-settings.php:283
+#: includes/admin/class-settings.php:284
 msgid "تشغيل مهام WP-Cron لجلب البيانات من المزوّدين."
 msgstr ""
 "Ejecutar las tareas de WP-Cron que obtienen los datos de los proveedores."
 
-#: includes/admin/class-settings.php:284
+#: includes/admin/class-settings.php:285
 msgid "مفتاح API-Football"
 msgstr "Clave de API-Football"
 
-#: includes/admin/class-settings.php:284
+#: includes/admin/class-settings.php:285
 msgid ""
 "من لوحة <a href=\"https://dashboard.api-football.com/\" target=\"_blank\" "
 "rel=\"noopener\">dashboard.api-football.com</a>. نفس المفتاح يعمل لكل رياضات"
@@ -883,11 +883,11 @@ msgstr ""
 "target=\"_blank\" rel=\"noopener\">dashboard.api-football.com</a>. La misma "
 "clave sirve para todos los deportes de api-sports.io."
 
-#: includes/admin/class-settings.php:285
+#: includes/admin/class-settings.php:286
 msgid "معرّفات دوريات كرة القدم"
 msgstr "IDs de ligas de fútbol"
 
-#: includes/admin/class-settings.php:285
+#: includes/admin/class-settings.php:286
 msgid ""
 "مفصولة بفواصل (مثال: 39 الإنجليزي، 140 الإسباني، 2 دوري الأبطال، 307 "
 "السعودي، 233 المصري). اتركه فارغاً لجلب كل الدوريات (غير مستحسن)."
@@ -896,29 +896,29 @@ msgstr ""
 "League, 307 Arabia Saudí, 233 Egipto). Déjalo vacío para obtener todas las "
 "ligas (no recomendado)."
 
-#: includes/admin/class-settings.php:286
+#: includes/admin/class-settings.php:287
 msgid "مفتاح API-Basketball (اختياري)"
 msgstr "Clave de API-Basketball (opcional)"
 
-#: includes/admin/class-settings.php:286
+#: includes/admin/class-settings.php:287
 msgid "إن تُرك فارغاً يُستخدم مفتاح API-Football."
 msgstr "Si está vacía, se usa la clave de API-Football."
 
-#: includes/admin/class-settings.php:287
+#: includes/admin/class-settings.php:288
 msgid "معرّفات دوريات السلة"
 msgstr "IDs de ligas de baloncesto"
 
-#: includes/admin/class-settings.php:287
+#: includes/admin/class-settings.php:288
 msgid "مثال: 12 (NBA)، 120 (Euroleague). اتركه فارغاً لتعطيل السلة."
 msgstr ""
 "P. ej.: 12 (NBA), 120 (Euroliga). Déjalo vacío para desactivar el "
 "baloncesto."
 
-#: includes/admin/class-settings.php:288
+#: includes/admin/class-settings.php:289
 msgid "مفتاح TheSportsDB"
 msgstr "Clave de TheSportsDB"
 
-#: includes/admin/class-settings.php:288
+#: includes/admin/class-settings.php:289
 msgid ""
 "للتنس والفورمولا 1 وكرة اليد والطائرة والفنون القتالية. <a "
 "href=\"https://www.thesportsdb.com/pricing\" target=\"_blank\" "
@@ -928,19 +928,19 @@ msgstr ""
 "href=\"https://www.thesportsdb.com/pricing\" target=\"_blank\" "
 "rel=\"noopener\">thesportsdb.com</a>"
 
-#: includes/admin/class-settings.php:289
+#: includes/admin/class-settings.php:290
 msgid "رياضات TheSportsDB"
 msgstr "Deportes de TheSportsDB"
 
-#: includes/admin/class-settings.php:292
+#: includes/admin/class-settings.php:293
 msgid "حدود الطلبات والتوقيت"
 msgstr "Límites de peticiones y hora"
 
-#: includes/admin/class-settings.php:295
+#: includes/admin/class-settings.php:296
 msgid "الحد اليومي لكل مزوّد"
 msgstr "Límite diario por proveedor"
 
-#: includes/admin/class-settings.php:295
+#: includes/admin/class-settings.php:296
 msgid ""
 "عدد الطلبات المسموح بها يومياً (الخطة المجانية لـ API-Football: 100). 0 = "
 "بلا حد."
@@ -948,27 +948,48 @@ msgstr ""
 "Número de peticiones permitidas al día (plan gratuito de API-Football: 100)."
 " 0 = sin límite."
 
-#: includes/admin/class-settings.php:296
+#: includes/admin/class-settings.php:297
 msgid "الحد في الدقيقة"
 msgstr "Límite por minuto"
 
-#: includes/admin/class-settings.php:296
+#: includes/admin/class-settings.php:297
 msgid "حسب خطتك (المجانية: 10)."
 msgstr "Según tu plan (gratuito: 10)."
 
-#: includes/admin/class-settings.php:297
+#: includes/admin/class-settings.php:298
 msgid "فاصل تحديث المباريات الحية (ثانية)"
 msgstr "Intervalo de actualización de partidos en directo (segundos)"
 
-#: includes/admin/class-settings.php:297
+#: includes/admin/class-settings.php:298
 msgid "لا يقل عن 60. يعمل فقط أثناء وجود مباريات حية."
 msgstr "Mínimo 60. Solo se ejecuta mientras haya partidos en directo."
 
-#: includes/admin/class-settings.php:298
+#: includes/admin/class-settings.php:301
+msgid "عرض المواعيد"
+msgstr "Visualización de horarios"
+
+#: includes/admin/class-settings.php:304
+msgid "بتوقيت جرينتش (GMT) لكل الزوار"
+msgstr "Hora de Greenwich (GMT) para todos los visitantes"
+
+#: includes/admin/class-settings.php:305
+msgid "بتوقيت جهاز كل زائر (يتحوّل تلقائياً)"
+msgstr "Hora del dispositivo de cada visitante (conversión automática)"
+
+#: includes/admin/class-settings.php:307
+msgid ""
+"مع GMT تظهر كل الأوقات بتوقيت جرينتش مع كلمة GMT، وتُحسب صفحات «اليوم» "
+"و«الغد» بتوقيت جرينتش بدل المنطقة الزمنية في الإعدادات > عام."
+msgstr ""
+"Con GMT, todas las horas se muestran en hora de Greenwich con la etiqueta "
+"GMT, y las páginas «Hoy» y «Mañana» usan el día GMT en lugar de la zona "
+"horaria de Ajustes > Generales."
+
+#: includes/admin/class-settings.php:311
 msgid "اسم التوقيت الأصلي"
 msgstr "Nombre de la zona horaria original"
 
-#: includes/admin/class-settings.php:298
+#: includes/admin/class-settings.php:311
 msgid ""
 "يظهر بجانب التوقيت الأصلي، مثال: «بتوقيت مكة». المنطقة الزمنية نفسها من "
 "الإعدادات > عام."
@@ -976,15 +997,15 @@ msgstr ""
 "Se muestra junto a la hora original, p. ej.: «hora de Madrid». La zona "
 "horaria se configura en Ajustes > Generales."
 
-#: includes/admin/class-settings.php:301
+#: includes/admin/class-settings.php:314
 msgid "خيارات أخرى"
 msgstr "Otras opciones"
 
-#: includes/admin/class-settings.php:304
+#: includes/admin/class-settings.php:317
 msgid "عرض شعارات المزوّد"
 msgstr "Mostrar logos del proveedor"
 
-#: includes/admin/class-settings.php:304
+#: includes/admin/class-settings.php:317
 msgid ""
 "شعارات الأندية والبطولات من المزوّد في كل أماكنها (المباريات، الترتيب، "
 "الفرق، البطولات). الشعارات علامات تجارية لأصحابها: فعّلها إذا كانت خطة "
@@ -995,11 +1016,11 @@ msgstr ""
 "de sus propietarios: actívalo si tu plan del proveedor permite mostrarlos. "
 "Las banderas se muestran siempre."
 
-#: includes/admin/class-settings.php:305
+#: includes/admin/class-settings.php:318
 msgid "حفظ الشعارات على موقعك"
 msgstr "Guardar los logos en tu sitio"
 
-#: includes/admin/class-settings.php:305
+#: includes/admin/class-settings.php:318
 msgid ""
 "تنزيل شعارات المزوّد إلى مجلد الرفع (128px، WebP) بدفعات كل ساعة بدلاً من "
 "تحميلها من خادم المزوّد. أسرع وأكثر استقراراً."
@@ -1008,19 +1029,19 @@ msgstr ""
 "lotes cada hora en lugar de cargarlos desde el servidor del proveedor. Más "
 "rápido y fiable."
 
-#: includes/admin/class-settings.php:306
+#: includes/admin/class-settings.php:319
 msgid "Google News Sitemap"
 msgstr "Google News Sitemap"
 
-#: includes/admin/class-settings.php:306
+#: includes/admin/class-settings.php:319
 msgid "إنشاء /news-sitemap.xml لأخبار آخر 48 ساعة."
 msgstr "Crear /news-sitemap.xml con las noticias de las últimas 48 horas."
 
-#: includes/admin/class-settings.php:309
+#: includes/admin/class-settings.php:322
 msgid "مواقع اللغات الأخرى (hreflang)"
 msgstr "Sitios en otros idiomas (hreflang)"
 
-#: includes/admin/class-settings.php:312
+#: includes/admin/class-settings.php:325
 msgid ""
 "سطر لكل لغة: رمز اللغة=رابط الموقع. يضيف وسوم hreflang لصفحات المباريات "
 "والفرق والبطولات والأيام بين نسخ الموقع بلغات مختلفة."
@@ -1029,42 +1050,42 @@ msgstr ""
 "hreflang a las páginas de partidos, equipos, competiciones y días entre las "
 "versiones del sitio en distintos idiomas."
 
-#: includes/admin/class-settings.php:316
+#: includes/admin/class-settings.php:329
 msgid "حذف الإعدادات عند الحذف"
 msgstr "Eliminar ajustes al desinstalar"
 
-#: includes/admin/class-settings.php:316
+#: includes/admin/class-settings.php:329
 msgid "حذف الإعدادات والجداول عند حذف الإضافة (المحتوى نفسه لا يُحذف)."
 msgstr ""
 "Eliminar los ajustes y las tablas al borrar el plugin (el contenido nunca se"
 " elimina)."
 
-#: includes/admin/class-settings.php:335
+#: includes/admin/class-settings.php:348
 msgid "المزوّد"
 msgstr "Proveedor"
 
-#: includes/admin/class-settings.php:337
+#: includes/admin/class-settings.php:350
 msgid "طلبات اليوم"
 msgstr "Peticiones hoy"
 
-#: includes/admin/class-settings.php:338
+#: includes/admin/class-settings.php:351
 msgid "المتبقي لدى المزوّد"
 msgstr "Restantes en el proveedor"
 
-#: includes/admin/class-settings.php:346
+#: includes/admin/class-settings.php:359
 msgid "مُعد"
 msgstr "Configurado"
 
-#: includes/admin/class-settings.php:346
+#: includes/admin/class-settings.php:359
 msgid "بدون مفتاح"
 msgstr "Sin clave"
 
 #. translators: 1: cron hook, 2: date.
-#: includes/admin/class-settings.php:358
+#: includes/admin/class-settings.php:371
 msgid "%1$s: التشغيل التالي %2$s"
 msgstr "%1$s: próxima ejecución %2$s"
 
-#: includes/admin/class-settings.php:361
+#: includes/admin/class-settings.php:374
 msgid ""
 "تنبيه: WP-Cron يعمل بزيارات الموقع. للحصول على تحديث حي منتظم فعّل cron "
 "حقيقياً على الخادم (راجع README)."
@@ -1072,15 +1093,15 @@ msgstr ""
 "Aviso: WP-Cron depende de las visitas al sitio. Para actualizaciones en "
 "directo regulares, configura un cron real en el servidor (ver README)."
 
-#: includes/admin/class-settings.php:381
+#: includes/admin/class-settings.php:394
 msgid "الإعلانات (Google AdSense)"
 msgstr "Anuncios (Google AdSense)"
 
-#: includes/admin/class-settings.php:387
+#: includes/admin/class-settings.php:400
 msgid "معرّف الناشر (Publisher ID)"
 msgstr "ID de editor (Publisher ID)"
 
-#: includes/admin/class-settings.php:387
+#: includes/admin/class-settings.php:400
 msgid ""
 "مثال: ca-pub-1234567890123456. يُحقن سكربت AdSense مرة واحدة في "
 "&lt;head&gt;."
@@ -1088,11 +1109,11 @@ msgstr ""
 "P. ej.: ca-pub-1234567890123456. El script de AdSense se añade una sola vez "
 "en &lt;head&gt;."
 
-#: includes/admin/class-settings.php:388
+#: includes/admin/class-settings.php:401
 msgid "Auto Ads"
 msgstr "Auto Ads"
 
-#: includes/admin/class-settings.php:388
+#: includes/admin/class-settings.php:401
 msgid ""
 "استخدم الإعلانات التلقائية بدلاً من الخانات اليدوية (فعّلها أيضاً من لوحة "
 "AdSense)."
@@ -1100,23 +1121,23 @@ msgstr ""
 "Usar anuncios automáticos en lugar de los espacios manuales (actívalos "
 "también en el panel de AdSense)."
 
-#: includes/admin/class-settings.php:389
+#: includes/admin/class-settings.php:402
 msgid "ads.txt"
 msgstr "ads.txt"
 
-#: includes/admin/class-settings.php:389
+#: includes/admin/class-settings.php:402
 msgid "إنشاء ملف ads.txt تلقائياً في جذر الموقع."
 msgstr "Crear automáticamente un archivo ads.txt en la raíz del sitio."
 
-#: includes/admin/class-settings.php:393
+#: includes/admin/class-settings.php:406
 msgid "محتوى ads.txt:"
 msgstr "Contenido de ads.txt:"
 
-#: includes/admin/class-settings.php:396
+#: includes/admin/class-settings.php:409
 msgid "الخانات اليدوية"
 msgstr "Espacios manuales"
 
-#: includes/admin/class-settings.php:397
+#: includes/admin/class-settings.php:410
 msgid ""
 "أدخل رقم الوحدة الإعلانية (data-ad-slot) من AdSense. لكل خانة ارتفاع محجوز "
 "لمنع اهتزاز التخطيط (CLS) وعنوان «إعلان»."
@@ -1125,31 +1146,31 @@ msgstr ""
 "espacio reserva su altura para evitar saltos de diseño (CLS) y lleva la "
 "etiqueta «Anuncio»."
 
-#: includes/admin/class-settings.php:401
+#: includes/admin/class-settings.php:414
 msgid "الخانة"
 msgstr "Espacio"
 
-#: includes/admin/class-settings.php:402 includes/admin/class-settings.php:413
+#: includes/admin/class-settings.php:415 includes/admin/class-settings.php:426
 msgid "تفعيل"
 msgstr "Activar"
 
-#: includes/admin/class-settings.php:403
+#: includes/admin/class-settings.php:416
 msgid "رقم الوحدة (data-ad-slot)"
 msgstr "Número del bloque (data-ad-slot)"
 
-#: includes/admin/class-settings.php:404
+#: includes/admin/class-settings.php:417
 msgid "كود مخصص (اختياري)"
 msgstr "Código personalizado (opcional)"
 
-#: includes/admin/class-settings.php:405
+#: includes/admin/class-settings.php:418
 msgid "الارتفاع المحجوز"
 msgstr "Altura reservada"
 
-#: includes/admin/class-settings.php:419
+#: includes/admin/class-settings.php:432
 msgid "يتطلب صلاحية unfiltered_html"
 msgstr "Requiere la capacidad unfiltered_html"
 
-#: includes/admin/class-settings.php:427
+#: includes/admin/class-settings.php:440
 msgid ""
 "لا تظهر الإعلانات في: صفحة 404، نتائج البحث الفارغة، صفحات الخصوصية والتواصل"
 " والشروط وإخلاء المسؤولية."
@@ -1157,11 +1178,11 @@ msgstr ""
 "No se muestran anuncios en: la página 404, búsquedas sin resultados, las "
 "páginas de privacidad, contacto, términos y aviso legal."
 
-#: includes/admin/class-settings.php:447 includes/ads/class-consent.php:99
+#: includes/admin/class-settings.php:460 includes/ads/class-consent.php:99
 msgid "الموافقة على ملفات تعريف الارتباط"
 msgstr "Consentimiento de cookies"
 
-#: includes/admin/class-settings.php:449
+#: includes/admin/class-settings.php:462
 msgid ""
 "تشترط Google استخدام منصة إدارة موافقة (CMP) معتمدة من Google لزوار المنطقة "
 "الاقتصادية الأوروبية والمملكة المتحدة وسويسرا. الأسهل: فعّل رسالة GDPR من "
@@ -1172,23 +1193,23 @@ msgstr ""
 "activa el mensaje RGPD en AdSense > Privacidad y mensajes y elige aquí el "
 "modo «CMP externa»."
 
-#: includes/admin/class-settings.php:455
+#: includes/admin/class-settings.php:468
 msgid "الوضع"
 msgstr "Modo"
 
-#: includes/admin/class-settings.php:458
+#: includes/admin/class-settings.php:471
 msgid "CMP خارجية معتمدة من Google (موصى به)"
 msgstr "CMP externa certificada por Google (recomendado)"
 
-#: includes/admin/class-settings.php:459
+#: includes/admin/class-settings.php:472
 msgid "لافتة الموافقة المدمجة (احتياطية)"
 msgstr "Banner de consentimiento integrado (alternativa)"
 
-#: includes/admin/class-settings.php:460
+#: includes/admin/class-settings.php:473
 msgid "تعطيل"
 msgstr "Desactivado"
 
-#: includes/admin/class-settings.php:465
+#: includes/admin/class-settings.php:478
 msgid ""
 "إرسال القيم الافتراضية (ad_storage, ad_user_data, ad_personalization, "
 "analytics_storage) قبل أي وسم من Google."
@@ -1197,124 +1218,124 @@ msgstr ""
 "ad_personalization, analytics_storage) antes de cualquier etiqueta de "
 "Google."
 
-#: includes/admin/class-settings.php:466
+#: includes/admin/class-settings.php:479
 msgid "أوروبا فقط"
 msgstr "Solo Europa"
 
-#: includes/admin/class-settings.php:466
+#: includes/admin/class-settings.php:479
 msgid "الرفض الافتراضي لزوار أوروبا/بريطانيا/سويسرا فقط، والسماح لباقي الدول."
 msgstr ""
 "Rechazo por defecto solo para visitantes de Europa / Reino Unido / Suiza; "
 "permitido para los demás países."
 
-#: includes/admin/class-settings.php:489
+#: includes/admin/class-settings.php:502
 msgid "سجل المزامنة والأخطاء"
 msgstr "Registro de sincronización y errores"
 
-#: includes/admin/class-settings.php:491
+#: includes/admin/class-settings.php:504
 msgid "الكل"
 msgstr "Todo"
 
-#: includes/admin/class-settings.php:492 includes/functions.php:354
+#: includes/admin/class-settings.php:505 includes/functions.php:362
 msgid "الأخطاء"
 msgstr "Errores"
 
-#: includes/admin/class-settings.php:493
+#: includes/admin/class-settings.php:506
 msgid "التحذيرات"
 msgstr "Avisos"
 
-#: includes/admin/class-settings.php:498
+#: includes/admin/class-settings.php:511
 msgid "مسح السجل"
 msgstr "Vaciar registro"
 
-#: includes/admin/class-settings.php:502
+#: includes/admin/class-settings.php:515
 msgid "الوقت (UTC)"
 msgstr "Hora (UTC)"
 
-#: includes/admin/class-settings.php:503
+#: includes/admin/class-settings.php:516
 msgid "المستوى"
 msgstr "Nivel"
 
-#: includes/admin/class-settings.php:504
+#: includes/admin/class-settings.php:517
 msgid "المصدر"
 msgstr "Origen"
 
-#: includes/admin/class-settings.php:505 includes/class-contact-form.php:74
+#: includes/admin/class-settings.php:518 includes/class-contact-form.php:74
 msgid "الرسالة"
 msgstr "Mensaje"
 
-#: includes/admin/class-settings.php:506
+#: includes/admin/class-settings.php:519
 msgid "التفاصيل"
 msgstr "Detalles"
 
-#: includes/admin/class-settings.php:510
+#: includes/admin/class-settings.php:523
 msgid "لا توجد سجلات."
 msgstr "No hay registros."
 
-#: includes/admin/class-settings.php:553
+#: includes/admin/class-settings.php:566
 msgid "أدوات SportsArena"
 msgstr "Herramientas de SportsArena"
 
-#: includes/admin/class-settings.php:555
+#: includes/admin/class-settings.php:568
 msgid "تم تنفيذ العملية. راجع السجل للتفاصيل."
 msgstr "Operación realizada. Consulta el registro para más detalles."
 
-#: includes/admin/class-settings.php:557
+#: includes/admin/class-settings.php:570
 msgid "البيانات التجريبية"
 msgstr "Datos de demostración"
 
-#: includes/admin/class-settings.php:559
+#: includes/admin/class-settings.php:572
 msgid "إنشاء بيانات تجريبية"
 msgstr "Crear datos de demostración"
 
-#: includes/admin/class-settings.php:559
+#: includes/admin/class-settings.php:572
 msgid ""
 "بطولات وفرق ومباريات (أمس/اليوم/غداً) وأخبار لعرض الموقع قبل ربط الـ API."
 msgstr ""
 "Competiciones, equipos, partidos (ayer / hoy / mañana) y noticias para "
 "previsualizar el sitio antes de conectar la API."
 
-#: includes/admin/class-settings.php:560
+#: includes/admin/class-settings.php:573
 msgid "يحذف فقط العناصر المعلَّمة كتجريبية."
 msgstr "Elimina solo los elementos marcados como demostración."
 
-#: includes/admin/class-settings.php:562
+#: includes/admin/class-settings.php:575
 msgid "المزامنة اليدوية"
 msgstr "Sincronización manual"
 
-#: includes/admin/class-settings.php:564
+#: includes/admin/class-settings.php:577
 msgid "مزامنة مباريات اليوم والغد"
 msgstr "Sincronizar los partidos de hoy y mañana"
 
-#: includes/admin/class-settings.php:564
+#: includes/admin/class-settings.php:577
 msgid "تستهلك طلبات من رصيدك."
 msgstr "Consume peticiones de tu cuota."
 
-#: includes/admin/class-settings.php:565
+#: includes/admin/class-settings.php:578
 msgid "مزامنة الترتيب والهدافين"
 msgstr "Sincronizar clasificación y goleadores"
 
-#: includes/admin/class-settings.php:565
+#: includes/admin/class-settings.php:578
 msgid "طلبان لكل بطولة متابعة."
 msgstr "Dos peticiones por competición seguida."
 
-#: includes/admin/class-settings.php:566
+#: includes/admin/class-settings.php:579
 msgid "تحديث المباريات الحية"
 msgstr "Actualizar partidos en directo"
 
-#: includes/admin/class-settings.php:566
+#: includes/admin/class-settings.php:579
 msgid "يعمل فقط عند وجود مباريات حية."
 msgstr "Solo se ejecuta cuando hay partidos en directo."
 
-#: includes/admin/class-settings.php:568
+#: includes/admin/class-settings.php:581
 msgid "الصفحات والملفات"
 msgstr "Páginas y archivos"
 
-#: includes/admin/class-settings.php:570
+#: includes/admin/class-settings.php:583
 msgid "إنشاء الصفحات الإلزامية وأقسام الأخبار"
 msgstr "Crear las páginas obligatorias y las secciones de noticias"
 
-#: includes/admin/class-settings.php:570
+#: includes/admin/class-settings.php:583
 msgid ""
 "صفحة الأخبار، أقسام الأخبار لكل رياضة، من نحن، اتصل بنا، الخصوصية، الشروط، "
 "إخلاء المسؤولية (لا يستبدل الموجود)."
@@ -1322,41 +1343,56 @@ msgstr ""
 "Página de noticias, secciones por deporte, Quiénes somos, Contacto, "
 "Privacidad, Términos, Aviso legal (las existentes nunca se reemplazan)."
 
-#: includes/admin/class-settings.php:571
+#: includes/admin/class-settings.php:584
+msgid "تحويل المحتوى إلى لغة الموقع"
+msgstr "Convertir el contenido al idioma del sitio"
+
+#: includes/admin/class-settings.php:584
+msgid ""
+"يعيد كتابة الصفحات الإلزامية وأقسام الأخبار والبيانات التجريبية بلغة الموقع "
+"الحالية، حتى لا تختلط لغتان في صفحة. يحدث تلقائياً عند تغيير اللغة من "
+"الإعدادات > عام، ولا يلمس ما عدّلته بنفسك."
+msgstr ""
+"Reescribe las páginas obligatorias, las secciones de noticias y los datos de"
+" demostración en el idioma actual del sitio, para que ninguna página mezcle "
+"dos idiomas. Ocurre automáticamente al cambiar el idioma en Ajustes > "
+"Generales y nunca toca lo que hayas editado tú."
+
+#: includes/admin/class-settings.php:585
 msgid "تنزيل الشعارات الآن"
 msgstr "Descargar los logos ahora"
 
-#: includes/admin/class-settings.php:571
+#: includes/admin/class-settings.php:585
 msgid "يحفظ شعارات المزوّد على موقعك (يتطلب تفعيل عرض الشعارات)."
 msgstr ""
 "Guarda los logos del proveedor en tu sitio (requiere activar la "
 "visualización de logos)."
 
-#: includes/admin/class-settings.php:572
+#: includes/admin/class-settings.php:586
 msgid "إعادة إنشاء ads.txt"
 msgstr "Regenerar ads.txt"
 
-#: includes/admin/class-settings.php:572
+#: includes/admin/class-settings.php:586
 msgid "يكتب الملف في جذر الموقع إن أمكن."
 msgstr "Escribe el archivo en la raíz del sitio si es posible."
 
-#: includes/admin/class-settings.php:573
+#: includes/admin/class-settings.php:587
 msgid "تحديث الروابط الدائمة والكاش"
 msgstr "Actualizar enlaces permanentes y caché"
 
-#: includes/admin/class-settings.php:573
+#: includes/admin/class-settings.php:587
 msgid "استخدمه إذا ظهرت صفحة 404 لروابط المباريات."
 msgstr "Úsalo si los enlaces de los partidos devuelven una página 404."
 
-#: includes/admin/class-tools.php:47 includes/admin/class-tools.php:171
+#: includes/admin/class-tools.php:47 includes/admin/class-tools.php:182
 msgid "ليست لديك صلاحية."
 msgstr "No tienes permiso."
 
-#: includes/admin/class-tools.php:194
+#: includes/admin/class-tools.php:205
 msgid "تم تحديث بيانات المباراة من المزوّد."
 msgstr "Datos del partido actualizados desde el proveedor."
 
-#: includes/admin/class-tools.php:194
+#: includes/admin/class-tools.php:205
 msgid "تعذّر التحديث: تحقق من المفتاح والسجل."
 msgstr "No se pudo actualizar: revisa la clave y el registro."
 
@@ -1438,7 +1474,7 @@ msgstr ""
 
 #. translators: 1: home team, 2: away team.
 #: includes/class-localized-names.php:94 includes/data/class-importer.php:87
-#: includes/seo/class-seo.php:164 includes/seo/class-seo.php:223
+#: includes/seo/class-seo.php:165 includes/seo/class-seo.php:224
 msgid "%1$s ضد %2$s"
 msgstr "%1$s vs %2$s"
 
@@ -1521,50 +1557,50 @@ msgstr ""
 "Análisis tácticos, artículos de opinión y previas a fondo de nuestra "
 "redacción."
 
-#: includes/class-options.php:93
+#: includes/class-options.php:94
 msgid "أسفل الهيدر"
 msgstr "Debajo de la cabecera"
 
-#: includes/class-options.php:99
+#: includes/class-options.php:100
 msgid "داخل المقال (بعد الفقرة الثانية)"
 msgstr "Dentro de la noticia (tras el segundo párrafo)"
 
-#: includes/class-options.php:105
+#: includes/class-options.php:106
 msgid "داخل المقال الطويل (بعد الفقرة السادسة)"
 msgstr "En artículos largos (tras el sexto párrafo)"
 
-#: includes/class-options.php:111
+#: includes/class-options.php:112
 msgid "أسفل المقال"
 msgstr "Debajo del artículo"
 
-#: includes/class-options.php:117
+#: includes/class-options.php:118
 msgid "بين بطاقات الأخبار (كل 6 أخبار)"
 msgstr "Entre tarjetas de noticias (cada 6)"
 
-#: includes/class-options.php:123
+#: includes/class-options.php:124
 msgid "الشريط الجانبي (ثابت على الديسكتوب)"
 msgstr "Barra lateral (fija en escritorio)"
 
-#: includes/class-options.php:129
+#: includes/class-options.php:130
 msgid "بين مجموعات البطولات (كل 3 بطولات)"
 msgstr "Entre grupos de competiciones (cada 3 competiciones)"
 
-#: includes/class-options.php:135
+#: includes/class-options.php:136
 msgid "أسفل صفحة المباراة"
 msgstr "Al final de la página del partido"
 
-#: includes/class-pages.php:240 includes/seo/class-breadcrumbs.php:164
+#: includes/class-pages.php:242 includes/seo/class-breadcrumbs.php:164
 msgid "الأخبار"
 msgstr "Noticias"
 
-#: includes/class-pages.php:243
+#: includes/class-pages.php:245
 msgid ""
 "آخر الأخبار والتحليلات من عالم كرة القدم وباقي الرياضات، مقسّمة حسب الرياضة."
 msgstr ""
 "Las últimas noticias y análisis del fútbol y otros deportes, organizados por"
 " deporte."
 
-#: includes/class-pages.php:248
+#: includes/class-pages.php:250
 msgid ""
 "<strong>{site}</strong> موقع رياضي عربي يقدّم نتائج المباريات ومواعيدها "
 "وجداول الترتيب والإحصائيات والأخبار الرياضية لكرة القدم وباقي الرياضات، "
@@ -1574,36 +1610,34 @@ msgstr ""
 "precisa resultados, calendario, clasificaciones, estadísticas y noticias de "
 "fútbol y otros deportes."
 
-#: includes/class-pages.php:249
+#: includes/class-pages.php:251
 msgid "ماذا نقدّم؟"
 msgstr "Qué ofrecemos"
 
-#: includes/class-pages.php:252
+#: includes/class-pages.php:254
 msgid "نتائج المباريات وتحديثها أثناء اللعب (نصياً فقط، دون أي بث)."
 msgstr ""
 "Resultados de los partidos actualizados durante el juego (solo texto, nunca "
 "retransmisiones)."
 
-#: includes/class-pages.php:253
-msgid "مواعيد المباريات بتوقيتك المحلي والقنوات الناقلة كمعلومة نصية."
-msgstr ""
-"Horarios de los partidos en tu hora local y los canales de TV como "
-"información."
+#: includes/class-pages.php:255
+msgid "مواعيد المباريات والقنوات الناقلة كمعلومة نصية."
+msgstr "Los horarios de los partidos y los canales de TV como información."
 
-#: includes/class-pages.php:254
+#: includes/class-pages.php:256
 msgid "جداول الترتيب وقوائم الهدافين للدوريات والبطولات."
 msgstr "Clasificaciones y tablas de goleadores de ligas y competiciones."
 
-#: includes/class-pages.php:255
+#: includes/class-pages.php:257
 msgid "الأخبار والتحليلات والمعاينات التي يكتبها فريق التحرير."
 msgstr ""
 "Noticias, análisis y previas escritos por nuestro equipo de redacción."
 
-#: includes/class-pages.php:258
+#: includes/class-pages.php:260
 msgid "مصادر البيانات"
 msgstr "Fuentes de datos"
 
-#: includes/class-pages.php:259
+#: includes/class-pages.php:261
 msgid ""
 "نعتمد على مزوّدي بيانات رياضية مرخّصين، ونراجع المحتوى التحريري قبل نشره. إن"
 " لاحظت خطأً، يسعدنا تواصلك معنا عبر صفحة «اتصل بنا»."
@@ -1612,11 +1646,11 @@ msgstr ""
 "contenido editorial antes de publicarlo. Si ves un error, avísanos desde la "
 "página «Contacto»."
 
-#: includes/class-pages.php:260
+#: includes/class-pages.php:262
 msgid "التزامنا"
 msgstr "Nuestro compromiso"
 
-#: includes/class-pages.php:261
+#: includes/class-pages.php:263
 msgid ""
 "لا يقدّم {site} أي بث مباشر للمباريات ولا روابط بث، ويحترم حقوق الملكية "
 "الفكرية لجميع الجهات."
@@ -1625,7 +1659,7 @@ msgstr ""
 "streaming, y respeta los derechos de propiedad intelectual de todas las "
 "partes."
 
-#: includes/class-pages.php:266
+#: includes/class-pages.php:268
 msgid ""
 "يسعدنا تواصلك مع فريق {site} للاستفسارات أو الملاحظات أو تصحيح المعلومات أو "
 "الإعلان. املأ النموذج التالي وسنرد عليك في أقرب وقت."
@@ -1634,15 +1668,15 @@ msgstr ""
 "correcciones o consultas publicitarias. Rellena el formulario y te "
 "responderemos lo antes posible."
 
-#: includes/class-pages.php:268
+#: includes/class-pages.php:270
 msgid "يمكنك أيضاً مراسلتنا على البريد: {email}"
 msgstr "También puedes escribirnos a: {email}"
 
-#: includes/class-pages.php:273
+#: includes/class-pages.php:275
 msgid "آخر تحديث: {date}"
 msgstr "Última actualización: {date}"
 
-#: includes/class-pages.php:274
+#: includes/class-pages.php:276
 msgid ""
 "توضح هذه السياسة كيف يجمع موقع {site} ({domain}) المعلومات ويستخدمها ويحميها"
 " عند زيارتك له."
@@ -1650,11 +1684,11 @@ msgstr ""
 "Esta política explica cómo {site} ({domain}) recopila, usa y protege la "
 "información cuando lo visitas."
 
-#: includes/class-pages.php:275
+#: includes/class-pages.php:277
 msgid "المعلومات التي نجمعها"
 msgstr "Información que recopilamos"
 
-#: includes/class-pages.php:278
+#: includes/class-pages.php:280
 msgid ""
 "معلومات تقدّمها طوعاً، مثل الاسم والبريد الإلكتروني عند استخدام نموذج "
 "التواصل."
@@ -1662,7 +1696,7 @@ msgstr ""
 "Información que facilitas voluntariamente, como tu nombre y correo al usar "
 "el formulario de contacto."
 
-#: includes/class-pages.php:279
+#: includes/class-pages.php:281
 msgid ""
 "معلومات تقنية تُجمع تلقائياً، مثل نوع المتصفح والجهاز والصفحات التي تزورها، "
 "لأغراض الإحصاء وتحسين الموقع."
@@ -1671,11 +1705,11 @@ msgstr ""
 "dispositivo y las páginas que visitas, con fines estadísticos y para mejorar"
 " el sitio."
 
-#: includes/class-pages.php:282
+#: includes/class-pages.php:284
 msgid "ملفات تعريف الارتباط (Cookies)"
 msgstr "Cookies"
 
-#: includes/class-pages.php:283
+#: includes/class-pages.php:285
 msgid ""
 "يستخدم الموقع ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الداكن) ولقياس "
 "الزيارات ولعرض الإعلانات. يمكنك التحكم في ملفات تعريف الارتباط أو حذفها من "
@@ -1689,11 +1723,11 @@ msgstr ""
 "antes de usar cookies publicitarias personalizadas cuando la ley lo exija "
 "(por ejemplo, en el Espacio Económico Europeo, el Reino Unido y Suiza)."
 
-#: includes/class-pages.php:284
+#: includes/class-pages.php:286
 msgid "إعلانات Google AdSense"
 msgstr "Publicidad de Google AdSense"
 
-#: includes/class-pages.php:285
+#: includes/class-pages.php:287
 msgid ""
 "نستخدم خدمة Google AdSense لعرض الإعلانات. تستخدم Google وشركاؤها ملفات "
 "تعريف الارتباط (ومنها ملف DoubleClick) لعرض إعلانات استناداً إلى زياراتك "
@@ -1703,7 +1737,7 @@ msgstr ""
 "cookies (incluida la cookie de DoubleClick) para mostrar anuncios basados en"
 " tus visitas anteriores a este u otros sitios web."
 
-#: includes/class-pages.php:288
+#: includes/class-pages.php:290
 msgid ""
 "يتيح استخدام Google لملفات تعريف الارتباط الإعلانية لها ولشركائها عرض "
 "الإعلانات لك استناداً إلى زيارتك لمواقعنا و/أو مواقع أخرى."
@@ -1712,7 +1746,7 @@ msgstr ""
 "anuncios basados en tus visitas a nuestros sitios y/o a otros sitios de "
 "Internet."
 
-#: includes/class-pages.php:289
+#: includes/class-pages.php:291
 msgid ""
 "يمكنك إيقاف الإعلانات المخصّصة من خلال <a "
 "href=\"https://adssettings.google.com\" rel=\"nofollow noopener\" "
@@ -1728,7 +1762,7 @@ msgstr ""
 "target=\"_blank\">aboutads.info</a> para desactivar las cookies de "
 "proveedores externos."
 
-#: includes/class-pages.php:290
+#: includes/class-pages.php:292
 msgid ""
 "لمعرفة المزيد عن كيفية استخدام Google للبيانات: <a "
 "href=\"https://policies.google.com/technologies/partner-sites\" "
@@ -1740,11 +1774,11 @@ msgstr ""
 "rel=\"nofollow noopener\" target=\"_blank\">cómo utiliza Google la "
 "información de sitios o aplicaciones que usan sus servicios</a>."
 
-#: includes/class-pages.php:293
+#: includes/class-pages.php:295
 msgid "أطراف ثالثة"
 msgstr "Terceros"
 
-#: includes/class-pages.php:294
+#: includes/class-pages.php:296
 msgid ""
 "قد يحتوي الموقع على خدمات لأطراف ثالثة مثل Google (الإعلانات والإحصاءات "
 "والخطوط) ومزوّدي البيانات الرياضية. لهذه الجهات سياسات خصوصية مستقلة، ولا "
@@ -1755,27 +1789,27 @@ msgstr ""
 "tienen sus propias políticas de privacidad y no controlamos sus prácticas. "
 "Te recomendamos consultarlas."
 
-#: includes/class-pages.php:295
+#: includes/class-pages.php:297
 msgid "كيف نستخدم المعلومات"
 msgstr "Cómo usamos la información"
 
-#: includes/class-pages.php:298
+#: includes/class-pages.php:300
 msgid "تشغيل الموقع وتحسينه وتحليل استخدامه."
 msgstr "Para hacer funcionar, mejorar y analizar el uso del sitio."
 
-#: includes/class-pages.php:299
+#: includes/class-pages.php:301
 msgid "الرد على رسائلك واستفساراتك."
 msgstr "Para responder a tus mensajes y consultas."
 
-#: includes/class-pages.php:300
+#: includes/class-pages.php:302
 msgid "عرض الإعلانات وقياس أدائها وفق موافقتك."
 msgstr "Para mostrar anuncios y medir su rendimiento según tu consentimiento."
 
-#: includes/class-pages.php:303
+#: includes/class-pages.php:305
 msgid "حقوقك"
 msgstr "Tus derechos"
 
-#: includes/class-pages.php:304
+#: includes/class-pages.php:306
 msgid ""
 "يحق لك طلب الاطلاع على بياناتك أو تصحيحها أو حذفها، وسحب موافقتك على ملفات "
 "تعريف الارتباط في أي وقت عبر رابط «إعدادات الخصوصية» أسفل الصفحة. للتواصل: "
@@ -1785,21 +1819,21 @@ msgstr ""
 "y retirar tu consentimiento de cookies en cualquier momento mediante el "
 "enlace «Ajustes de privacidad» al pie de la página. Contacto: {email}"
 
-#: includes/class-pages.php:305
+#: includes/class-pages.php:307
 msgid "خصوصية الأطفال"
 msgstr "Privacidad de los menores"
 
-#: includes/class-pages.php:306
+#: includes/class-pages.php:308
 msgid "لا يستهدف الموقع الأطفال دون 13 عاماً، ولا نجمع بياناتهم عن قصد."
 msgstr ""
 "El sitio no está dirigido a menores de 13 años y no recopilamos sus datos de"
 " forma intencionada."
 
-#: includes/class-pages.php:307
+#: includes/class-pages.php:309
 msgid "التعديلات"
 msgstr "Cambios"
 
-#: includes/class-pages.php:308
+#: includes/class-pages.php:310
 msgid ""
 "قد نحدّث هذه السياسة من وقت لآخر، وسيُنشر أي تعديل في هذه الصفحة مع تاريخ "
 "التحديث."
@@ -1807,15 +1841,15 @@ msgstr ""
 "Podemos actualizar esta política de vez en cuando. Cualquier cambio se "
 "publicará en esta página con la fecha de actualización."
 
-#: includes/class-pages.php:313
+#: includes/class-pages.php:315
 msgid "باستخدامك موقع {site} فإنك توافق على الشروط التالية:"
 msgstr "Al usar {site} aceptas las siguientes condiciones:"
 
-#: includes/class-pages.php:314
+#: includes/class-pages.php:316
 msgid "استخدام المحتوى"
 msgstr "Uso del contenido"
 
-#: includes/class-pages.php:315
+#: includes/class-pages.php:317
 msgid ""
 "المحتوى التحريري في الموقع (الأخبار والتحليلات) محمي بحقوق النشر، ولا يجوز "
 "نسخه أو إعادة نشره دون إذن كتابي مسبق مع ذكر المصدر."
@@ -1824,11 +1858,11 @@ msgstr ""
 "derechos de autor y no puede copiarse ni republicarse sin permiso previo por"
 " escrito y mención de la fuente."
 
-#: includes/class-pages.php:316
+#: includes/class-pages.php:318
 msgid "دقة المعلومات"
 msgstr "Exactitud de la información"
 
-#: includes/class-pages.php:317
+#: includes/class-pages.php:319
 msgid ""
 "نبذل جهدنا لعرض النتائج والمواعيد بدقة، لكنها تُقدَّم «كما هي» وقد تتأخر أو "
 "تتغير. لا يتحمل الموقع مسؤولية أي قرار يُتخذ بناءً عليها."
@@ -1837,28 +1871,28 @@ msgstr ""
 "ofrecen «tal cual» y pueden retrasarse o cambiar. El sitio no se "
 "responsabiliza de las decisiones tomadas en base a ellos."
 
-#: includes/class-pages.php:318
+#: includes/class-pages.php:320
 msgid "السلوك المقبول"
 msgstr "Uso aceptable"
 
-#: includes/class-pages.php:321
+#: includes/class-pages.php:323
 msgid "عدم إساءة استخدام الموقع أو محاولة اختراقه أو تعطيله."
 msgstr ""
 "No hacer un uso indebido del sitio ni intentar piratearlo o interrumpirlo."
 
-#: includes/class-pages.php:322
+#: includes/class-pages.php:324
 msgid "عدم استخدام أدوات آلية لسحب البيانات بشكل مكثف."
 msgstr "No usar herramientas automáticas para extraer datos de forma masiva."
 
-#: includes/class-pages.php:323
+#: includes/class-pages.php:325
 msgid "الالتزام بالقوانين السارية عند استخدام الموقع."
 msgstr "Cumplir las leyes aplicables al usar el sitio."
 
-#: includes/class-pages.php:326
+#: includes/class-pages.php:328
 msgid "الروابط الخارجية"
 msgstr "Enlaces externos"
 
-#: includes/class-pages.php:327
+#: includes/class-pages.php:329
 msgid ""
 "قد يحتوي الموقع على روابط لمواقع أخرى لا نتحكم في محتواها ولا نتحمل "
 "مسؤوليته."
@@ -1866,11 +1900,11 @@ msgstr ""
 "El sitio puede contener enlaces a otros sitios cuyo contenido no controlamos"
 " y del que no nos hacemos responsables."
 
-#: includes/class-pages.php:328
+#: includes/class-pages.php:330
 msgid "التعديل"
 msgstr "Modificaciones"
 
-#: includes/class-pages.php:329
+#: includes/class-pages.php:331
 msgid ""
 "يحق لإدارة الموقع تعديل هذه الشروط في أي وقت، ويُعد استمرار استخدامك للموقع "
 "قبولاً بها."
@@ -1878,13 +1912,13 @@ msgstr ""
 "La administración del sitio puede modificar estas condiciones en cualquier "
 "momento; seguir usando el sitio implica su aceptación."
 
-#: includes/class-pages.php:334
+#: includes/class-pages.php:336
 msgid "المعلومات المنشورة على {site} لأغراض إعلامية عامة فقط."
 msgstr ""
 "La información publicada en {site} tiene únicamente fines informativos "
 "generales."
 
-#: includes/class-pages.php:337
+#: includes/class-pages.php:339
 msgid ""
 "لا يقدّم الموقع أي بث مباشر للمباريات ولا يستضيف أو يوفّر روابط بث، ويعرض "
 "النتائج والإحصائيات نصياً فقط."
@@ -1893,7 +1927,7 @@ msgstr ""
 "facilita enlaces de streaming; muestra los resultados y estadísticas solo "
 "como texto."
 
-#: includes/class-pages.php:338
+#: includes/class-pages.php:340
 msgid ""
 "أسماء الأندية والبطولات والعلامات التجارية مملوكة لأصحابها، واستخدامها "
 "للتعريف فقط."
@@ -1901,24 +1935,24 @@ msgstr ""
 "Los nombres de clubes, competiciones y marcas pertenecen a sus propietarios "
 "y se usan solo con fines identificativos."
 
-#: includes/class-pages.php:339
+#: includes/class-pages.php:341
 msgid "البيانات الرياضية مصدرها مزوّدون خارجيون وقد تحتوي على أخطاء أو تأخير."
 msgstr ""
 "Los datos deportivos proceden de proveedores externos y pueden contener "
 "errores o retrasos."
 
-#: includes/class-pages.php:340
+#: includes/class-pages.php:342
 msgid "الموقع غير مرتبط رسمياً بأي اتحاد أو نادٍ أو بطولة."
 msgstr ""
 "El sitio no está afiliado oficialmente a ninguna federación, club o "
 "competición."
 
-#: includes/class-pages.php:341
+#: includes/class-pages.php:343
 msgid "لا يروّج الموقع للمراهنات أو القمار بأي شكل."
 msgstr ""
 "El sitio no promociona las apuestas ni los juegos de azar de ninguna forma."
 
-#: includes/class-pages.php:344
+#: includes/class-pages.php:346
 msgid "للإبلاغ عن خطأ أو انتهاك لحقوق الملكية، راسلنا عبر صفحة «اتصل بنا»."
 msgstr ""
 "Para informar de un error o de una infracción de derechos de autor, "
@@ -1999,19 +2033,19 @@ msgstr "Buscar en: %s"
 msgid "لا توجد عناصر."
 msgstr "No se han encontrado elementos."
 
-#: includes/class-seeder.php:218
+#: includes/class-seeder.php:289
 msgid "مدرب الفريق المضيف"
 msgstr "Entrenador del equipo local"
 
-#: includes/class-seeder.php:218
+#: includes/class-seeder.php:289
 msgid "مدرب الفريق الضيف"
 msgstr "Entrenador del equipo visitante"
 
-#: includes/class-seeder.php:432
+#: includes/class-seeder.php:503
 msgid "beIN Sports (مثال)"
 msgstr "beIN Sports (ejemplo)"
 
-#: includes/class-seeder.php:442
+#: includes/class-seeder.php:513
 msgid ""
 "معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة "
 "العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة."
@@ -2020,7 +2054,7 @@ msgstr ""
 "Barcelona, en el partido estrella de la jornada 10 de LaLiga, un duelo clave"
 " en la lucha por el título."
 
-#: includes/class-seeder.php:442
+#: includes/class-seeder.php:513
 msgid ""
 "يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة،"
 " ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم "
@@ -2032,7 +2066,7 @@ msgstr ""
 "desde el panel."
 
 #. translators: %s: competition.
-#: includes/class-seeder.php:552
+#: includes/class-seeder.php:623
 msgid ""
 "صفحة %s: تابع جدول الترتيب ومواعيد المباريات ونتائجها وقائمة الهدافين. "
 "(محتوى تجريبي يمكن تعديله من لوحة التحكم.)"
@@ -2040,53 +2074,53 @@ msgstr ""
 "Página de %s: sigue la clasificación, el calendario, los resultados y los "
 "máximos goleadores. (Contenido de demostración editable desde el panel.)"
 
-#: includes/class-seeder.php:591
+#: includes/class-seeder.php:662
 msgid "ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة"
 msgstr "El Real Madrid prepara el Clásico ante el Barcelona"
 
-#: includes/class-seeder.php:592
+#: includes/class-seeder.php:663
 msgid "ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي"
 msgstr ""
 "El Liverpool sigue ganando y refuerza su liderato en la Premier League"
 
-#: includes/class-seeder.php:593
+#: includes/class-seeder.php:664
 msgid "الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن"
 msgstr "El Al-Hilal golea 3-0 al Al-Ittihad en la Saudi Pro League"
 
-#: includes/class-seeder.php:594
+#: includes/class-seeder.php:665
 msgid "تعادل مثير بين الأهلي وبيراميدز في الدوري المصري"
 msgstr "Empate emocionante entre Al Ahly y Pyramids en la liga egipcia"
 
-#: includes/class-seeder.php:595
+#: includes/class-seeder.php:666
 msgid "بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال"
 msgstr ""
 "Bayern de Múnich y Paris Saint-Germain, duelo de alto voltaje en la "
 "Champions League"
 
-#: includes/class-seeder.php:596
+#: includes/class-seeder.php:667
 msgid "ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية"
 msgstr ""
 "Derbi de Casablanca: Wydad y Raja se enfrentan en la cima de la Botola"
 
-#: includes/class-seeder.php:597
+#: includes/class-seeder.php:668
 msgid "ليكرز يتفوق على سلتيكس في قمة مثيرة بالدوري الأمريكي"
 msgstr "Los Lakers superan a los Celtics en un duelo vibrante de la NBA"
 
-#: includes/class-seeder.php:598
+#: includes/class-seeder.php:669
 msgid "ألكاراز وسينر في مواجهة جديدة بالبطولة الختامية"
 msgstr "Alcaraz y Sinner, de nuevo frente a frente en las ATP Finals"
 
-#: includes/class-seeder.php:599
+#: includes/class-seeder.php:670
 msgid "الهلال يقترب من حسم صفقة جديدة في الميركاتو الشتوي"
 msgstr ""
 "El Al-Hilal, cerca de cerrar un nuevo fichaje en el mercado de invierno"
 
-#: includes/class-seeder.php:600
+#: includes/class-seeder.php:671
 msgid "تحليل: كيف يحسم خط الوسط مباريات الكلاسيكو؟"
 msgstr "Análisis: cómo el centro del campo decide el Clásico"
 
 #. translators: 1: first team, 2: second team.
-#: includes/class-seeder.php:622
+#: includes/class-seeder.php:693
 msgid ""
 "خبر تجريبي: تتجه الأنظار إلى مواجهة %1$s و%2$s، حيث يسعى كل فريق إلى تحقيق "
 "نتيجة إيجابية تعزز حظوظه هذا الموسم."
@@ -2096,7 +2130,7 @@ msgstr ""
 " opciones esta temporada."
 
 #. translators: %s: team.
-#: includes/class-seeder.php:624
+#: includes/class-seeder.php:695
 msgid ""
 "وأكد الجهاز الفني لفريق %s جاهزية اللاعبين بعد سلسلة من الحصص التدريبية "
 "المكثفة، مع عودة بعض العناصر الأساسية من الإصابة."
@@ -2105,7 +2139,7 @@ msgstr ""
 " de entrenamientos intensos, con el regreso de varios titulares lesionados."
 
 #. translators: %s: team.
-#: includes/class-seeder.php:626
+#: includes/class-seeder.php:697
 msgid ""
 "في المقابل، يدخل %s اللقاء بطموح كبير، معتمداً على الانضباط الدفاعي والهجمات"
 " المرتدة السريعة."
@@ -2113,7 +2147,7 @@ msgstr ""
 "Por su parte, el %s afronta el partido con grandes ambiciones, apoyado en la"
 " disciplina defensiva y los contraataques rápidos."
 
-#: includes/class-seeder.php:627
+#: includes/class-seeder.php:698
 msgid ""
 "ويرى المحللون أن خط الوسط سيكون مفتاح المباراة، وأن الفريق الأكثر استحواذاً "
 "على الكرة سيملك الأفضلية في الشوط الثاني."
@@ -2121,7 +2155,7 @@ msgstr ""
 "Los analistas creen que el centro del campo decidirá el partido y que el "
 "equipo con más posesión tendrá ventaja en la segunda parte."
 
-#: includes/class-seeder.php:628
+#: includes/class-seeder.php:699
 msgid ""
 "هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > "
 "SportsArena > الأدوات."
@@ -2129,7 +2163,7 @@ msgstr ""
 "Este contenido de demostración muestra el diseño de una noticia; puedes "
 "eliminarlo en Panel > SportsArena > Herramientas."
 
-#: includes/class-seeder.php:635
+#: includes/class-seeder.php:706
 msgid ""
 "تكتيكياً، يميل الفريقان إلى الضغط العالي في الدقائق الأولى، ما يجعل الكرات "
 "الثانية والتحولات السريعة عاملاً حاسماً."
@@ -2137,7 +2171,7 @@ msgstr ""
 "Tácticamente, ambos equipos suelen presionar arriba al principio, lo que "
 "hace decisivas las segundas jugadas y las transiciones rápidas."
 
-#: includes/class-seeder.php:636
+#: includes/class-seeder.php:707
 msgid ""
 "وتشير الأرقام إلى أن الفريق الذي يسجل أولاً في هذه المواجهة فاز في أغلب "
 "المباريات الأخيرة بينهما."
@@ -2145,13 +2179,13 @@ msgstr ""
 "Los números indican que el equipo que marca primero en este duelo ha ganado "
 "la mayoría de los últimos enfrentamientos."
 
-#: includes/class-seeder.php:637
+#: includes/class-seeder.php:708
 msgid "أما بدنياً، فقد يكون عمق دكة البدلاء هو الفارق في آخر عشرين دقيقة."
 msgstr ""
 "Físicamente, la profundidad del banquillo puede marcar la diferencia en los "
 "últimos veinte minutos."
 
-#: includes/class-seeder.php:638
+#: includes/class-seeder.php:709
 msgid ""
 "في المحصلة، تبقى التفاصيل الصغيرة وتركيز اللاعبين في الكرات الثابتة مفتاح "
 "الحسم."
@@ -2160,7 +2194,7 @@ msgstr ""
 "parado serán la clave."
 
 #. translators: 1: first team, 2: second team.
-#: includes/class-seeder.php:650
+#: includes/class-seeder.php:721
 msgid "آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة."
 msgstr "Últimas noticias de %1$s y %2$s antes del gran partido."
 
@@ -2273,91 +2307,91 @@ msgstr "Semifinales"
 msgid "النهائي"
 msgstr "Final"
 
-#: includes/functions.php:327
+#: includes/functions.php:335
 msgid "هدف"
 msgstr "Gol"
 
-#: includes/functions.php:328
+#: includes/functions.php:336
 msgid "هدف عكسي"
 msgstr "Gol en propia puerta"
 
-#: includes/functions.php:329
+#: includes/functions.php:337
 msgid "ركلة جزاء"
 msgstr "Penalti"
 
-#: includes/functions.php:330
+#: includes/functions.php:338
 msgid "ركلة جزاء ضائعة"
 msgstr "Penalti fallado"
 
-#: includes/functions.php:331
+#: includes/functions.php:339
 msgid "بطاقة صفراء"
 msgstr "Tarjeta amarilla"
 
-#: includes/functions.php:332
+#: includes/functions.php:340
 msgid "بطاقة حمراء"
 msgstr "Tarjeta roja"
 
-#: includes/functions.php:333
+#: includes/functions.php:341
 msgid "تبديل"
 msgstr "Sustitución"
 
-#: includes/functions.php:334
+#: includes/functions.php:342
 msgid "فار"
 msgstr "VAR"
 
-#: includes/functions.php:347
+#: includes/functions.php:355
 msgid "الاستحواذ"
 msgstr "Posesión"
 
-#: includes/functions.php:348
+#: includes/functions.php:356
 msgid "إجمالي التسديدات"
 msgstr "Tiros totales"
 
-#: includes/functions.php:349
+#: includes/functions.php:357
 msgid "تسديدات على المرمى"
 msgstr "Tiros a puerta"
 
-#: includes/functions.php:350
+#: includes/functions.php:358
 msgid "تسديدات خارج المرمى"
 msgstr "Tiros fuera"
 
-#: includes/functions.php:351
+#: includes/functions.php:359
 msgid "تسديدات محجوبة"
 msgstr "Tiros bloqueados"
 
-#: includes/functions.php:352
+#: includes/functions.php:360
 msgid "الركلات الركنية"
 msgstr "Córneres"
 
-#: includes/functions.php:353
+#: includes/functions.php:361
 msgid "التسلل"
 msgstr "Fueras de juego"
 
-#: includes/functions.php:355
+#: includes/functions.php:363
 msgid "البطاقات الصفراء"
 msgstr "Tarjetas amarillas"
 
-#: includes/functions.php:356
+#: includes/functions.php:364
 msgid "البطاقات الحمراء"
 msgstr "Tarjetas rojas"
 
-#: includes/functions.php:357
+#: includes/functions.php:365
 msgid "تصديات الحارس"
 msgstr "Paradas del portero"
 
-#: includes/functions.php:358
+#: includes/functions.php:366
 msgid "إجمالي التمريرات"
 msgstr "Pases totales"
 
-#: includes/functions.php:359
+#: includes/functions.php:367
 msgid "تمريرات صحيحة"
 msgstr "Pases precisos"
 
-#: includes/functions.php:360
+#: includes/functions.php:368
 msgid "دقة التمرير"
 msgstr "Precisión de pase"
 
-#: includes/functions.php:361
+#: includes/functions.php:369
 msgid "الأهداف المتوقعة (xG)"
 msgstr "Goles esperados (xG)"
 
@@ -2387,7 +2421,7 @@ msgid "مسار التنقل"
 msgstr "Ruta de navegación"
 
 #. translators: Short word between two team names on the share image.
-#: includes/seo/class-og-image.php:193
+#: includes/seo/class-og-image.php:194
 msgid "ضد"
 msgstr "vs"
 
@@ -2395,82 +2429,82 @@ msgstr "vs"
 msgid "يُحدد لاحقاً"
 msgstr "Por confirmar"
 
-#: includes/seo/class-seo.php:108
+#: includes/seo/class-seo.php:109
 msgid "مباريات اليوم"
 msgstr "Partidos de hoy"
 
-#: includes/seo/class-seo.php:109
+#: includes/seo/class-seo.php:110
 msgid "مباريات الغد"
 msgstr "Partidos de mañana"
 
-#: includes/seo/class-seo.php:110
+#: includes/seo/class-seo.php:111
 msgid "مباريات الأمس"
 msgstr "Partidos de ayer"
 
 #. translators: %s: date.
-#: includes/seo/class-seo.php:113
+#: includes/seo/class-seo.php:114
 msgid "مباريات يوم %s"
 msgstr "Partidos del %s"
 
 #. translators: %s: label with date.
-#: includes/seo/class-seo.php:116
+#: includes/seo/class-seo.php:117
 msgid "%s: المواعيد والنتائج المباشرة"
 msgstr "%s: horarios y resultados en directo"
 
 #. translators: %s: team name.
-#: includes/seo/class-seo.php:124
+#: includes/seo/class-seo.php:125
 msgid "%s: مواعيد المباريات والنتائج وآخر الأخبار"
 msgstr "%s: calendario, resultados y últimas noticias"
 
 #. translators: %s: competition.
-#: includes/seo/class-seo.php:134
+#: includes/seo/class-seo.php:135
 msgid "جدول ترتيب %s"
 msgstr "Clasificación de %s"
 
 #. translators: %s: competition.
-#: includes/seo/class-seo.php:137
+#: includes/seo/class-seo.php:138
 msgid "ترتيب هدافي %s"
 msgstr "Máximos goleadores de %s"
 
 #. translators: %s: competition.
-#: includes/seo/class-seo.php:140
+#: includes/seo/class-seo.php:141
 msgid "مباريات %s: المواعيد والنتائج"
 msgstr "Partidos de %s: calendario y resultados"
 
 #. translators: %s: competition.
-#: includes/seo/class-seo.php:143
+#: includes/seo/class-seo.php:144
 msgid "%s: جدول الترتيب والمباريات والهدافين"
 msgstr "%s: clasificación, partidos y goleadores"
 
 #. translators: %s: sport.
-#: includes/seo/class-seo.php:147
+#: includes/seo/class-seo.php:148
 msgid "%s: نتائج المباريات والمواعيد والأخبار"
 msgstr "%s: resultados, calendario y noticias"
 
 #. translators: 1: teams and score, 2: competition.
-#: includes/seo/class-seo.php:169
+#: includes/seo/class-seo.php:170
 msgid "%1$s: نتيجة المباراة والأهداف والتشكيلة%2$s"
 msgstr "%1$s: resultado, goles y alineaciones%2$s"
 
 #. translators: 1: teams, 2: relative day or date, 3: competition.
-#: includes/seo/class-seo.php:173
+#: includes/seo/class-seo.php:174
 msgid "%1$s %2$s: موعد المباراة والتشكيلة والنتيجة المباشرة%3$s"
 msgstr "%1$s %2$s: horario, alineaciones y resultado en directo%3$s"
 
-#: includes/seo/class-seo.php:188
+#: includes/seo/class-seo.php:189
 msgid "اليوم"
 msgstr "hoy"
 
-#: includes/seo/class-seo.php:191
+#: includes/seo/class-seo.php:192
 msgid "غداً"
 msgstr "mañana"
 
-#: includes/seo/class-seo.php:194
+#: includes/seo/class-seo.php:195
 msgid "أمس"
 msgstr "ayer"
 
 #. translators: %s: date.
-#: includes/seo/class-seo.php:212
+#: includes/seo/class-seo.php:213
 msgid ""
 "جدول مواعيد ونتائج مباريات يوم %s في جميع البطولات: الدوريات الأوروبية "
 "والعربية ودوري الأبطال، مع النتائج المباشرة والتشكيلات وتوقيت كل مباراة "
@@ -2480,16 +2514,16 @@ msgstr ""
 "ligas europeas y árabes y la Champions League, con resultados en directo, "
 "alineaciones y cada partido en tu hora local."
 
-#: includes/seo/class-seo.php:225
+#: includes/seo/class-seo.php:226
 msgid "الساعة"
 msgstr "a las"
 
-#: includes/seo/class-seo.php:226
+#: includes/seo/class-seo.php:227
 msgid "على ملعب"
 msgstr "en el estadio"
 
 #. translators: 1: teams, 2: score, 3: competition, 4: date.
-#: includes/seo/class-seo.php:229
+#: includes/seo/class-seo.php:230
 msgid ""
 "نتيجة مباراة %1$s (%2$s) في %3$s يوم %4$s: الأهداف والبطاقات والتشكيلة "
 "والإحصائيات الكاملة."
@@ -2498,7 +2532,7 @@ msgstr ""
 "estadísticas completas."
 
 #. translators: 1: teams, 2: competition, 3: date/time, 4: venue.
-#: includes/seo/class-seo.php:232
+#: includes/seo/class-seo.php:233
 msgid ""
 "موعد مباراة %1$s في %2$s يوم %3$s%4$s. تابع التشكيلة الرسمية والإحصائيات "
 "والنتيجة المباشرة لحظة بلحظة."
@@ -2507,7 +2541,7 @@ msgstr ""
 " y el resultado en directo minuto a minuto."
 
 #. translators: %s: team.
-#: includes/seo/class-seo.php:241
+#: includes/seo/class-seo.php:242
 msgid ""
 "كل ما يخص %s: المباريات القادمة ونتائج المباريات السابقة ومواعيدها، وآخر "
 "الأخبار والتحليلات."
@@ -2516,7 +2550,7 @@ msgstr ""
 " de las últimas noticias y análisis."
 
 #. translators: %s: competition.
-#: includes/seo/class-seo.php:250
+#: includes/seo/class-seo.php:251
 msgid ""
 "جدول ترتيب %s محدّث، ومواعيد ونتائج المباريات حسب الجولات، وقائمة الهدافين."
 msgstr ""
@@ -2524,12 +2558,12 @@ msgstr ""
 "lista de máximos goleadores."
 
 #. translators: %s: sport.
-#: includes/seo/class-seo.php:258
+#: includes/seo/class-seo.php:259
 msgid "نتائج ومواعيد مباريات %s اليوم، وآخر الأخبار والتغطيات."
 msgstr "Resultados y horarios de hoy en %s, y las últimas noticias."
 
 #. translators: %s: site name.
-#: includes/seo/class-seo.php:268
+#: includes/seo/class-seo.php:269
 msgid ""
 "%s: نتائج المباريات المباشرة ومواعيد مباريات اليوم والغد، جداول الترتيب "
 "والهدافين، وآخر أخبار كرة القدم وباقي الرياضات."

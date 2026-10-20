@@ -40,6 +40,7 @@ final class Options {
 			'live_interval'          => 60,
 			'allow_logos'            => 0,
 			'cache_logos'            => 1,
+			'time_display'           => 'gmt',
 			'timezone_label'         => '',
 			'news_sitemap'           => 1,
 			'alternate_sites'        => '',

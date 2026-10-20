@@ -44,6 +44,7 @@ final class Plugin {
 
 		Installer::maybe_upgrade();
 
+		( new Time_Display() )->register_hooks();
 		( new Locale_Fallback() )->register_hooks();
 		( new Localized_Names() )->register_hooks();
 		( new Post_Types() )->register_hooks();
@@ -61,6 +62,7 @@ final class Plugin {
 		( new Linking() )->register_hooks();
 		( new Logo_Cache() )->register_hooks();
 		( new News_Sections() )->register_hooks();
+		( new Relocalize() )->register_hooks();
 
 		if ( is_admin() ) {
 			( new Admin\Settings() )->register_hooks();

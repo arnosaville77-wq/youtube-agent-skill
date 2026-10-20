@@ -85,8 +85,9 @@ function sportsarena_round_label( $round ) {
 }
 
 /**
- * <time> element: shows the site-timezone time server side; the theme JS
- * converts it to the visitor's timezone and keeps the original as a tooltip.
+ * <time> element. GMT mode: Greenwich time with a "GMT" label. Local mode:
+ * the site-timezone time server side, which the theme JS converts to the
+ * visitor's timezone (the original is kept as a tooltip).
  *
  * @param int    $timestamp UTC timestamp.
  * @param string $format    PHP date format.
@@ -95,6 +96,13 @@ function sportsarena_round_label( $round ) {
 function sportsarena_time_html( $timestamp, $format = 'H:i' ) {
 	if ( ! $timestamp ) {
 		return '';
+	}
+	if ( SportsArena\Core\Time_Display::is_gmt() ) {
+		return sprintf(
+			'<time class="sa-time" datetime="%1$s">%2$s <span class="sa-tz">GMT</span></time>',
+			esc_attr( gmdate( 'c', $timestamp ) ),
+			esc_html( wp_date( $format, $timestamp ) )
+		);
 	}
 	$label = (string) Options::get( 'timezone_label' );
 	$title = wp_date( 'Y-m-d H:i', $timestamp ) . ( $label ? ' (' . $label . ')' : ' (' . wp_timezone_string() . ')' );

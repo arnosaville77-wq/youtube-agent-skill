@@ -129,6 +129,7 @@ final class Settings {
 		$out['daily_limit']        = max( 0, absint( $input['daily_limit'] ?? 100 ) );
 		$out['minute_limit']       = max( 0, absint( $input['minute_limit'] ?? 10 ) );
 		$out['live_interval']      = max( 60, absint( $input['live_interval'] ?? 60 ) );
+		$out['time_display']       = 'local' === ( $input['time_display'] ?? '' ) ? 'local' : 'gmt';
 		$out['timezone_label']     = sanitize_text_field( $input['timezone_label'] ?? '' );
 		$alternates                = array();
 		foreach ( preg_split( '/\r\n|\r|\n/', (string) ( $input['alternate_sites'] ?? '' ) ) as $line ) {
@@ -295,6 +296,18 @@ final class Settings {
 					$this->row( $n, 'daily_limit', __( 'الحد اليومي لكل مزوّد', 'sportsarena-core' ), $o['daily_limit'], __( 'عدد الطلبات المسموح بها يومياً (الخطة المجانية لـ API-Football: 100). 0 = بلا حد.', 'sportsarena-core' ), 'number' );
 					$this->row( $n, 'minute_limit', __( 'الحد في الدقيقة', 'sportsarena-core' ), $o['minute_limit'], __( 'حسب خطتك (المجانية: 10).', 'sportsarena-core' ), 'number' );
 					$this->row( $n, 'live_interval', __( 'فاصل تحديث المباريات الحية (ثانية)', 'sportsarena-core' ), $o['live_interval'], __( 'لا يقل عن 60. يعمل فقط أثناء وجود مباريات حية.', 'sportsarena-core' ), 'number' );
+					?>
+					<tr>
+						<th scope="row"><?php esc_html_e( 'عرض المواعيد', 'sportsarena-core' ); ?></th>
+						<td>
+							<fieldset>
+								<label><input type="radio" name="<?php echo esc_attr( $n . '[time_display]' ); ?>" value="gmt" <?php checked( 'local' !== $o['time_display'] ); ?>> <?php esc_html_e( 'بتوقيت جرينتش (GMT) لكل الزوار', 'sportsarena-core' ); ?></label><br>
+								<label><input type="radio" name="<?php echo esc_attr( $n . '[time_display]' ); ?>" value="local" <?php checked( 'local', $o['time_display'] ); ?>> <?php esc_html_e( 'بتوقيت جهاز كل زائر (يتحوّل تلقائياً)', 'sportsarena-core' ); ?></label>
+							</fieldset>
+							<p class="description"><?php esc_html_e( 'مع GMT تظهر كل الأوقات بتوقيت جرينتش مع كلمة GMT، وتُحسب صفحات «اليوم» و«الغد» بتوقيت جرينتش بدل المنطقة الزمنية في الإعدادات > عام.', 'sportsarena-core' ); ?></p>
+						</td>
+					</tr>
+					<?php
 					$this->row( $n, 'timezone_label', __( 'اسم التوقيت الأصلي', 'sportsarena-core' ), $o['timezone_label'], __( 'يظهر بجانب التوقيت الأصلي، مثال: «بتوقيت مكة». المنطقة الزمنية نفسها من الإعدادات > عام.', 'sportsarena-core' ) );
 					?>
 				</table>
@@ -568,6 +581,7 @@ final class Settings {
 			<h2><?php esc_html_e( 'الصفحات والملفات', 'sportsarena-core' ); ?></h2>
 			<?php
 			$tool( 'sportsarena_create_pages', __( 'إنشاء الصفحات الإلزامية وأقسام الأخبار', 'sportsarena-core' ), __( 'صفحة الأخبار، أقسام الأخبار لكل رياضة، من نحن، اتصل بنا، الخصوصية، الشروط، إخلاء المسؤولية (لا يستبدل الموجود).', 'sportsarena-core' ) );
+			$tool( 'sportsarena_relocalize', __( 'تحويل المحتوى إلى لغة الموقع', 'sportsarena-core' ), __( 'يعيد كتابة الصفحات الإلزامية وأقسام الأخبار والبيانات التجريبية بلغة الموقع الحالية، حتى لا تختلط لغتان في صفحة. يحدث تلقائياً عند تغيير اللغة من الإعدادات > عام، ولا يلمس ما عدّلته بنفسك.', 'sportsarena-core' ) );
 			$tool( 'sportsarena_cache_logos', __( 'تنزيل الشعارات الآن', 'sportsarena-core' ), __( 'يحفظ شعارات المزوّد على موقعك (يتطلب تفعيل عرض الشعارات).', 'sportsarena-core' ) );
 			$tool( 'sportsarena_write_ads_txt', __( 'إعادة إنشاء ads.txt', 'sportsarena-core' ), __( 'يكتب الملف في جذر الموقع إن أمكن.', 'sportsarena-core' ) );
 			$tool( 'sportsarena_flush', __( 'تحديث الروابط الدائمة والكاش', 'sportsarena-core' ), __( 'استخدمه إذا ظهرت صفحة 404 لروابط المباريات.', 'sportsarena-core' ) );

@@ -232,6 +232,15 @@ function sportsarena_theme_language_switcher() {
 }
 
 /**
+ * Whether kickoff times are shown in GMT (plugin setting, the default).
+ *
+ * @return bool
+ */
+function sportsarena_theme_time_is_gmt() {
+	return class_exists( 'SportsArena\\Core\\Time_Display' ) && SportsArena\Core\Time_Display::is_gmt();
+}
+
+/**
  * ID of the news hub page (plugin-created "news" page, or the WordPress
  * posts page), 0 when none.
  *

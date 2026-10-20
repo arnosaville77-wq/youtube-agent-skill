@@ -15,6 +15,7 @@ use SportsArena\Core\Options;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
 use SportsArena\Core\Rewrites;
+use SportsArena\Core\Time_Display;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -222,7 +223,7 @@ final class Seo {
 			/* translators: 1: home team, 2: away team. */
 			$teams = $away ? sprintf( __( '%1$s ضد %2$s', 'sportsarena-core' ), $home, $away ) : $home;
 			$comp  = $m['competition'] ? get_the_title( $m['competition'] ) : '';
-			$when  = wp_date( 'l j F Y', $m['kickoff'] ) . ' ' . __( 'الساعة', 'sportsarena-core' ) . ' ' . wp_date( 'H:i', $m['kickoff'] );
+			$when  = wp_date( 'l j F Y', $m['kickoff'] ) . ' ' . __( 'الساعة', 'sportsarena-core' ) . ' ' . wp_date( 'H:i', $m['kickoff'] ) . Time_Display::suffix();
 			$venue = $m['venue'] ? ' ' . __( 'على ملعب', 'sportsarena-core' ) . ' ' . $m['venue'] : '';
 			if ( 'finished' === $m['status'] && null !== $m['home_score'] ) {
 				/* translators: 1: teams, 2: score, 3: competition, 4: date. */

@@ -429,7 +429,7 @@ final class Seeder {
 				array(
 					'venue'      => 'Santiago Bernabéu',
 					'city'       => 'Madrid',
-					'referee'    => 'Referee Demo',
+					'referee'    => Names::is_arabic() ? 'حكم تجريبي' : 'Demo Referee',
 					'lineups'    => array( $lineup( 'home', 0 ), $lineup( 'away', 5 ) ),
 					'statistics' => $stats,
 				)
@@ -739,6 +739,25 @@ final class Seeder {
 				add_post_meta( $post_id, '_sa_competition_id', $comp_id );
 			}
 		}
+	}
+
+	/**
+	 * Whether demo content exists.
+	 *
+	 * @return bool
+	 */
+	public static function has_demo() {
+		return (bool) get_posts(
+			array(
+				'post_type'      => array( 'post', Post_Types::MATCH, Post_Types::TEAM, Post_Types::COMPETITION ),
+				'post_status'    => 'any',
+				'posts_per_page' => 1,
+				'fields'         => 'ids',
+				'no_found_rows'  => true,
+				'meta_key'       => '_sa_demo', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_query_meta_key -- Single lookup.
+				'meta_value'     => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_query_meta_value -- Single lookup.
+			)
+		);
 	}
 
 	/**

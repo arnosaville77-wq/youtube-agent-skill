@@ -99,4 +99,13 @@ final class Cli {
 		$ids = Pages::create_required_pages();
 		\WP_CLI::success( 'Pages: ' . wp_json_encode( $ids ) );
 	}
+
+	/**
+	 * Rewrite unedited pages, news sections and demo data in the site language.
+	 *
+	 * @return void
+	 */
+	public function relocalize() {
+		\WP_CLI::success( 'Relocalized: ' . wp_json_encode( Relocalize::run() ) );
+	}
 }

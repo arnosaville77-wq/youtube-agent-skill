@@ -104,7 +104,7 @@ h1,h2,h3,h4{line-height:1.35;margin:0 0 .5em}
 .sa-score{display:inline-flex;gap:6px;font-weight:700;font-size:1.05rem;font-variant-numeric:tabular-nums}
 .sa-score--time{font-weight:700;color:var(--text)}
 .sa-row--live .sa-score,.sa-row--halftime .sa-score{color:var(--live)}
-.sa-logo{flex:none;border-radius:6px}
+.sa-logo{flex:none;border-radius:6px;object-fit:contain}
 /* Scoreboard (match page) */
 .sa-scoreboard{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;text-align:center}
 .sa-scoreboard__comp{margin:0 0 4px;font-size:.9rem;color:var(--muted)}
@@ -120,6 +120,7 @@ h1,h2,h3,h4{line-height:1.35;margin:0 0 .5em}
 .sa-facts dt{color:var(--muted);display:inline}
 .sa-facts dt::after{content:": "}
 .sa-facts dd{display:inline;margin:0;font-weight:600}
+.sa-tz{font-size:.7em;font-weight:600;color:var(--muted);letter-spacing:.02em}
 .sa-time-original{display:block;color:var(--muted);font-weight:400;font-size:.8rem}
 /* Entity header, article head */
 .sa-entity{display:flex;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:16px;margin-bottom:12px}

@@ -66,6 +66,51 @@ msgid_plural "%s تعليقات"
 msgstr[0] "%s Kommentar"
 msgstr[1] "%s Kommentare"
 
+#: comments.php:41
+msgid "الاسم"
+msgstr "Name"
+
+#: comments.php:42
+msgid "البريد الإلكتروني"
+msgstr "E-Mail"
+
+#: comments.php:43
+msgid "الموقع الإلكتروني"
+msgstr "Website"
+
+#: comments.php:46
+msgid "احفظ اسمي وبريدي وموقعي في هذا المتصفح لاستخدامها في المرة القادمة."
+msgstr ""
+"Meinen Namen, meine E-Mail-Adresse und meine Website in diesem Browser für "
+"den nächsten Kommentar speichern."
+
+#: comments.php:51
+msgid "التعليق"
+msgstr "Kommentar"
+
+#: comments.php:52
+msgid "لن يُنشر بريدك الإلكتروني. الحقول المطلوبة عليها علامة *"
+msgstr ""
+"Deine E-Mail-Adresse wird nicht veröffentlicht. Erforderliche Felder sind "
+"mit * markiert"
+
+#: comments.php:53
+msgid "أضف تعليقاً"
+msgstr "Kommentar schreiben"
+
+#. translators: %s: comment author.
+#: comments.php:55
+msgid "الرد على %s"
+msgstr "Antwort an %s"
+
+#: comments.php:56
+msgid "إلغاء الرد"
+msgstr "Antworten abbrechen"
+
+#: comments.php:57
+msgid "نشر التعليق"
+msgstr "Kommentar abschicken"
+
 #: footer.php:19
 msgid ""
 "نعرض النتائج والمواعيد والإحصائيات والأخبار فقط، ولا نقدّم أي بث مباشر أو "
@@ -171,7 +216,7 @@ msgstr "Seitenleiste"
 msgid "يظهر بجانب المحتوى على الشاشات الكبيرة."
 msgstr "Wird auf großen Bildschirmen neben dem Inhalt angezeigt."
 
-#: inc/setup.php:121
+#: inc/setup.php:162
 msgid ""
 "قالب SportsArena يحتاج إلى إضافة «SportsArena Core» لعرض المباريات والفرق "
 "والبطولات. ارفعها وفعّلها من صفحة الإضافات."
@@ -206,14 +251,21 @@ msgid "مباريات يوم %s"
 msgstr "Spiele am %s"
 
 #. translators: %s: date.
-#: matches-day.php:32
+#: matches-day.php:33
+msgid ""
+"مواعيد ونتائج مباريات %s في كل البطولات. كل الأوقات بتوقيت جرينتش (GMT)."
+msgstr ""
+"Spielplan und Ergebnisse vom %s in allen Wettbewerben. Alle Zeiten in GMT."
+
+#. translators: %s: date.
+#: matches-day.php:36
 msgid ""
 "مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً."
 msgstr ""
 "Anstoßzeiten und Ergebnisse der Spiele am %s in allen Wettbewerben. Die "
 "Uhrzeiten werden automatisch in der Zeitzone deines Geräts angezeigt."
 
-#: matches-day.php:37
+#: matches-day.php:42
 msgid "لا توجد مباريات في هذا اليوم."
 msgstr "An diesem Tag gibt es keine Spiele."
 
@@ -266,7 +318,7 @@ msgstr "Kommende Spiele"
 msgid "لا توجد مباريات قادمة."
 msgstr "Keine kommenden Spiele."
 
-#: single-competition.php:67 single-match.php:252
+#: single-competition.php:67 single-match.php:254
 msgid "جدول الترتيب"
 msgstr "Tabelle"
 
@@ -291,81 +343,81 @@ msgid "الموعد"
 msgstr "Anstoß"
 
 #. translators: 1: time, 2: timezone label.
-#: single-match.php:68
+#: single-match.php:69
 msgid "التوقيت الأصلي: %1$s %2$s"
 msgstr "Originalzeit: %1$s %2$s"
 
-#: single-match.php:74
+#: single-match.php:76
 msgid "الملعب"
 msgstr "Stadion"
 
-#: single-match.php:77
+#: single-match.php:79
 msgid "الحكم"
 msgstr "Schiedsrichter"
 
-#: single-match.php:80
+#: single-match.php:82
 msgid "القناة الناقلة"
 msgstr "TV-Sender"
 
-#: single-match.php:85
+#: single-match.php:87
 msgid "أقسام الصفحة"
 msgstr "Bereiche der Seite"
 
-#: single-match.php:89
+#: single-match.php:91
 msgid "الأحداث"
 msgstr "Ereignisse"
 
-#: single-match.php:93 single-match.php:138
+#: single-match.php:95 single-match.php:140
 msgid "التشكيلة"
 msgstr "Aufstellungen"
 
-#: single-match.php:97
+#: single-match.php:99
 msgid "الإحصائيات"
 msgstr "Statistiken"
 
-#: single-match.php:98 single-match.php:189
+#: single-match.php:100 single-match.php:191
 msgid "المواجهات السابقة"
 msgstr "Direkte Duelle"
 
-#: single-match.php:102
+#: single-match.php:104
 msgid "المعاينة"
 msgstr "Vorbericht"
 
-#: single-match.php:107
+#: single-match.php:109
 msgid "الأهداف والبطاقات"
 msgstr "Tore und Karten"
 
 #. translators: %s: player.
-#: single-match.php:125
+#: single-match.php:127
 msgid "صناعة: %s"
 msgstr "Vorlage: %s"
 
-#: single-match.php:150
+#: single-match.php:152
 msgid "البدلاء"
 msgstr "Ersatzspieler"
 
-#: single-match.php:158
+#: single-match.php:160
 msgid "المدرب:"
 msgstr "Trainer:"
 
-#: single-match.php:168
+#: single-match.php:170
 msgid "إحصائيات المباراة"
 msgstr "Spielstatistik"
 
-#: single-match.php:205
+#: single-match.php:207
 msgid "لا توجد مواجهات سابقة مسجلة بين الفريقين."
 msgstr "Keine früheren Duelle zwischen diesen Teams erfasst."
 
-#: single-match.php:212
+#: single-match.php:214
 msgid "معاينة وتحليل"
 msgstr "Vorbericht und Analyse"
 
-#: single-match.php:224
+#: single-match.php:226
 msgid "أخبار مرتبطة"
 msgstr "Verwandte Nachrichten"
 
 #. translators: %s: competition.
-#: single-match.php:248
+#: single-match.php:250
 msgid "مباريات قادمة في %s"
 msgstr "Kommende Spiele in %s"
 

@@ -114,6 +114,7 @@ final class News_Sections {
 					continue;
 				}
 				$term_id = (int) $result['term_id'];
+				Relocalize::mark_term( $term_id );
 			} else {
 				$term_id = (int) $term->term_id;
 			}

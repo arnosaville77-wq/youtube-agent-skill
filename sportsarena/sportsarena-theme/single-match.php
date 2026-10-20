@@ -62,12 +62,14 @@ while ( have_posts() ) :
 					<dt><?php esc_html_e( 'الموعد', 'sportsarena-theme' ); ?></dt>
 					<dd>
 						<?php echo sportsarena_time_html( $sportsarena_m['kickoff'], 'l j F Y - H:i' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
-						<small class="sa-time-original">
-							<?php
-							/* translators: 1: time, 2: timezone label. */
-							echo esc_html( sprintf( __( 'التوقيت الأصلي: %1$s %2$s', 'sportsarena-theme' ), wp_date( 'H:i', $sportsarena_m['kickoff'] ), $sportsarena_tz ? $sportsarena_tz : wp_timezone_string() ) );
-							?>
-						</small>
+						<?php if ( ! sportsarena_theme_time_is_gmt() ) : ?>
+							<small class="sa-time-original">
+								<?php
+								/* translators: 1: time, 2: timezone label. */
+								echo esc_html( sprintf( __( 'التوقيت الأصلي: %1$s %2$s', 'sportsarena-theme' ), wp_date( 'H:i', $sportsarena_m['kickoff'] ), $sportsarena_tz ? $sportsarena_tz : wp_timezone_string() ) );
+								?>
+							</small>
+						<?php endif; ?>
 					</dd>
 				</div>
 				<?php if ( $sportsarena_m['venue'] ) : ?>

@@ -104,6 +104,7 @@ final class Pages {
 						'post_status'  => 'publish',
 					)
 				);
+				Relocalize::mark_post( $existing->ID );
 				$ids[ $key ] = (int) $existing->ID;
 				continue;
 			}
@@ -119,6 +120,7 @@ final class Pages {
 			if ( $page_id && ! is_wp_error( $page_id ) ) {
 				$ids[ $key ] = (int) $page_id;
 				self::set_template( (int) $page_id, $page );
+				Relocalize::mark_post( (int) $page_id );
 			}
 		}
 		update_option( Options::PAGES, $ids );
@@ -200,7 +202,7 @@ final class Pages {
 	 * @param string $content Content.
 	 * @return string
 	 */
-	private static function fill( $content ) {
+	public static function fill( $content ) {
 		$host = wp_parse_url( home_url(), PHP_URL_HOST );
 		return strtr(
 			$content,
@@ -250,7 +252,7 @@ final class Pages {
 					. $ul(
 						array(
 							__( 'نتائج المباريات وتحديثها أثناء اللعب (نصياً فقط، دون أي بث).', 'sportsarena-core' ),
-							__( 'مواعيد المباريات بتوقيتك المحلي والقنوات الناقلة كمعلومة نصية.', 'sportsarena-core' ),
+							__( 'مواعيد المباريات والقنوات الناقلة كمعلومة نصية.', 'sportsarena-core' ),
 							__( 'جداول الترتيب وقوائم الهدافين للدوريات والبطولات.', 'sportsarena-core' ),
 							__( 'الأخبار والتحليلات والمعاينات التي يكتبها فريق التحرير.', 'sportsarena-core' ),
 						)

@@ -105,9 +105,69 @@ function sportsarena_theme_activate() {
 	if ( function_exists( 'sportsarena_create_required_pages' ) ) {
 		sportsarena_create_required_pages();
 	}
+	sportsarena_theme_retire_default_widgets();
 	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'sportsarena_theme_activate' );
+
+/**
+ * Browser titles of the 404 and search pages from the theme translations
+ * (WordPress core would use its own strings, English until its language
+ * pack is installed).
+ *
+ * @param array $parts Title parts.
+ * @return array
+ */
+function sportsarena_theme_title_parts( $parts ) {
+	if ( is_404() ) {
+		$parts['title'] = __( 'الصفحة غير موجودة', 'sportsarena-theme' );
+	} elseif ( is_search() ) {
+		/* translators: %s: search query. */
+		$parts['title'] = sprintf( __( 'نتائج البحث عن: %s', 'sportsarena-theme' ), get_search_query( false ) );
+	}
+	return $parts;
+}
+add_filter( 'document_title_parts', 'sportsarena_theme_title_parts' );
+
+// Archive headings show the term or date alone ("Football news", not "Category: Football news").
+add_filter( 'get_the_archive_title_prefix', '__return_empty_string' );
+
+/**
+ * Move the widgets WordPress adds on install (search, recent posts, recent
+ * comments, archives, categories) out of the sidebar, so the theme's own
+ * sidebar (competitions, latest news) shows instead. Their headings are
+ * saved in the install language and would mix languages after a switch.
+ * Widgets the owner added are kept.
+ *
+ * @return void
+ */
+function sportsarena_theme_retire_default_widgets() {
+	$sidebars = wp_get_sidebars_widgets();
+	if ( empty( $sidebars['sidebar-1'] ) ) {
+		return;
+	}
+	$blocks  = (array) get_option( 'widget_block', array() );
+	$pattern = '/<!-- wp:(search|latest-posts|latest-comments|archives|categories)\b/';
+	$keep    = array();
+	$retired = array();
+	foreach ( (array) $sidebars['sidebar-1'] as $widget_id ) {
+		$default = (bool) preg_match( '/^(search|recent-posts|recent-comments|archives|categories|meta)-\d+$/', $widget_id );
+		if ( preg_match( '/^block-(\d+)$/', $widget_id, $m ) && isset( $blocks[ $m[1] ]['content'] ) ) {
+			$default = (bool) preg_match( $pattern, (string) $blocks[ $m[1] ]['content'] );
+		}
+		if ( $default ) {
+			$retired[] = $widget_id;
+		} else {
+			$keep[] = $widget_id;
+		}
+	}
+	if ( $retired ) {
+		$sidebars['sidebar-1']           = $keep;
+		$sidebars['wp_inactive_widgets'] = array_merge( (array) ( $sidebars['wp_inactive_widgets'] ?? array() ), $retired );
+		wp_set_sidebars_widgets( $sidebars );
+	}
+}
+add_action( 'sportsarena_relocalized', 'sportsarena_theme_retire_default_widgets' );
 
 /**
  * Remind admins to activate the companion plugin.

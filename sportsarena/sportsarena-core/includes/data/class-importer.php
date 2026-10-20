@@ -130,8 +130,8 @@ final class Importer {
 			'_sa_elapsed'     => null === $m['elapsed'] ? '' : (int) $m['elapsed'],
 			'_sa_home_score'  => null === $m['score']['home'] ? '' : (string) $m['score']['home'],
 			'_sa_away_score'  => null === $m['score']['away'] ? '' : (string) $m['score']['away'],
-			'_sa_venue'       => sanitize_text_field( $m['venue'] ),
-			'_sa_city'        => sanitize_text_field( $m['city'] ),
+			'_sa_venue'       => sanitize_text_field( Names::localize( (string) $m['venue'] ) ),
+			'_sa_city'        => sanitize_text_field( Names::localize( (string) $m['city'] ) ),
 			'_sa_round'       => sanitize_text_field( $m['competition']['round'] ?? '' ),
 			'_sa_referee'     => sanitize_text_field( $m['referee'] ),
 		);

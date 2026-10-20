@@ -11,6 +11,7 @@ namespace SportsArena\Core\Seo;
 use SportsArena\Core\Data\Names;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
+use SportsArena\Core\Time_Display;
 
 defined( 'ABSPATH' ) || exit;
 
@@ -108,7 +109,7 @@ final class Og_Image {
 			'competition' => $m['competition'] ? $decode( get_the_title( $m['competition'] ) ) : '',
 			'home'        => $decode( $m['home'] ? get_the_title( $m['home'] ) : get_the_title( $post_id ) ),
 			'away'        => $m['away'] ? $decode( get_the_title( $m['away'] ) ) : '',
-			'date'        => $m['kickoff'] ? wp_date( 'j F Y · H:i', $m['kickoff'] ) : '',
+			'date'        => $m['kickoff'] ? wp_date( 'j F Y · H:i', $m['kickoff'] ) . Time_Display::suffix() : '',
 		);
 	}
 
