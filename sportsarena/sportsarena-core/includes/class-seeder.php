@@ -19,6 +19,11 @@ defined( 'ABSPATH' ) || exit;
  */
 final class Seeder {
 
+	/**
+	 * Public crest library used for the demo logos (512x512 PNG).
+	 */
+	const LOGO_BASE = 'https://assets.football-logos.cc/logos/';
+
 	const PROVIDER = 'demo';
 
 	/**
@@ -66,50 +71,61 @@ final class Seeder {
 	}
 
 	/**
-	 * Provider (API-Sports) logo URL of a demo team, when its provider ID is
-	 * known. Shown only when the site enables provider logos.
+	 * Logo URL of a demo team: the football-logos.cc crest for football clubs,
+	 * the API-Sports logo for NBA teams. Shown only when the site enables
+	 * provider logos; real data uses the logos sent by the data provider.
 	 *
 	 * @param string $name Team name.
 	 * @return string
 	 */
 	private static function team_logo( $name ) {
 		$football   = array(
-			'Arsenal'             => 42,
-			'Manchester United'   => 33,
-			'Manchester City'     => 50,
-			'Liverpool'           => 40,
-			'Chelsea'             => 49,
-			'Tottenham'           => 47,
-			'Newcastle'           => 34,
-			'Aston Villa'         => 66,
-			'Brighton'            => 51,
-			'West Ham'            => 48,
-			'Barcelona'           => 529,
-			'Real Madrid'         => 541,
-			'Atletico Madrid'     => 530,
-			'Sevilla'             => 536,
-			'Valencia'            => 532,
-			'Villarreal'          => 533,
-			'Real Betis'          => 543,
-			'Real Sociedad'       => 548,
-			'Athletic Club'       => 531,
-			'Girona'              => 547,
-			'Bayern Munich'       => 157,
-			'Paris Saint Germain' => 85,
-			'Inter'               => 505,
-			'Marseille'           => 81,
-			'Lyon'                => 80,
-			'Monaco'              => 91,
-			'Juventus'            => 496,
-			'AC Milan'            => 489,
-			'Napoli'              => 492,
-			'Borussia Dortmund'   => 165,
-			'Bayer Leverkusen'    => 168,
-			'RB Leipzig'          => 173,
-			'Al-Hilal Saudi FC'   => 2932,
-			'Al-Nassr'            => 2939,
-			'Al-Ittihad FC'       => 2938,
-			'Al-Ahli Jeddah'      => 2929,
+			'Arsenal'             => 'england/512x512/arsenal.02d595b0.png',
+			'Manchester City'     => 'england/512x512/manchester-city.ef1fe757.png',
+			'Liverpool'           => 'england/512x512/liverpool.bc7f4063.png',
+			'Chelsea'             => 'england/512x512/chelsea.340855a2.png',
+			'Manchester United'   => 'england/512x512/manchester-united.92071bee.png',
+			'Tottenham'           => 'england/512x512/tottenham.e9f48315.png',
+			'Newcastle'           => 'england/512x512/newcastle.9d4dbaa7.png',
+			'Aston Villa'         => 'england/512x512/aston-villa.ac06ff1f.png',
+			'Brighton'            => 'england/512x512/brighton.b97367b5.png',
+			'West Ham'            => 'england/512x512/west-ham.4d2a7059.png',
+			'Real Madrid'         => 'spain/512x512/real-madrid.c97a476c.png',
+			'Barcelona'           => 'spain/512x512/barcelona.9ee7ed85.png',
+			'Atletico Madrid'     => 'spain/512x512/atletico-madrid.0e6714cc.png',
+			'Sevilla'             => 'spain/512x512/sevilla.19d97463.png',
+			'Real Sociedad'       => 'spain/512x512/real-sociedad.1fc4678b.png',
+			'Villarreal'          => 'spain/512x512/villarreal.dca647c8.png',
+			'Real Betis'          => 'spain/512x512/real-betis.ff95aa03.png',
+			'Valencia'            => 'spain/512x512/valencia.e7b59fb6.png',
+			'Athletic Club'       => 'spain/512x512/athletic-club.7902b314.png',
+			'Girona'              => 'spain/512x512/girona.b8c3c83a.png',
+			'Al-Hilal Saudi FC'   => 'saudi-arabia/512x512/al-hilal.b6fdc2c0.png',
+			'Al-Nassr'            => 'saudi-arabia/512x512/al-nassr.1de248ec.png',
+			'Al-Ittihad FC'       => 'saudi-arabia/512x512/al-ittihad.5f9bf4f3.png',
+			'Al-Ahli Jeddah'      => 'saudi-arabia/512x512/al-ahli.9f39d0c0.png',
+			'Al-Shabab'           => 'saudi-arabia/512x512/al-shabab.89785fab.png',
+			'Al-Taawoun'          => 'saudi-arabia/512x512/al-taawoun.f0fed438.png',
+			'Al Ahly'             => 'egypt/512x512/al-ahly.807381aa.png',
+			'Zamalek SC'          => 'egypt/512x512/zamalek.4fde1095.png',
+			'Pyramids FC'         => 'egypt/512x512/pyramids.ca754973.png',
+			'Al Masry'            => 'egypt/512x512/al-masry.2a53269a.png',
+			'Wydad AC'            => 'morocco/512x512/wydad-ac.3c1b30d8.png',
+			'Raja Casablanca'     => 'morocco/512x512/raja-ca.14b63b39.png',
+			'AS FAR'              => 'morocco/512x512/as-far.e4696dc0.png',
+			'RS Berkane'          => 'morocco/512x512/rs-berkane.34a47ba3.png',
+			'Paris Saint Germain' => 'france/512x512/paris-saint-germain.5329be3c.png',
+			'Marseille'           => 'france/512x512/marseille.f89278df.png',
+			'Monaco'              => 'france/512x512/as-monaco.61229e2f.png',
+			'Lyon'                => 'france/512x512/lyon.c7612bb5.png',
+			'Inter'               => 'italy/512x512/inter.ba4c3469.png',
+			'Napoli'              => 'italy/512x512/napoli.cbf9f0a6.png',
+			'Juventus'            => 'italy/512x512/juventus.4efced70.png',
+			'AC Milan'            => 'italy/512x512/milan.73b83ace.png',
+			'Bayern Munich'       => 'germany/512x512/bayern-munchen.8eda8ecc.png',
+			'Bayer Leverkusen'    => 'germany/512x512/bayer-leverkusen.8e88c731.png',
+			'Borussia Dortmund'   => 'germany/512x512/borussia-dortmund.ebd95525.png',
+			'RB Leipzig'          => 'germany/512x512/rb-leipzig.5a21bcbd.png',
 		);
 		$basketball = array(
 			'Boston Celtics'        => 133,
@@ -118,7 +134,7 @@ final class Seeder {
 			'Los Angeles Lakers'    => 145,
 		);
 		if ( isset( $football[ $name ] ) ) {
-			return 'https://media.api-sports.io/football/teams/' . $football[ $name ] . '.png';
+			return self::LOGO_BASE . $football[ $name ];
 		}
 		if ( isset( $basketball[ $name ] ) ) {
 			return 'https://media.api-sports.io/basketball/teams/' . $basketball[ $name ] . '.png';
@@ -127,25 +143,27 @@ final class Seeder {
 	}
 
 	/**
-	 * Provider (API-Sports) logo URL of a demo competition.
+	 * Logo URL of a demo competition.
 	 *
 	 * @param string $key Competition key.
 	 * @return string
 	 */
 	private static function competition_logo( $key ) {
-		$ids = array(
-			'ucl'    => 'football/leagues/2',
-			'pl'     => 'football/leagues/39',
-			'laliga' => 'football/leagues/140',
-			'spl'    => 'football/leagues/307',
-			'egy'    => 'football/leagues/233',
-			'botola' => 'football/leagues/200',
-			'ligue1' => 'football/leagues/61',
-			'seriea' => 'football/leagues/135',
-			'bund'   => 'football/leagues/78',
-			'nba'    => 'basketball/leagues/12',
+		$paths = array(
+			'ucl'    => 'tournaments/512x512/uefa-champions-league.effc906c.png',
+			'pl'     => 'england/512x512/english-premier-league.b597f797.png',
+			'laliga' => 'spain/512x512/la-liga.0ea0b0c5.png',
+			'spl'    => 'saudi-arabia/512x512/saudi-professional-league.59d5c8af.png',
+			'egy'    => 'egypt/512x512/egyptian-premier-league.b2e98144.png',
+			'botola' => 'morocco/512x512/botola-pro.b4277f0c.png',
+			'ligue1' => 'france/512x512/ligue-1.bcb13eb0.png',
+			'seriea' => 'italy/512x512/serie-a.1289b16a.png',
+			'bund'   => 'germany/512x512/bundesliga.24d9c6f9.png',
 		);
-		return isset( $ids[ $key ] ) ? 'https://media.api-sports.io/' . $ids[ $key ] . '.png' : '';
+		if ( isset( $paths[ $key ] ) ) {
+			return self::LOGO_BASE . $paths[ $key ];
+		}
+		return 'nba' === $key ? 'https://media.api-sports.io/basketball/leagues/12.png' : '';
 	}
 
 	/**

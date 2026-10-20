@@ -7,6 +7,7 @@
 
 namespace SportsArena\Core\Seo;
 
+use SportsArena\Core\Big_Matches;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Rewrites;
 
@@ -29,6 +30,14 @@ final class Breadcrumbs {
 				'url'  => home_url( '/' ),
 			),
 		);
+
+		if ( get_query_var( 'sa_big' ) ) {
+			$trail[] = array(
+				'name' => __( 'المباريات الكبرى', 'sportsarena-core' ),
+				'url'  => Big_Matches::url(),
+			);
+			return $trail;
+		}
 
 		$day = get_query_var( 'sa_day' );
 		if ( $day ) {

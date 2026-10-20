@@ -7,6 +7,7 @@
 
 namespace SportsArena\Core\Admin;
 
+use SportsArena\Core\Big_Matches;
 use SportsArena\Core\Data\Http_Client;
 use SportsArena\Core\Data\Provider_Registry;
 use SportsArena\Core\Logger;
@@ -139,6 +140,8 @@ final class Settings {
 			}
 		}
 		$out['alternate_sites'] = implode( "\n", $alternates );
+		$clubs                  = array_filter( array_map( 'sanitize_text_field', preg_split( '/\r\n|\r|\n/', (string) ( $input['big_clubs'] ?? '' ) ) ) );
+		$out['big_clubs']       = implode( "\n", array_unique( $clubs ) );
 		foreach ( array( 'sync_enabled', 'allow_logos', 'cache_logos', 'news_sitemap', 'delete_on_uninstall' ) as $flag ) {
 			$out[ $flag ] = empty( $input[ $flag ] ) ? 0 : 1;
 		}
@@ -323,6 +326,13 @@ final class Settings {
 						<td>
 							<textarea id="sa-alternate-sites" class="large-text code" rows="4" dir="ltr" name="<?php echo esc_attr( $n . '[alternate_sites]' ); ?>" placeholder="en=https://en.example.com&#10;fr=https://fr.example.com&#10;x-default=https://en.example.com"><?php echo esc_textarea( (string) $o['alternate_sites'] ); ?></textarea>
 							<p class="description"><?php esc_html_e( 'سطر لكل لغة: رمز اللغة=رابط الموقع. يضيف وسوم hreflang لصفحات المباريات والفرق والبطولات والأيام بين نسخ الموقع بلغات مختلفة.', 'sportsarena-core' ); ?></p>
+						</td>
+					</tr>
+					<tr>
+						<th scope="row"><label for="sa-big-clubs"><?php esc_html_e( 'الأندية الكبرى', 'sportsarena-core' ); ?></label></th>
+						<td>
+							<textarea id="sa-big-clubs" class="large-text code" rows="6" dir="ltr" name="<?php echo esc_attr( $n . '[big_clubs]' ); ?>" placeholder="<?php echo esc_attr( implode( "\n", array_slice( Big_Matches::default_clubs(), 0, 6 ) ) ); ?>"><?php echo esc_textarea( (string) $o['big_clubs'] ); ?></textarea>
+							<p class="description"><?php esc_html_e( 'اسم نادٍ في كل سطر، بالإنجليزية كما يرسله المزوّد. أي مباراة بين ناديين من هذه القائمة تظهر في صفحة «المباريات الكبرى» وعلى الرئيسية. اتركها فارغة لاستخدام القائمة الافتراضية (أكبر أندية أوروبا والعرب). ويمكن تحديد أي مباراة يدوياً من صفحة تعديلها.', 'sportsarena-core' ); ?></p>
 						</td>
 					</tr>
 					<?php

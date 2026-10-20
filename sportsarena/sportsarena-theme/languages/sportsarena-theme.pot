@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-20T09:47:59+00:00\n"
+"POT-Creation-Date: 2026-10-20T21:01:09+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sportsarena-theme\n"
@@ -32,6 +32,7 @@ msgid "قالب رياضي عربي خفيف (RTL) لنتائج المباريا
 msgstr ""
 
 #: 404.php:14
+#: inc/setup.php:123
 msgid "الصفحة غير موجودة"
 msgstr ""
 
@@ -40,7 +41,7 @@ msgid "ربما نُقلت الصفحة أو حُذفت. يمكنك البحث �
 msgstr ""
 
 #: 404.php:18
-#: front-page.php:28
+#: front-page.php:44
 #: header.php:50
 #: matches-day.php:17
 #: taxonomy-sport.php:25
@@ -59,6 +60,56 @@ msgstr ""
 #: archive.php:49
 #: index.php:49
 msgid "لا توجد مقالات بعد."
+msgstr ""
+
+#: big-matches.php:20
+#: front-page.php:30
+#: header.php:52
+msgid "المباريات الكبرى"
+msgstr ""
+
+#: big-matches.php:21
+msgid "مواجهات أشهر الأندية العربية والأوروبية ومباريات دوري أبطال أوروبا في مكان واحد."
+msgstr ""
+
+#: big-matches.php:26
+msgid "القادمة والمباشرة"
+msgstr ""
+
+#: big-matches.php:37
+msgid "لا توجد مباريات كبرى في الأيام القادمة."
+msgstr ""
+
+#: big-matches.php:47
+#: single-competition.php:20
+msgid "الترتيب"
+msgstr ""
+
+#: big-matches.php:49
+#: single-competition.php:62
+#: single-team.php:44
+msgid "المباريات القادمة"
+msgstr ""
+
+#: big-matches.php:50
+#: single-team.php:45
+msgid "لا توجد مباريات قادمة مسجلة."
+msgstr ""
+
+#: big-matches.php:51
+msgid "آخر النتائج"
+msgstr ""
+
+#: big-matches.php:52
+msgid "لا توجد نتائج بعد."
+msgstr ""
+
+#: big-matches.php:53
+msgid "كل مباريات دوري الأبطال"
+msgstr ""
+
+#: big-matches.php:60
+msgid "نتائج المباريات الكبرى الأخيرة"
 msgstr ""
 
 #. translators: %s: number of comments.
@@ -129,27 +180,31 @@ msgstr ""
 msgid "© %1$s %2$s. جميع الحقوق محفوظة."
 msgstr ""
 
-#: front-page.php:29
+#: front-page.php:31
+msgid "كل المباريات الكبرى ودوري الأبطال"
+msgstr ""
+
+#: front-page.php:45
 msgid "كل المباريات"
 msgstr ""
 
-#: front-page.php:34
+#: front-page.php:50
 msgid "تصفية حسب الرياضة"
 msgstr ""
 
-#: front-page.php:35
+#: front-page.php:51
 msgid "الكل"
 msgstr ""
 
-#: front-page.php:43
+#: front-page.php:59
 msgid "لا توجد مباريات مسجلة اليوم. تصفح مباريات الغد."
 msgstr ""
 
-#: front-page.php:61
+#: front-page.php:77
 msgid "أحدث الأخبار"
 msgstr ""
 
-#: front-page.php:63
+#: front-page.php:79
 #: template-news.php:84
 msgid "المزيد"
 msgstr ""
@@ -176,21 +231,25 @@ msgstr ""
 msgid "مباريات الغد"
 msgstr ""
 
-#: header.php:52
+#: header.php:55
+msgid "دوري الأبطال"
+msgstr ""
+
+#: header.php:57
 #: sidebar.php:18
 #: taxonomy-sport.php:31
 msgid "البطولات"
 msgstr ""
 
-#: header.php:56
+#: header.php:61
 msgid "الأخبار"
 msgstr ""
 
-#: header.php:67
+#: header.php:72
 msgid "تبديل الوضع الداكن"
 msgstr ""
 
-#: header.php:78
+#: header.php:83
 msgid "الرياضات"
 msgstr ""
 
@@ -219,7 +278,14 @@ msgstr ""
 msgid "يظهر بجانب المحتوى على الشاشات الكبيرة."
 msgstr ""
 
-#: inc/setup.php:162
+#. translators: %s: search query.
+#: inc/setup.php:126
+#: search.php:18
+#, php-format
+msgid "نتائج البحث عن: %s"
+msgstr ""
+
+#: inc/setup.php:181
 msgid "قالب SportsArena يحتاج إلى إضافة «SportsArena Core» لعرض المباريات والفرق والبطولات. ارفعها وفعّلها من صفحة الإضافات."
 msgstr ""
 
@@ -266,12 +332,6 @@ msgstr ""
 msgid "لا توجد مباريات في هذا اليوم."
 msgstr ""
 
-#. translators: %s: search query.
-#: search.php:18
-#, php-format
-msgid "نتائج البحث عن: %s"
-msgstr ""
-
 #: search.php:38
 msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."
 msgstr ""
@@ -293,10 +353,6 @@ msgstr ""
 msgid "المباريات"
 msgstr ""
 
-#: single-competition.php:20
-msgid "الترتيب"
-msgstr ""
-
 #: single-competition.php:21
 #: single-competition.php:83
 msgid "الهدافون"
@@ -308,11 +364,6 @@ msgstr ""
 
 #: single-competition.php:51
 msgid "أقسام البطولة"
-msgstr ""
-
-#: single-competition.php:62
-#: single-team.php:44
-msgid "المباريات القادمة"
 msgstr ""
 
 #: single-competition.php:63
@@ -434,10 +485,6 @@ msgstr ""
 
 #: single-team.php:33
 msgid "التأسيس:"
-msgstr ""
-
-#: single-team.php:45
-msgid "لا توجد مباريات قادمة مسجلة."
 msgstr ""
 
 #: single-team.php:49

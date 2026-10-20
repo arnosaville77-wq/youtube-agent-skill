@@ -49,6 +49,11 @@ defined( 'ABSPATH' ) || exit;
 				if ( sportsarena_theme_core() ) {
 					echo '<li><a href="' . esc_url( sportsarena_day_url( 'today' ) ) . '">' . esc_html__( 'مباريات اليوم', 'sportsarena-theme' ) . '</a></li>';
 					echo '<li><a href="' . esc_url( sportsarena_day_url( 'tomorrow' ) ) . '">' . esc_html__( 'مباريات الغد', 'sportsarena-theme' ) . '</a></li>';
+					echo '<li><a href="' . esc_url( sportsarena_big_matches_url() ) . '">' . esc_html__( 'المباريات الكبرى', 'sportsarena-theme' ) . '</a></li>';
+					$sportsarena_ucl = sportsarena_champions_league_id();
+					if ( $sportsarena_ucl ) {
+						echo '<li><a href="' . esc_url( get_permalink( $sportsarena_ucl ) ) . '">' . esc_html__( 'دوري الأبطال', 'sportsarena-theme' ) . '</a></li>';
+					}
 					echo '<li><a href="' . esc_url( (string) get_post_type_archive_link( 'competition' ) ) . '">' . esc_html__( 'البطولات', 'sportsarena-theme' ) . '</a></li>';
 				}
 				$sportsarena_news = sportsarena_theme_news_page();

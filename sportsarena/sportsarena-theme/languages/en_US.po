@@ -35,7 +35,7 @@ msgstr ""
 "for search engines, Google AdSense and Core Web Vitals. Works with the "
 "SportsArena Core plugin."
 
-#: 404.php:14
+#: 404.php:14 inc/setup.php:123
 msgid "الصفحة غير موجودة"
 msgstr "Page not found"
 
@@ -45,7 +45,7 @@ msgstr ""
 "The page may have been moved or deleted. You can search or go back to "
 "today's matches."
 
-#: 404.php:18 front-page.php:28 header.php:50 matches-day.php:17
+#: 404.php:18 front-page.php:44 header.php:50 matches-day.php:17
 #: taxonomy-sport.php:25
 msgid "مباريات اليوم"
 msgstr "Today's matches"
@@ -58,6 +58,54 @@ msgstr "Latest news"
 #: archive.php:49 index.php:49
 msgid "لا توجد مقالات بعد."
 msgstr "No articles yet."
+
+#: big-matches.php:20 front-page.php:30 header.php:52
+msgid "المباريات الكبرى"
+msgstr "Big matches"
+
+#: big-matches.php:21
+msgid ""
+"مواجهات أشهر الأندية العربية والأوروبية ومباريات دوري أبطال أوروبا في مكان "
+"واحد."
+msgstr ""
+"The biggest Arab and European clubs and the UEFA Champions League, all in "
+"one place."
+
+#: big-matches.php:26
+msgid "القادمة والمباشرة"
+msgstr "Upcoming and live"
+
+#: big-matches.php:37
+msgid "لا توجد مباريات كبرى في الأيام القادمة."
+msgstr "No big matches in the coming days."
+
+#: big-matches.php:47 single-competition.php:20
+msgid "الترتيب"
+msgstr "Standings"
+
+#: big-matches.php:49 single-competition.php:62 single-team.php:44
+msgid "المباريات القادمة"
+msgstr "Upcoming matches"
+
+#: big-matches.php:50 single-team.php:45
+msgid "لا توجد مباريات قادمة مسجلة."
+msgstr "No upcoming matches recorded."
+
+#: big-matches.php:51
+msgid "آخر النتائج"
+msgstr "Latest results"
+
+#: big-matches.php:52
+msgid "لا توجد نتائج بعد."
+msgstr "No results yet."
+
+#: big-matches.php:53
+msgid "كل مباريات دوري الأبطال"
+msgstr "All Champions League matches"
+
+#: big-matches.php:60
+msgid "نتائج المباريات الكبرى الأخيرة"
+msgstr "Latest big match results"
 
 #. translators: %s: number of comments.
 #: comments.php:19
@@ -130,27 +178,31 @@ msgstr "Privacy settings"
 msgid "© %1$s %2$s. جميع الحقوق محفوظة."
 msgstr "© %1$s %2$s. All rights reserved."
 
-#: front-page.php:29
+#: front-page.php:31
+msgid "كل المباريات الكبرى ودوري الأبطال"
+msgstr "All big matches and the Champions League"
+
+#: front-page.php:45
 msgid "كل المباريات"
 msgstr "All matches"
 
-#: front-page.php:34
+#: front-page.php:50
 msgid "تصفية حسب الرياضة"
 msgstr "Filter by sport"
 
-#: front-page.php:35
+#: front-page.php:51
 msgid "الكل"
 msgstr "All"
 
-#: front-page.php:43
+#: front-page.php:59
 msgid "لا توجد مباريات مسجلة اليوم. تصفح مباريات الغد."
 msgstr "No matches scheduled today. Browse tomorrow's matches."
 
-#: front-page.php:61
+#: front-page.php:77
 msgid "أحدث الأخبار"
 msgstr "Latest news"
 
-#: front-page.php:63 template-news.php:84
+#: front-page.php:79 template-news.php:84
 msgid "المزيد"
 msgstr "More"
 
@@ -174,19 +226,23 @@ msgstr "Home"
 msgid "مباريات الغد"
 msgstr "Tomorrow's matches"
 
-#: header.php:52 sidebar.php:18 taxonomy-sport.php:31
+#: header.php:55
+msgid "دوري الأبطال"
+msgstr "Champions League"
+
+#: header.php:57 sidebar.php:18 taxonomy-sport.php:31
 msgid "البطولات"
 msgstr "Competitions"
 
-#: header.php:56
+#: header.php:61
 msgid "الأخبار"
 msgstr "News"
 
-#: header.php:67
+#: header.php:72
 msgid "تبديل الوضع الداكن"
 msgstr "Toggle dark mode"
 
-#: header.php:78
+#: header.php:83
 msgid "الرياضات"
 msgstr "Sports"
 
@@ -214,7 +270,12 @@ msgstr "Sidebar"
 msgid "يظهر بجانب المحتوى على الشاشات الكبيرة."
 msgstr "Shown next to the content on large screens."
 
-#: inc/setup.php:162
+#. translators: %s: search query.
+#: inc/setup.php:126 search.php:18
+msgid "نتائج البحث عن: %s"
+msgstr "Search results for: %s"
+
+#: inc/setup.php:181
 msgid ""
 "قالب SportsArena يحتاج إلى إضافة «SportsArena Core» لعرض المباريات والفرق "
 "والبطولات. ارفعها وفعّلها من صفحة الإضافات."
@@ -266,11 +327,6 @@ msgstr ""
 msgid "لا توجد مباريات في هذا اليوم."
 msgstr "No matches on this day."
 
-#. translators: %s: search query.
-#: search.php:18
-msgid "نتائج البحث عن: %s"
-msgstr "Search results for: %s"
-
 #: search.php:38
 msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."
 msgstr "No matching results. Try other words."
@@ -291,10 +347,6 @@ msgstr "Overview"
 msgid "المباريات"
 msgstr "Matches"
 
-#: single-competition.php:20
-msgid "الترتيب"
-msgstr "Standings"
-
 #: single-competition.php:21 single-competition.php:83
 msgid "الهدافون"
 msgstr "Top scorers"
@@ -306,10 +358,6 @@ msgstr "Season:"
 #: single-competition.php:51
 msgid "أقسام البطولة"
 msgstr "Competition sections"
-
-#: single-competition.php:62 single-team.php:44
-msgid "المباريات القادمة"
-msgstr "Upcoming matches"
 
 #: single-competition.php:63
 msgid "لا توجد مباريات قادمة."
@@ -425,10 +473,6 @@ msgstr "Stadium:"
 #: single-team.php:33
 msgid "التأسيس:"
 msgstr "Founded:"
-
-#: single-team.php:45
-msgid "لا توجد مباريات قادمة مسجلة."
-msgstr "No upcoming matches recorded."
 
 #: single-team.php:49
 msgid "نتائج المباريات السابقة"

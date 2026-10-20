@@ -415,3 +415,21 @@ function sportsarena_create_required_pages() {
 function sportsarena_required_pages() {
 	return SportsArena\Core\Pages::ids();
 }
+
+/**
+ * URL of the big matches page (/big-matches/).
+ *
+ * @return string
+ */
+function sportsarena_big_matches_url() {
+	return SportsArena\Core\Big_Matches::url();
+}
+
+/**
+ * The UEFA Champions League competition post ID, 0 if not imported.
+ *
+ * @return int
+ */
+function sportsarena_champions_league_id() {
+	return SportsArena\Core\Big_Matches::champions_league();
+}

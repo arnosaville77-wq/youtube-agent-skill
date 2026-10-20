@@ -23,6 +23,22 @@ foreach ( $sportsarena_groups as $sportsarena_group ) {
 <div class="sa-container sa-layout">
 	<div class="sa-content">
 		<?php if ( sportsarena_theme_core() ) : ?>
+			<?php $sportsarena_big = \SportsArena\Core\Repository::big_matches( 'upcoming', 4 ); ?>
+			<?php if ( $sportsarena_big ) : ?>
+				<section class="sa-section" aria-labelledby="sa-big-title">
+					<div class="sa-section__head">
+						<h2 id="sa-big-title" class="sa-section__title"><?php esc_html_e( 'المباريات الكبرى', 'sportsarena-theme' ); ?></h2>
+						<a class="sa-more" href="<?php echo esc_url( sportsarena_big_matches_url() ); ?>"><?php esc_html_e( 'كل المباريات الكبرى ودوري الأبطال', 'sportsarena-theme' ); ?></a>
+					</div>
+					<ul class="sa-bigcards" role="list">
+						<?php
+						foreach ( $sportsarena_big as $sportsarena_match_id ) {
+							get_template_part( 'template-parts/big-match-card', null, array( 'id' => $sportsarena_match_id ) );
+						}
+						?>
+					</ul>
+				</section>
+			<?php endif; ?>
 			<section class="sa-section" aria-labelledby="sa-today-title">
 				<div class="sa-section__head">
 					<h1 id="sa-today-title" class="sa-section__title"><?php esc_html_e( 'مباريات اليوم', 'sportsarena-theme' ); ?></h1>

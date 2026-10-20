@@ -11,6 +11,7 @@
 
 namespace SportsArena\Core\Seo;
 
+use SportsArena\Core\Big_Matches;
 use SportsArena\Core\Options;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
@@ -98,6 +99,9 @@ final class Seo {
 	 * @return string
 	 */
 	public static function title() {
+		if ( get_query_var( 'sa_big' ) ) {
+			return __( 'المباريات الكبرى ودوري أبطال أوروبا: المواعيد والنتائج', 'sportsarena-core' );
+		}
 		$day = get_query_var( 'sa_day' );
 		if ( $day ) {
 			$date = Rewrites::resolve_day( $day );
@@ -203,6 +207,9 @@ final class Seo {
 	 * @return string
 	 */
 	public static function description() {
+		if ( get_query_var( 'sa_big' ) ) {
+			return __( 'مواعيد ونتائج المباريات الكبرى بين أشهر الأندية العربية والأوروبية، ومباريات دوري أبطال أوروبا، مع النتائج المباشرة والتشكيلات.', 'sportsarena-core' );
+		}
 		$day = get_query_var( 'sa_day' );
 		if ( $day ) {
 			$date = Rewrites::resolve_day( $day );
@@ -277,6 +284,9 @@ final class Seo {
 	 * @return string
 	 */
 	public static function canonical() {
+		if ( get_query_var( 'sa_big' ) ) {
+			return Big_Matches::url();
+		}
 		$day = get_query_var( 'sa_day' );
 		if ( $day ) {
 			return isset( Rewrites::DAY_SLUGS[ $day ] ) ? Rewrites::day_url( $day ) : home_url( user_trailingslashit( 'matches/' . $day ) );
@@ -319,6 +329,9 @@ final class Seo {
 	public static function is_noindex() {
 		if ( is_search() || is_404() ) {
 			return true;
+		}
+		if ( get_query_var( 'sa_big' ) ) {
+			return ! Repository::big_matches( 'upcoming', 1 ) && ! Repository::big_matches( 'past', 1 );
 		}
 		$day = get_query_var( 'sa_day' );
 		if ( $day ) {
@@ -498,7 +511,7 @@ final class Seo {
 		if ( ! $sites || self::is_noindex() ) {
 			return;
 		}
-		$shared = is_front_page() || get_query_var( 'sa_day' ) || is_tax( Post_Types::TAX_SPORT )
+		$shared = is_front_page() || get_query_var( 'sa_day' ) || get_query_var( 'sa_big' ) || is_tax( Post_Types::TAX_SPORT )
 			|| is_singular( array( Post_Types::MATCH, Post_Types::TEAM, Post_Types::COMPETITION ) );
 		if ( ! $shared ) {
 			return;
@@ -553,7 +566,7 @@ final class Seo {
 	 * @return bool
 	 */
 	private function is_ours() {
-		return get_query_var( 'sa_day' )
+		return get_query_var( 'sa_day' ) || get_query_var( 'sa_big' )
 			|| is_singular( array( Post_Types::MATCH, Post_Types::TEAM, Post_Types::COMPETITION ) )
 			|| is_tax( Post_Types::TAX_SPORT );
 	}
@@ -593,7 +606,7 @@ final class Seo {
 	 * @return string
 	 */
 	public function filter_plugin_canonical( $canonical ) {
-		if ( get_query_var( 'sa_day' ) || get_query_var( 'sa_tab' ) ) {
+		if ( get_query_var( 'sa_day' ) || get_query_var( 'sa_tab' ) || get_query_var( 'sa_big' ) ) {
 			return self::canonical();
 		}
 		return $canonical;

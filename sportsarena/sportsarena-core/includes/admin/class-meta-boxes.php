@@ -8,6 +8,7 @@
 
 namespace SportsArena\Core\Admin;
 
+use SportsArena\Core\Big_Matches;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Repository;
 
@@ -108,6 +109,12 @@ final class Meta_Boxes {
 			<p><label><?php esc_html_e( 'المدينة', 'sportsarena-core' ); ?><br><input type="text" name="sa[city]" value="<?php echo esc_attr( $m['city'] ); ?>"></label></p>
 			<p><label><?php esc_html_e( 'الجولة', 'sportsarena-core' ); ?><br><input type="text" name="sa[round]" value="<?php echo esc_attr( $m['round'] ); ?>"></label></p>
 			<p><label><?php esc_html_e( 'الحكم', 'sportsarena-core' ); ?><br><input type="text" name="sa[referee]" value="<?php echo esc_attr( $m['referee'] ); ?>"></label></p>
+			<?php $big = (string) get_post_meta( $post->ID, Big_Matches::META, true ); ?>
+			<p><label><?php esc_html_e( 'مباراة كبرى', 'sportsarena-core' ); ?><br><select name="sa[big]">
+				<option value="" <?php selected( $big, '' ); ?>><?php esc_html_e( 'تلقائي (حسب قائمة الأندية الكبرى)', 'sportsarena-core' ); ?></option>
+				<option value="1" <?php selected( $big, '1' ); ?>><?php esc_html_e( 'نعم، اعرضها في المباريات الكبرى', 'sportsarena-core' ); ?></option>
+				<option value="0" <?php selected( $big, '0' ); ?>><?php esc_html_e( 'لا', 'sportsarena-core' ); ?></option>
+			</select></label></p>
 		</div>
 		<p><label><?php esc_html_e( 'القنوات الناقلة (نص فقط — بدون أي روابط بث)', 'sportsarena-core' ); ?><br>
 			<input type="text" class="widefat" name="sa[tv]" value="<?php echo esc_attr( $m['tv'] ); ?>" placeholder="beIN Sports 1, SSC 1"></label></p>
@@ -295,6 +302,12 @@ final class Meta_Boxes {
 			if ( $date ) {
 				update_post_meta( $post_id, '_sa_kickoff', $date->getTimestamp() );
 			}
+		}
+		$big = (string) ( $data['big'] ?? '' );
+		if ( in_array( $big, array( '0', '1' ), true ) ) {
+			update_post_meta( $post_id, Big_Matches::META, $big );
+		} else {
+			delete_post_meta( $post_id, Big_Matches::META );
 		}
 		$status = sanitize_key( $data['status'] ?? 'scheduled' );
 		update_post_meta( $post_id, '_sa_status', in_array( $status, $statuses, true ) ? $status : 'scheduled' );

@@ -1,6 +1,7 @@
 <?php
 /**
- * SEO friendly routes: /matches-today/, /matches/2026-10-26/, competition tabs.
+ * SEO friendly routes: /matches-today/, /matches/2026-10-26/, /big-matches/,
+ * competition tabs.
  *
  * @package SportsArena\Core
  */
@@ -21,6 +22,13 @@ final class Rewrites {
 	);
 
 	const COMPETITION_TABS = array( 'matches', 'standings', 'scorers' );
+
+	const BIG_MATCHES_SLUG = 'big-matches';
+
+	/**
+	 * Bumped when rules change, so they are flushed once on existing sites.
+	 */
+	const RULES_VERSION = '2';
 
 	/**
 	 * Hook into WordPress.
@@ -50,6 +58,11 @@ final class Rewrites {
 			'index.php?sa_competition=$matches[1]&sa_tab=$matches[2]',
 			'top'
 		);
+		add_rewrite_rule( '^' . self::BIG_MATCHES_SLUG . '/?$', 'index.php?post_type=match&sa_big=1', 'top' );
+		if ( get_option( 'sportsarena_rules_version' ) !== self::RULES_VERSION ) {
+			flush_rewrite_rules( false );
+			update_option( 'sportsarena_rules_version', self::RULES_VERSION );
+		}
 	}
 
 	/**
@@ -61,6 +74,7 @@ final class Rewrites {
 	public function query_vars( $vars ) {
 		$vars[] = 'sa_day';
 		$vars[] = 'sa_tab';
+		$vars[] = 'sa_big';
 		return $vars;
 	}
 
@@ -75,7 +89,7 @@ final class Rewrites {
 		if ( is_admin() || ! $query->is_main_query() ) {
 			return;
 		}
-		if ( $query->get( 'sa_day' ) ) {
+		if ( $query->get( 'sa_day' ) || $query->get( 'sa_big' ) ) {
 			$query->set( 'posts_per_page', 1 );
 			$query->set( 'no_found_rows', true );
 			$query->set( 'fields', 'ids' );
@@ -93,7 +107,7 @@ final class Rewrites {
 	 */
 	public function template_redirect() {
 		$day = get_query_var( 'sa_day' );
-		if ( ! $day && is_post_type_archive( Post_Types::MATCH ) && ! is_feed() ) {
+		if ( ! $day && ! get_query_var( 'sa_big' ) && is_post_type_archive( Post_Types::MATCH ) && ! is_feed() ) {
 			wp_safe_redirect( self::day_url( 'today' ), 301 );
 			exit;
 		}
@@ -112,12 +126,18 @@ final class Rewrites {
 	}
 
 	/**
-	 * Use the theme's matches-day.php template for the day pages.
+	 * Use the theme's big-matches.php and matches-day.php templates.
 	 *
 	 * @param string $template Template path.
 	 * @return string
 	 */
 	public function template_include( $template ) {
+		if ( get_query_var( 'sa_big' ) && ! is_404() ) {
+			$found = locate_template( array( 'big-matches.php' ) );
+			if ( $found ) {
+				return $found;
+			}
+		}
 		if ( get_query_var( 'sa_day' ) && ! is_404() ) {
 			$found = locate_template( array( 'matches-day.php', 'archive-match.php' ) );
 			if ( $found ) {

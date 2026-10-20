@@ -13,6 +13,7 @@
 
 namespace SportsArena\Core\Seo;
 
+use SportsArena\Core\Big_Matches;
 use SportsArena\Core\Options;
 use SportsArena\Core\Post_Types;
 use SportsArena\Core\Rewrites;
@@ -72,6 +73,7 @@ final class Sitemaps {
 			Rewrites::day_url( 'today' ),
 			Rewrites::day_url( 'tomorrow' ),
 			Rewrites::day_url( 'yesterday' ),
+			Big_Matches::url(),
 		);
 	}
 

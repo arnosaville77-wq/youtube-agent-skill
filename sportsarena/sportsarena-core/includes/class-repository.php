@@ -317,6 +317,46 @@ final class Repository {
 	}
 
 	/**
+	 * Big matches (see Big_Matches): upcoming and live ones (next three weeks)
+	 * or recent results (last three weeks).
+	 *
+	 * @param string $when  upcoming|past.
+	 * @param int    $limit Max rows.
+	 * @return int[]
+	 */
+	public static function big_matches( $when = 'upcoming', $limit = 12 ) {
+		return self::remember(
+			'big|' . $when . '|' . $limit . '|' . md5( implode( ',', Big_Matches::clubs() ) ),
+			10 * MINUTE_IN_SECONDS,
+			static function () use ( $when, $limit ) {
+				$upcoming = 'upcoming' === $when;
+				$ids      = self::query_matches(
+					array(
+						'from'   => $upcoming ? time() - 3 * HOUR_IN_SECONDS : time() - 21 * DAY_IN_SECONDS,
+						'to'     => $upcoming ? time() + 21 * DAY_IN_SECONDS : time(),
+						'status' => $upcoming ? array() : array( 'finished' ),
+						'order'  => $upcoming ? 'ASC' : 'DESC',
+						'limit'  => 400,
+					)
+				);
+				$big      = array();
+				foreach ( $ids as $id ) {
+					if ( $upcoming && 'finished' === get_post_meta( $id, '_sa_status', true ) ) {
+						continue;
+					}
+					if ( Big_Matches::is_big( $id ) ) {
+						$big[] = $id;
+						if ( count( $big ) >= $limit ) {
+							break;
+						}
+					}
+				}
+				return $big;
+			}
+		);
+	}
+
+	/**
 	 * Upcoming or past matches of a competition.
 	 *
 	 * @param int    $competition_id Competition post ID.
