@@ -331,7 +331,7 @@ function sportsarena_theme_news_page() {
 /**
  * Inline SVG interface icon (decorative, inherits the text colour).
  *
- * @param string $name Icon: search|user|star|chevron-prev|chevron-next|calendar|moon|sun|trophy|list|news|fire.
+ * @param string $name Icon: search|user|star|chevron-prev|chevron-next|calendar|moon|sun|trophy|list|news|download|ball|fire.
  * @param int    $size Pixel size.
  * @return string
  */
@@ -348,6 +348,8 @@ function sportsarena_theme_icon( $name, $size = 20 ) {
 		'trophy'       => '<path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1.5A3.5 3.5 0 0 0 7.5 11M17 6h3v1.5a3.5 3.5 0 0 1-3.5 3.5M12 14v4M8 20.5h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
 		'list'         => '<path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4" cy="6" r="1.3" fill="currentColor"/><circle cx="4" cy="12" r="1.3" fill="currentColor"/><circle cx="4" cy="18" r="1.3" fill="currentColor"/>',
 		'news'         => '<rect x="3.5" y="4.5" width="13" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 8.5h3a1 1 0 0 1 1 1V17a2.5 2.5 0 0 1-5 0M7 9h6M7 12.5h6M7 16h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+		'download'     => '<rect x="6.5" y="2.5" width="11" height="19" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 7v7m-3-3 3 3 3-3M10 18.5h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+		'ball'         => '<defs><clipPath id="sa-ball-clip"><circle cx="12" cy="12" r="9.6"/></clipPath></defs><circle cx="12" cy="12" r="9.6" fill="#fff"/><g clip-path="url(#sa-ball-clip)" fill="#071a2b"><path d="M12.00 8.60 L15.23 10.95 L14.00 14.75 L10.00 14.75 L8.77 10.95Z"/><path d="M15.23 7.55 L14.07 3.97 L17.11 1.76 L20.16 3.97 L18.99 7.55ZM17.23 13.70 L20.27 11.49 L23.32 13.70 L22.16 17.28 L18.39 17.28ZM12.00 17.50 L15.04 19.71 L13.88 23.29 L10.12 23.29 L8.96 19.71ZM6.77 13.70 L5.61 17.28 L1.84 17.28 L0.68 13.70 L3.73 11.49ZM8.77 7.55 L5.01 7.55 L3.84 3.97 L6.89 1.76 L9.93 3.97Z"/></g><path d="M12.00 8.60L12.00 5.40M15.23 10.95L18.28 9.96M14.00 14.75L15.88 17.34M10.00 14.75L8.12 17.34M8.77 10.95L5.72 9.96" stroke="#071a2b" stroke-width="1.1"/>',
 		'fire'         => '<path d="M12 21c-4 0-7-2.7-7-6.6 0-3.1 2-5.3 3.6-7 .4 1.8 1.4 3 2.6 3.6C11 7.4 12.6 4.6 15 3c-.3 2.6.6 4.4 2 6 1.3 1.5 2 3.2 2 5.3C19 18.3 16 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
 	);
 	if ( ! isset( $paths[ $name ] ) ) {

@@ -45,7 +45,8 @@ msgstr ""
 "La pagina potrebbe essere stata spostata o eliminata. Puoi cercare o tornare"
 " alle partite di oggi."
 
-#: 404.php:18 front-page.php:28 matches-day.php:17 taxonomy-sport.php:25
+#: 404.php:18 front-page.php:28 inc/pwa.php:146 matches-day.php:17
+#: taxonomy-sport.php:25
 msgid "مباريات اليوم"
 msgstr "Partite di oggi"
 
@@ -58,7 +59,7 @@ msgstr "Ultime notizie"
 msgid "لا توجد مقالات بعد."
 msgstr "Ancora nessun articolo."
 
-#: big-matches.php:20 front-page.php:116 header.php:82
+#: big-matches.php:20 front-page.php:116 header.php:87 inc/pwa.php:150
 msgid "المباريات الكبرى"
 msgstr "Big match"
 
@@ -234,52 +235,86 @@ msgstr ""
 "velocemente."
 
 #: header.php:55
+msgid "تثبيت التطبيق"
+msgstr "Installa l’app"
+
+#: header.php:58
+msgid ""
+"لتثبيت التطبيق على آيفون: اضغط زر المشاركة في Safari ثم «إضافة إلى الشاشة "
+"الرئيسية»."
+msgstr ""
+"Per installare l’app su iPhone: tocca il pulsante Condividi in Safari, poi "
+"«Aggiungi alla schermata Home»."
+
+#: header.php:60
 msgid "الوضع الداكن"
 msgstr "Modalità scura"
 
-#: header.php:58
+#: header.php:63
 msgid "بدون تسجيل: المفضلة محفوظة في متصفحك فقط."
 msgstr "Senza registrazione: i preferiti sono salvati solo nel tuo browser."
 
-#: header.php:64 inc/setup.php:40
+#: header.php:69 inc/setup.php:40
 msgid "القائمة الرئيسية"
 msgstr "Menu principale"
 
-#: header.php:85
+#: header.php:90
 msgid "دوري الأبطال"
 msgstr "Champions League"
 
-#: header.php:87 inc/assets.php:82 sidebar.php:18 taxonomy-sport.php:31
+#: header.php:92 inc/assets.php:84 sidebar.php:18 taxonomy-sport.php:31
 msgid "البطولات"
 msgstr "Competizioni"
 
-#: header.php:91
+#: header.php:96 inc/pwa.php:157
 msgid "الأخبار"
 msgstr "Notizie"
 
-#: inc/assets.php:78
+#: header.php:117
+msgid "ثبّت التطبيق"
+msgstr "Installa l’app"
+
+#: header.php:118
+msgid "النتائج المباشرة بلمسة من شاشة هاتفك، وتعمل حتى بدون إنترنت."
+msgstr ""
+"I risultati in diretta a portata di tocco dalla schermata Home, anche "
+"offline."
+
+#: header.php:120
+msgid "تثبيت"
+msgstr "Installa"
+
+#: header.php:121
+msgid "إغلاق"
+msgstr "Chiudi"
+
+#: inc/assets.php:80
 msgid "بتوقيتك"
 msgstr "tuo orario"
 
-#: inc/assets.php:79
+#: inc/assets.php:81
 msgid "لا توجد نتائج"
 msgstr "Nessun risultato"
 
-#: inc/assets.php:80
+#: inc/assets.php:82
 msgid "فريق"
 msgstr "Squadra"
 
-#: inc/assets.php:81 single-competition.php:19
+#: inc/assets.php:83 single-competition.php:19
 msgid "المباريات"
 msgstr "Partite"
 
-#: inc/assets.php:83
+#: inc/assets.php:85
 msgid "الفرق"
 msgstr "Squadre"
 
-#: inc/assets.php:84
+#: inc/assets.php:86
 msgid "إزالة من المفضلة"
 msgstr "Rimuovi dai preferiti"
+
+#: inc/pwa.php:415 offline.php:16
+msgid "لا يوجد اتصال بالإنترنت"
+msgstr "Nessuna connessione a Internet"
 
 #: inc/setup.php:41
 msgid "قائمة الفوتر"
@@ -320,7 +355,7 @@ msgid "اللغة"
 msgstr "Lingua"
 
 #. translators: %s: match, team or competition name.
-#: inc/template-tags.php:393
+#: inc/template-tags.php:395
 msgid "إضافة %s إلى المفضلة"
 msgstr "Aggiungi %s ai preferiti"
 
@@ -356,6 +391,21 @@ msgid ""
 msgstr ""
 "Orari e risultati delle partite del %s in tutte le competizioni. Gli orari "
 "vengono mostrati automaticamente nel fuso orario del tuo dispositivo."
+
+#: offline.php:17
+msgid ""
+"يمكنك فتح الصفحات التي زرتها من قبل. ستظهر النتائج الجديدة عند عودة الاتصال."
+msgstr ""
+"Puoi ancora aprire le pagine già visitate. I nuovi risultati appariranno "
+"quando tornerai online."
+
+#: offline.php:19
+msgid "إعادة المحاولة"
+msgstr "Riprova"
+
+#: offline.php:20
+msgid "الرئيسية"
+msgstr "Home"
 
 #: search.php:38
 msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."

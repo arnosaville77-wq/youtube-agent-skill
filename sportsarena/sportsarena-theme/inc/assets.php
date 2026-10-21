@@ -74,6 +74,8 @@ function sportsarena_theme_assets() {
 				'search'   => esc_url_raw( rest_url( 'sportsarena/v1/search' ) ),
 				'dayUrl'   => function_exists( 'sportsarena_day_url' ) ? esc_url_raw( home_url( user_trailingslashit( 'matches/__DATE__' ) ) ) : '',
 				'interval' => 60,
+				'sw'       => sportsarena_theme_pwa_enabled() && ! is_user_logged_in() ? esc_url_raw( sportsarena_theme_pwa_sw_url() ) : '',
+				'swScope'  => sportsarena_theme_pwa_base() . '/',
 				'i18n'     => array(
 					'yourTime'        => __( 'بتوقيتك', 'sportsarena-theme' ),
 					'noResults'       => __( 'لا توجد نتائج', 'sportsarena-theme' ),
@@ -154,14 +156,3 @@ function sportsarena_theme_cleanup() {
 	remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 }
 add_action( 'init', 'sportsarena_theme_cleanup' );
-
-/**
- * Theme color meta for mobile browsers.
- *
- * @return void
- */
-function sportsarena_theme_meta() {
-	echo '<meta name="theme-color" content="#0b3d2e" media="(prefers-color-scheme: light)">' . "\n";
-	echo '<meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)">' . "\n";
-}
-add_action( 'wp_head', 'sportsarena_theme_meta', 2 );

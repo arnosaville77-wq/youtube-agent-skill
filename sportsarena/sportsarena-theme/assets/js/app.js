@@ -5,6 +5,8 @@
  * - Header pop-overs (search, language, profile).
  * - Favourites («مفضلتي»): stars on matches and competitions, saved in
  *   localStorage only (no account, nothing sent to the server).
+ * - Installable app: service worker registration, install button / bar
+ *   (and the «Add to Home Screen» hint on iPhone), offline retry.
  * - Match centre: status tabs (all / live / finished / upcoming / favourites)
  *   and sport chips.
  * - Broken provider logos fall back to a neutral shield.
@@ -409,6 +411,92 @@
 			if ( pop.open && ! pop.contains( e.target ) ) {
 				pop.open = false;
 			}
+		} );
+	} );
+
+	/* ---------- Installable app (PWA) ---------- */
+	if ( cfg.sw && 'serviceWorker' in navigator ) {
+		window.addEventListener( 'load', function () {
+			navigator.serviceWorker.register( cfg.sw, { scope: cfg.swScope || '/' } ).catch( function () {} );
+		} );
+	}
+	var installBtns = document.querySelectorAll( '[data-sa-install]' );
+	var appbar = document.querySelector( '[data-sa-appbar]' );
+	var iosHint = document.querySelector( '[data-sa-install-ios]' );
+	var deferredPrompt = null;
+	var standalone = ( window.matchMedia && window.matchMedia( '(display-mode: standalone)' ).matches ) || window.navigator.standalone === true;
+	var ua = window.navigator.userAgent || '';
+	var isIos = ( /iphone|ipad|ipod/i.test( ua ) || ( window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1 ) ) && ! /crios|fxios|edgios/i.test( ua );
+	var DISMISS_KEY = 'sa-app-dismissed';
+	var dismissed = false;
+	try {
+		dismissed = Date.now() - parseInt( localStorage.getItem( DISMISS_KEY ) || '0', 10 ) < 30 * 864e5;
+	} catch ( e ) {}
+
+	function showInstall() {
+		installBtns.forEach( function ( btn ) {
+			btn.hidden = false;
+		} );
+		if ( appbar && ! dismissed ) {
+			appbar.hidden = false;
+		}
+	}
+	function hideInstall() {
+		installBtns.forEach( function ( btn ) {
+			btn.hidden = true;
+		} );
+		if ( appbar ) {
+			appbar.hidden = true;
+		}
+	}
+	if ( ! standalone ) {
+		window.addEventListener( 'beforeinstallprompt', function ( e ) {
+			e.preventDefault();
+			deferredPrompt = e;
+			showInstall();
+		} );
+		if ( isIos ) {
+			showInstall();
+		}
+	}
+	window.addEventListener( 'appinstalled', hideInstall );
+	installBtns.forEach( function ( btn ) {
+		btn.addEventListener( 'click', function () {
+			if ( deferredPrompt ) {
+				deferredPrompt.prompt();
+				deferredPrompt.userChoice.then( function ( choice ) {
+					deferredPrompt = null;
+					if ( choice && choice.outcome === 'accepted' ) {
+						hideInstall();
+					}
+				} );
+			} else if ( isIos && iosHint ) {
+				iosHint.hidden = false;
+				var text = appbar && appbar.querySelector( '[data-sa-appbar-text]' );
+				if ( text ) {
+					text.textContent = iosHint.textContent;
+				}
+				if ( appbar ) {
+					var own = appbar.querySelector( '[data-sa-install]' );
+					if ( own ) {
+						own.hidden = true;
+					}
+				}
+			}
+		} );
+	} );
+	var appbarClose = document.querySelector( '[data-sa-appbar-close]' );
+	if ( appbarClose && appbar ) {
+		appbarClose.addEventListener( 'click', function () {
+			appbar.hidden = true;
+			try {
+				localStorage.setItem( DISMISS_KEY, String( Date.now() ) );
+			} catch ( e ) {}
+		} );
+	}
+	document.querySelectorAll( '[data-sa-retry]' ).forEach( function ( btn ) {
+		btn.addEventListener( 'click', function () {
+			window.location.reload();
 		} );
 	} );
 

@@ -32,6 +32,9 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .sa-profile__empty{margin:0 4px 10px;color:var(--muted);font-size:.88rem}
 .sa-profile__empty[hidden]{display:none}
 .sa-profile__row{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;padding:0 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
+.sa-profile__row[hidden],.sa-profile__hint[hidden]{display:none}
+.sa-profile__row--app{margin-bottom:8px;border-color:var(--accent);color:var(--accent)}
+.sa-profile__hint{margin:-2px 4px 10px;font-size:.82rem;color:var(--muted)}
 .sa-profile__note{margin:8px 4px 0;font-size:.75rem;color:var(--muted)}
 
 /* Jump links on the match page */
@@ -122,6 +125,11 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .sa-comments{margin-top:24px}
 .sa-comment-list{list-style:none;padding:0}
 .sa-comment-list .comment-body{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:12px;margin-bottom:12px}
+
+/* Offline page of the app */
+.sa-offline{max-width:560px;margin:32px auto;padding:28px 20px;text-align:center;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius)}
+.sa-offline__icon{display:inline-flex;align-items:center;justify-content:center;width:72px;height:72px;margin-bottom:12px;border-radius:18px;background:var(--accent);color:#fff}
+.sa-offline__actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:16px}
 
 /* 404 */
 .sa-404{max-width:640px;margin:24px auto;text-align:center}

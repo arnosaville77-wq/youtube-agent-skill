@@ -18,3 +18,4 @@ require SPORTSARENA_THEME_DIR . '/inc/setup.php';
 require SPORTSARENA_THEME_DIR . '/inc/assets.php';
 require SPORTSARENA_THEME_DIR . '/inc/template-tags.php';
 require SPORTSARENA_THEME_DIR . '/inc/images.php';
+require SPORTSARENA_THEME_DIR . '/inc/pwa.php';

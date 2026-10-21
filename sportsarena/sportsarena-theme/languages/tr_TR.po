@@ -45,7 +45,8 @@ msgstr ""
 "Sayfa taşınmış veya silinmiş olabilir. Arama yapabilir veya bugünün "
 "maçlarına dönebilirsiniz."
 
-#: 404.php:18 front-page.php:28 matches-day.php:17 taxonomy-sport.php:25
+#: 404.php:18 front-page.php:28 inc/pwa.php:146 matches-day.php:17
+#: taxonomy-sport.php:25
 msgid "مباريات اليوم"
 msgstr "Bugünün maçları"
 
@@ -58,7 +59,7 @@ msgstr "Son haberler"
 msgid "لا توجد مقالات بعد."
 msgstr "Henüz yazı yok."
 
-#: big-matches.php:20 front-page.php:116 header.php:82
+#: big-matches.php:20 front-page.php:116 header.php:87 inc/pwa.php:150
 msgid "المباريات الكبرى"
 msgstr "Büyük maçlar"
 
@@ -230,52 +231,84 @@ msgstr ""
 "Bir maçı veya turnuvayı burada hızla bulmak için yanındaki yıldıza dokunun."
 
 #: header.php:55
+msgid "تثبيت التطبيق"
+msgstr "Uygulamayı yükle"
+
+#: header.php:58
+msgid ""
+"لتثبيت التطبيق على آيفون: اضغط زر المشاركة في Safari ثم «إضافة إلى الشاشة "
+"الرئيسية»."
+msgstr ""
+"Uygulamayı iPhone’a yüklemek için: Safari’de Paylaş düğmesine, ardından “Ana"
+" Ekrana Ekle”ye dokunun."
+
+#: header.php:60
 msgid "الوضع الداكن"
 msgstr "Karanlık mod"
 
-#: header.php:58
+#: header.php:63
 msgid "بدون تسجيل: المفضلة محفوظة في متصفحك فقط."
 msgstr "Kayıt yok: favoriler yalnızca tarayıcınızda saklanır."
 
-#: header.php:64 inc/setup.php:40
+#: header.php:69 inc/setup.php:40
 msgid "القائمة الرئيسية"
 msgstr "Ana menü"
 
-#: header.php:85
+#: header.php:90
 msgid "دوري الأبطال"
 msgstr "Şampiyonlar Ligi"
 
-#: header.php:87 inc/assets.php:82 sidebar.php:18 taxonomy-sport.php:31
+#: header.php:92 inc/assets.php:84 sidebar.php:18 taxonomy-sport.php:31
 msgid "البطولات"
 msgstr "Turnuvalar"
 
-#: header.php:91
+#: header.php:96 inc/pwa.php:157
 msgid "الأخبار"
 msgstr "Haberler"
 
-#: inc/assets.php:78
+#: header.php:117
+msgid "ثبّت التطبيق"
+msgstr "Uygulamayı yükleyin"
+
+#: header.php:118
+msgid "النتائج المباشرة بلمسة من شاشة هاتفك، وتعمل حتى بدون إنترنت."
+msgstr "Canlı skorlar ana ekranınızda tek dokunuşla, internet olmadan bile."
+
+#: header.php:120
+msgid "تثبيت"
+msgstr "Yükle"
+
+#: header.php:121
+msgid "إغلاق"
+msgstr "Kapat"
+
+#: inc/assets.php:80
 msgid "بتوقيتك"
 msgstr "sizin saatiniz"
 
-#: inc/assets.php:79
+#: inc/assets.php:81
 msgid "لا توجد نتائج"
 msgstr "Sonuç yok"
 
-#: inc/assets.php:80
+#: inc/assets.php:82
 msgid "فريق"
 msgstr "Takım"
 
-#: inc/assets.php:81 single-competition.php:19
+#: inc/assets.php:83 single-competition.php:19
 msgid "المباريات"
 msgstr "Maçlar"
 
-#: inc/assets.php:83
+#: inc/assets.php:85
 msgid "الفرق"
 msgstr "Takımlar"
 
-#: inc/assets.php:84
+#: inc/assets.php:86
 msgid "إزالة من المفضلة"
 msgstr "Favorilerden çıkar"
+
+#: inc/pwa.php:415 offline.php:16
+msgid "لا يوجد اتصال بالإنترنت"
+msgstr "İnternet bağlantısı yok"
 
 #: inc/setup.php:41
 msgid "قائمة الفوتر"
@@ -317,7 +350,7 @@ msgid "اللغة"
 msgstr "Dil"
 
 #. translators: %s: match, team or competition name.
-#: inc/template-tags.php:393
+#: inc/template-tags.php:395
 msgid "إضافة %s إلى المفضلة"
 msgstr "%s favorilere ekle"
 
@@ -352,6 +385,21 @@ msgid ""
 msgstr ""
 "%s tarihindeki maçların tüm turnuvalardaki saatleri ve sonuçları. Saatler "
 "cihazınızın saat dilimine göre otomatik gösterilir."
+
+#: offline.php:17
+msgid ""
+"يمكنك فتح الصفحات التي زرتها من قبل. ستظهر النتائج الجديدة عند عودة الاتصال."
+msgstr ""
+"Daha önce ziyaret ettiğiniz sayfaları açabilirsiniz. Bağlantı geri "
+"geldiğinde yeni skorlar görünecek."
+
+#: offline.php:19
+msgid "إعادة المحاولة"
+msgstr "Tekrar dene"
+
+#: offline.php:20
+msgid "الرئيسية"
+msgstr "Ana sayfa"
 
 #: search.php:38
 msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."

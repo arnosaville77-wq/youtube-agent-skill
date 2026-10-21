@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 				<?php the_custom_logo(); ?>
 			<?php else : ?>
 				<a class="sa-brand__name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<span class="sa-brand__mark" aria-hidden="true"><?php echo sportsarena_theme_sport_icon( 'football', 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?></span>
+					<span class="sa-brand__mark" aria-hidden="true"><?php echo sportsarena_theme_icon( 'ball', 24 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?></span>
 					<span class="sa-brand__text"><?php bloginfo( 'name' ); ?></span>
 				</a>
 			<?php endif; ?>
@@ -51,6 +51,11 @@ defined( 'ABSPATH' ) || exit;
 					<p class="sa-profile__title"><?php echo sportsarena_theme_icon( 'star', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?> <?php esc_html_e( 'مفضلتي', 'sportsarena-theme' ); ?></p>
 					<div class="sa-profile__list" data-sa-fav-list></div>
 					<p class="sa-profile__empty" data-sa-fav-empty><?php esc_html_e( 'اضغط النجمة بجانب أي مباراة أو بطولة لتجدها هنا بسرعة.', 'sportsarena-theme' ); ?></p>
+					<button class="sa-profile__row sa-profile__row--app" type="button" data-sa-install hidden>
+						<span><?php esc_html_e( 'تثبيت التطبيق', 'sportsarena-theme' ); ?></span>
+						<?php echo sportsarena_theme_icon( 'download', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
+					</button>
+					<p class="sa-profile__hint" data-sa-install-ios hidden><?php esc_html_e( 'لتثبيت التطبيق على آيفون: اضغط زر المشاركة في Safari ثم «إضافة إلى الشاشة الرئيسية».', 'sportsarena-theme' ); ?></p>
 					<button class="sa-profile__row sa-theme-toggle" type="button" aria-pressed="false">
 						<span><?php esc_html_e( 'الوضع الداكن', 'sportsarena-theme' ); ?></span>
 						<?php echo sportsarena_theme_icon( 'moon', 18 ) . sportsarena_theme_icon( 'sun', 18 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Static SVG. ?>
@@ -103,6 +108,20 @@ defined( 'ABSPATH' ) || exit;
 			?>
 		</ul>
 	</nav>
+
+	<?php if ( sportsarena_theme_pwa_enabled() ) : ?>
+		<div class="sa-appbar" data-sa-appbar hidden>
+			<div class="sa-container sa-appbar__inner">
+				<img class="sa-appbar__icon" src="<?php echo esc_url( has_site_icon() ? get_site_icon_url( 64 ) : SPORTSARENA_THEME_URI . '/assets/icons/icon-192.png' ); ?>" width="36" height="36" alt="">
+				<p class="sa-appbar__text">
+					<strong><?php esc_html_e( 'ثبّت التطبيق', 'sportsarena-theme' ); ?></strong>
+					<span data-sa-appbar-text><?php esc_html_e( 'النتائج المباشرة بلمسة من شاشة هاتفك، وتعمل حتى بدون إنترنت.', 'sportsarena-theme' ); ?></span>
+				</p>
+				<button type="button" class="sa-appbar__install" data-sa-install><?php esc_html_e( 'تثبيت', 'sportsarena-theme' ); ?></button>
+				<button type="button" class="sa-appbar__close" data-sa-appbar-close aria-label="<?php esc_attr_e( 'إغلاق', 'sportsarena-theme' ); ?>">&times;</button>
+			</div>
+		</div>
+	<?php endif; ?>
 
 	<?php
 	if ( sportsarena_theme_core() && ! is_front_page() && ! get_query_var( 'sa_day' ) ) {

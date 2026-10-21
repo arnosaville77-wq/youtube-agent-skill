@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-21T21:44:58+00:00\n"
+"POT-Creation-Date: 2026-10-21T22:13:35+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sportsarena-theme\n"
@@ -42,6 +42,7 @@ msgstr ""
 
 #: 404.php:18
 #: front-page.php:28
+#: inc/pwa.php:146
 #: matches-day.php:17
 #: taxonomy-sport.php:25
 msgid "مباريات اليوم"
@@ -64,7 +65,8 @@ msgstr ""
 
 #: big-matches.php:20
 #: front-page.php:116
-#: header.php:82
+#: header.php:87
+#: inc/pwa.php:150
 msgid "المباريات الكبرى"
 msgstr ""
 
@@ -242,56 +244,86 @@ msgid "اضغط النجمة بجانب أي مباراة أو بطولة لتج
 msgstr ""
 
 #: header.php:55
-msgid "الوضع الداكن"
+msgid "تثبيت التطبيق"
 msgstr ""
 
 #: header.php:58
+msgid "لتثبيت التطبيق على آيفون: اضغط زر المشاركة في Safari ثم «إضافة إلى الشاشة الرئيسية»."
+msgstr ""
+
+#: header.php:60
+msgid "الوضع الداكن"
+msgstr ""
+
+#: header.php:63
 msgid "بدون تسجيل: المفضلة محفوظة في متصفحك فقط."
 msgstr ""
 
-#: header.php:64
+#: header.php:69
 #: inc/setup.php:40
 msgid "القائمة الرئيسية"
 msgstr ""
 
-#: header.php:85
+#: header.php:90
 msgid "دوري الأبطال"
 msgstr ""
 
-#: header.php:87
-#: inc/assets.php:82
+#: header.php:92
+#: inc/assets.php:84
 #: sidebar.php:18
 #: taxonomy-sport.php:31
 msgid "البطولات"
 msgstr ""
 
-#: header.php:91
+#: header.php:96
+#: inc/pwa.php:157
 msgid "الأخبار"
 msgstr ""
 
-#: inc/assets.php:78
-msgid "بتوقيتك"
+#: header.php:117
+msgid "ثبّت التطبيق"
 msgstr ""
 
-#: inc/assets.php:79
-msgid "لا توجد نتائج"
+#: header.php:118
+msgid "النتائج المباشرة بلمسة من شاشة هاتفك، وتعمل حتى بدون إنترنت."
+msgstr ""
+
+#: header.php:120
+msgid "تثبيت"
+msgstr ""
+
+#: header.php:121
+msgid "إغلاق"
 msgstr ""
 
 #: inc/assets.php:80
-msgid "فريق"
+msgid "بتوقيتك"
 msgstr ""
 
 #: inc/assets.php:81
+msgid "لا توجد نتائج"
+msgstr ""
+
+#: inc/assets.php:82
+msgid "فريق"
+msgstr ""
+
+#: inc/assets.php:83
 #: single-competition.php:19
 msgid "المباريات"
 msgstr ""
 
-#: inc/assets.php:83
+#: inc/assets.php:85
 msgid "الفرق"
 msgstr ""
 
-#: inc/assets.php:84
+#: inc/assets.php:86
 msgid "إزالة من المفضلة"
+msgstr ""
+
+#: inc/pwa.php:415
+#: offline.php:16
+msgid "لا يوجد اتصال بالإنترنت"
 msgstr ""
 
 #: inc/setup.php:41
@@ -332,7 +364,7 @@ msgid "اللغة"
 msgstr ""
 
 #. translators: %s: match, team or competition name.
-#: inc/template-tags.php:393
+#: inc/template-tags.php:395
 #, php-format
 msgid "إضافة %s إلى المفضلة"
 msgstr ""
@@ -365,6 +397,18 @@ msgstr ""
 #: matches-day.php:46
 #, php-format
 msgid "مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً."
+msgstr ""
+
+#: offline.php:17
+msgid "يمكنك فتح الصفحات التي زرتها من قبل. ستظهر النتائج الجديدة عند عودة الاتصال."
+msgstr ""
+
+#: offline.php:19
+msgid "إعادة المحاولة"
+msgstr ""
+
+#: offline.php:20
+msgid "الرئيسية"
 msgstr ""
 
 #: search.php:38
