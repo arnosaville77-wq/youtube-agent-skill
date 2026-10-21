@@ -75,9 +75,13 @@ function sportsarena_theme_assets() {
 				'dayUrl'   => function_exists( 'sportsarena_day_url' ) ? esc_url_raw( home_url( user_trailingslashit( 'matches/__DATE__' ) ) ) : '',
 				'interval' => 60,
 				'i18n'     => array(
-					'yourTime'  => __( 'بتوقيتك', 'sportsarena-theme' ),
-					'noResults' => __( 'لا توجد نتائج', 'sportsarena-theme' ),
-					'team'      => __( 'فريق', 'sportsarena-theme' ),
+					'yourTime'        => __( 'بتوقيتك', 'sportsarena-theme' ),
+					'noResults'       => __( 'لا توجد نتائج', 'sportsarena-theme' ),
+					'team'            => __( 'فريق', 'sportsarena-theme' ),
+					'favMatches'      => __( 'المباريات', 'sportsarena-theme' ),
+					'favCompetitions' => __( 'البطولات', 'sportsarena-theme' ),
+					'favTeams'        => __( 'الفرق', 'sportsarena-theme' ),
+					'favRemove'       => __( 'إزالة من المفضلة', 'sportsarena-theme' ),
 				),
 			)
 		) . ';',

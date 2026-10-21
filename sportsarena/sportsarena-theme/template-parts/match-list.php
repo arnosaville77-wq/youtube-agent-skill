@@ -22,14 +22,32 @@ foreach ( $sportsarena_groups as $sportsarena_i => $sportsarena_group ) :
 	$sportsarena_sports = $sportsarena_comp ? get_the_terms( $sportsarena_comp, 'sport' ) : false;
 	$sportsarena_slug   = $sportsarena_sports && ! is_wp_error( $sportsarena_sports ) ? $sportsarena_sports[0]->slug : '';
 	?>
-	<section class="sa-group" data-sa-sport="<?php echo esc_attr( $sportsarena_slug ); ?>">
-		<h2 class="sa-group__title">
+	<section class="sa-group" data-sa-sport="<?php echo esc_attr( $sportsarena_slug ); ?>" data-sa-comp="<?php echo esc_attr( (string) $sportsarena_comp ); ?>">
+		<div class="sa-group__head">
 			<?php if ( $sportsarena_comp ) : ?>
-				<a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>"><?php echo sportsarena_competition_logo( $sportsarena_comp, 22 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?><span><?php echo esc_html( get_the_title( $sportsarena_comp ) ); ?></span></a>
+				<?php
+				$sportsarena_comp_title = get_the_title( $sportsarena_comp );
+				$sportsarena_country    = sportsarena_theme_country_label( $sportsarena_comp );
+				echo sportsarena_theme_fav_button( 'competition', $sportsarena_comp, $sportsarena_comp_title, get_permalink( $sportsarena_comp ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper.
+				?>
+				<h2 class="sa-group__title">
+					<a href="<?php echo esc_url( get_permalink( $sportsarena_comp ) ); ?>">
+						<?php echo sportsarena_competition_logo( $sportsarena_comp, 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
+						<span class="sa-group__name">
+							<?php if ( $sportsarena_country ) : ?>
+								<span class="sa-group__country"><?php echo esc_html( $sportsarena_country ); ?>:</span>
+							<?php endif; ?>
+							<span><?php echo esc_html( $sportsarena_comp_title ); ?></span>
+						</span>
+					</a>
+				</h2>
+				<?php if ( 'football' === $sportsarena_slug || 'basketball' === $sportsarena_slug ) : ?>
+					<a class="sa-group__table" href="<?php echo esc_url( sportsarena_competition_tab_url( $sportsarena_comp, 'standings' ) ); ?>"><?php esc_html_e( 'الترتيب', 'sportsarena-theme' ); ?></a>
+				<?php endif; ?>
 			<?php else : ?>
-				<?php esc_html_e( 'مباريات أخرى', 'sportsarena-theme' ); ?>
+				<h2 class="sa-group__title"><?php esc_html_e( 'مباريات أخرى', 'sportsarena-theme' ); ?></h2>
 			<?php endif; ?>
-		</h2>
+		</div>
 		<ul class="sa-matches" role="list">
 			<?php
 			foreach ( $sportsarena_group['matches'] as $sportsarena_match_id ) {

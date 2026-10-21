@@ -45,13 +45,12 @@ msgstr ""
 "Sayfa taşınmış veya silinmiş olabilir. Arama yapabilir veya bugünün "
 "maçlarına dönebilirsiniz."
 
-#: 404.php:18 front-page.php:44 header.php:50 matches-day.php:17
-#: taxonomy-sport.php:25
+#: 404.php:18 front-page.php:28 matches-day.php:17 taxonomy-sport.php:25
 msgid "مباريات اليوم"
 msgstr "Bugünün maçları"
 
-#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:130
-#: taxonomy-sport.php:58 template-news.php:46
+#: archive.php:22 front-page.php:139 index.php:22 sidebar.php:39
+#: single-competition.php:130 taxonomy-sport.php:58 template-news.php:46
 msgid "آخر الأخبار"
 msgstr "Son haberler"
 
@@ -59,7 +58,7 @@ msgstr "Son haberler"
 msgid "لا توجد مقالات بعد."
 msgstr "Henüz yazı yok."
 
-#: big-matches.php:20 front-page.php:30 header.php:52
+#: big-matches.php:20 front-page.php:116 header.php:82
 msgid "المباريات الكبرى"
 msgstr "Büyük maçlar"
 
@@ -78,6 +77,7 @@ msgid "لا توجد مباريات كبرى في الأيام القادمة."
 msgstr "Önümüzdeki günlerde büyük maç yok."
 
 #: big-matches.php:47 single-competition.php:20
+#: template-parts/match-list.php:45
 msgid "الترتيب"
 msgstr "Puan durumu"
 
@@ -176,73 +176,82 @@ msgstr "Gizlilik ayarları"
 msgid "© %1$s %2$s. جميع الحقوق محفوظة."
 msgstr "© %1$s %2$s. Tüm hakları saklıdır."
 
-#: front-page.php:31
-msgid "كل المباريات الكبرى ودوري الأبطال"
-msgstr "Tüm büyük maçlar ve Şampiyonlar Ligi"
-
-#: front-page.php:45
-msgid "كل المباريات"
-msgstr "Tüm maçlar"
-
-#: front-page.php:50
-msgid "تصفية حسب الرياضة"
-msgstr "Spora göre filtrele"
-
-#: front-page.php:51
-msgid "الكل"
-msgstr "Tümü"
-
-#: front-page.php:59
+#: front-page.php:29
 msgid "لا توجد مباريات مسجلة اليوم. تصفح مباريات الغد."
 msgstr "Bugün planlanmış maç yok. Yarının maçlarına göz atın."
 
-#: front-page.php:77
+#: front-page.php:48
 msgid "أحدث الأخبار"
 msgstr "En yeni haberler"
 
-#: front-page.php:79 template-news.php:84
+#: front-page.php:50 template-news.php:84
 msgid "المزيد"
 msgstr "Daha fazla"
+
+#: front-page.php:67
+msgid "البطولات والدول"
+msgstr "Turnuvalar ve ülkeler"
+
+#: front-page.php:70
+msgid "أهم البطولات"
+msgstr "Önemli turnuvalar"
+
+#: front-page.php:81
+msgid "بطولات دولية"
+msgstr "Uluslararası turnuvalar"
+
+#: front-page.php:92
+msgid "الدول"
+msgstr "Ülkeler"
+
+#: front-page.php:111 inc/setup.php:86 sidebar.php:10
+msgid "الشريط الجانبي"
+msgstr "Kenar çubuğu"
+
+#: front-page.php:124
+msgid "كل المباريات الكبرى ودوري الأبطال"
+msgstr "Tüm büyük maçlar ve Şampiyonlar Ligi"
 
 #: header.php:18
 msgid "تخطَّ إلى المحتوى"
 msgstr "İçeriğe geç"
 
-#: header.php:31
-msgid "القائمة"
-msgstr "Menü"
+#: header.php:35 header.php:37 searchform.php:13 searchform.php:15
+msgid "بحث"
+msgstr "Ara"
 
-#: header.php:35 inc/setup.php:40
+#: header.php:45 header.php:48 header.php:51
+msgid "مفضلتي"
+msgstr "Favorilerim"
+
+#: header.php:53
+msgid "اضغط النجمة بجانب أي مباراة أو بطولة لتجدها هنا بسرعة."
+msgstr ""
+"Bir maçı veya turnuvayı burada hızla bulmak için yanındaki yıldıza dokunun."
+
+#: header.php:55
+msgid "الوضع الداكن"
+msgstr "Karanlık mod"
+
+#: header.php:58
+msgid "بدون تسجيل: المفضلة محفوظة في متصفحك فقط."
+msgstr "Kayıt yok: favoriler yalnızca tarayıcınızda saklanır."
+
+#: header.php:64 inc/setup.php:40
 msgid "القائمة الرئيسية"
 msgstr "Ana menü"
 
-#: header.php:48
-msgid "الرئيسية"
-msgstr "Ana sayfa"
-
-#: header.php:51 matches-day.php:18
-msgid "مباريات الغد"
-msgstr "Yarının maçları"
-
-#: header.php:55
+#: header.php:85
 msgid "دوري الأبطال"
 msgstr "Şampiyonlar Ligi"
 
-#: header.php:57 sidebar.php:18 taxonomy-sport.php:31
+#: header.php:87 inc/assets.php:82 sidebar.php:18 taxonomy-sport.php:31
 msgid "البطولات"
 msgstr "Turnuvalar"
 
-#: header.php:61
+#: header.php:91
 msgid "الأخبار"
 msgstr "Haberler"
-
-#: header.php:72
-msgid "تبديل الوضع الداكن"
-msgstr "Karanlık modu aç/kapat"
-
-#: header.php:83
-msgid "الرياضات"
-msgstr "Sporlar"
 
 #: inc/assets.php:78
 msgid "بتوقيتك"
@@ -256,13 +265,21 @@ msgstr "Sonuç yok"
 msgid "فريق"
 msgstr "Takım"
 
+#: inc/assets.php:81 single-competition.php:19
+msgid "المباريات"
+msgstr "Maçlar"
+
+#: inc/assets.php:83
+msgid "الفرق"
+msgstr "Takımlar"
+
+#: inc/assets.php:84
+msgid "إزالة من المفضلة"
+msgstr "Favorilerden çıkar"
+
 #: inc/setup.php:41
 msgid "قائمة الفوتر"
 msgstr "Alt bilgi menüsü"
-
-#: inc/setup.php:86 sidebar.php:10
-msgid "الشريط الجانبي"
-msgstr "Kenar çubuğu"
 
 #: inc/setup.php:88
 msgid "يظهر بجانب المحتوى على الشاشات الكبيرة."
@@ -299,6 +316,15 @@ msgstr "Yazı gezintisi"
 msgid "اللغة"
 msgstr "Dil"
 
+#. translators: %s: match, team or competition name.
+#: inc/template-tags.php:393
+msgid "إضافة %s إلى المفضلة"
+msgstr "%s favorilere ekle"
+
+#: matches-day.php:18
+msgid "مباريات الغد"
+msgstr "Yarının maçları"
+
 #: matches-day.php:19
 msgid "مباريات الأمس"
 msgstr "Dünün maçları"
@@ -308,32 +334,28 @@ msgstr "Dünün maçları"
 msgid "مباريات يوم %s"
 msgstr "%s maçları"
 
+#: matches-day.php:35
+msgid "لا توجد مباريات في هذا اليوم."
+msgstr "Bu gün maç yok."
+
 #. translators: %s: date.
-#: matches-day.php:33
+#: matches-day.php:43
 msgid ""
 "مواعيد ونتائج مباريات %s في كل البطولات. كل الأوقات بتوقيت جرينتش (GMT)."
 msgstr ""
 "%s tarihindeki tüm müsabakaların fikstürü ve sonuçları. Tüm saatler GMT’dir."
 
 #. translators: %s: date.
-#: matches-day.php:36
+#: matches-day.php:46
 msgid ""
 "مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً."
 msgstr ""
 "%s tarihindeki maçların tüm turnuvalardaki saatleri ve sonuçları. Saatler "
 "cihazınızın saat dilimine göre otomatik gösterilir."
 
-#: matches-day.php:42
-msgid "لا توجد مباريات في هذا اليوم."
-msgstr "Bu gün maç yok."
-
 #: search.php:38
 msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."
 msgstr "Eşleşen sonuç bulunamadı. Başka kelimeler deneyin."
-
-#: searchform.php:13 searchform.php:15
-msgid "بحث"
-msgstr "Ara"
 
 #: searchform.php:14
 msgid "ابحث في الموقع…"
@@ -342,10 +364,6 @@ msgstr "Sitede ara…"
 #: single-competition.php:18
 msgid "نظرة عامة"
 msgstr "Genel bakış"
-
-#: single-competition.php:19
-msgid "المباريات"
-msgstr "Maçlar"
 
 #: single-competition.php:21 single-competition.php:83
 msgid "الهدافون"
@@ -504,35 +522,71 @@ msgstr "Bugün bu sporda maç yok."
 msgid "الأخبار (حسب الرياضة)"
 msgstr "Haberler (spora göre)"
 
-#: template-parts/date-picker.php:15
-msgid "أمس"
-msgstr "Dün"
-
-#: template-parts/date-picker.php:16
-msgid "اليوم"
-msgstr "Bugün"
-
-#: template-parts/date-picker.php:17
-msgid "غداً"
-msgstr "Yarın"
-
-#: template-parts/date-picker.php:20
-msgid "اختيار اليوم"
-msgstr "Günü seçin"
-
-#: template-parts/date-picker.php:35
-msgid "اختر تاريخاً"
-msgstr "Tarih seçin"
-
 #: template-parts/live-ticker.php:15
 msgid "المباريات الجارية الآن"
 msgstr "Devam eden maçlar"
 
-#: template-parts/live-ticker.php:17
+#: template-parts/live-ticker.php:17 template-parts/match-center.php:32
 msgid "مباشر"
 msgstr "Canlı"
 
-#: template-parts/match-list.php:30
+#: template-parts/match-center.php:31
+msgid "الكل"
+msgstr "Tümü"
+
+#: template-parts/match-center.php:33
+msgid "النتائج"
+msgstr "Sonuçlar"
+
+#: template-parts/match-center.php:34
+msgid "القادمة"
+msgstr "Yaklaşan"
+
+#: template-parts/match-center.php:35
+msgid "المفضلة"
+msgstr "Favoriler"
+
+#: template-parts/match-center.php:42
+msgid "اختيار اليوم"
+msgstr "Günü seçin"
+
+#: template-parts/match-center.php:45
+msgid "اليوم السابق"
+msgstr "Önceki gün"
+
+#: template-parts/match-center.php:50
+msgid "اختر تاريخاً"
+msgstr "Tarih seçin"
+
+#: template-parts/match-center.php:55
+msgid "اليوم التالي"
+msgstr "Sonraki gün"
+
+#: template-parts/match-center.php:61
+msgid "تصفية المباريات"
+msgstr "Maçları filtrele"
+
+#: template-parts/match-center.php:76
+msgid "تصفية حسب الرياضة"
+msgstr "Spora göre filtrele"
+
+#: template-parts/match-center.php:77
+msgid "كل الرياضات"
+msgstr "Tüm sporlar"
+
+#: template-parts/match-center.php:86
+msgid "لا توجد مباريات في هذا التصنيف."
+msgstr "Bu görünümde maç yok."
+
+#: template-parts/match-center.php:87
+msgid ""
+"لم تضف مباريات أو بطولات إلى المفضلة بعد. اضغط النجمة بجانب أي مباراة أو "
+"بطولة."
+msgstr ""
+"Henüz favorilerinize maç veya turnuva eklemediniz. Herhangi bir maçın veya "
+"turnuvanın yanındaki yıldıza dokunun."
+
+#: template-parts/match-list.php:48
 msgid "مباريات أخرى"
 msgstr "Diğer maçlar"
 

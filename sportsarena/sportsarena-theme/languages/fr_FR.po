@@ -45,13 +45,12 @@ msgstr ""
 "La page a peut-être été déplacée ou supprimée. Vous pouvez faire une "
 "recherche ou revenir aux matchs du jour."
 
-#: 404.php:18 front-page.php:44 header.php:50 matches-day.php:17
-#: taxonomy-sport.php:25
+#: 404.php:18 front-page.php:28 matches-day.php:17 taxonomy-sport.php:25
 msgid "مباريات اليوم"
 msgstr "Matchs du jour"
 
-#: archive.php:22 index.php:22 sidebar.php:39 single-competition.php:130
-#: taxonomy-sport.php:58 template-news.php:46
+#: archive.php:22 front-page.php:139 index.php:22 sidebar.php:39
+#: single-competition.php:130 taxonomy-sport.php:58 template-news.php:46
 msgid "آخر الأخبار"
 msgstr "Dernières actualités"
 
@@ -59,7 +58,7 @@ msgstr "Dernières actualités"
 msgid "لا توجد مقالات بعد."
 msgstr "Aucun article pour le moment."
 
-#: big-matches.php:20 front-page.php:30 header.php:52
+#: big-matches.php:20 front-page.php:116 header.php:82
 msgid "المباريات الكبرى"
 msgstr "Grands matchs"
 
@@ -80,6 +79,7 @@ msgid "لا توجد مباريات كبرى في الأيام القادمة."
 msgstr "Aucun grand match dans les prochains jours."
 
 #: big-matches.php:47 single-competition.php:20
+#: template-parts/match-list.php:45
 msgid "الترتيب"
 msgstr "Classement"
 
@@ -180,73 +180,85 @@ msgstr "Paramètres de confidentialité"
 msgid "© %1$s %2$s. جميع الحقوق محفوظة."
 msgstr "© %1$s %2$s. Tous droits réservés."
 
-#: front-page.php:31
-msgid "كل المباريات الكبرى ودوري الأبطال"
-msgstr "Tous les grands matchs et la Ligue des champions"
-
-#: front-page.php:45
-msgid "كل المباريات"
-msgstr "Tous les matchs"
-
-#: front-page.php:50
-msgid "تصفية حسب الرياضة"
-msgstr "Filtrer par sport"
-
-#: front-page.php:51
-msgid "الكل"
-msgstr "Tout"
-
-#: front-page.php:59
+#: front-page.php:29
 msgid "لا توجد مباريات مسجلة اليوم. تصفح مباريات الغد."
 msgstr "Aucun match prévu aujourd’hui. Consultez les matchs de demain."
 
-#: front-page.php:77
+#: front-page.php:48
 msgid "أحدث الأخبار"
 msgstr "Dernières actualités"
 
-#: front-page.php:79 template-news.php:84
+#: front-page.php:50 template-news.php:84
 msgid "المزيد"
 msgstr "Plus"
+
+#: front-page.php:67
+msgid "البطولات والدول"
+msgstr "Compétitions et pays"
+
+#: front-page.php:70
+msgid "أهم البطولات"
+msgstr "Compétitions principales"
+
+#: front-page.php:81
+msgid "بطولات دولية"
+msgstr "Compétitions internationales"
+
+#: front-page.php:92
+msgid "الدول"
+msgstr "Pays"
+
+#: front-page.php:111 inc/setup.php:86 sidebar.php:10
+msgid "الشريط الجانبي"
+msgstr "Barre latérale"
+
+#: front-page.php:124
+msgid "كل المباريات الكبرى ودوري الأبطال"
+msgstr "Tous les grands matchs et la Ligue des champions"
 
 #: header.php:18
 msgid "تخطَّ إلى المحتوى"
 msgstr "Aller au contenu"
 
-#: header.php:31
-msgid "القائمة"
-msgstr "Menu"
+#: header.php:35 header.php:37 searchform.php:13 searchform.php:15
+msgid "بحث"
+msgstr "Rechercher"
 
-#: header.php:35 inc/setup.php:40
+#: header.php:45 header.php:48 header.php:51
+msgid "مفضلتي"
+msgstr "Mes favoris"
+
+#: header.php:53
+msgid "اضغط النجمة بجانب أي مباراة أو بطولة لتجدها هنا بسرعة."
+msgstr ""
+"Touchez l’étoile à côté d’un match ou d’une compétition pour le retrouver "
+"ici rapidement."
+
+#: header.php:55
+msgid "الوضع الداكن"
+msgstr "Mode sombre"
+
+#: header.php:58
+msgid "بدون تسجيل: المفضلة محفوظة في متصفحك فقط."
+msgstr ""
+"Sans inscription : les favoris sont enregistrés uniquement dans votre "
+"navigateur."
+
+#: header.php:64 inc/setup.php:40
 msgid "القائمة الرئيسية"
 msgstr "Menu principal"
 
-#: header.php:48
-msgid "الرئيسية"
-msgstr "Accueil"
-
-#: header.php:51 matches-day.php:18
-msgid "مباريات الغد"
-msgstr "Matchs de demain"
-
-#: header.php:55
+#: header.php:85
 msgid "دوري الأبطال"
 msgstr "Ligue des champions"
 
-#: header.php:57 sidebar.php:18 taxonomy-sport.php:31
+#: header.php:87 inc/assets.php:82 sidebar.php:18 taxonomy-sport.php:31
 msgid "البطولات"
 msgstr "Compétitions"
 
-#: header.php:61
+#: header.php:91
 msgid "الأخبار"
 msgstr "Actualités"
-
-#: header.php:72
-msgid "تبديل الوضع الداكن"
-msgstr "Basculer le mode sombre"
-
-#: header.php:83
-msgid "الرياضات"
-msgstr "Sports"
 
 #: inc/assets.php:78
 msgid "بتوقيتك"
@@ -260,13 +272,21 @@ msgstr "Aucun résultat"
 msgid "فريق"
 msgstr "Équipe"
 
+#: inc/assets.php:81 single-competition.php:19
+msgid "المباريات"
+msgstr "Matchs"
+
+#: inc/assets.php:83
+msgid "الفرق"
+msgstr "Équipes"
+
+#: inc/assets.php:84
+msgid "إزالة من المفضلة"
+msgstr "Retirer des favoris"
+
 #: inc/setup.php:41
 msgid "قائمة الفوتر"
 msgstr "Menu du pied de page"
-
-#: inc/setup.php:86 sidebar.php:10
-msgid "الشريط الجانبي"
-msgstr "Barre latérale"
 
 #: inc/setup.php:88
 msgid "يظهر بجانب المحتوى على الشاشات الكبيرة."
@@ -303,6 +323,15 @@ msgstr "Navigation des articles"
 msgid "اللغة"
 msgstr "Langue"
 
+#. translators: %s: match, team or competition name.
+#: inc/template-tags.php:393
+msgid "إضافة %s إلى المفضلة"
+msgstr "Ajouter %s aux favoris"
+
+#: matches-day.php:18
+msgid "مباريات الغد"
+msgstr "Matchs de demain"
+
 #: matches-day.php:19
 msgid "مباريات الأمس"
 msgstr "Matchs d’hier"
@@ -312,8 +341,12 @@ msgstr "Matchs d’hier"
 msgid "مباريات يوم %s"
 msgstr "Matchs du %s"
 
+#: matches-day.php:35
+msgid "لا توجد مباريات في هذا اليوم."
+msgstr "Aucun match ce jour-là."
+
 #. translators: %s: date.
-#: matches-day.php:33
+#: matches-day.php:43
 msgid ""
 "مواعيد ونتائج مباريات %s في كل البطولات. كل الأوقات بتوقيت جرينتش (GMT)."
 msgstr ""
@@ -321,24 +354,16 @@ msgstr ""
 " sont en GMT."
 
 #. translators: %s: date.
-#: matches-day.php:36
+#: matches-day.php:46
 msgid ""
 "مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً."
 msgstr ""
 "Programme et résultats des matchs du %s dans toutes les compétitions. Les "
 "horaires s’affichent automatiquement dans le fuseau de votre appareil."
 
-#: matches-day.php:42
-msgid "لا توجد مباريات في هذا اليوم."
-msgstr "Aucun match ce jour-là."
-
 #: search.php:38
 msgid "لم نعثر على نتائج مطابقة. جرّب كلمات أخرى."
 msgstr "Aucun résultat correspondant. Essayez d’autres mots."
-
-#: searchform.php:13 searchform.php:15
-msgid "بحث"
-msgstr "Rechercher"
 
 #: searchform.php:14
 msgid "ابحث في الموقع…"
@@ -347,10 +372,6 @@ msgstr "Rechercher sur le site…"
 #: single-competition.php:18
 msgid "نظرة عامة"
 msgstr "Vue d’ensemble"
-
-#: single-competition.php:19
-msgid "المباريات"
-msgstr "Matchs"
 
 #: single-competition.php:21 single-competition.php:83
 msgid "الهدافون"
@@ -509,35 +530,71 @@ msgstr "Aucun match aujourd’hui dans ce sport."
 msgid "الأخبار (حسب الرياضة)"
 msgstr "Actualités (par sport)"
 
-#: template-parts/date-picker.php:15
-msgid "أمس"
-msgstr "Hier"
-
-#: template-parts/date-picker.php:16
-msgid "اليوم"
-msgstr "Aujourd’hui"
-
-#: template-parts/date-picker.php:17
-msgid "غداً"
-msgstr "Demain"
-
-#: template-parts/date-picker.php:20
-msgid "اختيار اليوم"
-msgstr "Choisir le jour"
-
-#: template-parts/date-picker.php:35
-msgid "اختر تاريخاً"
-msgstr "Choisir une date"
-
 #: template-parts/live-ticker.php:15
 msgid "المباريات الجارية الآن"
 msgstr "Matchs en cours"
 
-#: template-parts/live-ticker.php:17
+#: template-parts/live-ticker.php:17 template-parts/match-center.php:32
 msgid "مباشر"
 msgstr "En direct"
 
-#: template-parts/match-list.php:30
+#: template-parts/match-center.php:31
+msgid "الكل"
+msgstr "Tout"
+
+#: template-parts/match-center.php:33
+msgid "النتائج"
+msgstr "Résultats"
+
+#: template-parts/match-center.php:34
+msgid "القادمة"
+msgstr "À venir"
+
+#: template-parts/match-center.php:35
+msgid "المفضلة"
+msgstr "Favoris"
+
+#: template-parts/match-center.php:42
+msgid "اختيار اليوم"
+msgstr "Choisir le jour"
+
+#: template-parts/match-center.php:45
+msgid "اليوم السابق"
+msgstr "Jour précédent"
+
+#: template-parts/match-center.php:50
+msgid "اختر تاريخاً"
+msgstr "Choisir une date"
+
+#: template-parts/match-center.php:55
+msgid "اليوم التالي"
+msgstr "Jour suivant"
+
+#: template-parts/match-center.php:61
+msgid "تصفية المباريات"
+msgstr "Filtrer les matchs"
+
+#: template-parts/match-center.php:76
+msgid "تصفية حسب الرياضة"
+msgstr "Filtrer par sport"
+
+#: template-parts/match-center.php:77
+msgid "كل الرياضات"
+msgstr "Tous les sports"
+
+#: template-parts/match-center.php:86
+msgid "لا توجد مباريات في هذا التصنيف."
+msgstr "Aucun match dans cette vue."
+
+#: template-parts/match-center.php:87
+msgid ""
+"لم تضف مباريات أو بطولات إلى المفضلة بعد. اضغط النجمة بجانب أي مباراة أو "
+"بطولة."
+msgstr ""
+"Vous n’avez encore ajouté aucun match ni aucune compétition à vos favoris. "
+"Touchez l’étoile à côté d’un match ou d’une compétition."
+
+#: template-parts/match-list.php:48
 msgid "مباريات أخرى"
 msgstr "Autres matchs"
 

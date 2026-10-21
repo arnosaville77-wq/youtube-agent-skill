@@ -2,7 +2,11 @@
  * SportsArena front-end (vanilla JS, loaded with defer, no jQuery).
  *
  * - Dark / light toggle.
- * - Mobile navigation.
+ * - Header pop-overs (search, language, profile).
+ * - Favourites («مفضلتي»): stars on matches and competitions, saved in
+ *   localStorage only (no account, nothing sent to the server).
+ * - Match centre: status tabs (all / live / finished / upcoming / favourites)
+ *   and sport chips.
  * - Broken provider logos fall back to a neutral shield.
  * - Converts kickoff times to the visitor's timezone (original kept as tooltip).
  * - Sport filter tabs, date picker, quick search.
@@ -58,16 +62,6 @@
 		}
 	} );
 
-	/* ---------- Mobile navigation ---------- */
-	var navToggle = document.querySelector( '.sa-nav-toggle' );
-	var nav = document.getElementById( 'sa-nav' );
-	if ( navToggle && nav ) {
-		navToggle.addEventListener( 'click', function () {
-			var open = nav.classList.toggle( 'is-open' );
-			navToggle.setAttribute( 'aria-expanded', open ? 'true' : 'false' );
-		} );
-	}
-
 	/* ---------- Local time ---------- */
 	var lang = ( document.documentElement.lang || 'ar' ).split( '-' )[ 0 ];
 	var locale = lang === 'ar' ? 'ar-u-nu-latn' : lang;
@@ -99,22 +93,195 @@
 	}
 	localizeAll();
 
-	/* ---------- Sport filter tabs (home) ---------- */
-	document.querySelectorAll( '[data-sa-filter]' ).forEach( function ( tab ) {
-		tab.addEventListener( 'click', function () {
-			var sport = tab.getAttribute( 'data-sa-filter' );
-			document.querySelectorAll( '[data-sa-filter]' ).forEach( function ( t ) {
-				t.setAttribute( 'aria-selected', t === tab ? 'true' : 'false' );
-			} );
-			var target = document.querySelector( '[data-sa-filter-target]' );
-			if ( ! target ) {
+	/* ---------- Favourites («مفضلتي») ---------- */
+	var FAV_KEY = 'sa-favs';
+	var favs = { match: {}, competition: {}, team: {} };
+	try {
+		var stored = JSON.parse( localStorage.getItem( FAV_KEY ) || '{}' );
+		Object.keys( favs ).forEach( function ( type ) {
+			if ( stored && stored[ type ] && typeof stored[ type ] === 'object' ) {
+				favs[ type ] = stored[ type ];
+			}
+		} );
+	} catch ( e ) {}
+
+	function isFav( type, id ) {
+		return !! ( favs[ type ] && favs[ type ][ String( id ) ] );
+	}
+
+	function saveFavs() {
+		try {
+			localStorage.setItem( FAV_KEY, JSON.stringify( favs ) );
+		} catch ( e ) {}
+	}
+
+	function syncStars() {
+		document.querySelectorAll( '.sa-fav[data-sa-fav]' ).forEach( function ( btn ) {
+			btn.setAttribute( 'aria-pressed', isFav( btn.getAttribute( 'data-sa-fav' ), btn.getAttribute( 'data-id' ) ) ? 'true' : 'false' );
+		} );
+	}
+
+	function renderFavs() {
+		var list = document.querySelector( '[data-sa-fav-list]' );
+		var empty = document.querySelector( '[data-sa-fav-empty]' );
+		var count = document.querySelector( '[data-sa-fav-count]' );
+		var total = 0;
+		var labels = { match: i18n.favMatches, competition: i18n.favCompetitions, team: i18n.favTeams };
+		if ( list ) {
+			list.textContent = '';
+		}
+		[ 'match', 'competition', 'team' ].forEach( function ( type ) {
+			var ids = Object.keys( favs[ type ] );
+			total += ids.length;
+			if ( ! list || ! ids.length ) {
 				return;
 			}
-			target.querySelectorAll( '.sa-group' ).forEach( function ( group ) {
-				group.hidden = !! sport && group.getAttribute( 'data-sa-sport' ) !== sport;
+			var group = document.createElement( 'div' );
+			group.className = 'sa-profile__group';
+			var title = document.createElement( 'h3' );
+			title.textContent = labels[ type ] || '';
+			group.appendChild( title );
+			var ul = document.createElement( 'ul' );
+			ids.forEach( function ( id ) {
+				var item = favs[ type ][ id ];
+				var li = document.createElement( 'li' );
+				var a = document.createElement( 'a' );
+				a.href = item.u || '#';
+				a.textContent = item.t || '';
+				var btn = document.createElement( 'button' );
+				btn.type = 'button';
+				btn.className = 'sa-fav';
+				btn.setAttribute( 'data-sa-fav', type );
+				btn.setAttribute( 'data-id', id );
+				btn.setAttribute( 'aria-pressed', 'true' );
+				btn.setAttribute( 'aria-label', i18n.favRemove || '' );
+				btn.title = i18n.favRemove || '';
+				btn.innerHTML = '<svg class="sa-i" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 3.2 2.6 5.6 6.1.7-4.5 4.2 1.2 6.1L12 16.8l-5.4 3 1.2-6.1-4.5-4.2 6.1-.7z" fill="var(--sa-star-fill,none)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
+				li.appendChild( a );
+				li.appendChild( btn );
+				ul.appendChild( li );
+			} );
+			group.appendChild( ul );
+			list.appendChild( group );
+		} );
+		if ( empty ) {
+			empty.hidden = total > 0;
+		}
+		if ( count ) {
+			count.textContent = String( total );
+			count.hidden = ! total;
+		}
+	}
+
+	document.addEventListener( 'click', function ( e ) {
+		var btn = e.target.closest && e.target.closest( '.sa-fav[data-sa-fav]' );
+		if ( ! btn ) {
+			return;
+		}
+		e.preventDefault();
+		var type = btn.getAttribute( 'data-sa-fav' );
+		var id = String( btn.getAttribute( 'data-id' ) );
+		if ( ! favs[ type ] ) {
+			return;
+		}
+		if ( favs[ type ][ id ] ) {
+			delete favs[ type ][ id ];
+		} else {
+			favs[ type ][ id ] = { t: btn.getAttribute( 'data-title' ) || '', u: btn.getAttribute( 'data-url' ) || '' };
+		}
+		saveFavs();
+		syncStars();
+		renderFavs();
+		document.querySelectorAll( '[data-sa-mc]' ).forEach( filterMc );
+	} );
+
+	/* ---------- Match centre: status tabs + sport chips ---------- */
+	var STATUS_CLASSES = {
+		live: [ 'sa-row--live', 'sa-row--halftime' ],
+		finished: [ 'sa-row--finished' ],
+		scheduled: [ 'sa-row--scheduled' ],
+	};
+
+	function rowMatches( row, group, status ) {
+		if ( ! status ) {
+			return true;
+		}
+		if ( status === 'fav' ) {
+			var teams = ( row.getAttribute( 'data-sa-teams' ) || '' ).split( ',' );
+			return isFav( 'match', row.getAttribute( 'data-sa-match' ) ) ||
+				isFav( 'competition', group.getAttribute( 'data-sa-comp' ) ) ||
+				teams.some( function ( t ) {
+					return t && t !== '0' && isFav( 'team', t );
+				} );
+		}
+		return ( STATUS_CLASSES[ status ] || [] ).some( function ( c ) {
+			return row.classList.contains( c );
+		} );
+	}
+
+	function filterMc( mc ) {
+		var status = mc.getAttribute( 'data-status' ) || '';
+		var sport = mc.getAttribute( 'data-sport' ) || '';
+		var groups = mc.querySelectorAll( '.sa-group' );
+		var shown = 0;
+		var live = 0;
+		groups.forEach( function ( group ) {
+			var sportOk = ! sport || group.getAttribute( 'data-sa-sport' ) === sport;
+			var any = false;
+			group.querySelectorAll( '.sa-row' ).forEach( function ( row ) {
+				if ( row.classList.contains( 'sa-row--live' ) || row.classList.contains( 'sa-row--halftime' ) ) {
+					live++;
+				}
+				var show = sportOk && rowMatches( row, group, status );
+				row.hidden = ! show;
+				any = any || show;
+			} );
+			group.hidden = ! any;
+			shown += any ? 1 : 0;
+		} );
+		var countEl = mc.querySelector( '[data-sa-live-count]' );
+		if ( countEl ) {
+			if ( countEl.textContent !== String( live ) ) {
+				countEl.textContent = String( live );
+			}
+			countEl.hidden = ! live;
+		}
+		var emptyEl = mc.querySelector( '[data-sa-mc-empty]' );
+		var emptyFav = mc.querySelector( '[data-sa-mc-empty-fav]' );
+		if ( emptyEl && emptyFav ) {
+			emptyEl.hidden = ! groups.length || shown > 0 || status === 'fav';
+			emptyFav.hidden = ! groups.length || shown > 0 || status !== 'fav';
+		}
+		// Ad slots sit between every 3 groups of the full list: hide them while
+		// filtering, so an ad never ends up first or next to the tabs.
+		mc.querySelectorAll( '.sa-mc__list > .sa-ad' ).forEach( function ( ad ) {
+			ad.hidden = !! status || !! sport || ! shown;
+		} );
+	}
+
+	document.querySelectorAll( '[data-sa-mc]' ).forEach( function ( mc ) {
+		mc.querySelectorAll( '[data-sa-status-filter]' ).forEach( function ( tab ) {
+			tab.addEventListener( 'click', function () {
+				mc.querySelectorAll( '[data-sa-status-filter]' ).forEach( function ( t ) {
+					t.setAttribute( 'aria-selected', t === tab ? 'true' : 'false' );
+				} );
+				mc.setAttribute( 'data-status', tab.getAttribute( 'data-sa-status-filter' ) );
+				filterMc( mc );
+			} );
+		} );
+		mc.querySelectorAll( '[data-sa-filter]' ).forEach( function ( chip ) {
+			chip.addEventListener( 'click', function () {
+				mc.querySelectorAll( '[data-sa-filter]' ).forEach( function ( c ) {
+					c.setAttribute( 'aria-selected', c === chip ? 'true' : 'false' );
+				} );
+				mc.setAttribute( 'data-sport', chip.getAttribute( 'data-sa-filter' ) );
+				filterMc( mc );
 			} );
 		} );
 	} );
+
+	syncStars();
+	renderFavs();
 
 	/* ---------- Date picker ---------- */
 	document.querySelectorAll( 'input[data-sa-date]' ).forEach( function ( input ) {
@@ -213,21 +380,37 @@
 		} );
 	}
 
-	/* Language menu: close on outside click or Escape. */
-	var langMenu = document.querySelector( '.sa-lang' );
-	if ( langMenu ) {
-		document.addEventListener( 'click', function ( e ) {
-			if ( langMenu.open && ! langMenu.contains( e.target ) ) {
-				langMenu.open = false;
+	/* ---------- Header pop-overs: one open at a time, close outside / Escape ---------- */
+	var pops = document.querySelectorAll( 'details.sa-pop, details.sa-lang' );
+	pops.forEach( function ( pop ) {
+		pop.addEventListener( 'toggle', function () {
+			if ( ! pop.open ) {
+				return;
+			}
+			pops.forEach( function ( other ) {
+				if ( other !== pop ) {
+					other.open = false;
+				}
+			} );
+			var field = pop.querySelector( 'input[type="search"]' );
+			if ( field ) {
+				field.focus();
 			}
 		} );
-		langMenu.addEventListener( 'keydown', function ( e ) {
-			if ( e.key === 'Escape' && langMenu.open ) {
-				langMenu.open = false;
-				langMenu.querySelector( 'summary' ).focus();
+		pop.addEventListener( 'keydown', function ( e ) {
+			if ( e.key === 'Escape' && pop.open ) {
+				pop.open = false;
+				pop.querySelector( 'summary' ).focus();
 			}
 		} );
-	}
+	} );
+	document.addEventListener( 'click', function ( e ) {
+		pops.forEach( function ( pop ) {
+			if ( pop.open && ! pop.contains( e.target ) ) {
+				pop.open = false;
+			}
+		} );
+	} );
 
 	/* ---------- Live scores (fragment updates only) ---------- */
 	var interval = Math.max( 60, parseInt( cfg.interval, 10 ) || 60 ) * 1000;
@@ -256,8 +439,12 @@
 	function apply( match ) {
 		document.querySelectorAll( '[data-sa-match="' + match.id + '"]' ).forEach( function ( el ) {
 			var status = el.querySelector( '[data-sa-status]' );
-			if ( status && status.textContent !== match.label ) {
-				status.textContent = match.label;
+			var label = match.label;
+			if ( status && status.getAttribute( 'data-sa-status' ) === 'short' && match.status === 'live' && match.elapsed !== null && match.elapsed !== undefined ) {
+				label = match.elapsed + "'";
+			}
+			if ( status && status.textContent !== label ) {
+				status.textContent = label;
 			}
 			if ( status ) {
 				status.classList.toggle( 'is-live', !! match.live );
@@ -304,6 +491,7 @@
 			.then( function ( data ) {
 				if ( data && data.matches ) {
 					data.matches.forEach( apply );
+					document.querySelectorAll( '[data-sa-mc]' ).forEach( filterMc );
 					if ( data.interval ) {
 						interval = Math.max( 60, data.interval ) * 1000;
 					}

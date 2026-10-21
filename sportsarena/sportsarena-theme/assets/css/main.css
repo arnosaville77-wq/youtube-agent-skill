@@ -19,6 +19,21 @@ a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,te
 .sa-qsearch__list a:hover,.sa-qsearch__list [aria-selected="true"] a{background:color-mix(in srgb,var(--surface) 88%,var(--accent))}
 .sa-qsearch__list small{color:var(--muted)}
 
+/* Profile panel: «مفضلتي» (favourites saved in the browser) and settings */
+.sa-profile__title{display:flex;align-items:center;gap:6px;margin:2px 4px 8px;font-weight:700}
+.sa-profile__title .sa-i{color:var(--star);--sa-star-fill:var(--star)}
+.sa-profile__group{margin:0 0 8px}
+.sa-profile__group h3{margin:6px 4px 2px;font-size:.75rem;font-weight:700;color:var(--muted);text-transform:uppercase}
+.sa-profile__group ul{list-style:none;margin:0;padding:0}
+.sa-profile__group li{display:flex;align-items:center;gap:4px}
+.sa-profile__group a{flex:1;min-width:0;display:block;padding:8px 6px;border-radius:8px;text-decoration:none;font-size:.9rem;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.sa-profile__group a:hover{background:var(--surface-2)}
+.sa-profile__group .sa-fav{min-height:36px;width:36px}
+.sa-profile__empty{margin:0 4px 10px;color:var(--muted);font-size:.88rem}
+.sa-profile__empty[hidden]{display:none}
+.sa-profile__row{display:flex;align-items:center;justify-content:space-between;width:100%;min-height:44px;padding:0 10px;border:1px solid var(--border);border-radius:10px;background:var(--surface-2);color:var(--text);font:inherit;font-weight:600;cursor:pointer}
+.sa-profile__note{margin:8px 4px 0;font-size:.75rem;color:var(--muted)}
+
 /* Jump links on the match page */
 .sa-jump{display:flex;gap:6px;overflow-x:auto;margin-block:12px;scrollbar-width:none}
 .sa-jump a{flex:none;padding:6px 12px;border-radius:999px;background:var(--surface);border:1px solid var(--border);text-decoration:none;font-size:.9rem}

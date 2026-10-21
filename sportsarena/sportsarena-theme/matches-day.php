@@ -24,22 +24,29 @@ $sportsarena_title = $sportsarena_titles[ $sportsarena_day ] ?? sprintf( __( 'م
 ?>
 <div class="sa-container sa-layout">
 	<div class="sa-content">
-		<header class="sa-page-head">
-			<h1 class="sa-page-title"><?php echo esc_html( $sportsarena_title ); ?></h1>
-			<p class="sa-page-desc">
-				<?php
-				if ( sportsarena_theme_time_is_gmt() ) {
-					/* translators: %s: date. */
-					echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. كل الأوقات بتوقيت جرينتش (GMT).', 'sportsarena-theme' ), $sportsarena_pretty ) );
-				} else {
-					/* translators: %s: date. */
-					echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً.', 'sportsarena-theme' ), $sportsarena_pretty ) );
-				}
-				?>
-			</p>
-		</header>
-		<?php get_template_part( 'template-parts/date-picker', null, array( 'current' => $sportsarena_date ) ); ?>
-		<?php sportsarena_theme_match_list( $sportsarena_groups, __( 'لا توجد مباريات في هذا اليوم.', 'sportsarena-theme' ) ); ?>
+		<?php
+		get_template_part(
+			'template-parts/match-center',
+			null,
+			array(
+				'groups' => $sportsarena_groups,
+				'date'   => (string) $sportsarena_date,
+				'title'  => $sportsarena_title,
+				'empty'  => __( 'لا توجد مباريات في هذا اليوم.', 'sportsarena-theme' ),
+			)
+		);
+		?>
+		<p class="sa-page-desc sa-mc__desc">
+			<?php
+			if ( sportsarena_theme_time_is_gmt() ) {
+				/* translators: %s: date. */
+				echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. كل الأوقات بتوقيت جرينتش (GMT).', 'sportsarena-theme' ), $sportsarena_pretty ) );
+			} else {
+				/* translators: %s: date. */
+				echo esc_html( sprintf( __( 'مواعيد ونتائج مباريات %s في كل البطولات. التوقيت يظهر بتوقيت جهازك تلقائياً.', 'sportsarena-theme' ), $sportsarena_pretty ) );
+			}
+			?>
+		</p>
 	</div>
 	<?php get_sidebar(); ?>
 </div>

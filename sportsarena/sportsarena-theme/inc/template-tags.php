@@ -327,3 +327,120 @@ function sportsarena_theme_news_page() {
 	}
 	return (int) get_option( 'page_for_posts' );
 }
+
+/**
+ * Inline SVG interface icon (decorative, inherits the text colour).
+ *
+ * @param string $name Icon: search|user|star|chevron-prev|chevron-next|calendar|moon|sun|trophy|list|news|fire.
+ * @param int    $size Pixel size.
+ * @return string
+ */
+function sportsarena_theme_icon( $name, $size = 20 ) {
+	$paths = array(
+		'search'       => '<circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="m15.5 15.5 5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+		'user'         => '<circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 20.5c1.4-3.6 4.4-5.5 8-5.5s6.6 1.9 8 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+		'star'         => '<path d="m12 3.2 2.6 5.6 6.1.7-4.5 4.2 1.2 6.1L12 16.8l-5.4 3 1.2-6.1-4.5-4.2 6.1-.7z" fill="var(--sa-star-fill,none)" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>',
+		'chevron-prev' => '<path d="m9 5 7 7-7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>',
+		'chevron-next' => '<path d="m15 5-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>',
+		'calendar'     => '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10h17M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+		'moon'         => '<path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z" fill="currentColor"/>',
+		'sun'          => '<circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.6 4.6l2.1 2.1M17.3 17.3l2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+		'trophy'       => '<path d="M7 4h10v5a5 5 0 0 1-10 0zM7 6H4v1.5A3.5 3.5 0 0 0 7.5 11M17 6h3v1.5a3.5 3.5 0 0 1-3.5 3.5M12 14v4M8 20.5h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>',
+		'list'         => '<path d="M8 6h12M8 12h12M8 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="4" cy="6" r="1.3" fill="currentColor"/><circle cx="4" cy="12" r="1.3" fill="currentColor"/><circle cx="4" cy="18" r="1.3" fill="currentColor"/>',
+		'news'         => '<rect x="3.5" y="4.5" width="13" height="15" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16.5 8.5h3a1 1 0 0 1 1 1V17a2.5 2.5 0 0 1-5 0M7 9h6M7 12.5h6M7 16h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>',
+		'fire'         => '<path d="M12 21c-4 0-7-2.7-7-6.6 0-3.1 2-5.3 3.6-7 .4 1.8 1.4 3 2.6 3.6C11 7.4 12.6 4.6 15 3c-.3 2.6.6 4.4 2 6 1.3 1.5 2 3.2 2 5.3C19 18.3 16 21 12 21z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>',
+	);
+	if ( ! isset( $paths[ $name ] ) ) {
+		return '';
+	}
+	return sprintf( '<svg class="sa-i sa-i--%1$s" width="%2$d" height="%2$d" viewBox="0 0 24 24" aria-hidden="true" focusable="false">%3$s</svg>', esc_attr( $name ), (int) $size, $paths[ $name ] );
+}
+
+/**
+ * Inline SVG icon of a sport for the main menu.
+ *
+ * @param string $slug Sport slug.
+ * @param int    $size Pixel size.
+ * @return string
+ */
+function sportsarena_theme_sport_icon( $slug, $size = 22 ) {
+	$paths = array(
+		'football'   => '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m12 7.2 3.6 2.6-1.4 4.2H9.8L8.4 9.8z" fill="currentColor"/><path d="M12 7.2V3.1M15.6 9.8l3.9-1.3M14.2 14l2.4 3.3M9.8 14l-2.4 3.3M8.4 9.8 4.5 8.5" stroke="currentColor" stroke-width="1.6"/>',
+		'basketball' => '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3v18M5.6 5.6c2.6 2.6 2.6 10.2 0 12.8M18.4 5.6c-2.6 2.6-2.6 10.2 0 12.8" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+		'tennis'     => '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M5.2 6.2c3.3 3 3.3 8.6 0 11.6M18.8 6.2c-3.3 3-3.3 8.6 0 11.6" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+		'formula-1'  => '<path d="M5 21V3.5M5 4h13l-2.5 4L18 12H5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 4v8M13 4v8M5 8h13" stroke="currentColor" stroke-width="1.2"/>',
+		'handball'   => '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 3c-2 3-2 6 0 9s2 6 0 9M3.5 9c3 1 6 1 8.5 3s5.5 2 8.5 3" fill="none" stroke="currentColor" stroke-width="1.6"/>',
+		'volleyball' => '<circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 12V3.2M12 12l7.6 4.4M12 12l-7.6 4.4M12 3.2c3.5 2.5 5.4 6.7 4.8 10.8M19.6 16.4c-4 1.7-8.5 1.2-11.8-1.3M4.4 16.4C4 12.1 6 8 9.6 5.8" fill="none" stroke="currentColor" stroke-width="1.4"/>',
+		'mma'        => '<path d="M7 10V7a3 3 0 0 1 3-3h4.5A3.5 3.5 0 0 1 18 7.5V13a6 6 0 0 1-6 6h-1a5 5 0 0 1-5-5v-2a2 2 0 0 1 2-2h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 19v2.5h7V19" fill="none" stroke="currentColor" stroke-width="1.8"/>',
+	);
+	if ( ! isset( $paths[ $slug ] ) ) {
+		return sportsarena_theme_icon( 'trophy', $size );
+	}
+	return sprintf( '<svg class="sa-i" width="%1$d" height="%1$d" viewBox="0 0 24 24" aria-hidden="true" focusable="false">%2$s</svg>', (int) $size, $paths[ $slug ] );
+}
+
+/**
+ * Favourite (star) toggle, saved in the visitor's browser (no account).
+ *
+ * @param string $type  match|team|competition.
+ * @param int    $id    Post ID.
+ * @param string $title Label shown in «مفضلتي».
+ * @param string $url   Link.
+ * @return string
+ */
+function sportsarena_theme_fav_button( $type, $id, $title, $url ) {
+	/* translators: %s: match, team or competition name. */
+	$label = sprintf( __( 'إضافة %s إلى المفضلة', 'sportsarena-theme' ), $title );
+	return sprintf(
+		'<button type="button" class="sa-fav" data-sa-fav="%1$s" data-id="%2$d" data-title="%3$s" data-url="%4$s" aria-pressed="false" aria-label="%5$s" title="%5$s">%6$s</button>',
+		esc_attr( $type ),
+		(int) $id,
+		esc_attr( $title ),
+		esc_url( $url ),
+		esc_attr( $label ),
+		sportsarena_theme_icon( 'star', 18 )
+	);
+}
+
+/**
+ * Country of a competition in the page language ('' for international
+ * competitions). Arabic from the plugin dictionary, other languages from
+ * PHP intl when available, English otherwise.
+ *
+ * @param int $competition_id Competition ID.
+ * @return string
+ */
+function sportsarena_theme_country_label( $competition_id ) {
+	if ( ! function_exists( 'sportsarena_country_of' ) ) {
+		return '';
+	}
+	$country = sportsarena_country_of( $competition_id );
+	$code    = '' !== $country ? SportsArena\Core\Data\Countries::code( $country ) : '';
+	if ( '' === $code ) {
+		return '';
+	}
+	$locale = determine_locale();
+	if ( 'ar' === substr( $locale, 0, 2 ) ) {
+		$arabic = SportsArena\Core\Data\Names::arabic( $country );
+		if ( SportsArena\Core\Data\Names::has_arabic( $arabic ) || 'gb-eng' === $code ) {
+			return 'gb-eng' === $code && ! SportsArena\Core\Data\Names::has_arabic( $arabic ) ? 'إنجلترا' : $arabic;
+		}
+	}
+	$england = array(
+		'fr' => 'Angleterre',
+		'es' => 'Inglaterra',
+		'it' => 'Inghilterra',
+		'pt' => 'Inglaterra',
+		'tr' => 'İngiltere',
+	);
+	if ( 'gb-eng' === $code ) {
+		return $england[ substr( $locale, 0, 2 ) ] ?? 'England';
+	}
+	if ( 2 === strlen( $code ) && class_exists( 'Locale' ) ) {
+		$name = \Locale::getDisplayRegion( '-' . strtoupper( $code ), $locale );
+		if ( $name && strtoupper( $code ) !== $name ) {
+			return $name;
+		}
+	}
+	return $country;
+}
