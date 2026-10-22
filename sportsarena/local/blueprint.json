@@ -1,0 +1,22 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"landingPage": "/",
+	"steps": [
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire '/wordpress/wp-load.php';\nif ( get_option( 'sportsarena_local_ready' ) ) {\n\treturn;\n}\n// Arabic site language: download the WordPress language pack (needs internet),\n// otherwise store the locale directly (the theme and plugin are Arabic already).\nrequire_once ABSPATH . 'wp-admin/includes/file.php';\nrequire_once ABSPATH . 'wp-admin/includes/translation-install.php';\nif ( ! in_array( 'ar', get_available_languages(), true ) ) {\n\twp_download_language_pack( 'ar' );\n}\nif ( in_array( 'ar', get_available_languages(), true ) ) {\n\tupdate_option( 'WPLANG', 'ar' );\n} else {\n\tglobal $wpdb;\n\t$wpdb->replace( $wpdb->options, array( 'option_name' => 'WPLANG', 'option_value' => 'ar', 'autoload' => 'yes' ) );\n\twp_cache_flush();\n}\nupdate_option( 'blogname', 'ساحة الرياضة' );\nupdate_option( 'blogdescription', 'نتائج ومواعيد المباريات لحظة بلحظة' );\nupdate_option( 'permalink_structure', '/%postname%/' );\nupdate_option( 'timezone_string', 'UTC' );\n"
+		},
+		{
+			"step": "activatePlugin",
+			"pluginPath": "sportsarena-core/sportsarena-core.php"
+		},
+		{
+			"step": "activateTheme",
+			"themeFolderName": "sportsarena-theme"
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php\nrequire '/wordpress/wp-load.php';\nif ( get_option( 'sportsarena_local_ready' ) || ! class_exists( 'SportsArena\\Core\\Seeder' ) ) {\n\treturn;\n}\n$settings                = (array) get_option( 'sportsarena_settings', array() );\n$settings['allow_logos'] = 1;\n$settings['site_names']  = \"en=Sports Arena|Live scores and fixtures, minute by minute\\nfr=Sports Arena|Résultats et calendrier des matchs en direct\";\nupdate_option( 'sportsarena_settings', $settings );\nSportsArena\\Core\\Seeder::seed();\nflush_rewrite_rules();\nupdate_option( 'sportsarena_local_ready', 1 );\n"
+		}
+	]
+}

@@ -1,0 +1,2623 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SportsArena Core 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/sportsarena-core\n"
+"PO-Revision-Date: 2026-10-20 00:00+0000\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: tr_TR\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Domain: sportsarena-core\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: sportsarena-core.php:3
+msgid "SportsArena Core"
+msgstr "SportsArena Core"
+
+#. Plugin URI of the plugin
+#: sportsarena-core.php:4
+msgid "https://example.com/"
+msgstr "https://example.com/"
+
+#. Description of the plugin
+#: sportsarena-core.php:5
+msgid ""
+"منطق البيانات لموقع رياضي: المباريات والفرق والبطولات، المزامنة مع مزوّدي "
+"البيانات، SEO وSchema، وإعدادات AdSense والموافقة على الكوكيز."
+msgstr ""
+"Spor sitesi için veri motoru: maçlar, takımlar ve turnuvalar, veri "
+"sağlayıcılarla senkronizasyon, SEO ve Schema, AdSense ayarları ve çerez "
+"onayı."
+
+#. Author of the plugin
+#: sportsarena-core.php:9 includes/admin/class-settings.php:44
+msgid "SportsArena"
+msgstr "SportsArena"
+
+#: includes/admin/class-adsense-check.php:48
+msgid "فحص جاهزية AdSense"
+msgstr "AdSense kontrolü"
+
+#: includes/admin/class-adsense-check.php:48
+msgid "فحص AdSense"
+msgstr "AdSense kontrolü"
+
+#: includes/admin/class-adsense-check.php:73
+msgid "الموقع"
+msgstr "Site"
+
+#: includes/admin/class-adsense-check.php:74
+msgid "الصفحات والمحتوى"
+msgstr "Sayfalar ve içerik"
+
+#: includes/admin/class-adsense-check.php:75
+#: includes/admin/class-settings.php:46
+msgid "الإعلانات"
+msgstr "Reklamlar"
+
+#: includes/admin/class-adsense-check.php:76
+msgid "سياسات المحتوى"
+msgstr "İçerik politikaları"
+
+#: includes/admin/class-adsense-check.php:77
+msgid "الخصوصية والموافقة"
+msgstr "Gizlilik ve onay"
+
+#: includes/admin/class-adsense-check.php:78
+msgid "الأداء والتقنية"
+msgstr "Performans ve teknik"
+
+#: includes/admin/class-adsense-check.php:82
+msgid "شهادة HTTPS"
+msgstr "HTTPS sertifikası"
+
+#: includes/admin/class-adsense-check.php:82
+msgid "الموقع يعمل عبر HTTPS."
+msgstr "Site HTTPS üzerinden çalışıyor."
+
+#: includes/admin/class-adsense-check.php:82
+msgid "رابط الموقع يبدأ بـ http."
+msgstr "Site adresi http ile başlıyor."
+
+#: includes/admin/class-adsense-check.php:82
+msgid ""
+"فعّل شهادة SSL من الاستضافة وغيّر رابط الموقع في الإعدادات > عام إلى https."
+msgstr ""
+"Barındırma hizmetinizden SSL sertifikası etkinleştirin ve Ayarlar > Genel'de"
+" site adresini https yapın."
+
+#: includes/admin/class-adsense-check.php:85
+msgid "ظهور الموقع لمحركات البحث"
+msgstr "Arama motoru görünürlüğü"
+
+#: includes/admin/class-adsense-check.php:85
+msgid "محركات البحث مسموح لها بالفهرسة."
+msgstr "Arama motorlarının siteyi dizinlemesine izin veriliyor."
+
+#: includes/admin/class-adsense-check.php:85
+msgid "خيار «منع محركات البحث من فهرسة الموقع» مفعّل."
+msgstr "«Arama motorlarının bu siteyi dizinlemesini engelle» seçeneği açık."
+
+#: includes/admin/class-adsense-check.php:85
+msgid "ألغِ تفعيله من الإعدادات > القراءة."
+msgstr "Ayarlar > Okuma bölümünden kapatın."
+
+#: includes/admin/class-adsense-check.php:88
+msgid "الروابط الدائمة"
+msgstr "Kalıcı bağlantılar"
+
+#: includes/admin/class-adsense-check.php:88
+msgid "روابط صديقة لمحركات البحث."
+msgstr "Arama motoru dostu bağlantılar."
+
+#: includes/admin/class-adsense-check.php:88
+msgid "الروابط بصيغة ?p=123."
+msgstr "Bağlantılar ?p=123 biçiminde."
+
+#: includes/admin/class-adsense-check.php:88
+msgid "اختر «اسم المقالة» من الإعدادات > الروابط الدائمة."
+msgstr "Ayarlar > Kalıcı bağlantılar bölümünden «Yazı adı»nı seçin."
+
+#: includes/admin/class-adsense-check.php:92
+msgid "اسم الموقع ووصفه"
+msgstr "Site başlığı ve sloganı"
+
+#: includes/admin/class-adsense-check.php:92
+msgid "الاسم والوصف مضبوطان."
+msgstr "Başlık ve slogan ayarlı."
+
+#: includes/admin/class-adsense-check.php:92
+msgid "الوصف (الشعار) فارغ أو افتراضي."
+msgstr "Slogan boş veya varsayılan."
+
+#: includes/admin/class-adsense-check.php:92
+msgid "اكتب اسماً ووصفاً واضحين في الإعدادات > عام."
+msgstr "Ayarlar > Genel'de açık bir başlık ve slogan yazın."
+
+#: includes/admin/class-adsense-check.php:97 includes/class-pages.php:248
+msgid "من نحن"
+msgstr "Hakkımızda"
+
+#: includes/admin/class-adsense-check.php:98 includes/class-pages.php:266
+msgid "اتصل بنا"
+msgstr "İletişim"
+
+#: includes/admin/class-adsense-check.php:99
+#: includes/ads/class-consent.php:103 includes/class-pages.php:273
+msgid "سياسة الخصوصية"
+msgstr "Gizlilik politikası"
+
+#: includes/admin/class-adsense-check.php:100 includes/class-pages.php:313
+msgid "الشروط والأحكام"
+msgstr "Şartlar ve koşullar"
+
+#: includes/admin/class-adsense-check.php:101 includes/class-pages.php:334
+msgid "إخلاء المسؤولية"
+msgstr "Sorumluluk reddi"
+
+#: includes/admin/class-adsense-check.php:111
+msgid "الصفحات الإلزامية"
+msgstr "Zorunlu sayfalar"
+
+#. translators: %s: list of pages.
+#: includes/admin/class-adsense-check.php:114
+msgid "صفحات ناقصة: %s"
+msgstr "Eksik sayfalar: %s"
+
+#. translators: %s: list of pages.
+#: includes/admin/class-adsense-check.php:114
+msgid "من نحن، اتصل بنا، الخصوصية، الشروط، إخلاء المسؤولية: منشورة."
+msgstr "Hakkımızda, İletişim, Gizlilik, Şartlar ve Sorumluluk reddi yayında."
+
+#: includes/admin/class-adsense-check.php:115
+msgid "اضغط «إنشاء الصفحات الإلزامية» في SportsArena > الأدوات."
+msgstr "SportsArena > Araçlar'da «Zorunlu sayfaları oluştur»a tıklayın."
+
+#: includes/admin/class-adsense-check.php:121
+msgid "سياسة الخصوصية تذكر AdSense والكوكيز"
+msgstr "Gizlilik politikası AdSense'ten ve çerezlerden bahsediyor"
+
+#: includes/admin/class-adsense-check.php:121
+msgid "الصفحة تذكر Google AdSense وملفات تعريف الارتباط والأطراف الثالثة."
+msgstr "Sayfa Google AdSense, çerezler ve üçüncü taraflardan bahsediyor."
+
+#: includes/admin/class-adsense-check.php:121
+msgid "لم يُعثر على ذكر AdSense أو ملفات تعريف الارتباط."
+msgstr "AdSense veya çerezlerden bahsedilmiyor."
+
+#: includes/admin/class-adsense-check.php:121
+msgid ""
+"أضف فقرة عن Google AdSense وملفات تعريف الارتباط (القالب المُنشأ تلقائياً "
+"يتضمنها)."
+msgstr ""
+"Google AdSense ve çerezler hakkında bir bölüm ekleyin (otomatik oluşturulan "
+"şablonda vardır)."
+
+#: includes/admin/class-adsense-check.php:125
+msgid "وسيلة تواصل فعّالة"
+msgstr "Çalışan iletişim yolu"
+
+#: includes/admin/class-adsense-check.php:125
+msgid "صفحة «اتصل بنا» تحتوي نموذج تواصل."
+msgstr "«İletişim» sayfasında iletişim formu var."
+
+#: includes/admin/class-adsense-check.php:125
+msgid "لم يُعثر على نموذج في صفحة التواصل."
+msgstr "İletişim sayfasında form bulunamadı."
+
+#: includes/admin/class-adsense-check.php:125
+msgid ""
+"أضف [sportsarena_contact_form] أو نموذج Contact Form 7 / WPForms، وتأكد أن "
+"البريد يصل (WP Mail SMTP)."
+msgstr ""
+"[sportsarena_contact_form] veya Contact Form 7 / WPForms formu ekleyin ve "
+"e-postaların ulaştığından emin olun (WP Mail SMTP)."
+
+#: includes/admin/class-adsense-check.php:128
+msgid "روابط الصفحات في الفوتر والتنقل"
+msgstr "Alt bilgi bağlantıları ve gezinti"
+
+#: includes/admin/class-adsense-check.php:128
+msgid "القالب يعرض روابط الصفحات الإلزامية في الفوتر وقائمة تنقل واضحة."
+msgstr ""
+"Tema, zorunlu sayfaları alt bilgide ve açık bir gezinti menüsünde "
+"gösteriyor."
+
+#: includes/admin/class-adsense-check.php:128
+msgid "تعذّر التأكد من روابط الفوتر مع هذا القالب."
+msgstr "Bu temayla alt bilgi bağlantıları doğrulanamadı."
+
+#: includes/admin/class-adsense-check.php:128
+msgid "أضف الصفحات الإلزامية إلى قائمة ظاهرة في كل الصفحات."
+msgstr "Zorunlu sayfaları her sayfada görünen bir menüye ekleyin."
+
+#: includes/admin/class-adsense-check.php:137
+msgid "حجم المحتوى الأصلي"
+msgstr "Özgün içerik miktarı"
+
+#. translators: %d: number of articles.
+#: includes/admin/class-adsense-check.php:140
+msgid "%d مقالاً/خبراً منشوراً (بدون التجريبي)."
+msgstr "%d yayımlanmış yazı (demo hariç)."
+
+#: includes/admin/class-adsense-check.php:141
+msgid ""
+"انشر 25–30 مقالاً أصلياً على الأقل قبل التقديم (أخبار، تحليلات، معاينات). "
+"صفحات المباريات وحدها لا تكفي لأن بياناتها مشتركة مع مواقع أخرى."
+msgstr ""
+"Başvurmadan önce en az 25–30 özgün yazı yayımlayın (haberler, analizler, maç"
+" önü). Verileri başka sitelerle ortak olduğu için maç sayfaları tek başına "
+"yeterli değildir."
+
+#: includes/admin/class-adsense-check.php:148
+msgid "طول المقالات"
+msgstr "Yazı uzunluğu"
+
+#. translators: %d: average words.
+#: includes/admin/class-adsense-check.php:151
+msgid "متوسط طول آخر 20 مقالاً: %d كلمة."
+msgstr "Son 20 yazının ortalama uzunluğu: %d kelime."
+
+#: includes/admin/class-adsense-check.php:152
+msgid ""
+"اكتب مقالات من 300 كلمة فأكثر بمعلومة مفيدة وتحليل، وتجنّب الأخبار القصيرة "
+"جداً أو المنسوخة."
+msgstr ""
+"Faydalı bilgi ve analiz içeren 300 kelime ve üzeri yazılar yazın; çok kısa "
+"veya kopya haberlerden kaçının."
+
+#: includes/admin/class-adsense-check.php:158
+msgid "محتوى أصلي في صفحات المباريات"
+msgstr "Maç sayfalarında özgün içerik"
+
+#. translators: %d: number of matches.
+#: includes/admin/class-adsense-check.php:161
+msgid "%d مباراة تحتوي «معاينة/تحليل» مكتوبة."
+msgstr "%d maçın yazılı maç önü / analizi var."
+
+#: includes/admin/class-adsense-check.php:162
+msgid ""
+"اكتب معاينة نصية للمباريات المهمة: صفحات النتائج المجردة تُعتبر محتوى "
+"ضعيفاً."
+msgstr ""
+"Önemli maçlar için maç önü yazın: yalnızca sonuç gösteren sayfalar zayıf "
+"içerik sayılır."
+
+#: includes/admin/class-adsense-check.php:168
+#: includes/admin/class-settings.php:624
+msgid "حذف البيانات التجريبية"
+msgstr "Demo verilerini sil"
+
+#. translators: %d: number of items.
+#: includes/admin/class-adsense-check.php:171
+msgid "%d عنصراً تجريبياً ما زال منشوراً."
+msgstr "%d demo öğesi hâlâ yayında."
+
+#. translators: %d: number of items.
+#: includes/admin/class-adsense-check.php:171
+msgid "لا توجد بيانات تجريبية."
+msgstr "Demo verisi yok."
+
+#: includes/admin/class-adsense-check.php:172
+msgid "اضغط «حذف البيانات التجريبية» في الأدوات."
+msgstr "Araçlar'da «Demo verilerini sil»e tıklayın."
+
+#: includes/admin/class-adsense-check.php:186
+msgid "المحتوى الافتراضي لووردبريس"
+msgstr "WordPress varsayılan içeriği"
+
+#. translators: %s: list of items.
+#: includes/admin/class-adsense-check.php:189
+msgid "ما زال منشوراً: %s"
+msgstr "Hâlâ yayında: %s"
+
+#. translators: %s: list of items.
+#: includes/admin/class-adsense-check.php:189
+msgid "لا يوجد محتوى افتراضي."
+msgstr "Varsayılan içerik yok."
+
+#: includes/admin/class-adsense-check.php:190
+msgid "احذف المقالة والصفحة الافتراضيتين."
+msgstr "Varsayılan yazıyı ve sayfayı silin."
+
+#: includes/admin/class-adsense-check.php:197
+msgid "لا بث مباشر ولا روابط بث"
+msgstr "Canlı yayın veya yayın bağlantısı yok"
+
+#. translators: %s: list of titles.
+#: includes/admin/class-adsense-check.php:200
+msgid "عبارات أو روابط بث في: %s"
+msgstr "Yayın ifadeleri veya bağlantıları bulundu: %s"
+
+#. translators: %s: list of titles.
+#: includes/admin/class-adsense-check.php:200
+msgid "لم يُعثر على روابط أو عبارات بث في المحتوى."
+msgstr "İçerikte yayın bağlantısı veya ifadesi bulunamadı."
+
+#: includes/admin/class-adsense-check.php:201
+msgid ""
+"احذف أي رابط أو إشارة لبث المباريات: البث غير المرخّص يؤدي إلى رفض AdSense."
+msgstr ""
+"Maç yayınına dair her bağlantıyı veya ifadeyi kaldırın: lisanssız yayın "
+"AdSense'in reddetmesine yol açar."
+
+#: includes/admin/class-adsense-check.php:207
+msgid "لا ترويج للمراهنات أو القمار"
+msgstr "Bahis veya kumar tanıtımı yok"
+
+#. translators: %s: list of titles.
+#: includes/admin/class-adsense-check.php:210
+msgid "محتوى مراهنات في: %s"
+msgstr "Bahis içeriği bulundu: %s"
+
+#. translators: %s: list of titles.
+#: includes/admin/class-adsense-check.php:210
+msgid "لم يُعثر على ترويج لمواقع المراهنات."
+msgstr "Bahis sitesi tanıtımı bulunamadı."
+
+#: includes/admin/class-adsense-check.php:211
+msgid ""
+"احذف روابط وإعلانات مواقع المراهنات: تتعارض مع سياسات AdSense في أغلب الدول "
+"العربية."
+msgstr ""
+"Bahis sitelerinin bağlantılarını ve reklamlarını kaldırın: çoğu Arap "
+"ülkesinde AdSense politikalarına aykırıdır."
+
+#: includes/admin/class-adsense-check.php:217
+msgid "حقوق الشعارات والصور"
+msgstr "Logo ve görsel hakları"
+
+#: includes/admin/class-adsense-check.php:219
+msgid "شعارات الأندية والبطولات من المزوّد معروضة."
+msgstr "Sağlayıcının kulüp ve turnuva logoları gösteriliyor."
+
+#: includes/admin/class-adsense-check.php:219
+msgid "تُعرض أعلام الدول وصور بديلة عامة فقط."
+msgstr "Yalnızca ülke bayrakları ve genel görseller gösteriliyor."
+
+#: includes/admin/class-adsense-check.php:220
+msgid ""
+"الشعارات علامات تجارية لأصحابها: تأكد أن خطة المزوّد تسمح بعرضها، واستخدمها "
+"للتعريف فقط، واحذف أي شعار عند طلب صاحبه. صور اللاعبين من وكالات الصور تحتاج"
+" ترخيصاً."
+msgstr ""
+"Logolar sahiplerinin markalarıdır: sağlayıcı planınızın göstermeye izin "
+"verdiğinden emin olun, yalnızca tanıtım amacıyla kullanın ve sahibi isterse "
+"logoyu kaldırın. Ajanslardan alınan oyuncu fotoğrafları lisans gerektirir."
+
+#: includes/admin/class-adsense-check.php:225
+msgid "معرّف الناشر"
+msgstr "Yayıncı kimliği"
+
+#: includes/admin/class-adsense-check.php:225
+msgid "غير مضبوط."
+msgstr "Ayarlanmadı."
+
+#: includes/admin/class-adsense-check.php:225
+msgid ""
+"أدخل ca-pub-... في SportsArena > الإعلانات (يُحقن السكربت في <head> للتحقق "
+"من الموقع)."
+msgstr ""
+"SportsArena > Reklamlar'a ca-pub-... girin (betik site doğrulaması için "
+"<head> içine eklenir)."
+
+#: includes/admin/class-adsense-check.php:239
+msgid "أماكن الإعلانات"
+msgstr "Reklam yerleri"
+
+#: includes/admin/class-adsense-check.php:241
+msgid "الإعلانات التلقائية مفعّلة."
+msgstr "Otomatik reklamlar açık."
+
+#. translators: %d: number of slots.
+#: includes/admin/class-adsense-check.php:243
+msgid "%d خانة يدوية مفعّلة، لكل منها ارتفاع محجوز وعنوان «إعلان»."
+msgstr ""
+"%d manuel alan açık; her birinin ayrılmış yüksekliği ve «Reklam» etiketi "
+"var."
+
+#. translators: %d: number of slots.
+#: includes/admin/class-adsense-check.php:243
+msgid "لا توجد خانات مفعّلة بعد."
+msgstr "Henüz açık alan yok."
+
+#: includes/admin/class-adsense-check.php:245
+msgid ""
+"فعّل Auto Ads أو الخانات اليدوية بعد الموافقة. أثناء المراجعة يكفي سكربت "
+"التحقق."
+msgstr ""
+"Onaydan sonra Auto Ads'i veya manuel alanları açın. İnceleme sırasında "
+"doğrulama betiği yeterlidir."
+
+#: includes/admin/class-adsense-check.php:248
+msgid "سياسات وضع الإعلانات"
+msgstr "Reklam yerleşimi politikaları"
+
+#: includes/admin/class-adsense-check.php:248
+msgid ""
+"لا إعلانات في صفحات 404 والبحث الفارغ والخصوصية والتواصل والشروط؛ لا إعلانات"
+" داخل قوائم المباريات أو ملاصقة للأزرار؛ لا تحديث تلقائي للصفحة (النتائج "
+"الحية تُحدَّث جزئياً)؛ لا نوافذ منبثقة."
+msgstr ""
+"404, boş arama, gizlilik, iletişim ve şartlar sayfalarında reklam yok; maç "
+"listelerinin içinde veya düğmelerin yanında reklam yok; sayfa otomatik "
+"yenilenmiyor (canlı skorlar kısmen güncellenir); açılır pencere yok."
+
+#: includes/admin/class-adsense-check.php:253
+#: includes/admin/class-adsense-check.php:255
+#: includes/admin/class-adsense-check.php:257
+msgid "منصة الموافقة (CMP)"
+msgstr "Onay yönetim platformu (CMP)"
+
+#: includes/admin/class-adsense-check.php:253
+msgid "وضع CMP خارجية معتمدة من Google."
+msgstr "Google sertifikalı harici CMP modu."
+
+#: includes/admin/class-adsense-check.php:253
+msgid "تأكد أن رسالة GDPR منشورة في AdSense > الخصوصية والمراسلة."
+msgstr ""
+"GDPR mesajının AdSense > Gizlilik ve mesajlar bölümünde yayımlandığından "
+"emin olun."
+
+#: includes/admin/class-adsense-check.php:255
+msgid "اللافتة المدمجة مفعّلة (احتياطية)."
+msgstr "Yerleşik bant açık (yedek)."
+
+#: includes/admin/class-adsense-check.php:255
+msgid ""
+"لزوار أوروبا/بريطانيا/سويسرا تطلب Google منصة CMP معتمدة: فعّل رسالة GDPR "
+"المجانية في AdSense واختر وضع «CMP خارجية»."
+msgstr ""
+"Avrupa/İngiltere/İsviçre ziyaretçileri için Google sertifikalı bir CMP "
+"ister: AdSense'teki ücretsiz GDPR mesajını açın ve «Harici CMP» modunu "
+"seçin."
+
+#: includes/admin/class-adsense-check.php:257
+msgid "الموافقة على الكوكيز معطّلة."
+msgstr "Çerez onayı kapalı."
+
+#: includes/admin/class-adsense-check.php:257
+msgid ""
+"فعّل CMP معتمدة أو اللافتة المدمجة من SportsArena > الموافقة على الكوكيز."
+msgstr ""
+"SportsArena > Çerez onayı bölümünden sertifikalı bir CMP'yi veya yerleşik "
+"bandı açın."
+
+#: includes/admin/class-adsense-check.php:260
+#: includes/admin/class-settings.php:529
+msgid "Google Consent Mode v2"
+msgstr "Google Consent Mode v2"
+
+#: includes/admin/class-adsense-check.php:260
+msgid "القيم الافتراضية تُرسل قبل وسوم Google."
+msgstr "Varsayılan değerler Google etiketlerinden önce gönderiliyor."
+
+#: includes/admin/class-adsense-check.php:260
+msgid "غير مفعّل."
+msgstr "Açık değil."
+
+#: includes/admin/class-adsense-check.php:260
+msgid "فعّله من صفحة الموافقة على الكوكيز."
+msgstr "Çerez onayı sayfasından açın."
+
+#: includes/admin/class-adsense-check.php:264
+msgid "خريطة الموقع وSEO"
+msgstr "Site haritası ve SEO"
+
+#: includes/admin/class-adsense-check.php:264
+msgid "إضافة SEO مكتشفة وتتولى خريطة الموقع، وSchema الرياضة من SportsArena."
+msgstr ""
+"Site haritasını yöneten bir SEO eklentisi algılandı; spor Schema'sı "
+"SportsArena'dan geliyor."
+
+#: includes/admin/class-adsense-check.php:264
+msgid "wp-sitemap.xml وnews-sitemap.xml وSchema وOpen Graph مفعّلة."
+msgstr "wp-sitemap.xml, news-sitemap.xml, Schema ve Open Graph etkin."
+
+#: includes/admin/class-adsense-check.php:264
+msgid "أرسل خريطة الموقع في Google Search Console."
+msgstr "Site haritasını Google Search Console'a gönderin."
+
+#: includes/admin/class-adsense-check.php:267
+msgid "التخزين المؤقت للصفحات"
+msgstr "Sayfa önbelleği"
+
+#: includes/admin/class-adsense-check.php:267
+msgid "إضافة كاش مكتشفة."
+msgstr "Bir önbellek eklentisi algılandı."
+
+#: includes/admin/class-adsense-check.php:267
+msgid "لم تُكتشف إضافة كاش."
+msgstr "Önbellek eklentisi algılanmadı."
+
+#: includes/admin/class-adsense-check.php:267
+msgid "ثبّت LiteSpeed Cache أو WP Rocket وفعّل ضغط gzip/brotli لسرعة أفضل."
+msgstr ""
+"Daha iyi hız için LiteSpeed Cache veya WP Rocket kurun ve gzip/brotli "
+"sıkıştırmayı açın."
+
+#: includes/admin/class-adsense-check.php:270
+msgid "Cron حقيقي"
+msgstr "Gerçek cron"
+
+#: includes/admin/class-adsense-check.php:270
+msgid "WP-Cron يعمل من الخادم."
+msgstr "WP-Cron sunucudan çalışıyor."
+
+#: includes/admin/class-adsense-check.php:270
+msgid "WP-Cron يعتمد على الزيارات."
+msgstr "WP-Cron site ziyaretlerine bağlı."
+
+#: includes/admin/class-adsense-check.php:270
+msgid "اتبع قسم Cron في README لتحديث النتائج بانتظام."
+msgstr "Sonuçları düzenli güncellemek için README'deki Cron bölümünü izleyin."
+
+#: includes/admin/class-adsense-check.php:284
+msgid "ملف ads.txt"
+msgstr "ads.txt dosyası"
+
+#: includes/admin/class-adsense-check.php:286
+msgid "يحتاج معرّف الناشر أولاً."
+msgstr "Önce yayıncı kimliği gerekli."
+
+#: includes/admin/class-adsense-check.php:286
+msgid "أدخل معرّف الناشر وفعّل خيار ads.txt."
+msgstr "Yayıncı kimliğini girin ve ads.txt seçeneğini açın."
+
+#: includes/admin/class-adsense-check.php:291
+msgid "معطّل."
+msgstr "Kapalı."
+
+#: includes/admin/class-adsense-check.php:301
+msgid "افتح رابط /ads.txt بنفسك من المتصفح وتأكد أنه يعرض سطر google.com."
+msgstr ""
+"Tarayıcıda /ads.txt adresini açın ve google.com satırını gösterdiğini "
+"kontrol edin."
+
+#. translators: %s: URL.
+#: includes/admin/class-adsense-check.php:310
+msgid "%s يحتوي سطر Google الصحيح."
+msgstr "%s doğru Google satırını içeriyor."
+
+#. translators: %s: URL.
+#: includes/admin/class-adsense-check.php:310
+msgid "الملف غير موجود أو لا يحتوي معرّف الناشر."
+msgstr "Dosya yok veya yayıncı kimliğini içermiyor."
+
+#: includes/admin/class-adsense-check.php:311
+msgid ""
+"فعّل ads.txt في الإعلانات واضغط «إعادة إنشاء ads.txt» في الأدوات، ثم امسح "
+"كاش الموقع."
+msgstr ""
+"Reklamlar'da ads.txt'yi açın, Araçlar'da «ads.txt dosyasını yeniden "
+"oluştur»a tıklayın ve site önbelleğini temizleyin."
+
+#: includes/admin/class-adsense-check.php:437
+msgid "فحص جاهزية الموقع لـ Google AdSense"
+msgstr "Sitenin Google AdSense'e hazırlık kontrolü"
+
+#. translators: 1: passed, 2: warnings, 3: failures.
+#: includes/admin/class-adsense-check.php:441
+msgid "ناجح: %1$d · تحذيرات: %2$d · يجب إصلاحه: %3$d"
+msgstr "Geçti: %1$d · Uyarı: %2$d · Düzeltilecek: %3$d"
+
+#: includes/admin/class-adsense-check.php:444
+msgid ""
+"فحص آلي إرشادي. مراجعة Google تقيّم أيضاً أصالة المحتوى وقيمته للزائر، وقد "
+"تشترط بعض الدول عمراً أدنى للموقع."
+msgstr ""
+"Otomatik ve yol gösterici bir kontroldür. Google incelemesi içeriğin "
+"özgünlüğünü ve değerini de değerlendirir; bazı ülkeler asgari site yaşı "
+"ister."
+
+#: includes/admin/class-adsense-check.php:447
+#: includes/admin/class-meta-boxes.php:100
+#: includes/admin/class-settings.php:400
+msgid "الحالة"
+msgstr "Durum"
+
+#: includes/admin/class-adsense-check.php:448
+msgid "الفحص"
+msgstr "Kontrol"
+
+#: includes/admin/class-adsense-check.php:449
+msgid "النتيجة"
+msgstr "Sonuç"
+
+#: includes/admin/class-adsense-check.php:450
+msgid "طريقة الإصلاح"
+msgstr "Nasıl düzeltilir"
+
+#: includes/admin/class-meta-boxes.php:41
+msgid "بيانات المباراة"
+msgstr "Maç bilgileri"
+
+#: includes/admin/class-meta-boxes.php:42
+msgid "بيانات الفريق"
+msgstr "Takım bilgileri"
+
+#: includes/admin/class-meta-boxes.php:43
+msgid "الترتيب والهدافون"
+msgstr "Puan durumu ve gol krallığı"
+
+#: includes/admin/class-meta-boxes.php:44
+msgid "الفرق والبطولات المرتبطة"
+msgstr "İlgili takımlar ve turnuvalar"
+
+#: includes/admin/class-meta-boxes.php:82 includes/functions.php:45
+msgid "لم تبدأ"
+msgstr "Başlamadı"
+
+#: includes/admin/class-meta-boxes.php:83
+msgid "حية"
+msgstr "Canlı"
+
+#: includes/admin/class-meta-boxes.php:84 includes/functions.php:37
+msgid "استراحة"
+msgstr "Devre arası"
+
+#: includes/admin/class-meta-boxes.php:85 includes/functions.php:39
+msgid "انتهت"
+msgstr "Bitti"
+
+#: includes/admin/class-meta-boxes.php:86 includes/functions.php:41
+msgid "مؤجلة"
+msgstr "Ertelendi"
+
+#: includes/admin/class-meta-boxes.php:87 includes/functions.php:43
+msgid "ملغاة"
+msgstr "İptal edildi"
+
+#: includes/admin/class-meta-boxes.php:96
+msgid "الفريق المضيف"
+msgstr "Ev sahibi"
+
+#: includes/admin/class-meta-boxes.php:97
+msgid "الفريق الضيف"
+msgstr "Deplasman"
+
+#: includes/admin/class-meta-boxes.php:98
+msgid "البطولة"
+msgstr "Turnuva"
+
+#: includes/admin/class-meta-boxes.php:99
+msgid "موعد البداية (توقيت الموقع)"
+msgstr "Başlama saati (site saati)"
+
+#: includes/admin/class-meta-boxes.php:106
+msgid "الدقيقة"
+msgstr "Dakika"
+
+#: includes/admin/class-meta-boxes.php:107
+msgid "أهداف المضيف"
+msgstr "Ev sahibi golleri"
+
+#: includes/admin/class-meta-boxes.php:108
+msgid "أهداف الضيف"
+msgstr "Deplasman golleri"
+
+#: includes/admin/class-meta-boxes.php:109
+#: includes/admin/class-meta-boxes.php:146
+msgid "الملعب"
+msgstr "Stadyum"
+
+#: includes/admin/class-meta-boxes.php:110
+msgid "المدينة"
+msgstr "Şehir"
+
+#: includes/admin/class-meta-boxes.php:111
+msgid "الجولة"
+msgstr "Hafta"
+
+#: includes/admin/class-meta-boxes.php:112
+msgid "الحكم"
+msgstr "Hakem"
+
+#: includes/admin/class-meta-boxes.php:114
+msgid "مباراة كبرى"
+msgstr "Büyük maç"
+
+#: includes/admin/class-meta-boxes.php:115
+msgid "تلقائي (حسب قائمة الأندية الكبرى)"
+msgstr "Otomatik (büyük kulüpler listesine göre)"
+
+#: includes/admin/class-meta-boxes.php:116
+msgid "نعم، اعرضها في المباريات الكبرى"
+msgstr "Evet, büyük maçlarda göster"
+
+#: includes/admin/class-meta-boxes.php:117
+msgid "لا"
+msgstr "Hayır"
+
+#: includes/admin/class-meta-boxes.php:120
+msgid "القنوات الناقلة (نص فقط — بدون أي روابط بث)"
+msgstr "TV kanalları (yalnızca metin — asla yayın bağlantısı yok)"
+
+#: includes/admin/class-meta-boxes.php:122
+msgid ""
+"الأحداث (سطر لكل حدث): الدقيقة|home أو "
+"away|goal/own_goal/penalty/yellow/red/sub|اللاعب|صانع الهدف أو البديل"
+msgstr ""
+"Olaylar (her satıra bir): dakika|home veya "
+"away|goal/own_goal/penalty/yellow/red/sub|oyuncu|asist veya oyuna giren"
+
+#: includes/admin/class-meta-boxes.php:124
+msgid ""
+"اكتب «المعاينة/التحليل» في محرر المحتوى أعلاه. التشكيلات والإحصائيات تُجلب "
+"من المزوّد."
+msgstr ""
+"«Maç önü / analiz» yazısını yukarıdaki içerik düzenleyicide yazın. Kadrolar "
+"ve istatistikler sağlayıcıdan gelir."
+
+#: includes/admin/class-meta-boxes.php:127
+msgid "تحديث من المزوّد (الأحداث، التشكيلة، الإحصائيات، المواجهات)"
+msgstr ""
+"Sağlayıcıdan güncelle (olaylar, kadrolar, istatistikler, aralarındaki "
+"maçlar)"
+
+#: includes/admin/class-meta-boxes.php:143
+#: includes/admin/class-meta-boxes.php:181
+msgid "الاسم بالإنجليزية"
+msgstr "İngilizce ad"
+
+#: includes/admin/class-meta-boxes.php:144
+msgid "الاسم المختصر"
+msgstr "Kısa ad"
+
+#: includes/admin/class-meta-boxes.php:145
+msgid "سنة التأسيس"
+msgstr "Kuruluş yılı"
+
+#: includes/admin/class-meta-boxes.php:147
+msgid "رابط الشعار (يُعرض فقط إذا سمحت الإعدادات بشعارات المزوّد)"
+msgstr ""
+"Logo URL'si (yalnızca ayarlar sağlayıcı logolarına izin veriyorsa "
+"gösterilir)"
+
+#: includes/admin/class-meta-boxes.php:159
+msgid "الصورة البارزة تُستخدم كشعار للفريق (ارفع شعاراً تملك حق استخدامه)."
+msgstr ""
+"Öne çıkan görsel takım arması olarak kullanılır (kullanma hakkınız olan bir "
+"logo yükleyin)."
+
+#: includes/admin/class-meta-boxes.php:182
+msgid "الموسم"
+msgstr "Sezon"
+
+#: includes/admin/class-meta-boxes.php:183
+msgid "الأولوية في القوائم (الأصغر أولاً)"
+msgstr "Listelerdeki sıra (küçük olan önce)"
+
+#: includes/admin/class-meta-boxes.php:185
+msgid ""
+"جدول الترتيب (سطر لكل فريق): "
+"المركز|الفريق|لعب|فاز|تعادل|خسر|له|عليه|النقاط|المجموعة"
+msgstr ""
+"Puan durumu (her satıra bir takım): "
+"sıra|takım|oynanan|galibiyet|beraberlik|mağlubiyet|atılan|yenilen|puan|grup"
+
+#: includes/admin/class-meta-boxes.php:187
+msgid ""
+"الهدافون (سطر لكل لاعب): المركز|اللاعب|الفريق|الأهداف|التمريرات الحاسمة"
+msgstr "Gol krallığı (her satıra bir oyuncu): sıra|oyuncu|takım|gol|asist"
+
+#: includes/admin/class-meta-boxes.php:189
+msgid "تُستبدل تلقائياً عند المزامنة مع المزوّد."
+msgstr "Sağlayıcıyla senkronizasyonda otomatik olarak değiştirilir."
+
+#: includes/admin/class-meta-boxes.php:202 includes/class-post-types.php:83
+msgid "الفرق"
+msgstr "Takımlar"
+
+#: includes/admin/class-meta-boxes.php:203 includes/class-post-types.php:101
+msgid "البطولات"
+msgstr "Turnuvalar"
+
+#: includes/admin/class-meta-boxes.php:223
+msgid ""
+"إن تُركت فارغة تُكتشف الفرق والبطولات المذكورة في الخبر تلقائياً عند النشر."
+msgstr ""
+"Boş bırakılırsa haberde geçen takımlar ve turnuvalar yayımlanırken otomatik "
+"algılanır."
+
+#: includes/admin/class-meta-boxes.php:226
+msgid "لغة الخبر"
+msgstr "Haberin dili"
+
+#: includes/admin/class-meta-boxes.php:231
+msgid "يظهر الخبر في صفحات هذه اللغة فقط."
+msgstr "Haber yalnızca bu dildeki sayfalarda görünür."
+
+#: includes/admin/class-settings.php:45
+msgid "البيانات والمزامنة"
+msgstr "Veri ve senkronizasyon"
+
+#: includes/admin/class-settings.php:47
+msgid "الموافقة على الكوكيز"
+msgstr "Çerez onayı"
+
+#: includes/admin/class-settings.php:48
+msgid "السجل"
+msgstr "Kayıt"
+
+#: includes/admin/class-settings.php:49
+msgid "الأدوات"
+msgstr "Araçlar"
+
+#: includes/admin/class-settings.php:59
+msgid "الإعدادات"
+msgstr "Ayarlar"
+
+#: includes/admin/class-settings.php:178
+msgid "معرّف الناشر غير صالح. الصيغة الصحيحة: ca-pub-1234567890123456"
+msgstr "Geçersiz yayıncı kimliği. Beklenen biçim: ca-pub-1234567890123456"
+
+#: includes/admin/class-settings.php:265
+msgid "معرّف عبر ثابت في wp-config.php."
+msgstr "wp-config.php içinde bir sabitle tanımlandı."
+
+#: includes/admin/class-settings.php:269
+msgid "حذف المفتاح المحفوظ"
+msgstr "Kayıtlı anahtarı sil"
+
+#: includes/admin/class-settings.php:291
+msgid "SportsArena: البيانات والمزامنة"
+msgstr "SportsArena: veri ve senkronizasyon"
+
+#: includes/admin/class-settings.php:296
+msgid "مزوّدو البيانات"
+msgstr "Veri sağlayıcılar"
+
+#: includes/admin/class-settings.php:299
+msgid "تفعيل المزامنة"
+msgstr "Senkronizasyonu etkinleştir"
+
+#: includes/admin/class-settings.php:299
+msgid "تشغيل مهام WP-Cron لجلب البيانات من المزوّدين."
+msgstr "Sağlayıcılardan veri çeken WP-Cron görevlerini çalıştır."
+
+#: includes/admin/class-settings.php:300
+msgid "مفتاح API-Football"
+msgstr "API-Football anahtarı"
+
+#: includes/admin/class-settings.php:300
+msgid ""
+"من لوحة <a href=\"https://dashboard.api-football.com/\" target=\"_blank\" "
+"rel=\"noopener\">dashboard.api-football.com</a>. نفس المفتاح يعمل لكل رياضات"
+" api-sports.io."
+msgstr ""
+"<a href=\"https://dashboard.api-football.com/\" target=\"_blank\" "
+"rel=\"noopener\">dashboard.api-football.com</a> panelinden. Aynı anahtar "
+"api-sports.io'nun tüm sporlarında çalışır."
+
+#: includes/admin/class-settings.php:301
+msgid "معرّفات دوريات كرة القدم"
+msgstr "Futbol ligi kimlikleri"
+
+#: includes/admin/class-settings.php:301
+msgid ""
+"مفصولة بفواصل (مثال: 39 الإنجليزي، 140 الإسباني، 2 دوري الأبطال، 307 "
+"السعودي، 233 المصري). اتركه فارغاً لجلب كل الدوريات (غير مستحسن)."
+msgstr ""
+"Virgülle ayrılmış (örn.: 39 Premier Lig, 140 La Liga, 2 Şampiyonlar Ligi, "
+"307 Suudi Arabistan, 233 Mısır). Tüm ligleri çekmek için boş bırakın "
+"(önerilmez)."
+
+#: includes/admin/class-settings.php:302
+msgid "مفتاح API-Basketball (اختياري)"
+msgstr "API-Basketball anahtarı (isteğe bağlı)"
+
+#: includes/admin/class-settings.php:302
+msgid "إن تُرك فارغاً يُستخدم مفتاح API-Football."
+msgstr "Boşsa API-Football anahtarı kullanılır."
+
+#: includes/admin/class-settings.php:303
+msgid "معرّفات دوريات السلة"
+msgstr "Basketbol ligi kimlikleri"
+
+#: includes/admin/class-settings.php:303
+msgid "مثال: 12 (NBA)، 120 (Euroleague). اتركه فارغاً لتعطيل السلة."
+msgstr ""
+"Örn.: 12 (NBA), 120 (EuroLeague). Basketbolu kapatmak için boş bırakın."
+
+#: includes/admin/class-settings.php:304
+msgid "مفتاح TheSportsDB"
+msgstr "TheSportsDB anahtarı"
+
+#: includes/admin/class-settings.php:304
+msgid ""
+"للتنس والفورمولا 1 وكرة اليد والطائرة والفنون القتالية. <a "
+"href=\"https://www.thesportsdb.com/pricing\" target=\"_blank\" "
+"rel=\"noopener\">thesportsdb.com</a>"
+msgstr ""
+"Tenis, Formula 1, hentbol, voleybol ve dövüş sporları için. <a "
+"href=\"https://www.thesportsdb.com/pricing\" target=\"_blank\" "
+"rel=\"noopener\">thesportsdb.com</a>"
+
+#: includes/admin/class-settings.php:305
+msgid "رياضات TheSportsDB"
+msgstr "TheSportsDB sporları"
+
+#: includes/admin/class-settings.php:308
+msgid "حدود الطلبات والتوقيت"
+msgstr "İstek sınırları ve saat"
+
+#: includes/admin/class-settings.php:311
+msgid "الحد اليومي لكل مزوّد"
+msgstr "Sağlayıcı başına günlük sınır"
+
+#: includes/admin/class-settings.php:311
+msgid ""
+"عدد الطلبات المسموح بها يومياً (الخطة المجانية لـ API-Football: 100). 0 = "
+"بلا حد."
+msgstr ""
+"Günlük izin verilen istek sayısı (API-Football ücretsiz plan: 100). 0 = "
+"sınırsız."
+
+#: includes/admin/class-settings.php:312
+msgid "الحد في الدقيقة"
+msgstr "Dakika başına sınır"
+
+#: includes/admin/class-settings.php:312
+msgid "حسب خطتك (المجانية: 10)."
+msgstr "Planınıza göre (ücretsiz: 10)."
+
+#: includes/admin/class-settings.php:313
+msgid "فاصل تحديث المباريات الحية (ثانية)"
+msgstr "Canlı maç yenileme aralığı (saniye)"
+
+#: includes/admin/class-settings.php:313
+msgid "لا يقل عن 60. يعمل فقط أثناء وجود مباريات حية."
+msgstr "En az 60. Yalnızca canlı maç varken çalışır."
+
+#: includes/admin/class-settings.php:316
+msgid "عرض المواعيد"
+msgstr "Saat gösterimi"
+
+#: includes/admin/class-settings.php:319
+msgid "بتوقيت جرينتش (GMT) لكل الزوار"
+msgstr "Tüm ziyaretçiler için Greenwich saati (GMT)"
+
+#: includes/admin/class-settings.php:320
+msgid "بتوقيت جهاز كل زائر (يتحوّل تلقائياً)"
+msgstr "Her ziyaretçinin cihaz saati (otomatik dönüştürülür)"
+
+#: includes/admin/class-settings.php:322
+msgid ""
+"مع GMT تظهر كل الأوقات بتوقيت جرينتش مع كلمة GMT، وتُحسب صفحات «اليوم» "
+"و«الغد» بتوقيت جرينتش بدل المنطقة الزمنية في الإعدادات > عام."
+msgstr ""
+"GMT seçildiğinde tüm saatler GMT ibaresiyle Greenwich saatine göre "
+"gösterilir; “Bugün” ve “Yarın” sayfaları Ayarlar > Genel’deki saat dilimi "
+"yerine GMT gününe göre hesaplanır."
+
+#: includes/admin/class-settings.php:326
+msgid "اسم التوقيت الأصلي"
+msgstr "Orijinal saat dilimi adı"
+
+#: includes/admin/class-settings.php:326
+msgid ""
+"يظهر بجانب التوقيت الأصلي، مثال: «بتوقيت مكة». المنطقة الزمنية نفسها من "
+"الإعدادات > عام."
+msgstr ""
+"Orijinal saatin yanında gösterilir, örn.: «İstanbul saati». Saat dilimi "
+"Ayarlar > Genel'den belirlenir."
+
+#: includes/admin/class-settings.php:329
+msgid "لغات الموقع"
+msgstr "Site dilleri"
+
+#: includes/admin/class-settings.php:331
+msgid "إضافة Polylang أو WPML مفعّلة: هي التي تدير اللغات ومبدّل اللغة."
+msgstr "Polylang veya WPML etkin: dilleri ve dil seçiciyi o yönetir."
+
+#: includes/admin/class-settings.php:335
+msgid "لغات إضافية للزوار"
+msgstr "Ziyaretçiler için ek diller"
+
+#: includes/admin/class-settings.php:340
+msgid "لغة الموقع"
+msgstr "Site dili"
+
+#: includes/admin/class-settings.php:346
+msgid ""
+"يظهر مبدّل اللغة في رأس الموقع وتذييله. لغة الموقع (الإعدادات > عام) على "
+"الرابط الرئيسي وكل لغة إضافية تحت رمزها، مثل /en/. المباريات والفرق "
+"والبطولات مشتركة بين اللغات وتُترجم أسماؤها تلقائياً، أما الأخبار فلكل لغة "
+"أخبارها: اختر لغة الخبر من صفحة تعديله."
+msgstr ""
+"Dil seçici sitenin üst ve alt bilgisinde görünür. Site dili (Ayarlar > "
+"Genel) ana adreste, her ek dil ise kendi kodu altında yer alır, örneğin "
+"/en/. Maçlar, takımlar ve turnuvalar tüm dillerde ortaktır ve adları "
+"otomatik çevrilir; haberler her dil için ayrıdır: bir haberin dilini "
+"düzenleme ekranından seçin."
+
+#: includes/admin/class-settings.php:350
+msgid "اسم الموقع بكل لغة"
+msgstr "Dile göre site adı"
+
+#: includes/admin/class-settings.php:353
+msgid "اختياري. سطر لكل لغة: الرمز=الاسم|الوصف المختصر."
+msgstr "İsteğe bağlı. Her dil için bir satır: kod=Ad|Slogan."
+
+#: includes/admin/class-settings.php:358
+msgid "خيارات أخرى"
+msgstr "Diğer seçenekler"
+
+#: includes/admin/class-settings.php:361
+msgid "عرض شعارات المزوّد"
+msgstr "Sağlayıcı logolarını göster"
+
+#: includes/admin/class-settings.php:361
+msgid ""
+"شعارات الأندية والبطولات من المزوّد في كل أماكنها (المباريات، الترتيب، "
+"الفرق، البطولات). الشعارات علامات تجارية لأصحابها: فعّلها إذا كانت خطة "
+"المزوّد تسمح بعرضها. أعلام الدول تظهر دائماً."
+msgstr ""
+"Sağlayıcının kulüp ve turnuva logoları tüm yerlerinde (maçlar, puan durumu, "
+"takımlar, turnuvalar). Logolar sahiplerinin markalarıdır: sağlayıcı planınız"
+" göstermeye izin veriyorsa açın. Ülke bayrakları her zaman gösterilir."
+
+#: includes/admin/class-settings.php:362
+msgid "حفظ الشعارات على موقعك"
+msgstr "Logoları sitenizde sakla"
+
+#: includes/admin/class-settings.php:362
+msgid ""
+"تنزيل شعارات المزوّد إلى مجلد الرفع (128px، WebP) بدفعات كل ساعة بدلاً من "
+"تحميلها من خادم المزوّد. أسرع وأكثر استقراراً."
+msgstr ""
+"Sağlayıcı logolarını sağlayıcının sunucusundan yüklemek yerine saatlik "
+"gruplar halinde yükleme klasörüne indirin (128 px, WebP). Daha hızlı ve daha"
+" kararlı."
+
+#: includes/admin/class-settings.php:363
+msgid "Google News Sitemap"
+msgstr "Google News Sitemap"
+
+#: includes/admin/class-settings.php:363
+msgid "إنشاء /news-sitemap.xml لأخبار آخر 48 ساعة."
+msgstr "Son 48 saatin haberleri için /news-sitemap.xml oluştur."
+
+#: includes/admin/class-settings.php:366
+msgid "مواقع اللغات الأخرى (hreflang)"
+msgstr "Diğer dillerdeki siteler (hreflang)"
+
+#: includes/admin/class-settings.php:369
+msgid ""
+"سطر لكل لغة: رمز اللغة=رابط الموقع. يضيف وسوم hreflang لصفحات المباريات "
+"والفرق والبطولات والأيام بين نسخ الموقع بلغات مختلفة."
+msgstr ""
+"Her satıra bir dil: dil kodu=site URL'si. Sitenin dil sürümleri arasında "
+"maç, takım, turnuva ve gün sayfalarına hreflang etiketleri ekler."
+
+#: includes/admin/class-settings.php:373
+msgid "الأندية الكبرى"
+msgstr "Büyük kulüpler"
+
+#: includes/admin/class-settings.php:376
+msgid ""
+"اسم نادٍ في كل سطر، بالإنجليزية كما يرسله المزوّد. أي مباراة بين ناديين من "
+"هذه القائمة تظهر في صفحة «المباريات الكبرى» وعلى الرئيسية. اتركها فارغة "
+"لاستخدام القائمة الافتراضية (أكبر أندية أوروبا والعرب). ويمكن تحديد أي "
+"مباراة يدوياً من صفحة تعديلها."
+msgstr ""
+"Her satıra bir kulüp, sağlayıcının gönderdiği gibi İngilizce. Bu listedeki "
+"iki kulüp arasındaki her maç “Büyük maçlar” sayfasında ve ana sayfada "
+"görünür. Varsayılan listeyi (en büyük Avrupa ve Arap kulüpleri) kullanmak "
+"için boş bırakın. Bir maçı düzenleme ekranından elle de "
+"işaretleyebilirsiniz."
+
+#: includes/admin/class-settings.php:380
+msgid "حذف الإعدادات عند الحذف"
+msgstr "Kaldırırken ayarları sil"
+
+#: includes/admin/class-settings.php:380
+msgid "حذف الإعدادات والجداول عند حذف الإضافة (المحتوى نفسه لا يُحذف)."
+msgstr ""
+"Eklenti silindiğinde ayarları ve tabloları sil (içerik asla silinmez)."
+
+#: includes/admin/class-settings.php:399
+msgid "المزوّد"
+msgstr "Sağlayıcı"
+
+#: includes/admin/class-settings.php:401
+msgid "طلبات اليوم"
+msgstr "Bugünkü istekler"
+
+#: includes/admin/class-settings.php:402
+msgid "المتبقي لدى المزوّد"
+msgstr "Sağlayıcıda kalan"
+
+#: includes/admin/class-settings.php:410
+msgid "مُعد"
+msgstr "Yapılandırıldı"
+
+#: includes/admin/class-settings.php:410
+msgid "بدون مفتاح"
+msgstr "Anahtar yok"
+
+#. translators: 1: cron hook, 2: date.
+#: includes/admin/class-settings.php:422
+msgid "%1$s: التشغيل التالي %2$s"
+msgstr "%1$s: sonraki çalışma %2$s"
+
+#: includes/admin/class-settings.php:425
+msgid ""
+"تنبيه: WP-Cron يعمل بزيارات الموقع. للحصول على تحديث حي منتظم فعّل cron "
+"حقيقياً على الخادم (راجع README)."
+msgstr ""
+"Not: WP-Cron site ziyaretleriyle çalışır. Düzenli canlı güncelleme için "
+"sunucuda gerçek bir cron kurun (README'ye bakın)."
+
+#: includes/admin/class-settings.php:445
+msgid "الإعلانات (Google AdSense)"
+msgstr "Reklamlar (Google AdSense)"
+
+#: includes/admin/class-settings.php:451
+msgid "معرّف الناشر (Publisher ID)"
+msgstr "Yayıncı kimliği (Publisher ID)"
+
+#: includes/admin/class-settings.php:451
+msgid ""
+"مثال: ca-pub-1234567890123456. يُحقن سكربت AdSense مرة واحدة في "
+"&lt;head&gt;."
+msgstr ""
+"Örn.: ca-pub-1234567890123456. AdSense betiği &lt;head&gt; içine bir kez "
+"eklenir."
+
+#: includes/admin/class-settings.php:452
+msgid "Auto Ads"
+msgstr "Auto Ads"
+
+#: includes/admin/class-settings.php:452
+msgid ""
+"استخدم الإعلانات التلقائية بدلاً من الخانات اليدوية (فعّلها أيضاً من لوحة "
+"AdSense)."
+msgstr ""
+"Manuel alanlar yerine otomatik reklamları kullan (AdSense panelinde de "
+"etkinleştirin)."
+
+#: includes/admin/class-settings.php:453
+msgid "ads.txt"
+msgstr "ads.txt"
+
+#: includes/admin/class-settings.php:453
+msgid "إنشاء ملف ads.txt تلقائياً في جذر الموقع."
+msgstr "Site kök dizininde otomatik olarak ads.txt dosyası oluştur."
+
+#: includes/admin/class-settings.php:457
+msgid "محتوى ads.txt:"
+msgstr "ads.txt içeriği:"
+
+#: includes/admin/class-settings.php:460
+msgid "الخانات اليدوية"
+msgstr "Manuel alanlar"
+
+#: includes/admin/class-settings.php:461
+msgid ""
+"أدخل رقم الوحدة الإعلانية (data-ad-slot) من AdSense. لكل خانة ارتفاع محجوز "
+"لمنع اهتزاز التخطيط (CLS) وعنوان «إعلان»."
+msgstr ""
+"AdSense'teki reklam birimi numarasını (data-ad-slot) girin. Her alan düzen "
+"kaymasını (CLS) önlemek için yüksekliğini ayırır ve «Reklam» etiketi taşır."
+
+#: includes/admin/class-settings.php:465
+msgid "الخانة"
+msgstr "Alan"
+
+#: includes/admin/class-settings.php:466 includes/admin/class-settings.php:477
+msgid "تفعيل"
+msgstr "Etkinleştir"
+
+#: includes/admin/class-settings.php:467
+msgid "رقم الوحدة (data-ad-slot)"
+msgstr "Birim numarası (data-ad-slot)"
+
+#: includes/admin/class-settings.php:468
+msgid "كود مخصص (اختياري)"
+msgstr "Özel kod (isteğe bağlı)"
+
+#: includes/admin/class-settings.php:469
+msgid "الارتفاع المحجوز"
+msgstr "Ayrılan yükseklik"
+
+#: includes/admin/class-settings.php:483
+msgid "يتطلب صلاحية unfiltered_html"
+msgstr "unfiltered_html yetkisi gerektirir"
+
+#: includes/admin/class-settings.php:491
+msgid ""
+"لا تظهر الإعلانات في: صفحة 404، نتائج البحث الفارغة، صفحات الخصوصية والتواصل"
+" والشروط وإخلاء المسؤولية."
+msgstr ""
+"Reklam gösterilmez: 404 sayfası, sonuçsuz aramalar, gizlilik, iletişim, "
+"şartlar ve sorumluluk reddi sayfaları."
+
+#: includes/admin/class-settings.php:511 includes/ads/class-consent.php:99
+msgid "الموافقة على ملفات تعريف الارتباط"
+msgstr "Çerez onayı"
+
+#: includes/admin/class-settings.php:513
+msgid ""
+"تشترط Google استخدام منصة إدارة موافقة (CMP) معتمدة من Google لزوار المنطقة "
+"الاقتصادية الأوروبية والمملكة المتحدة وسويسرا. الأسهل: فعّل رسالة GDPR من "
+"AdSense > الخصوصية والمراسلة، ثم اختر وضع «CMP خارجية» هنا."
+msgstr ""
+"Google, AEA, Birleşik Krallık ve İsviçre'den gelen ziyaretçiler için Google "
+"sertifikalı bir onay yönetim platformu (CMP) şart koşar. En kolayı: AdSense "
+"> Gizlilik ve mesajlar bölümünden GDPR mesajını etkinleştirin, ardından "
+"burada «Harici CMP» modunu seçin."
+
+#: includes/admin/class-settings.php:519
+msgid "الوضع"
+msgstr "Mod"
+
+#: includes/admin/class-settings.php:522
+msgid "CMP خارجية معتمدة من Google (موصى به)"
+msgstr "Google sertifikalı harici CMP (önerilen)"
+
+#: includes/admin/class-settings.php:523
+msgid "لافتة الموافقة المدمجة (احتياطية)"
+msgstr "Yerleşik onay bandı (yedek)"
+
+#: includes/admin/class-settings.php:524
+msgid "تعطيل"
+msgstr "Kapalı"
+
+#: includes/admin/class-settings.php:529
+msgid ""
+"إرسال القيم الافتراضية (ad_storage, ad_user_data, ad_personalization, "
+"analytics_storage) قبل أي وسم من Google."
+msgstr ""
+"Varsayılan değerleri (ad_storage, ad_user_data, ad_personalization, "
+"analytics_storage) herhangi bir Google etiketinden önce gönder."
+
+#: includes/admin/class-settings.php:530
+msgid "أوروبا فقط"
+msgstr "Yalnızca Avrupa"
+
+#: includes/admin/class-settings.php:530
+msgid "الرفض الافتراضي لزوار أوروبا/بريطانيا/سويسرا فقط، والسماح لباقي الدول."
+msgstr ""
+"Varsayılan ret yalnızca Avrupa / Birleşik Krallık / İsviçre ziyaretçileri "
+"için, diğer ülkelere izin ver."
+
+#: includes/admin/class-settings.php:553
+msgid "سجل المزامنة والأخطاء"
+msgstr "Senkronizasyon ve hata kaydı"
+
+#: includes/admin/class-settings.php:555
+msgid "الكل"
+msgstr "Tümü"
+
+#: includes/admin/class-settings.php:556 includes/functions.php:375
+msgid "الأخطاء"
+msgstr "Hatalar"
+
+#: includes/admin/class-settings.php:557
+msgid "التحذيرات"
+msgstr "Uyarılar"
+
+#: includes/admin/class-settings.php:562
+msgid "مسح السجل"
+msgstr "Kaydı temizle"
+
+#: includes/admin/class-settings.php:566
+msgid "الوقت (UTC)"
+msgstr "Zaman (UTC)"
+
+#: includes/admin/class-settings.php:567
+msgid "المستوى"
+msgstr "Seviye"
+
+#: includes/admin/class-settings.php:568
+msgid "المصدر"
+msgstr "Kaynak"
+
+#: includes/admin/class-settings.php:569 includes/class-contact-form.php:74
+msgid "الرسالة"
+msgstr "Mesaj"
+
+#: includes/admin/class-settings.php:570
+msgid "التفاصيل"
+msgstr "Ayrıntılar"
+
+#: includes/admin/class-settings.php:574
+msgid "لا توجد سجلات."
+msgstr "Kayıt yok."
+
+#: includes/admin/class-settings.php:617
+msgid "أدوات SportsArena"
+msgstr "SportsArena araçları"
+
+#: includes/admin/class-settings.php:619
+msgid "تم تنفيذ العملية. راجع السجل للتفاصيل."
+msgstr "İşlem tamamlandı. Ayrıntılar için kayda bakın."
+
+#: includes/admin/class-settings.php:621
+msgid "البيانات التجريبية"
+msgstr "Demo verileri"
+
+#: includes/admin/class-settings.php:623
+msgid "إنشاء بيانات تجريبية"
+msgstr "Demo verileri oluştur"
+
+#: includes/admin/class-settings.php:623
+msgid ""
+"بطولات وفرق ومباريات (أمس/اليوم/غداً) وأخبار لعرض الموقع قبل ربط الـ API."
+msgstr ""
+"API'yi bağlamadan önce siteyi görmek için turnuvalar, takımlar, maçlar (dün "
+"/ bugün / yarın) ve haberler."
+
+#: includes/admin/class-settings.php:624
+msgid "يحذف فقط العناصر المعلَّمة كتجريبية."
+msgstr "Yalnızca demo olarak işaretlenen öğeleri siler."
+
+#: includes/admin/class-settings.php:626
+msgid "المزامنة اليدوية"
+msgstr "Manuel senkronizasyon"
+
+#: includes/admin/class-settings.php:628
+msgid "مزامنة مباريات اليوم والغد"
+msgstr "Bugünün ve yarının maçlarını senkronize et"
+
+#: includes/admin/class-settings.php:628
+msgid "تستهلك طلبات من رصيدك."
+msgstr "Kotanızdan istek harcar."
+
+#: includes/admin/class-settings.php:629
+msgid "مزامنة الترتيب والهدافين"
+msgstr "Puan durumu ve gol krallığını senkronize et"
+
+#: includes/admin/class-settings.php:629
+msgid "طلبان لكل بطولة متابعة."
+msgstr "Takip edilen her turnuva için iki istek."
+
+#: includes/admin/class-settings.php:630
+msgid "تحديث المباريات الحية"
+msgstr "Canlı maçları güncelle"
+
+#: includes/admin/class-settings.php:630
+msgid "يعمل فقط عند وجود مباريات حية."
+msgstr "Yalnızca canlı maç varken çalışır."
+
+#: includes/admin/class-settings.php:632
+msgid "الصفحات والملفات"
+msgstr "Sayfalar ve dosyalar"
+
+#: includes/admin/class-settings.php:634
+msgid "إنشاء الصفحات الإلزامية وأقسام الأخبار"
+msgstr "Zorunlu sayfaları ve haber bölümlerini oluştur"
+
+#: includes/admin/class-settings.php:634
+msgid ""
+"صفحة الأخبار، أقسام الأخبار لكل رياضة، من نحن، اتصل بنا، الخصوصية، الشروط، "
+"إخلاء المسؤولية (لا يستبدل الموجود)."
+msgstr ""
+"Haberler sayfası, her spor için haber bölümleri, Hakkımızda, İletişim, "
+"Gizlilik, Şartlar, Sorumluluk reddi (mevcut olanlar asla değiştirilmez)."
+
+#: includes/admin/class-settings.php:635
+msgid "تحويل المحتوى إلى لغة الموقع"
+msgstr "İçeriği site diline dönüştür"
+
+#: includes/admin/class-settings.php:635
+msgid ""
+"يعيد كتابة الصفحات الإلزامية وأقسام الأخبار والبيانات التجريبية بلغة الموقع "
+"الحالية، حتى لا تختلط لغتان في صفحة. يحدث تلقائياً عند تغيير اللغة من "
+"الإعدادات > عام، ولا يلمس ما عدّلته بنفسك."
+msgstr ""
+"Zorunlu sayfaları, haber bölümlerini ve demo verilerini sitenin geçerli "
+"dilinde yeniden yazar; böylece hiçbir sayfada iki dil karışmaz. Ayarlar > "
+"Genel’de dili değiştirdiğinizde otomatik çalışır ve sizin düzenlediklerinize"
+" dokunmaz."
+
+#: includes/admin/class-settings.php:636
+msgid "تنزيل الشعارات الآن"
+msgstr "Logoları şimdi indir"
+
+#: includes/admin/class-settings.php:636
+msgid "يحفظ شعارات المزوّد على موقعك (يتطلب تفعيل عرض الشعارات)."
+msgstr ""
+"Sağlayıcı logolarını sitenizde saklar (logo gösterimi açık olmalıdır)."
+
+#: includes/admin/class-settings.php:637
+msgid "إعادة إنشاء ads.txt"
+msgstr "ads.txt dosyasını yeniden oluştur"
+
+#: includes/admin/class-settings.php:637
+msgid "يكتب الملف في جذر الموقع إن أمكن."
+msgstr "Mümkünse dosyayı site kök dizinine yazar."
+
+#: includes/admin/class-settings.php:638
+msgid "تحديث الروابط الدائمة والكاش"
+msgstr "Kalıcı bağlantıları ve önbelleği yenile"
+
+#: includes/admin/class-settings.php:638
+msgid "استخدمه إذا ظهرت صفحة 404 لروابط المباريات."
+msgstr "Maç bağlantıları 404 sayfası veriyorsa kullanın."
+
+#: includes/admin/class-tools.php:47 includes/admin/class-tools.php:182
+msgid "ليست لديك صلاحية."
+msgstr "Yetkiniz yok."
+
+#: includes/admin/class-tools.php:205
+msgid "تم تحديث بيانات المباراة من المزوّد."
+msgstr "Maç verileri sağlayıcıdan güncellendi."
+
+#: includes/admin/class-tools.php:205
+msgid "تعذّر التحديث: تحقق من المفتاح والسجل."
+msgstr "Güncelleme başarısız: anahtarı ve kaydı kontrol edin."
+
+#: includes/ads/class-ads.php:173
+msgid "إعلان"
+msgstr "Reklam"
+
+#: includes/ads/class-consent.php:101
+msgid ""
+"نستخدم ملفات تعريف الارتباط لتحسين تجربتك ولعرض إعلانات مخصّصة وقياس أدائها "
+"عبر Google. يمكنك القبول أو الرفض في أي وقت."
+msgstr ""
+"Deneyiminizi iyileştirmek, kişiselleştirilmiş reklamlar göstermek ve "
+"performanslarını Google aracılığıyla ölçmek için çerezler kullanıyoruz. "
+"İstediğiniz zaman kabul edebilir veya reddedebilirsiniz."
+
+#: includes/ads/class-consent.php:107
+msgid "قبول"
+msgstr "Kabul et"
+
+#: includes/ads/class-consent.php:108
+msgid "رفض"
+msgstr "Reddet"
+
+#: includes/class-contact-form.php:43
+msgid "شكراً لتواصلك، تم إرسال رسالتك بنجاح."
+msgstr "İletişime geçtiğiniz için teşekkürler, mesajınız gönderildi."
+
+#: includes/class-contact-form.php:45
+msgid "تعذّر إرسال الرسالة. تأكد من الحقول وحاول مرة أخرى."
+msgstr "Mesaj gönderilemedi. Alanları kontrol edip tekrar deneyin."
+
+#: includes/class-contact-form.php:47
+msgid "أرسلت عدة رسائل خلال وقت قصير، حاول لاحقاً."
+msgstr ""
+"Kısa sürede birkaç mesaj gönderdiniz, lütfen daha sonra tekrar deneyin."
+
+#: includes/class-contact-form.php:59
+msgid "اترك هذا الحقل فارغاً"
+msgstr "Bu alanı boş bırakın"
+
+#: includes/class-contact-form.php:62
+msgid "الاسم"
+msgstr "Ad"
+
+#: includes/class-contact-form.php:66
+msgid "البريد الإلكتروني"
+msgstr "E-posta"
+
+#: includes/class-contact-form.php:70
+msgid "الموضوع"
+msgstr "Konu"
+
+#: includes/class-contact-form.php:77
+msgid "إرسال"
+msgstr "Gönder"
+
+#. translators: 1: site name, 2: subject.
+#: includes/class-contact-form.php:123
+msgid "[%1$s] رسالة تواصل: %2$s"
+msgstr "[%1$s] İletişim mesajı: %2$s"
+
+#. translators: 1: site name, 2: subject.
+#: includes/class-contact-form.php:123
+msgid "بدون موضوع"
+msgstr "Konu yok"
+
+#. translators: 1: name, 2: email, 3: message.
+#: includes/class-contact-form.php:125
+msgid ""
+"الاسم: %1$s\n"
+"البريد: %2$s\n"
+"\n"
+"%3$s"
+msgstr ""
+"Ad: %1$s\n"
+"E-posta: %2$s\n"
+"\n"
+"%3$s"
+
+#. translators: 1: home team, 2: away team.
+#: includes/class-localized-names.php:94 includes/data/class-importer.php:87
+#: includes/seo/class-seo.php:169 includes/seo/class-seo.php:231
+msgid "%1$s ضد %2$s"
+msgstr "%1$s - %2$s"
+
+#: includes/class-news-sections.php:48
+msgid "أخبار كرة القدم"
+msgstr "Futbol haberleri"
+
+#: includes/class-news-sections.php:50
+msgid ""
+"آخر أخبار كرة القدم: الدوريات العربية والأوروبية ودوري الأبطال والمنتخبات."
+msgstr ""
+"Son futbol haberleri: Arap ve Avrupa ligleri, Şampiyonlar Ligi ve milli "
+"takımlar."
+
+#: includes/class-news-sections.php:53
+msgid "الانتقالات"
+msgstr "Transferler"
+
+#: includes/class-news-sections.php:55
+msgid "أخبار انتقالات اللاعبين والمدربين والصفقات الرسمية والشائعات الموثوقة."
+msgstr ""
+"Oyuncu ve teknik direktör transferleri, resmi anlaşmalar ve güvenilir "
+"söylentiler."
+
+#: includes/class-news-sections.php:58
+msgid "أخبار كرة السلة"
+msgstr "Basketbol haberleri"
+
+#: includes/class-news-sections.php:60
+msgid "أخبار كرة السلة: الدوري الأمريكي والدوري الأوروبي والبطولات العربية."
+msgstr "Basketbol haberleri: NBA, EuroLeague ve Arap turnuvaları."
+
+#: includes/class-news-sections.php:63
+msgid "أخبار التنس"
+msgstr "Tenis haberleri"
+
+#: includes/class-news-sections.php:65
+msgid "أخبار التنس وبطولات الجراند سلام ورابطة المحترفين."
+msgstr "Tenis haberleri, Grand Slam'ler ile ATP ve WTA turları."
+
+#: includes/class-news-sections.php:68
+msgid "أخبار الفورمولا 1"
+msgstr "Formula 1 haberleri"
+
+#: includes/class-news-sections.php:70
+msgid "أخبار الفورمولا 1: السباقات والسائقون والفرق."
+msgstr "Formula 1 haberleri: yarışlar, pilotlar ve takımlar."
+
+#: includes/class-news-sections.php:73
+msgid "أخبار كرة اليد"
+msgstr "Hentbol haberleri"
+
+#: includes/class-news-sections.php:75
+msgid "أخبار كرة اليد والبطولات القارية والعالمية."
+msgstr "Hentbol haberleri ile kıta ve dünya şampiyonaları."
+
+#: includes/class-news-sections.php:78
+msgid "أخبار الكرة الطائرة"
+msgstr "Voleybol haberleri"
+
+#: includes/class-news-sections.php:80
+msgid "أخبار الكرة الطائرة والبطولات المحلية والدولية."
+msgstr "Voleybol haberleri ile ulusal ve uluslararası turnuvalar."
+
+#: includes/class-news-sections.php:83
+msgid "أخبار الملاكمة والفنون القتالية"
+msgstr "Boks ve MMA haberleri"
+
+#: includes/class-news-sections.php:85
+msgid "أخبار الملاكمة وUFC والفنون القتالية المختلطة."
+msgstr "Boks, UFC ve karışık dövüş sanatları haberleri."
+
+#: includes/class-news-sections.php:88
+msgid "تحليلات ومقالات رأي"
+msgstr "Analiz ve yorum"
+
+#: includes/class-news-sections.php:90
+msgid "تحليلات فنية ومقالات رأي ومعاينات معمّقة يكتبها فريق التحرير."
+msgstr ""
+"Editör ekibimizden taktik analizler, yorum yazıları ve kapsamlı maç önü "
+"değerlendirmeleri."
+
+#: includes/class-options.php:97
+msgid "أسفل الهيدر"
+msgstr "Üst bilginin altında"
+
+#: includes/class-options.php:103
+msgid "داخل المقال (بعد الفقرة الثانية)"
+msgstr "Haberin içinde (ikinci paragraftan sonra)"
+
+#: includes/class-options.php:109
+msgid "داخل المقال الطويل (بعد الفقرة السادسة)"
+msgstr "Uzun yazıların içinde (altıncı paragraftan sonra)"
+
+#: includes/class-options.php:115
+msgid "أسفل المقال"
+msgstr "Yazının altında"
+
+#: includes/class-options.php:121
+msgid "بين بطاقات الأخبار (كل 6 أخبار)"
+msgstr "Haber kartları arasında (her 6 haberde bir)"
+
+#: includes/class-options.php:127
+msgid "الشريط الجانبي (ثابت على الديسكتوب)"
+msgstr "Kenar çubuğu (masaüstünde sabit)"
+
+#: includes/class-options.php:133
+msgid "بين مجموعات البطولات (كل 3 بطولات)"
+msgstr "Turnuva grupları arasında (her 3 turnuvada bir)"
+
+#: includes/class-options.php:139
+msgid "أسفل صفحة المباراة"
+msgstr "Maç sayfasının altında"
+
+#: includes/class-pages.php:242 includes/seo/class-breadcrumbs.php:173
+msgid "الأخبار"
+msgstr "Haberler"
+
+#: includes/class-pages.php:245
+msgid ""
+"آخر الأخبار والتحليلات من عالم كرة القدم وباقي الرياضات، مقسّمة حسب الرياضة."
+msgstr ""
+"Futbol ve diğer sporlardan son haberler ve analizler, spora göre "
+"düzenlenmiş."
+
+#: includes/class-pages.php:250
+msgid ""
+"<strong>{site}</strong> موقع رياضي عربي يقدّم نتائج المباريات ومواعيدها "
+"وجداول الترتيب والإحصائيات والأخبار الرياضية لكرة القدم وباقي الرياضات، "
+"بصورة سريعة ودقيقة."
+msgstr ""
+"<strong>{site}</strong>, futbol ve diğer sporlar için maç sonuçları, "
+"fikstür, puan durumu, istatistik ve spor haberlerini hızlı ve doğru sunan "
+"bir spor sitesidir."
+
+#: includes/class-pages.php:251
+msgid "ماذا نقدّم؟"
+msgstr "Neler sunuyoruz"
+
+#: includes/class-pages.php:254
+msgid "نتائج المباريات وتحديثها أثناء اللعب (نصياً فقط، دون أي بث)."
+msgstr "Maç sırasında güncellenen sonuçlar (yalnızca metin, asla yayın yok)."
+
+#: includes/class-pages.php:255
+msgid "مواعيد المباريات والقنوات الناقلة كمعلومة نصية."
+msgstr "Maç saatleri ve yayın kanalları bilgi amaçlı olarak."
+
+#: includes/class-pages.php:256
+msgid "جداول الترتيب وقوائم الهدافين للدوريات والبطولات."
+msgstr "Liglerin ve turnuvaların puan durumu ve gol krallığı tabloları."
+
+#: includes/class-pages.php:257
+msgid "الأخبار والتحليلات والمعاينات التي يكتبها فريق التحرير."
+msgstr "Editör ekibimizin yazdığı haberler, analizler ve maç önü yazıları."
+
+#: includes/class-pages.php:260
+msgid "مصادر البيانات"
+msgstr "Veri kaynakları"
+
+#: includes/class-pages.php:261
+msgid ""
+"نعتمد على مزوّدي بيانات رياضية مرخّصين، ونراجع المحتوى التحريري قبل نشره. إن"
+" لاحظت خطأً، يسعدنا تواصلك معنا عبر صفحة «اتصل بنا»."
+msgstr ""
+"Lisanslı spor veri sağlayıcılarına dayanıyor ve editoryal içeriği "
+"yayımlamadan önce gözden geçiriyoruz. Bir hata fark ederseniz «İletişim» "
+"sayfasından bize bildirin."
+
+#: includes/class-pages.php:262
+msgid "التزامنا"
+msgstr "Taahhüdümüz"
+
+#: includes/class-pages.php:263
+msgid ""
+"لا يقدّم {site} أي بث مباشر للمباريات ولا روابط بث، ويحترم حقوق الملكية "
+"الفكرية لجميع الجهات."
+msgstr ""
+"{site} maçların canlı yayınını veya yayın bağlantılarını sunmaz ve herkesin "
+"fikri mülkiyet haklarına saygı gösterir."
+
+#: includes/class-pages.php:268
+msgid ""
+"يسعدنا تواصلك مع فريق {site} للاستفسارات أو الملاحظات أو تصحيح المعلومات أو "
+"الإعلان. املأ النموذج التالي وسنرد عليك في أقرب وقت."
+msgstr ""
+"{site} ekibi sorularınızı, görüşlerinizi, düzeltmelerinizi veya reklam "
+"taleplerinizi dinlemekten memnuniyet duyar. Aşağıdaki formu doldurun, en "
+"kısa sürede yanıt verelim."
+
+#: includes/class-pages.php:270
+msgid "يمكنك أيضاً مراسلتنا على البريد: {email}"
+msgstr "Bize şu adresten de yazabilirsiniz: {email}"
+
+#: includes/class-pages.php:275
+msgid "آخر تحديث: {date}"
+msgstr "Son güncelleme: {date}"
+
+#: includes/class-pages.php:276
+msgid ""
+"توضح هذه السياسة كيف يجمع موقع {site} ({domain}) المعلومات ويستخدمها ويحميها"
+" عند زيارتك له."
+msgstr ""
+"Bu politika, {site} ({domain}) sitesini ziyaret ettiğinizde bilgilerin nasıl"
+" toplandığını, kullanıldığını ve korunduğunu açıklar."
+
+#: includes/class-pages.php:277
+msgid "المعلومات التي نجمعها"
+msgstr "Topladığımız bilgiler"
+
+#: includes/class-pages.php:280
+msgid ""
+"معلومات تقدّمها طوعاً، مثل الاسم والبريد الإلكتروني عند استخدام نموذج "
+"التواصل."
+msgstr ""
+"İletişim formunu kullanırken verdiğiniz ad ve e-posta adresi gibi gönüllü "
+"olarak sağladığınız bilgiler."
+
+#: includes/class-pages.php:281
+msgid ""
+"معلومات تقنية تُجمع تلقائياً، مثل نوع المتصفح والجهاز والصفحات التي تزورها، "
+"لأغراض الإحصاء وتحسين الموقع."
+msgstr ""
+"İstatistik ve siteyi iyileştirme amacıyla otomatik toplanan tarayıcı türü, "
+"cihaz ve ziyaret edilen sayfalar gibi teknik bilgiler."
+
+#: includes/class-pages.php:284
+msgid "ملفات تعريف الارتباط (Cookies)"
+msgstr "Çerezler"
+
+#: includes/class-pages.php:285
+msgid ""
+"يستخدم الموقع ملفات تعريف الارتباط لحفظ تفضيلاتك (مثل الوضع الداكن) ولقياس "
+"الزيارات ولعرض الإعلانات. يمكنك التحكم في ملفات تعريف الارتباط أو حذفها من "
+"إعدادات متصفحك، وسنطلب موافقتك قبل استخدام ملفات الإعلانات المخصّصة حيث "
+"يقتضي القانون ذلك (مثل المنطقة الاقتصادية الأوروبية والمملكة المتحدة "
+"وسويسرا)."
+msgstr ""
+"Site, tercihlerinizi (örneğin karanlık mod) hatırlamak, ziyaretleri ölçmek "
+"ve reklam göstermek için çerezler kullanır. Çerezleri tarayıcı "
+"ayarlarınızdan yönetebilir veya silebilirsiniz; yasanın gerektirdiği "
+"yerlerde (örneğin Avrupa Ekonomik Alanı, Birleşik Krallık ve İsviçre) "
+"kişiselleştirilmiş reklam çerezlerini kullanmadan önce onayınızı isteriz."
+
+#: includes/class-pages.php:286
+msgid "إعلانات Google AdSense"
+msgstr "Google AdSense reklamları"
+
+#: includes/class-pages.php:287
+msgid ""
+"نستخدم خدمة Google AdSense لعرض الإعلانات. تستخدم Google وشركاؤها ملفات "
+"تعريف الارتباط (ومنها ملف DoubleClick) لعرض إعلانات استناداً إلى زياراتك "
+"السابقة لهذا الموقع أو لمواقع أخرى على الإنترنت."
+msgstr ""
+"Reklam göstermek için Google AdSense kullanıyoruz. Google ve ortakları, bu "
+"siteye veya diğer sitelere önceki ziyaretlerinize göre reklam göstermek için"
+" çerezler (DoubleClick çerezi dahil) kullanır."
+
+#: includes/class-pages.php:290
+msgid ""
+"يتيح استخدام Google لملفات تعريف الارتباط الإعلانية لها ولشركائها عرض "
+"الإعلانات لك استناداً إلى زيارتك لمواقعنا و/أو مواقع أخرى."
+msgstr ""
+"Reklam çerezleri, Google'ın ve ortaklarının sitelerimize ve/veya "
+"internetteki diğer sitelere yaptığınız ziyaretlere göre size reklam "
+"sunmasını sağlar."
+
+#: includes/class-pages.php:291
+msgid ""
+"يمكنك إيقاف الإعلانات المخصّصة من خلال <a "
+"href=\"https://adssettings.google.com\" rel=\"nofollow noopener\" "
+"target=\"_blank\">إعدادات الإعلانات في Google</a>، أو زيارة <a "
+"href=\"https://www.aboutads.info\" rel=\"nofollow noopener\" "
+"target=\"_blank\">aboutads.info</a> لإيقاف ملفات تعريف الارتباط لدى موردي "
+"الطرف الثالث."
+msgstr ""
+"Kişiselleştirilmiş reklamları <a href=\"https://adssettings.google.com\" "
+"rel=\"nofollow noopener\" target=\"_blank\">Google Reklam Ayarları</a> "
+"üzerinden kapatabilir veya üçüncü taraf sağlayıcıların çerezlerini kapatmak "
+"için <a href=\"https://www.aboutads.info\" rel=\"nofollow noopener\" "
+"target=\"_blank\">aboutads.info</a> adresini ziyaret edebilirsiniz."
+
+#: includes/class-pages.php:292
+msgid ""
+"لمعرفة المزيد عن كيفية استخدام Google للبيانات: <a "
+"href=\"https://policies.google.com/technologies/partner-sites\" "
+"rel=\"nofollow noopener\" target=\"_blank\">كيف تستخدم Google المعلومات من "
+"المواقع التي تستخدم خدماتها</a>."
+msgstr ""
+"Google'ın verileri nasıl kullandığı hakkında: <a "
+"href=\"https://policies.google.com/technologies/partner-sites\" "
+"rel=\"nofollow noopener\" target=\"_blank\">Google, hizmetlerini kullanan "
+"site veya uygulamalardaki bilgileri nasıl kullanır</a>."
+
+#: includes/class-pages.php:295
+msgid "أطراف ثالثة"
+msgstr "Üçüncü taraflar"
+
+#: includes/class-pages.php:296
+msgid ""
+"قد يحتوي الموقع على خدمات لأطراف ثالثة مثل Google (الإعلانات والإحصاءات "
+"والخطوط) ومزوّدي البيانات الرياضية. لهذه الجهات سياسات خصوصية مستقلة، ولا "
+"نتحكم في ممارساتها. ننصحك بالاطلاع على سياساتها."
+msgstr ""
+"Site, Google (reklam, istatistik ve yazı tipleri) ve spor veri sağlayıcıları"
+" gibi üçüncü taraf hizmetleri içerebilir. Bu tarafların kendi gizlilik "
+"politikaları vardır ve uygulamalarını kontrol etmeyiz. Politikalarını "
+"okumanızı öneririz."
+
+#: includes/class-pages.php:297
+msgid "كيف نستخدم المعلومات"
+msgstr "Bilgileri nasıl kullanıyoruz"
+
+#: includes/class-pages.php:300
+msgid "تشغيل الموقع وتحسينه وتحليل استخدامه."
+msgstr "Siteyi işletmek, geliştirmek ve kullanımını analiz etmek için."
+
+#: includes/class-pages.php:301
+msgid "الرد على رسائلك واستفساراتك."
+msgstr "Mesajlarınızı ve sorularınızı yanıtlamak için."
+
+#: includes/class-pages.php:302
+msgid "عرض الإعلانات وقياس أدائها وفق موافقتك."
+msgstr "Onayınıza göre reklam göstermek ve performansını ölçmek için."
+
+#: includes/class-pages.php:305
+msgid "حقوقك"
+msgstr "Haklarınız"
+
+#: includes/class-pages.php:306
+msgid ""
+"يحق لك طلب الاطلاع على بياناتك أو تصحيحها أو حذفها، وسحب موافقتك على ملفات "
+"تعريف الارتباط في أي وقت عبر رابط «إعدادات الخصوصية» أسفل الصفحة. للتواصل: "
+"{email}"
+msgstr ""
+"Verilerinize erişim, düzeltme veya silme talep edebilir ve sayfanın "
+"altındaki «Gizlilik ayarları» bağlantısıyla çerez onayınızı istediğiniz "
+"zaman geri çekebilirsiniz. İletişim: {email}"
+
+#: includes/class-pages.php:307
+msgid "خصوصية الأطفال"
+msgstr "Çocukların gizliliği"
+
+#: includes/class-pages.php:308
+msgid "لا يستهدف الموقع الأطفال دون 13 عاماً، ولا نجمع بياناتهم عن قصد."
+msgstr ""
+"Site 13 yaşından küçük çocuklara yönelik değildir ve onların verilerini "
+"bilerek toplamayız."
+
+#: includes/class-pages.php:309
+msgid "التعديلات"
+msgstr "Değişiklikler"
+
+#: includes/class-pages.php:310
+msgid ""
+"قد نحدّث هذه السياسة من وقت لآخر، وسيُنشر أي تعديل في هذه الصفحة مع تاريخ "
+"التحديث."
+msgstr ""
+"Bu politikayı zaman zaman güncelleyebiliriz. Her değişiklik güncelleme "
+"tarihiyle bu sayfada yayımlanır."
+
+#: includes/class-pages.php:315
+msgid "باستخدامك موقع {site} فإنك توافق على الشروط التالية:"
+msgstr "{site} sitesini kullanarak aşağıdaki şartları kabul etmiş olursunuz:"
+
+#: includes/class-pages.php:316
+msgid "استخدام المحتوى"
+msgstr "İçeriğin kullanımı"
+
+#: includes/class-pages.php:317
+msgid ""
+"المحتوى التحريري في الموقع (الأخبار والتحليلات) محمي بحقوق النشر، ولا يجوز "
+"نسخه أو إعادة نشره دون إذن كتابي مسبق مع ذكر المصدر."
+msgstr ""
+"Sitedeki editoryal içerik (haberler ve analizler) telif hakkıyla korunur; "
+"önceden yazılı izin alınmadan ve kaynak gösterilmeden kopyalanamaz veya "
+"yeniden yayımlanamaz."
+
+#: includes/class-pages.php:318
+msgid "دقة المعلومات"
+msgstr "Bilgilerin doğruluğu"
+
+#: includes/class-pages.php:319
+msgid ""
+"نبذل جهدنا لعرض النتائج والمواعيد بدقة، لكنها تُقدَّم «كما هي» وقد تتأخر أو "
+"تتغير. لا يتحمل الموقع مسؤولية أي قرار يُتخذ بناءً عليها."
+msgstr ""
+"Sonuçları ve saatleri doğru göstermek için elimizden geleni yapıyoruz, ancak"
+" bunlar «olduğu gibi» sunulur ve gecikebilir veya değişebilir. Site, bunlara"
+" dayanarak alınan kararlardan sorumlu değildir."
+
+#: includes/class-pages.php:320
+msgid "السلوك المقبول"
+msgstr "Kabul edilebilir kullanım"
+
+#: includes/class-pages.php:323
+msgid "عدم إساءة استخدام الموقع أو محاولة اختراقه أو تعطيله."
+msgstr "Siteyi kötüye kullanmamak veya hacklemeye ya da bozmaya çalışmamak."
+
+#: includes/class-pages.php:324
+msgid "عدم استخدام أدوات آلية لسحب البيانات بشكل مكثف."
+msgstr "Yoğun veri çekmek için otomatik araçlar kullanmamak."
+
+#: includes/class-pages.php:325
+msgid "الالتزام بالقوانين السارية عند استخدام الموقع."
+msgstr "Siteyi kullanırken geçerli yasalara uymak."
+
+#: includes/class-pages.php:328
+msgid "الروابط الخارجية"
+msgstr "Dış bağlantılar"
+
+#: includes/class-pages.php:329
+msgid ""
+"قد يحتوي الموقع على روابط لمواقع أخرى لا نتحكم في محتواها ولا نتحمل "
+"مسؤوليته."
+msgstr ""
+"Site, içeriğini kontrol etmediğimiz ve sorumluluk kabul etmediğimiz başka "
+"sitelere bağlantılar içerebilir."
+
+#: includes/class-pages.php:330
+msgid "التعديل"
+msgstr "Değişiklik"
+
+#: includes/class-pages.php:331
+msgid ""
+"يحق لإدارة الموقع تعديل هذه الشروط في أي وقت، ويُعد استمرار استخدامك للموقع "
+"قبولاً بها."
+msgstr ""
+"Site yönetimi bu şartları istediği zaman değiştirebilir; siteyi kullanmaya "
+"devam etmek kabul anlamına gelir."
+
+#: includes/class-pages.php:336
+msgid "المعلومات المنشورة على {site} لأغراض إعلامية عامة فقط."
+msgstr ""
+"{site} üzerinde yayımlanan bilgiler yalnızca genel bilgilendirme amaçlıdır."
+
+#: includes/class-pages.php:339
+msgid ""
+"لا يقدّم الموقع أي بث مباشر للمباريات ولا يستضيف أو يوفّر روابط بث، ويعرض "
+"النتائج والإحصائيات نصياً فقط."
+msgstr ""
+"Site maçların canlı yayınını sunmaz, yayın bağlantısı barındırmaz veya "
+"sağlamaz; sonuçları ve istatistikleri yalnızca metin olarak gösterir."
+
+#: includes/class-pages.php:340
+msgid ""
+"أسماء الأندية والبطولات والعلامات التجارية مملوكة لأصحابها، واستخدامها "
+"للتعريف فقط."
+msgstr ""
+"Kulüp, turnuva ve marka adları sahiplerine aittir ve yalnızca tanımlama "
+"amacıyla kullanılır."
+
+#: includes/class-pages.php:341
+msgid "البيانات الرياضية مصدرها مزوّدون خارجيون وقد تحتوي على أخطاء أو تأخير."
+msgstr ""
+"Spor verileri üçüncü taraf sağlayıcılardan gelir ve hata veya gecikme "
+"içerebilir."
+
+#: includes/class-pages.php:342
+msgid "الموقع غير مرتبط رسمياً بأي اتحاد أو نادٍ أو بطولة."
+msgstr ""
+"Site hiçbir federasyon, kulüp veya turnuvayla resmi olarak bağlantılı "
+"değildir."
+
+#: includes/class-pages.php:343
+msgid "لا يروّج الموقع للمراهنات أو القمار بأي شكل."
+msgstr "Site hiçbir şekilde bahis veya kumarı teşvik etmez."
+
+#: includes/class-pages.php:346
+msgid "للإبلاغ عن خطأ أو انتهاك لحقوق الملكية، راسلنا عبر صفحة «اتصل بنا»."
+msgstr ""
+"Bir hatayı veya telif hakkı ihlalini bildirmek için «İletişim» sayfasından "
+"bize yazın."
+
+#: includes/class-post-types.php:64 includes/seo/class-breadcrumbs.php:46
+#: includes/seo/class-breadcrumbs.php:92
+msgid "المباريات"
+msgstr "Maçlar"
+
+#: includes/class-post-types.php:64
+msgid "مباراة"
+msgstr "Maç"
+
+#: includes/class-post-types.php:83 includes/class-rest.php:154
+msgid "فريق"
+msgstr "Takım"
+
+#: includes/class-post-types.php:101 includes/class-rest.php:154
+msgid "بطولة"
+msgstr "Turnuva"
+
+#: includes/class-post-types.php:119
+msgid "اللاعبون"
+msgstr "Oyuncular"
+
+#: includes/class-post-types.php:119
+msgid "لاعب"
+msgstr "Oyuncu"
+
+#: includes/class-post-types.php:145
+msgid "الرياضات"
+msgstr "Sporlar"
+
+#: includes/class-post-types.php:145
+msgid "رياضة"
+msgstr "Spor"
+
+#: includes/class-post-types.php:161
+msgid "المواسم"
+msgstr "Sezonlar"
+
+#: includes/class-post-types.php:161
+msgid "موسم"
+msgstr "Sezon"
+
+#: includes/class-post-types.php:177
+msgid "الدول"
+msgstr "Ülkeler"
+
+#: includes/class-post-types.php:177
+msgid "دولة"
+msgstr "Ülke"
+
+#. translators: %s: singular item name.
+#. translators: %s: singular term name.
+#: includes/class-post-types.php:282 includes/class-post-types.php:307
+msgid "إضافة %s"
+msgstr "Ekle: %s"
+
+#. translators: %s: singular item name.
+#. translators: %s: singular term name.
+#: includes/class-post-types.php:284 includes/class-post-types.php:309
+msgid "تحرير %s"
+msgstr "Düzenle: %s"
+
+#. translators: %s: singular item name.
+#: includes/class-post-types.php:286
+msgid "عرض %s"
+msgstr "Görüntüle: %s"
+
+#. translators: %s: plural item name.
+#: includes/class-post-types.php:289
+msgid "بحث في %s"
+msgstr "Ara: %s"
+
+#: includes/class-post-types.php:290
+msgid "لا توجد عناصر."
+msgstr "Öğe bulunamadı."
+
+#: includes/class-seeder.php:663
+msgid ""
+"معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة "
+"العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة."
+msgstr ""
+"Demo maç önü: Real Madrid, La Liga'nın 10. haftasının dev maçında ezeli "
+"rakibi Barcelona'yı ağırlıyor; şampiyonluk yarışında kritik bir mücadele."
+
+#: includes/class-seeder.php:664
+msgid ""
+"يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة،"
+" ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم "
+"«المعاينة/التحليل» الذي يكتبه المحرر من لوحة التحكم."
+msgstr ""
+"İki takım da son haftalardaki iyi sonuçların ardından moralli ve her teknik "
+"direktörün en güçlü kadrosuyla çıkması bekleniyor. Bu metin, editörün "
+"panelden yazdığı «maç önü / analiz» bölümüne bir örnektir."
+
+#. translators: %s: competition.
+#: includes/class-seeder.php:668
+msgid ""
+"صفحة %s: تابع جدول الترتيب ومواعيد المباريات ونتائجها وقائمة الهدافين. "
+"(محتوى تجريبي يمكن تعديله من لوحة التحكم.)"
+msgstr ""
+"%s sayfası: puan durumunu, fikstürü, sonuçları ve gol krallığını takip edin."
+" (Panelden düzenlenebilen demo içerik.)"
+
+#: includes/class-seeder.php:740
+msgid "ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة"
+msgstr "Real Madrid, Barcelona karşısındaki El Clásico'ya hazırlanıyor"
+
+#: includes/class-seeder.php:741
+msgid "ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي"
+msgstr ""
+"Liverpool kazanmaya devam ediyor ve Premier Lig'de liderliğini "
+"sağlamlaştırıyor"
+
+#: includes/class-seeder.php:742
+msgid "الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن"
+msgstr "Al-Hilal, Suudi Pro Lig'de Al-Ittihad'ı 3-0 ile geçti"
+
+#: includes/class-seeder.php:743
+msgid "تعادل مثير بين الأهلي وبيراميدز في الدوري المصري"
+msgstr "Mısır liginde Al Ahly ile Pyramids arasında heyecanlı beraberlik"
+
+#: includes/class-seeder.php:744
+msgid "بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال"
+msgstr ""
+"Şampiyonlar Ligi'nde Bayern Münih ile Paris Saint-Germain arasında dev "
+"mücadele"
+
+#: includes/class-seeder.php:745
+msgid "ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية"
+msgstr ""
+"Kazablanka derbisi: Wydad ve Raja, Botola'nın zirvesinde karşı karşıya"
+
+#: includes/class-seeder.php:746
+msgid "ليكرز يتفوق على سلتيكس في قمة مثيرة بالدوري الأمريكي"
+msgstr "Lakers, NBA'deki heyecanlı maçta Celtics'i geçti"
+
+#: includes/class-seeder.php:747
+msgid "ألكاراز وسينر في مواجهة جديدة بالبطولة الختامية"
+msgstr "Alcaraz ve Sinner ATP Finals'ta yeniden karşı karşıya"
+
+#: includes/class-seeder.php:748
+msgid "الهلال يقترب من حسم صفقة جديدة في الميركاتو الشتوي"
+msgstr "Al-Hilal kış transfer döneminde yeni bir transfere yakın"
+
+#: includes/class-seeder.php:749
+msgid "تحليل: كيف يحسم خط الوسط مباريات الكلاسيكو؟"
+msgstr "Analiz: Orta saha El Clásico'yu nasıl belirliyor?"
+
+#. translators: 1: first team, 2: second team.
+#: includes/class-seeder.php:771
+msgid ""
+"خبر تجريبي: تتجه الأنظار إلى مواجهة %1$s و%2$s، حيث يسعى كل فريق إلى تحقيق "
+"نتيجة إيجابية تعزز حظوظه هذا الموسم."
+msgstr ""
+"Demo haber: Tüm gözler %1$s ile %2$s arasındaki maçta; iki takım da bu sezon"
+" şanslarını artıracak bir sonuç peşinde."
+
+#. translators: %s: team.
+#: includes/class-seeder.php:773
+msgid ""
+"وأكد الجهاز الفني لفريق %s جاهزية اللاعبين بعد سلسلة من الحصص التدريبية "
+"المكثفة، مع عودة بعض العناصر الأساسية من الإصابة."
+msgstr ""
+"%s teknik ekibi, yoğun antrenmanların ardından kadronun hazır olduğunu ve "
+"bazı as oyuncuların sakatlıktan döndüğünü açıkladı."
+
+#. translators: %s: team.
+#: includes/class-seeder.php:775
+msgid ""
+"في المقابل، يدخل %s اللقاء بطموح كبير، معتمداً على الانضباط الدفاعي والهجمات"
+" المرتدة السريعة."
+msgstr ""
+"Öte yandan %s, savunma disiplinine ve hızlı kontra ataklara güvenerek maça "
+"büyük hedeflerle çıkıyor."
+
+#: includes/class-seeder.php:776
+msgid ""
+"ويرى المحللون أن خط الوسط سيكون مفتاح المباراة، وأن الفريق الأكثر استحواذاً "
+"على الكرة سيملك الأفضلية في الشوط الثاني."
+msgstr ""
+"Uzmanlar, maçı orta sahanın belirleyeceğini ve topa daha çok sahip olan "
+"takımın ikinci yarıda avantajlı olacağını düşünüyor."
+
+#: includes/class-seeder.php:777
+msgid ""
+"هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > "
+"SportsArena > الأدوات."
+msgstr ""
+"Bu, haber sayfası düzenini göstermek için hazırlanmış demo içeriktir; Pano >"
+" SportsArena > Araçlar bölümünden silebilirsiniz."
+
+#: includes/class-seeder.php:784
+msgid ""
+"تكتيكياً، يميل الفريقان إلى الضغط العالي في الدقائق الأولى، ما يجعل الكرات "
+"الثانية والتحولات السريعة عاملاً حاسماً."
+msgstr ""
+"Taktik olarak iki takım da ilk dakikalarda önde baskı yapıyor; bu da ikinci "
+"topları ve hızlı geçişleri belirleyici kılıyor."
+
+#: includes/class-seeder.php:785
+msgid ""
+"وتشير الأرقام إلى أن الفريق الذي يسجل أولاً في هذه المواجهة فاز في أغلب "
+"المباريات الأخيرة بينهما."
+msgstr ""
+"Rakamlar, bu eşleşmede ilk golü atan takımın son maçların çoğunu kazandığını"
+" gösteriyor."
+
+#: includes/class-seeder.php:786
+msgid "أما بدنياً، فقد يكون عمق دكة البدلاء هو الفارق في آخر عشرين دقيقة."
+msgstr ""
+"Fiziksel olarak yedek kulübesinin derinliği son yirmi dakikada farkı "
+"yaratabilir."
+
+#: includes/class-seeder.php:787
+msgid ""
+"في المحصلة، تبقى التفاصيل الصغيرة وتركيز اللاعبين في الكرات الثابتة مفتاح "
+"الحسم."
+msgstr ""
+"Sonuçta küçük ayrıntılar ve duran toplardaki konsantrasyon belirleyici "
+"olacak."
+
+#. translators: 1: first team, 2: second team.
+#: includes/class-seeder.php:799
+msgid "آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة."
+msgstr "Büyük maç öncesi %1$s ve %2$s hakkında son haberler."
+
+#: includes/data/class-http-client.php:87
+msgid "تم تجاوز حد الطلبات لدى المزوّد (429)."
+msgstr "Sağlayıcının istek sınırı aşıldı (429)."
+
+#. translators: %d: HTTP status code.
+#: includes/data/class-http-client.php:94
+msgid "استجابة غير صالحة من المزوّد (HTTP %d)."
+msgstr "Sağlayıcıdan geçersiz yanıt (HTTP %d)."
+
+#: includes/data/class-http-client.php:198
+msgid "الطلبات متوقفة مؤقتاً بسبب حد المزوّد."
+msgstr "Sağlayıcı sınırı nedeniyle istekler duraklatıldı."
+
+#: includes/data/class-http-client.php:202
+msgid "تم استهلاك الحد اليومي المحدد للطلبات."
+msgstr "Ayarlanan günlük istek sınırına ulaşıldı."
+
+#: includes/data/class-http-client.php:205
+msgid "رصيد الطلبات لدى المزوّد انتهى لهذا اليوم."
+msgstr "Sağlayıcı kotası bugün için tükendi."
+
+#: includes/data/class-http-client.php:210
+msgid "تم بلوغ حد الطلبات في الدقيقة."
+msgstr "Dakika başına istek sınırına ulaşıldı."
+
+#: includes/data/class-names.php:27
+msgid "كرة القدم"
+msgstr "Futbol"
+
+#: includes/data/class-names.php:28
+msgid "كرة السلة"
+msgstr "Basketbol"
+
+#: includes/data/class-names.php:29
+msgid "التنس"
+msgstr "Tenis"
+
+#: includes/data/class-names.php:30
+msgid "الفورمولا 1"
+msgstr "Formula 1"
+
+#: includes/data/class-names.php:31
+msgid "كرة اليد"
+msgstr "Hentbol"
+
+#: includes/data/class-names.php:32
+msgid "الكرة الطائرة"
+msgstr "Voleybol"
+
+#: includes/data/class-names.php:33
+msgid "الملاكمة والفنون القتالية"
+msgstr "Boks ve MMA"
+
+#: includes/data/class-sync.php:64
+msgid "كل دقيقة (SportsArena)"
+msgstr "Her dakika (SportsArena)"
+
+#: includes/data/class-sync.php:68
+msgid "كل 30 دقيقة (SportsArena)"
+msgstr "Her 30 dakikada (SportsArena)"
+
+#: includes/data/class-sync.php:72
+msgid "كل 6 ساعات (SportsArena)"
+msgstr "Her 6 saatte (SportsArena)"
+
+#. translators: %d: number of matches.
+#: includes/data/class-sync.php:266
+msgid "تمت مزامنة %d مباراة."
+msgstr "%d maç senkronize edildi."
+
+#. translators: %d: elapsed minutes.
+#: includes/functions.php:35
+msgid "مباشر %d'"
+msgstr "Canlı %d'"
+
+#. translators: %d: elapsed minutes.
+#: includes/functions.php:35
+msgid "مباشر"
+msgstr "Canlı"
+
+#. translators: %d: round number.
+#: includes/functions.php:69
+msgid "الجولة %d"
+msgstr "%d. hafta"
+
+#: includes/functions.php:72
+msgid "الموسم المنتظم"
+msgstr "Normal sezon"
+
+#: includes/functions.php:73
+msgid "دور المجموعات"
+msgstr "Grup aşaması"
+
+#: includes/functions.php:74
+msgid "دور الـ16"
+msgstr "Son 16 turu"
+
+#: includes/functions.php:75
+msgid "ربع النهائي"
+msgstr "Çeyrek final"
+
+#: includes/functions.php:76
+msgid "نصف النهائي"
+msgstr "Yarı final"
+
+#: includes/functions.php:77
+msgid "النهائي"
+msgstr "Final"
+
+#: includes/functions.php:348
+msgid "هدف"
+msgstr "Gol"
+
+#: includes/functions.php:349
+msgid "هدف عكسي"
+msgstr "Kendi kalesine gol"
+
+#: includes/functions.php:350
+msgid "ركلة جزاء"
+msgstr "Penaltı"
+
+#: includes/functions.php:351
+msgid "ركلة جزاء ضائعة"
+msgstr "Kaçan penaltı"
+
+#: includes/functions.php:352
+msgid "بطاقة صفراء"
+msgstr "Sarı kart"
+
+#: includes/functions.php:353
+msgid "بطاقة حمراء"
+msgstr "Kırmızı kart"
+
+#: includes/functions.php:354
+msgid "تبديل"
+msgstr "Oyuncu değişikliği"
+
+#: includes/functions.php:355
+msgid "فار"
+msgstr "VAR"
+
+#: includes/functions.php:368
+msgid "الاستحواذ"
+msgstr "Topla oynama"
+
+#: includes/functions.php:369
+msgid "إجمالي التسديدات"
+msgstr "Toplam şut"
+
+#: includes/functions.php:370
+msgid "تسديدات على المرمى"
+msgstr "İsabetli şut"
+
+#: includes/functions.php:371
+msgid "تسديدات خارج المرمى"
+msgstr "İsabetsiz şut"
+
+#: includes/functions.php:372
+msgid "تسديدات محجوبة"
+msgstr "Engellenen şut"
+
+#: includes/functions.php:373
+msgid "الركلات الركنية"
+msgstr "Korner"
+
+#: includes/functions.php:374
+msgid "التسلل"
+msgstr "Ofsayt"
+
+#: includes/functions.php:376
+msgid "البطاقات الصفراء"
+msgstr "Sarı kartlar"
+
+#: includes/functions.php:377
+msgid "البطاقات الحمراء"
+msgstr "Kırmızı kartlar"
+
+#: includes/functions.php:378
+msgid "تصديات الحارس"
+msgstr "Kaleci kurtarışları"
+
+#: includes/functions.php:379
+msgid "إجمالي التمريرات"
+msgstr "Toplam pas"
+
+#: includes/functions.php:380
+msgid "تمريرات صحيحة"
+msgstr "İsabetli pas"
+
+#: includes/functions.php:381
+msgid "دقة التمرير"
+msgstr "Pas isabeti"
+
+#: includes/functions.php:382
+msgid "الأهداف المتوقعة (xG)"
+msgstr "Beklenen gol (xG)"
+
+#: includes/seo/class-breadcrumbs.php:29
+msgid "الرئيسية"
+msgstr "Ana sayfa"
+
+#: includes/seo/class-breadcrumbs.php:36
+msgid "المباريات الكبرى"
+msgstr "Büyük maçlar"
+
+#: includes/seo/class-breadcrumbs.php:93
+msgid "الترتيب"
+msgstr "Puan durumu"
+
+#: includes/seo/class-breadcrumbs.php:94
+msgid "الهدافون"
+msgstr "Gol krallığı"
+
+#. translators: %s: search term.
+#: includes/seo/class-breadcrumbs.php:157
+msgid "نتائج البحث عن: %s"
+msgstr "Arama sonuçları: %s"
+
+#: includes/seo/class-breadcrumbs.php:165
+msgid "الصفحة غير موجودة"
+msgstr "Sayfa bulunamadı"
+
+#: includes/seo/class-breadcrumbs.php:219
+msgid "مسار التنقل"
+msgstr "Gezinti yolu"
+
+#. translators: Short word between two team names on the share image.
+#: includes/seo/class-og-image.php:194
+msgid "ضد"
+msgstr "-"
+
+#: includes/seo/class-schema.php:220
+msgid "يُحدد لاحقاً"
+msgstr "Belirlenecek"
+
+#: includes/seo/class-seo.php:103
+msgid "المباريات الكبرى ودوري أبطال أوروبا: المواعيد والنتائج"
+msgstr "Büyük maçlar ve Şampiyonlar Ligi: fikstür ve sonuçlar"
+
+#: includes/seo/class-seo.php:113
+msgid "مباريات اليوم"
+msgstr "Bugünün maçları"
+
+#: includes/seo/class-seo.php:114
+msgid "مباريات الغد"
+msgstr "Yarının maçları"
+
+#: includes/seo/class-seo.php:115
+msgid "مباريات الأمس"
+msgstr "Dünün maçları"
+
+#. translators: %s: date.
+#: includes/seo/class-seo.php:118
+msgid "مباريات يوم %s"
+msgstr "%s maçları"
+
+#. translators: %s: label with date.
+#: includes/seo/class-seo.php:121
+msgid "%s: المواعيد والنتائج المباشرة"
+msgstr "%s: maç saatleri ve canlı sonuçlar"
+
+#. translators: %s: team name.
+#: includes/seo/class-seo.php:129
+msgid "%s: مواعيد المباريات والنتائج وآخر الأخبار"
+msgstr "%s: fikstür, sonuçlar ve son haberler"
+
+#. translators: %s: competition.
+#: includes/seo/class-seo.php:139
+msgid "جدول ترتيب %s"
+msgstr "%s puan durumu"
+
+#. translators: %s: competition.
+#: includes/seo/class-seo.php:142
+msgid "ترتيب هدافي %s"
+msgstr "%s gol krallığı"
+
+#. translators: %s: competition.
+#: includes/seo/class-seo.php:145
+msgid "مباريات %s: المواعيد والنتائج"
+msgstr "%s maçları: fikstür ve sonuçlar"
+
+#. translators: %s: competition.
+#: includes/seo/class-seo.php:148
+msgid "%s: جدول الترتيب والمباريات والهدافين"
+msgstr "%s: puan durumu, maçlar ve gol krallığı"
+
+#. translators: %s: sport.
+#: includes/seo/class-seo.php:152
+msgid "%s: نتائج المباريات والمواعيد والأخبار"
+msgstr "%s: maç sonuçları, fikstür ve haberler"
+
+#. translators: 1: teams and score, 2: competition.
+#: includes/seo/class-seo.php:174
+msgid "%1$s: نتيجة المباراة والأهداف والتشكيلة%2$s"
+msgstr "%1$s: maç sonucu, goller ve kadrolar%2$s"
+
+#. translators: 1: teams, 2: relative day or date, 3: competition.
+#: includes/seo/class-seo.php:178
+msgid "%1$s %2$s: موعد المباراة والتشكيلة والنتيجة المباشرة%3$s"
+msgstr "%1$s %2$s: maç saati, kadrolar ve canlı skor%3$s"
+
+#: includes/seo/class-seo.php:193
+msgid "اليوم"
+msgstr "bugün"
+
+#: includes/seo/class-seo.php:196
+msgid "غداً"
+msgstr "yarın"
+
+#: includes/seo/class-seo.php:199
+msgid "أمس"
+msgstr "dün"
+
+#: includes/seo/class-seo.php:211
+msgid ""
+"مواعيد ونتائج المباريات الكبرى بين أشهر الأندية العربية والأوروبية، ومباريات"
+" دوري أبطال أوروبا، مع النتائج المباشرة والتشكيلات."
+msgstr ""
+"En ünlü Arap ve Avrupa kulüpleri arasındaki büyük maçların ve Şampiyonlar "
+"Ligi maçlarının fikstürü ve sonuçları; canlı skorlar ve kadrolarla."
+
+#. translators: %s: date.
+#: includes/seo/class-seo.php:220
+msgid ""
+"جدول مواعيد ونتائج مباريات يوم %s في جميع البطولات: الدوريات الأوروبية "
+"والعربية ودوري الأبطال، مع النتائج المباشرة والتشكيلات وتوقيت كل مباراة "
+"بتوقيتك المحلي."
+msgstr ""
+"%s tarihindeki maçların tüm turnuvalardaki saatleri ve sonuçları: Avrupa ve "
+"Arap ligleri ile Şampiyonlar Ligi; canlı skorlar, kadrolar ve her maç yerel "
+"saatinizle."
+
+#: includes/seo/class-seo.php:233
+msgid "الساعة"
+msgstr "saat"
+
+#: includes/seo/class-seo.php:234
+msgid "على ملعب"
+msgstr "stadyum:"
+
+#. translators: 1: teams, 2: score, 3: competition, 4: date.
+#: includes/seo/class-seo.php:237
+msgid ""
+"نتيجة مباراة %1$s (%2$s) في %3$s يوم %4$s: الأهداف والبطاقات والتشكيلة "
+"والإحصائيات الكاملة."
+msgstr ""
+"%1$s maç sonucu (%2$s), %3$s, %4$s: goller, kartlar, kadrolar ve tüm "
+"istatistikler."
+
+#. translators: 1: teams, 2: competition, 3: date/time, 4: venue.
+#: includes/seo/class-seo.php:240
+msgid ""
+"موعد مباراة %1$s في %2$s يوم %3$s%4$s. تابع التشكيلة الرسمية والإحصائيات "
+"والنتيجة المباشرة لحظة بلحظة."
+msgstr ""
+"%1$s, %2$s, %3$s%4$s. Resmi kadroları, istatistikleri ve canlı skoru dakika "
+"dakika takip edin."
+
+#. translators: %s: team.
+#: includes/seo/class-seo.php:249
+msgid ""
+"كل ما يخص %s: المباريات القادمة ونتائج المباريات السابقة ومواعيدها، وآخر "
+"الأخبار والتحليلات."
+msgstr ""
+"%s hakkında her şey: yaklaşan maçlar, geçmiş sonuçlar ve fikstür ile son "
+"haberler ve analizler."
+
+#. translators: %s: competition.
+#: includes/seo/class-seo.php:258
+msgid ""
+"جدول ترتيب %s محدّث، ومواعيد ونتائج المباريات حسب الجولات، وقائمة الهدافين."
+msgstr ""
+"Güncel %s puan durumu, haftalara göre fikstür ve sonuçlar ile gol krallığı "
+"listesi."
+
+#. translators: %s: sport.
+#: includes/seo/class-seo.php:266
+msgid "نتائج ومواعيد مباريات %s اليوم، وآخر الأخبار والتغطيات."
+msgstr "Bugünün %s sonuçları ve maçları ile son haberler."
+
+#. translators: %s: site name.
+#: includes/seo/class-seo.php:276
+msgid ""
+"%s: نتائج المباريات المباشرة ومواعيد مباريات اليوم والغد، جداول الترتيب "
+"والهدافين، وآخر أخبار كرة القدم وباقي الرياضات."
+msgstr ""
+"%s: canlı maç sonuçları, bugünün ve yarının maçları, puan durumları ve gol "
+"krallığı, futbol ve diğer sporlardan son haberler."
