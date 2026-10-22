@@ -54,13 +54,14 @@ function sportsarena_theme_assets() {
 	if ( $font ) {
 		wp_enqueue_style( 'sportsarena-font', $font, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion -- Google Fonts URL must stay unversioned.
 	}
-	wp_enqueue_style( 'sportsarena-main', SPORTSARENA_THEME_URI . '/assets/css/main.css', array(), SPORTSARENA_THEME_VERSION );
+	// Version from the file date: browsers (and the app) fetch the new file right after an update.
+	wp_enqueue_style( 'sportsarena-main', SPORTSARENA_THEME_URI . '/assets/css/main.css', array(), SPORTSARENA_THEME_VERSION . '.' . filemtime( SPORTSARENA_THEME_DIR . '/assets/css/main.css' ) );
 
 	wp_enqueue_script(
 		'sportsarena-app',
 		SPORTSARENA_THEME_URI . '/assets/js/app.js',
 		array(),
-		SPORTSARENA_THEME_VERSION,
+		SPORTSARENA_THEME_VERSION . '.' . filemtime( SPORTSARENA_THEME_DIR . '/assets/js/app.js' ),
 		array(
 			'strategy'  => 'defer',
 			'in_footer' => true,
