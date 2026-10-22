@@ -306,6 +306,14 @@ msgstr "Takımlar"
 msgid "إزالة من المفضلة"
 msgstr "Favorilerden çıkar"
 
+#: inc/assets.php:87 inc/template-tags.php:492
+msgid "ج"
+msgstr "pen."
+
+#: inc/assets.php:88 inc/template-tags.php:493
+msgid "عكسي"
+msgstr "k.k."
+
 #: inc/pwa.php:415 offline.php:16
 msgid "لا يوجد اتصال بالإنترنت"
 msgstr "İnternet bağlantısı yok"
@@ -353,6 +361,10 @@ msgstr "Dil"
 #: inc/template-tags.php:395
 msgid "إضافة %s إلى المفضلة"
 msgstr "%s favorilere ekle"
+
+#: inc/template-tags.php:522
+msgid "بطاقة حمراء"
+msgstr "Kırmızı kart"
 
 #: matches-day.php:18
 msgid "مباريات الغد"
@@ -429,7 +441,7 @@ msgstr "Turnuva bölümleri"
 msgid "لا توجد مباريات قادمة."
 msgstr "Yaklaşan maç yok."
 
-#: single-competition.php:67 single-match.php:254
+#: single-competition.php:67 single-match.php:256
 msgid "جدول الترتيب"
 msgstr "Puan durumu"
 
@@ -449,86 +461,86 @@ msgstr "Kayıtlı maç yok."
 msgid "مباريات"
 msgstr "Maçlar"
 
-#: single-match.php:62
+#: single-match.php:64
 msgid "الموعد"
 msgstr "Maç saati"
 
 #. translators: 1: time, 2: timezone label.
-#: single-match.php:69
+#: single-match.php:71
 msgid "التوقيت الأصلي: %1$s %2$s"
 msgstr "Orijinal saat: %1$s %2$s"
 
-#: single-match.php:76
+#: single-match.php:78
 msgid "الملعب"
 msgstr "Stadyum"
 
-#: single-match.php:79
+#: single-match.php:81
 msgid "الحكم"
 msgstr "Hakem"
 
-#: single-match.php:82
+#: single-match.php:84
 msgid "القناة الناقلة"
 msgstr "TV kanalı"
 
-#: single-match.php:87
+#: single-match.php:89
 msgid "أقسام الصفحة"
 msgstr "Sayfa bölümleri"
 
-#: single-match.php:91
+#: single-match.php:93
 msgid "الأحداث"
 msgstr "Olaylar"
 
-#: single-match.php:95 single-match.php:140
+#: single-match.php:97 single-match.php:142
 msgid "التشكيلة"
 msgstr "Kadrolar"
 
-#: single-match.php:99
+#: single-match.php:101
 msgid "الإحصائيات"
 msgstr "İstatistikler"
 
-#: single-match.php:100 single-match.php:191
+#: single-match.php:102 single-match.php:193
 msgid "المواجهات السابقة"
 msgstr "Aralarındaki maçlar"
 
-#: single-match.php:104
+#: single-match.php:106
 msgid "المعاينة"
 msgstr "Maç önü"
 
-#: single-match.php:109
+#: single-match.php:111
 msgid "الأهداف والبطاقات"
 msgstr "Goller ve kartlar"
 
 #. translators: %s: player.
-#: single-match.php:127
+#: single-match.php:129
 msgid "صناعة: %s"
 msgstr "Asist: %s"
 
-#: single-match.php:152
+#: single-match.php:154
 msgid "البدلاء"
 msgstr "Yedekler"
 
-#: single-match.php:160
+#: single-match.php:162
 msgid "المدرب:"
 msgstr "Teknik direktör:"
 
-#: single-match.php:170
+#: single-match.php:172
 msgid "إحصائيات المباراة"
 msgstr "Maç istatistikleri"
 
-#: single-match.php:207
+#: single-match.php:209
 msgid "لا توجد مواجهات سابقة مسجلة بين الفريقين."
 msgstr "Bu takımlar arasında kayıtlı önceki maç yok."
 
-#: single-match.php:214
+#: single-match.php:216
 msgid "معاينة وتحليل"
 msgstr "Maç önü ve analiz"
 
-#: single-match.php:226
+#: single-match.php:228
 msgid "أخبار مرتبطة"
 msgstr "İlgili haberler"
 
 #. translators: %s: competition.
-#: single-match.php:250
+#: single-match.php:252
 msgid "مباريات قادمة في %s"
 msgstr "%s yaklaşan maçları"
 

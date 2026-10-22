@@ -84,6 +84,8 @@ function sportsarena_theme_assets() {
 					'favCompetitions' => __( 'البطولات', 'sportsarena-theme' ),
 					'favTeams'        => __( 'الفرق', 'sportsarena-theme' ),
 					'favRemove'       => __( 'إزالة من المفضلة', 'sportsarena-theme' ),
+					'penalty'         => __( 'ج', 'sportsarena-theme' ),
+					'ownGoal'         => __( 'عكسي', 'sportsarena-theme' ),
 				),
 			)
 		) . ';',

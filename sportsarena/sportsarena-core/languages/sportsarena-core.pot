@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-21T22:13:35+00:00\n"
+"POT-Creation-Date: 2026-10-22T19:27:31+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sportsarena-core\n"
@@ -1691,12 +1691,12 @@ msgid "مباراة"
 msgstr ""
 
 #: includes/class-post-types.php:83
-#: includes/class-rest.php:139
+#: includes/class-rest.php:154
 msgid "فريق"
 msgstr ""
 
 #: includes/class-post-types.php:101
-#: includes/class-rest.php:139
+#: includes/class-rest.php:154
 msgid "بطولة"
 msgstr ""
 
@@ -1764,104 +1764,104 @@ msgstr ""
 msgid "لا توجد عناصر."
 msgstr ""
 
-#: includes/class-seeder.php:798
+#: includes/class-seeder.php:663
 msgid "معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة."
 msgstr ""
 
-#: includes/class-seeder.php:799
+#: includes/class-seeder.php:664
 msgid "يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة، ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم «المعاينة/التحليل» الذي يكتبه المحرر من لوحة التحكم."
 msgstr ""
 
 #. translators: %s: competition.
-#: includes/class-seeder.php:803
+#: includes/class-seeder.php:668
 #, php-format
 msgid "صفحة %s: تابع جدول الترتيب ومواعيد المباريات ونتائجها وقائمة الهدافين. (محتوى تجريبي يمكن تعديله من لوحة التحكم.)"
 msgstr ""
 
-#: includes/class-seeder.php:875
+#: includes/class-seeder.php:740
 msgid "ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة"
 msgstr ""
 
-#: includes/class-seeder.php:876
+#: includes/class-seeder.php:741
 msgid "ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي"
 msgstr ""
 
-#: includes/class-seeder.php:877
+#: includes/class-seeder.php:742
 msgid "الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن"
 msgstr ""
 
-#: includes/class-seeder.php:878
+#: includes/class-seeder.php:743
 msgid "تعادل مثير بين الأهلي وبيراميدز في الدوري المصري"
 msgstr ""
 
-#: includes/class-seeder.php:879
+#: includes/class-seeder.php:744
 msgid "بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال"
 msgstr ""
 
-#: includes/class-seeder.php:880
+#: includes/class-seeder.php:745
 msgid "ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية"
 msgstr ""
 
-#: includes/class-seeder.php:881
+#: includes/class-seeder.php:746
 msgid "ليكرز يتفوق على سلتيكس في قمة مثيرة بالدوري الأمريكي"
 msgstr ""
 
-#: includes/class-seeder.php:882
+#: includes/class-seeder.php:747
 msgid "ألكاراز وسينر في مواجهة جديدة بالبطولة الختامية"
 msgstr ""
 
-#: includes/class-seeder.php:883
+#: includes/class-seeder.php:748
 msgid "الهلال يقترب من حسم صفقة جديدة في الميركاتو الشتوي"
 msgstr ""
 
-#: includes/class-seeder.php:884
+#: includes/class-seeder.php:749
 msgid "تحليل: كيف يحسم خط الوسط مباريات الكلاسيكو؟"
 msgstr ""
 
 #. translators: 1: first team, 2: second team.
-#: includes/class-seeder.php:906
+#: includes/class-seeder.php:771
 #, php-format
 msgid "خبر تجريبي: تتجه الأنظار إلى مواجهة %1$s و%2$s، حيث يسعى كل فريق إلى تحقيق نتيجة إيجابية تعزز حظوظه هذا الموسم."
 msgstr ""
 
 #. translators: %s: team.
-#: includes/class-seeder.php:908
+#: includes/class-seeder.php:773
 #, php-format
 msgid "وأكد الجهاز الفني لفريق %s جاهزية اللاعبين بعد سلسلة من الحصص التدريبية المكثفة، مع عودة بعض العناصر الأساسية من الإصابة."
 msgstr ""
 
 #. translators: %s: team.
-#: includes/class-seeder.php:910
+#: includes/class-seeder.php:775
 #, php-format
 msgid "في المقابل، يدخل %s اللقاء بطموح كبير، معتمداً على الانضباط الدفاعي والهجمات المرتدة السريعة."
 msgstr ""
 
-#: includes/class-seeder.php:911
+#: includes/class-seeder.php:776
 msgid "ويرى المحللون أن خط الوسط سيكون مفتاح المباراة، وأن الفريق الأكثر استحواذاً على الكرة سيملك الأفضلية في الشوط الثاني."
 msgstr ""
 
-#: includes/class-seeder.php:912
+#: includes/class-seeder.php:777
 msgid "هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > SportsArena > الأدوات."
 msgstr ""
 
-#: includes/class-seeder.php:919
+#: includes/class-seeder.php:784
 msgid "تكتيكياً، يميل الفريقان إلى الضغط العالي في الدقائق الأولى، ما يجعل الكرات الثانية والتحولات السريعة عاملاً حاسماً."
 msgstr ""
 
-#: includes/class-seeder.php:920
+#: includes/class-seeder.php:785
 msgid "وتشير الأرقام إلى أن الفريق الذي يسجل أولاً في هذه المواجهة فاز في أغلب المباريات الأخيرة بينهما."
 msgstr ""
 
-#: includes/class-seeder.php:921
+#: includes/class-seeder.php:786
 msgid "أما بدنياً، فقد يكون عمق دكة البدلاء هو الفارق في آخر عشرين دقيقة."
 msgstr ""
 
-#: includes/class-seeder.php:922
+#: includes/class-seeder.php:787
 msgid "في المحصلة، تبقى التفاصيل الصغيرة وتركيز اللاعبين في الكرات الثابتة مفتاح الحسم."
 msgstr ""
 
 #. translators: 1: first team, 2: second team.
-#: includes/class-seeder.php:934
+#: includes/class-seeder.php:799
 #, php-format
 msgid "آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة."
 msgstr ""

@@ -156,6 +156,8 @@ html:not([dir="rtl"]) .sa-datenav__step .sa-i{transform:scaleX(-1)}
 .sa-row__team{display:flex;align-items:center;gap:8px;min-width:0}
 .sa-row__name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500;font-size:.92rem}
 .sa-row__team.is-winner .sa-row__name{font-weight:700}
+.sa-redcard{flex:none;display:inline-flex;align-items:center;justify-content:center;min-width:10px;height:14px;padding:0 2px;border-radius:2px;background:#dc2626;color:#fff;font-size:.6rem;font-weight:700;line-height:1}
+.sa-redcard[hidden]{display:none}
 .sa-row__score{display:flex;align-items:center;min-width:24px}
 .sa-score--stack{flex-direction:column;align-items:center;gap:4px;font-size:.95rem;line-height:20px}
 .sa-score--stack .sa-score__sep{display:none}
@@ -192,6 +194,11 @@ html:not([dir="rtl"]) .sa-datenav__step .sa-i{transform:scaleX(-1)}
 .sa-scoreboard__team a{text-decoration:none}
 .sa-scoreboard__score .sa-score{font-size:2.2rem;gap:10px}
 .sa-scoreboard__score .sa-score--time{font-size:1.6rem}
+.sa-scorers{list-style:none;margin:2px 0 0;padding:0;font-size:.8rem;font-weight:500;color:var(--muted);line-height:1.5}
+.sa-scorers__item{display:flex;align-items:center;justify-content:center;gap:5px}
+.sa-scorers__icon{flex:none;width:9px;height:9px;border-radius:50%;background:var(--text)}
+.sa-scorers__item--red .sa-scorers__icon{width:8px;height:11px;border-radius:1px;background:#dc2626}
+.sa-scorers__min{font-variant-numeric:tabular-nums;direction:ltr;unicode-bidi:isolate}
 .sa-scoreboard__status{color:var(--muted);font-weight:600}
 .sa-facts{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px;margin:12px 0 0;font-size:.9rem}
 .sa-facts dt{color:var(--muted);display:inline}

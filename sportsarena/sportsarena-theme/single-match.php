@@ -44,6 +44,7 @@ while ( have_posts() ) :
 					<?php if ( $sportsarena_home ) : ?>
 						<a href="<?php echo esc_url( get_permalink( $sportsarena_home ) ); ?>"><?php echo esc_html( get_the_title( $sportsarena_home ) ); ?></a>
 					<?php endif; ?>
+					<?php echo sportsarena_theme_scorers_html( $sportsarena_m, 'home' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				</div>
 				<div class="sa-scoreboard__center">
 					<div class="sa-scoreboard__score" data-sa-score><?php echo sportsarena_theme_score_html( $sportsarena_m ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?></div>
@@ -53,6 +54,7 @@ while ( have_posts() ) :
 					<?php if ( $sportsarena_away ) : ?>
 						<?php echo sportsarena_team_logo( $sportsarena_away, 64 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 						<a href="<?php echo esc_url( get_permalink( $sportsarena_away ) ); ?>"><?php echo esc_html( get_the_title( $sportsarena_away ) ); ?></a>
+						<?php echo sportsarena_theme_scorers_html( $sportsarena_m, 'away' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 					<?php endif; ?>
 				</div>
 			</div>

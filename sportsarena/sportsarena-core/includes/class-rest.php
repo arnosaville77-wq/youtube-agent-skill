@@ -91,7 +91,21 @@ final class Rest {
 			if ( Post_Types::MATCH !== get_post_type( $id ) || 'publish' !== get_post_status( $id ) ) {
 				continue;
 			}
-			$match = Repository::match( $id );
+			$match  = Repository::match( $id );
+			$events = array();
+			foreach ( (array) $match['events'] as $event ) {
+				$type = (string) ( $event['type'] ?? '' );
+				if ( in_array( $type, array( 'goal', 'penalty', 'own_goal', 'red' ), true ) ) {
+					$team     = (string) ( $event['team'] ?? 'home' );
+					$events[] = array(
+						'minute' => (string) ( $event['minute'] ?? '' ),
+						// The team the event counts for (an own goal counts for the other side).
+						'team'   => 'own_goal' === $type ? ( 'home' === $team ? 'away' : 'home' ) : $team,
+						'type'   => $type,
+						'player' => sportsarena_text( (string) ( $event['player'] ?? '' ) ),
+					);
+				}
+			}
 			$out[] = array(
 				'id'      => $id,
 				'status'  => $match['status'],
@@ -100,6 +114,7 @@ final class Rest {
 				'away'    => $match['away_score'],
 				'elapsed' => $match['elapsed'],
 				'live'    => sportsarena_is_live( $match ),
+				'events'  => $events,
 			);
 		}
 		$response = new \WP_REST_Response(

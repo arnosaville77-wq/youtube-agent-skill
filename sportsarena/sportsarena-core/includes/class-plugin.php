@@ -64,6 +64,7 @@ final class Plugin {
 		( new Logo_Cache() )->register_hooks();
 		( new News_Sections() )->register_hooks();
 		( new Relocalize() )->register_hooks();
+		( new Demo_Clock() )->register_hooks();
 
 		if ( is_admin() ) {
 			( new Admin\Settings() )->register_hooks();

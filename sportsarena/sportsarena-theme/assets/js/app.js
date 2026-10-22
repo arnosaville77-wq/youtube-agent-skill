@@ -554,6 +554,37 @@
 					score.appendChild( scoreHtml( match ) );
 				}
 			}
+			if ( match.events ) {
+				el.querySelectorAll( '[data-sa-scorers]' ).forEach( function ( list ) {
+					var team = list.getAttribute( 'data-sa-scorers' );
+					list.textContent = '';
+					match.events.forEach( function ( ev ) {
+						if ( ev.team !== team ) {
+							return;
+						}
+						var li = document.createElement( 'li' );
+						li.className = 'sa-scorers__item sa-scorers__item--' + ( ev.type === 'red' ? 'red' : 'goal' );
+						var icon = document.createElement( 'span' );
+						icon.className = 'sa-scorers__icon';
+						icon.setAttribute( 'aria-hidden', 'true' );
+						li.appendChild( icon );
+						var note = ev.type === 'penalty' ? ' (' + ( i18n.penalty || '' ) + ')' : ( ev.type === 'own_goal' ? ' (' + ( i18n.ownGoal || '' ) + ')' : '' );
+						li.appendChild( document.createTextNode( ev.player + note + ' ' ) );
+						var min = document.createElement( 'span' );
+						min.className = 'sa-scorers__min';
+						min.textContent = ev.minute + "'";
+						li.appendChild( min );
+						list.appendChild( li );
+					} );
+				} );
+				el.querySelectorAll( '[data-sa-red]' ).forEach( function ( badge ) {
+					var n = match.events.filter( function ( ev ) {
+						return ev.type === 'red' && ev.team === badge.getAttribute( 'data-sa-red' );
+					} ).length;
+					badge.hidden = ! n;
+					badge.textContent = n > 1 ? String( n ) : '';
+				} );
+			}
 			el.className = el.className.replace( /\bsa-(row|scoreboard)--[a-z]+\b/g, function ( m, kind ) {
 				return 'sa-' + kind + '--' + match.status;
 			} );

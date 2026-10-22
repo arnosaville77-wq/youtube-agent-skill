@@ -277,7 +277,8 @@ final class Seeder {
 	 */
 	private static function player_names() {
 		// Stored in Latin script like provider data; shown in Arabic on Arabic pages (see Languages::text()).
-		return array( 'Ahmed Salem', 'Youssef Ali', 'Mohamed Hassan', 'Omar Khaled', 'Karim Nasser', 'Sami Fouad', 'Ziad Mansour', 'Majed Adel', 'Hisham Reda', 'Tarek Gamal', 'Nabil Fares', 'Rami Saeed', 'Basel Mourad', 'Walid Kamal', 'Faisal Nader', 'Gamal Issa' );
+		// 0-10 home starters, 11-21 away starters, 22-27 substitutes (see Demo_Clock).
+		return array( 'Ahmed Salem', 'Youssef Ali', 'Mohamed Hassan', 'Omar Khaled', 'Karim Nasser', 'Sami Fouad', 'Ziad Mansour', 'Majed Adel', 'Hisham Reda', 'Tarek Gamal', 'Nabil Fares', 'Rami Saeed', 'Basel Mourad', 'Walid Kamal', 'Faisal Nader', 'Gamal Issa', 'Adam Bennani', 'Ilyas Haddad', 'Hamza Tazi', 'Anas Rahimi', 'Bilal Saidi', 'Mehdi Alaoui', 'Amine Chraibi', 'Yassine Fassi', 'Khalil Amrani', 'Nizar Kabbaj', 'Soufiane Idrissi', 'Reda Bennis' );
 	}
 
 	/**
@@ -289,7 +290,6 @@ final class Seeder {
 		$importer = new Importer( self::PROVIDER );
 		$comps    = self::competitions();
 		$today    = new \DateTimeImmutable( 'today', wp_timezone() );
-		$now      = time();
 		$matches  = array();
 		$n        = 0;
 
@@ -344,122 +344,6 @@ final class Seeder {
 			return $day->modify( $time )->getTimestamp();
 		};
 
-		// Status relative to "now" for fixed local kickoff times.
-		$state = static function ( $kickoff, $home_goals, $away_goals ) use ( $now ) {
-			$minutes = (int) floor( ( $now - $kickoff ) / 60 );
-			if ( $minutes < 0 ) {
-				return array();
-			}
-			if ( $minutes > 110 ) {
-				return array(
-					'status'     => 'finished',
-					'status_raw' => 'FT',
-					'score'      => array(
-						'home' => $home_goals,
-						'away' => $away_goals,
-					),
-				);
-			}
-			$elapsed = $minutes > 60 ? $minutes - 15 : min( 45, $minutes );
-			$ht      = $minutes > 45 && $minutes <= 60;
-			return array(
-				'status'     => $ht ? 'halftime' : 'live',
-				'status_raw' => $ht ? 'HT' : ( $elapsed > 45 ? '2H' : '1H' ),
-				'elapsed'    => $ht ? 45 : $elapsed,
-				'score'      => array(
-					'home' => (int) min( $home_goals, floor( $elapsed / 40 ) ),
-					'away' => (int) min( $away_goals, floor( $elapsed / 55 ) ),
-				),
-			);
-		};
-
-		$players = self::player_names();
-		$events  = static function ( array $goals_home, array $goals_away ) use ( $players ) {
-			$list = array();
-			foreach ( $goals_home as $i => $minute ) {
-				$list[] = array(
-					'minute' => (string) $minute,
-					'team'   => 'home',
-					'type'   => 'goal',
-					'detail' => 'Normal Goal',
-					'player' => $players[ $i % count( $players ) ],
-					'assist' => $players[ ( $i + 3 ) % count( $players ) ],
-				);
-			}
-			foreach ( $goals_away as $i => $minute ) {
-				$list[] = array(
-					'minute' => (string) $minute,
-					'team'   => 'away',
-					'type'   => 'goal',
-					'detail' => 'Normal Goal',
-					'player' => $players[ ( $i + 8 ) % count( $players ) ],
-					'assist' => '',
-				);
-			}
-			$list[] = array(
-				'minute' => '38',
-				'team'   => 'away',
-				'type'   => 'yellow',
-				'detail' => 'Yellow Card',
-				'player' => $players[10],
-				'assist' => '',
-			);
-			usort(
-				$list,
-				static function ( $a, $b ) {
-					return (int) $a['minute'] <=> (int) $b['minute'];
-				}
-			);
-			return $list;
-		};
-
-		$lineup = static function ( $side, $offset ) use ( $players ) {
-			$start = array();
-			for ( $i = 0; $i < 11; $i++ ) {
-				$start[] = ( $i + 1 ) . ' ' . $players[ ( $i + $offset ) % count( $players ) ];
-			}
-			return array(
-				'team'      => $side,
-				'formation' => 'home' === $side ? '4-3-3' : '4-2-3-1',
-				'coach'     => 'home' === $side ? 'Khalid Mansouri' : 'Adel Ramzi',
-				'start'     => $start,
-				'subs'      => array( '12 ' . $players[ ( 11 + $offset ) % 16 ], '14 ' . $players[ ( 12 + $offset ) % 16 ], '20 ' . $players[ ( 13 + $offset ) % 16 ] ),
-			);
-		};
-
-		$stats = array(
-			array(
-				'type' => 'Ball Possession',
-				'home' => '58%',
-				'away' => '42%',
-			),
-			array(
-				'type' => 'Total Shots',
-				'home' => '14',
-				'away' => '9',
-			),
-			array(
-				'type' => 'Shots on Goal',
-				'home' => '6',
-				'away' => '3',
-			),
-			array(
-				'type' => 'Corner Kicks',
-				'home' => '7',
-				'away' => '4',
-			),
-			array(
-				'type' => 'Fouls',
-				'home' => '11',
-				'away' => '14',
-			),
-			array(
-				'type' => 'Yellow Cards',
-				'home' => '1',
-				'away' => '2',
-			),
-		);
-
 		$yesterday = $today->modify( '-1 day' );
 		$tomorrow  = $today->modify( '+1 day' );
 
@@ -477,7 +361,6 @@ final class Seeder {
 					'home' => 2,
 					'away' => 1,
 				),
-				'events'     => $events( array( 23, 71 ), array( 55 ) ),
 				'venue'      => 'Anfield',
 				'city'       => 'Liverpool',
 			)
@@ -495,7 +378,6 @@ final class Seeder {
 					'home' => 1,
 					'away' => 1,
 				),
-				'events'     => $events( array( 12 ), array( 80 ) ),
 				'venue'      => 'Metropolitano',
 				'city'       => 'Madrid',
 			)
@@ -513,7 +395,6 @@ final class Seeder {
 					'home' => 3,
 					'away' => 0,
 				),
-				'events'     => $events( array( 9, 44, 88 ), array() ),
 				'venue'      => 'Kingdom Arena',
 				'city'       => 'Riyadh',
 			)
@@ -531,29 +412,28 @@ final class Seeder {
 					'home' => 2,
 					'away' => 2,
 				),
-				'events'     => $events( array( 30, 66 ), array( 41, 90 ) ),
 				'venue'      => 'Cairo International Stadium',
 				'city'       => 'Cairo',
 			)
 		);
 
-		// Today: fixed local times, status depends on the current time.
+		// Today: kick-offs spread over the day. Demo_Clock plays them out live
+		// (minute, goals, cards) and moves the whole demo to each new day.
 		$featured  = $at( $today, '22:00' );
 		$today_set = array(
+			array( 'egy', 'Zamalek SC', 'Al Masry', '11:00', 1, 0 ),
+			array( 'seriea', 'Juventus', 'AC Milan', '12:30', 1, 0 ),
 			array( 'ucl', 'Manchester City', 'Inter', '13:30', 2, 0 ),
 			array( 'pl', 'Arsenal', 'Manchester United', '15:00', 1, 1 ),
+			array( 'bund', 'Borussia Dortmund', 'RB Leipzig', '16:30', 3, 1 ),
 			array( 'pl', 'Tottenham', 'Newcastle', '17:30', 0, 2 ),
 			array( 'spl', 'Al-Nassr', 'Al-Ahli Jeddah', '18:00', 2, 1 ),
-			array( 'egy', 'Zamalek SC', 'Al Masry', '19:00', 1, 0 ),
+			array( 'ligue1', 'Marseille', 'Lyon', '19:45', 2, 2 ),
 			array( 'botola', 'Wydad AC', 'Raja Casablanca', '20:00', 1, 1 ),
 			array( 'ucl', 'Bayern Munich', 'Paris Saint Germain', '21:00', 3, 2 ),
-			array( 'ligue1', 'Marseille', 'Lyon', '19:45', 2, 2 ),
-			array( 'seriea', 'Juventus', 'AC Milan', '18:45', 1, 0 ),
-			array( 'bund', 'Borussia Dortmund', 'RB Leipzig', '16:30', 3, 1 ),
 		);
 		foreach ( $today_set as $row ) {
-			$kickoff   = $at( $today, $row[3] );
-			$matches[] = $make( $row[0], $row[1], $row[2], $kickoff, 'Regular Season - 10', $state( $kickoff, $row[4], $row[5] ) );
+			$matches[] = $make( $row[0], $row[1], $row[2], $at( $today, $row[3] ), 'Regular Season - 10', array( '_final' => array( $row[4], $row[5] ) ) );
 		}
 		// Featured clásico with lineups and statistics.
 		$matches[] = $make(
@@ -562,35 +442,15 @@ final class Seeder {
 			'Barcelona',
 			$featured,
 			'Regular Season - 10',
-			array_merge(
-				$state( $featured, 2, 1 ),
-				array(
-					'venue'      => 'Santiago Bernabéu',
-					'city'       => 'Madrid',
-					'referee'    => 'Hassan Idrissi',
-					'lineups'    => array( $lineup( 'home', 0 ), $lineup( 'away', 5 ) ),
-					'statistics' => $stats,
-				)
-			)
-		);
-		// A match that is always live (for the live ticker demo).
-		$live_kickoff = $now - 52 * MINUTE_IN_SECONDS;
-		$matches[]    = $make(
-			'nba',
-			'Los Angeles Lakers',
-			'Boston Celtics',
-			$live_kickoff,
-			'Regular Season',
 			array(
-				'status'     => 'live',
-				'status_raw' => 'Q3',
-				'score'      => array(
-					'home' => 78,
-					'away' => 74,
-				),
+				'_final'  => array( 2, 1 ),
+				'venue'   => 'Santiago Bernabéu',
+				'city'    => 'Madrid',
+				'referee' => 'Hassan Idrissi',
 			)
 		);
-		$matches[]    = $make( 'atp', 'Carlos Alcaraz', 'Jannik Sinner', $at( $today, '16:00' ), 'Group Stage', $state( $at( $today, '16:00' ), 2, 1 ) );
+		$matches[] = $make( 'nba', 'Los Angeles Lakers', 'Boston Celtics', $at( $today, '19:30' ), 'Regular Season', array( '_final' => array( 112, 106 ) ) );
+		$matches[] = $make( 'atp', 'Carlos Alcaraz', 'Jannik Sinner', $at( $today, '14:00' ), 'Group Stage', array( '_final' => array( 2, 1 ) ) );
 
 		// Tomorrow.
 		$tomorrow_set = array(
@@ -640,6 +500,9 @@ final class Seeder {
 			}
 			++$count;
 			update_post_meta( $post_id, '_sa_demo', 1 );
+			if ( isset( $match['_final'] ) ) {
+				update_post_meta( $post_id, Demo_Clock::FINAL, wp_json_encode( $match['_final'] ) );
+			}
 			if ( 'football' === $match['sport'] ) {
 				update_post_meta( $post_id, '_sa_tv', 'beIN Sports' );
 			}
@@ -654,6 +517,8 @@ final class Seeder {
 		self::seed_tables( $importer, $comps );
 		self::flag_demo_entities();
 		self::seed_news( $importer );
+		Demo_Clock::build_plans( self::player_names() );
+		Demo_Clock::tick();
 		Repository::bump_version();
 
 		Logger::info( 'seeder', sprintf( 'Demo data created: %d matches.', $count ) );
@@ -983,17 +848,19 @@ final class Seeder {
 	public static function unseed() {
 		$ids = get_posts(
 			array(
-				'post_type'      => array( 'post', Post_Types::MATCH, Post_Types::TEAM, Post_Types::COMPETITION ),
-				'post_status'    => 'any',
-				'posts_per_page' => -1,
-				'fields'         => 'ids',
-				'meta_key'       => '_sa_demo', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_query_meta_key -- One-off cleanup.
-				'meta_value'     => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_query_meta_value -- One-off cleanup.
+				'post_type'        => array( 'post', Post_Types::MATCH, Post_Types::TEAM, Post_Types::COMPETITION ),
+				'post_status'      => 'any',
+				'posts_per_page'   => -1,
+				'fields'           => 'ids',
+				'sa_all_languages' => true,
+				'meta_key'         => '_sa_demo', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_query_meta_key -- One-off cleanup.
+				'meta_value'       => '1', // phpcs:ignore WordPress.DB.SlowDBQuery.slow_query_meta_value -- One-off cleanup.
 			)
 		);
 		foreach ( $ids as $id ) {
 			wp_delete_post( $id, true );
 		}
+		delete_option( Demo_Clock::DAY );
 		Repository::bump_version();
 		Logger::info( 'seeder', sprintf( 'Demo data removed: %d posts.', count( $ids ) ) );
 		return count( $ids );

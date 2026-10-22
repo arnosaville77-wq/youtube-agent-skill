@@ -446,3 +446,81 @@ function sportsarena_theme_country_label( $competition_id ) {
 	}
 	return $country;
 }
+
+/**
+ * Goals and red cards of a match, credited to the team they count for
+ * (an own goal counts for the other team).
+ *
+ * @param array $m Match data.
+ * @return array<int,array{minute:string,team:string,type:string,player:string}>
+ */
+function sportsarena_theme_key_events( array $m ) {
+	$out = array();
+	foreach ( (array) $m['events'] as $event ) {
+		$type = (string) ( $event['type'] ?? '' );
+		if ( ! in_array( $type, array( 'goal', 'penalty', 'own_goal', 'red' ), true ) ) {
+			continue;
+		}
+		$team = (string) ( $event['team'] ?? 'home' );
+		if ( 'own_goal' === $type ) {
+			$team = 'home' === $team ? 'away' : 'home';
+		}
+		$out[] = array(
+			'minute' => (string) ( $event['minute'] ?? '' ),
+			'team'   => $team,
+			'type'   => $type,
+			'player' => function_exists( 'sportsarena_text' ) ? sportsarena_text( (string) ( $event['player'] ?? '' ) ) : (string) ( $event['player'] ?? '' ),
+		);
+	}
+	return $out;
+}
+
+/**
+ * Scorers (and red cards) of one team under the score board.
+ *
+ * @param array  $m    Match data.
+ * @param string $team home|away.
+ * @return string
+ */
+function sportsarena_theme_scorers_html( array $m, $team ) {
+	$items = '';
+	foreach ( sportsarena_theme_key_events( $m ) as $event ) {
+		if ( $event['team'] !== $team ) {
+			continue;
+		}
+		$note = array(
+			'penalty'  => ' (' . __( 'ج', 'sportsarena-theme' ) . ')',
+			'own_goal' => ' (' . __( 'عكسي', 'sportsarena-theme' ) . ')',
+		);
+		$items .= sprintf(
+			'<li class="sa-scorers__item sa-scorers__item--%1$s"><span class="sa-scorers__icon" aria-hidden="true"></span>%2$s <span class="sa-scorers__min">%3$s</span></li>',
+			esc_attr( 'red' === $event['type'] ? 'red' : 'goal' ),
+			esc_html( $event['player'] . ( $note[ $event['type'] ] ?? '' ) ),
+			esc_html( $event['minute'] . "'" )
+		);
+	}
+	return '<ul class="sa-scorers" data-sa-scorers="' . esc_attr( $team ) . '">' . $items . '</ul>';
+}
+
+/**
+ * Red card badge next to a team name in match rows.
+ *
+ * @param array  $m    Match data.
+ * @param string $team home|away.
+ * @return string
+ */
+function sportsarena_theme_red_cards_html( array $m, $team ) {
+	$count = 0;
+	foreach ( sportsarena_theme_key_events( $m ) as $event ) {
+		if ( 'red' === $event['type'] && $event['team'] === $team ) {
+			++$count;
+		}
+	}
+	return sprintf(
+		'<span class="sa-redcard" data-sa-red="%1$s" title="%2$s"%3$s>%4$s</span>',
+		esc_attr( $team ),
+		esc_attr__( 'بطاقة حمراء', 'sportsarena-theme' ),
+		$count ? '' : ' hidden',
+		$count > 1 ? (int) $count : ''
+	);
+}

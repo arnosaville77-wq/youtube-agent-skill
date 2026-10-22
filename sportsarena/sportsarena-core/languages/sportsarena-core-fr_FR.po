@@ -2053,11 +2053,11 @@ msgstr "Matchs"
 msgid "مباراة"
 msgstr "Match"
 
-#: includes/class-post-types.php:83 includes/class-rest.php:139
+#: includes/class-post-types.php:83 includes/class-rest.php:154
 msgid "فريق"
 msgstr "Équipe"
 
-#: includes/class-post-types.php:101 includes/class-rest.php:139
+#: includes/class-post-types.php:101 includes/class-rest.php:154
 msgid "بطولة"
 msgstr "Compétition"
 
@@ -2119,7 +2119,7 @@ msgstr "Rechercher dans : %s"
 msgid "لا توجد عناصر."
 msgstr "Aucun élément trouvé."
 
-#: includes/class-seeder.php:798
+#: includes/class-seeder.php:663
 msgid ""
 "معاينة تجريبية: يستضيف ريال مدريد غريمه التقليدي برشلونة في قمة الجولة "
 "العاشرة من الدوري الإسباني، في مواجهة تحمل أهمية كبيرة في صراع الصدارة."
@@ -2128,7 +2128,7 @@ msgstr ""
 "Barcelone, pour l’affiche de la 10e journée de Liga, un match décisif dans "
 "la course au titre."
 
-#: includes/class-seeder.php:799
+#: includes/class-seeder.php:664
 msgid ""
 "يدخل الفريقان المباراة بمعنويات مرتفعة بعد نتائج إيجابية في الجولات الأخيرة،"
 " ويُتوقع أن يعتمد كل مدرب على تشكيلته الأساسية. هذا النص مثال على قسم "
@@ -2140,7 +2140,7 @@ msgstr ""
 "l’éditeur dans le tableau de bord."
 
 #. translators: %s: competition.
-#: includes/class-seeder.php:803
+#: includes/class-seeder.php:668
 msgid ""
 "صفحة %s: تابع جدول الترتيب ومواعيد المباريات ونتائجها وقائمة الهدافين. "
 "(محتوى تجريبي يمكن تعديله من لوحة التحكم.)"
@@ -2149,52 +2149,52 @@ msgstr ""
 "meilleurs buteurs. (Contenu de démonstration modifiable dans le tableau de "
 "bord.)"
 
-#: includes/class-seeder.php:875
+#: includes/class-seeder.php:740
 msgid "ريال مدريد يستعد لقمة الكلاسيكو أمام برشلونة"
 msgstr "Le Real Madrid prépare le Clásico face au Barça"
 
-#: includes/class-seeder.php:876
+#: includes/class-seeder.php:741
 msgid "ليفربول يواصل انتصاراته ويعزز موقعه في صدارة الدوري الإنجليزي"
 msgstr ""
 "Liverpool enchaîne les victoires et consolide sa première place en Premier "
 "League"
 
-#: includes/class-seeder.php:877
+#: includes/class-seeder.php:742
 msgid "الهلال يكتسح الاتحاد بثلاثية نظيفة في دوري روشن"
 msgstr "Al-Hilal écrase Al-Ittihad 3-0 en Saudi Pro League"
 
-#: includes/class-seeder.php:878
+#: includes/class-seeder.php:743
 msgid "تعادل مثير بين الأهلي وبيراميدز في الدوري المصري"
 msgstr "Nul spectaculaire entre Al Ahly et Pyramids en championnat d’Égypte"
 
-#: includes/class-seeder.php:879
+#: includes/class-seeder.php:744
 msgid "بايرن ميونخ وباريس سان جيرمان في مواجهة نارية بدوري الأبطال"
 msgstr ""
 "Bayern Munich et Paris Saint-Germain pour un choc explosif en Ligue des "
 "champions"
 
-#: includes/class-seeder.php:880
+#: includes/class-seeder.php:745
 msgid "ديربي الدار البيضاء: الوداد والرجاء في قمة البطولة المغربية"
 msgstr "Derby de Casablanca : le Wydad et le Raja au sommet de la Botola"
 
-#: includes/class-seeder.php:881
+#: includes/class-seeder.php:746
 msgid "ليكرز يتفوق على سلتيكس في قمة مثيرة بالدوري الأمريكي"
 msgstr "Les Lakers dominent les Celtics dans un choc spectaculaire en NBA"
 
-#: includes/class-seeder.php:882
+#: includes/class-seeder.php:747
 msgid "ألكاراز وسينر في مواجهة جديدة بالبطولة الختامية"
 msgstr "Alcaraz et Sinner se retrouvent au Masters"
 
-#: includes/class-seeder.php:883
+#: includes/class-seeder.php:748
 msgid "الهلال يقترب من حسم صفقة جديدة في الميركاتو الشتوي"
 msgstr "Al-Hilal proche d’une nouvelle recrue au mercato d’hiver"
 
-#: includes/class-seeder.php:884
+#: includes/class-seeder.php:749
 msgid "تحليل: كيف يحسم خط الوسط مباريات الكلاسيكو؟"
 msgstr "Analyse : comment le milieu de terrain décide du Clásico"
 
 #. translators: 1: first team, 2: second team.
-#: includes/class-seeder.php:906
+#: includes/class-seeder.php:771
 msgid ""
 "خبر تجريبي: تتجه الأنظار إلى مواجهة %1$s و%2$s، حيث يسعى كل فريق إلى تحقيق "
 "نتيجة إيجابية تعزز حظوظه هذا الموسم."
@@ -2204,7 +2204,7 @@ msgstr ""
 "chances cette saison."
 
 #. translators: %s: team.
-#: includes/class-seeder.php:908
+#: includes/class-seeder.php:773
 msgid ""
 "وأكد الجهاز الفني لفريق %s جاهزية اللاعبين بعد سلسلة من الحصص التدريبية "
 "المكثفة، مع عودة بعض العناصر الأساسية من الإصابة."
@@ -2213,7 +2213,7 @@ msgstr ""
 "d’entraînement intenses, avec le retour de plusieurs cadres blessés."
 
 #. translators: %s: team.
-#: includes/class-seeder.php:910
+#: includes/class-seeder.php:775
 msgid ""
 "في المقابل، يدخل %s اللقاء بطموح كبير، معتمداً على الانضباط الدفاعي والهجمات"
 " المرتدة السريعة."
@@ -2221,7 +2221,7 @@ msgstr ""
 "De son côté, %s aborde la rencontre avec de grandes ambitions, en misant sur"
 " la rigueur défensive et des contre-attaques rapides."
 
-#: includes/class-seeder.php:911
+#: includes/class-seeder.php:776
 msgid ""
 "ويرى المحللون أن خط الوسط سيكون مفتاح المباراة، وأن الفريق الأكثر استحواذاً "
 "على الكرة سيملك الأفضلية في الشوط الثاني."
@@ -2230,7 +2230,7 @@ msgstr ""
 "l’équipe qui aura le plus la possession prendra l’avantage en seconde "
 "période."
 
-#: includes/class-seeder.php:912
+#: includes/class-seeder.php:777
 msgid ""
 "هذا المحتوى تجريبي لعرض شكل صفحة الخبر، ويمكن حذفه من لوحة التحكم > "
 "SportsArena > الأدوات."
@@ -2238,7 +2238,7 @@ msgstr ""
 "Ce contenu de démonstration montre la mise en page d’un article ; vous "
 "pouvez le supprimer dans Tableau de bord > SportsArena > Outils."
 
-#: includes/class-seeder.php:919
+#: includes/class-seeder.php:784
 msgid ""
 "تكتيكياً، يميل الفريقان إلى الضغط العالي في الدقائق الأولى، ما يجعل الكرات "
 "الثانية والتحولات السريعة عاملاً حاسماً."
@@ -2246,7 +2246,7 @@ msgstr ""
 "Tactiquement, les deux équipes pressent haut en début de match, ce qui rend "
 "les seconds ballons et les transitions rapides décisifs."
 
-#: includes/class-seeder.php:920
+#: includes/class-seeder.php:785
 msgid ""
 "وتشير الأرقام إلى أن الفريق الذي يسجل أولاً في هذه المواجهة فاز في أغلب "
 "المباريات الأخيرة بينهما."
@@ -2254,13 +2254,13 @@ msgstr ""
 "Les chiffres montrent que l’équipe qui marque la première dans cette affiche"
 " a gagné la plupart des derniers duels."
 
-#: includes/class-seeder.php:921
+#: includes/class-seeder.php:786
 msgid "أما بدنياً، فقد يكون عمق دكة البدلاء هو الفارق في آخر عشرين دقيقة."
 msgstr ""
 "Physiquement, la profondeur du banc pourrait faire la différence dans les "
 "vingt dernières minutes."
 
-#: includes/class-seeder.php:922
+#: includes/class-seeder.php:787
 msgid ""
 "في المحصلة، تبقى التفاصيل الصغيرة وتركيز اللاعبين في الكرات الثابتة مفتاح "
 "الحسم."
@@ -2269,7 +2269,7 @@ msgstr ""
 "arrêtés feront la différence."
 
 #. translators: 1: first team, 2: second team.
-#: includes/class-seeder.php:934
+#: includes/class-seeder.php:799
 msgid "آخر أخبار %1$s و%2$s قبل المواجهة المرتقبة."
 msgstr "Les dernières nouvelles de %1$s et %2$s avant le grand rendez-vous."
 

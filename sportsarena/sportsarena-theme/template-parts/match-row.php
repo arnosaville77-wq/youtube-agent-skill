@@ -38,11 +38,13 @@ $sportsarena_short = $sportsarena_live && 'live' === $sportsarena_m['status'] &&
 			<span class="sa-row__team<?php echo 'home' === $sportsarena_win ? ' is-winner' : ''; ?>">
 				<?php echo sportsarena_team_logo( $sportsarena_m['home'], 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				<span class="sa-row__name"><?php echo esc_html( $sportsarena_home ); ?></span>
+				<?php echo sportsarena_theme_red_cards_html( $sportsarena_m, 'home' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 			</span>
 			<?php if ( $sportsarena_m['away'] ) : ?>
 				<span class="sa-row__team<?php echo 'away' === $sportsarena_win ? ' is-winner' : ''; ?>">
 					<?php echo sportsarena_team_logo( $sportsarena_m['away'], 20 ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 					<span class="sa-row__name"><?php echo esc_html( $sportsarena_away ); ?></span>
+					<?php echo sportsarena_theme_red_cards_html( $sportsarena_m, 'away' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaped in helper. ?>
 				</span>
 			<?php endif; ?>
 		</span>
