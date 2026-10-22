@@ -192,14 +192,56 @@ while ( have_posts() ) :
 		<section id="sa-h2h" class="sa-box">
 			<h2 class="sa-box__title"><?php esc_html_e( 'المواجهات السابقة', 'sportsarena-theme' ); ?></h2>
 			<?php if ( $sportsarena_m['h2h'] ) : ?>
+				<?php
+				$sportsarena_home_name = $sportsarena_home ? get_the_title( $sportsarena_home ) : '';
+				$sportsarena_away_name = $sportsarena_away ? get_the_title( $sportsarena_away ) : '';
+				$sportsarena_tally     = array(
+					'home' => 0,
+					'draw' => 0,
+					'away' => 0,
+				);
+				$sportsarena_games     = array();
+				foreach ( $sportsarena_m['h2h'] as $sportsarena_game ) {
+					$sportsarena_parts = array_map( 'intval', explode( '-', str_replace( ' ', '', (string) $sportsarena_game['score'] ) ) ) + array( 0, 0 );
+					$sportsarena_gh    = sportsarena_text( (string) $sportsarena_game['home'] );
+					$sportsarena_ga    = sportsarena_text( (string) $sportsarena_game['away'] );
+					$sportsarena_winner = $sportsarena_parts[0] === $sportsarena_parts[1] ? '' : ( $sportsarena_parts[0] > $sportsarena_parts[1] ? $sportsarena_gh : $sportsarena_ga );
+					if ( '' === $sportsarena_winner ) {
+						++$sportsarena_tally['draw'];
+					} elseif ( $sportsarena_winner === $sportsarena_home_name ) {
+						++$sportsarena_tally['home'];
+					} elseif ( $sportsarena_winner === $sportsarena_away_name ) {
+						++$sportsarena_tally['away'];
+					}
+					$sportsarena_games[] = array( $sportsarena_game, $sportsarena_gh, $sportsarena_ga, $sportsarena_parts, $sportsarena_winner );
+				}
+				$sportsarena_total = max( 1, array_sum( $sportsarena_tally ) );
+				?>
+				<?php if ( $sportsarena_home_name && $sportsarena_away_name ) : ?>
+					<div class="sa-h2h-sum">
+						<div class="sa-h2h-sum__cells">
+							<div class="sa-h2h-sum__cell sa-h2h-sum__cell--home"><strong><?php echo esc_html( (string) $sportsarena_tally['home'] ); ?></strong><span><?php echo esc_html( sprintf( /* translators: %s: team. */ __( 'فوز %s', 'sportsarena-theme' ), $sportsarena_home_name ) ); ?></span></div>
+							<div class="sa-h2h-sum__cell sa-h2h-sum__cell--draw"><strong><?php echo esc_html( (string) $sportsarena_tally['draw'] ); ?></strong><span><?php esc_html_e( 'تعادل', 'sportsarena-theme' ); ?></span></div>
+							<div class="sa-h2h-sum__cell sa-h2h-sum__cell--away"><strong><?php echo esc_html( (string) $sportsarena_tally['away'] ); ?></strong><span><?php echo esc_html( sprintf( /* translators: %s: team. */ __( 'فوز %s', 'sportsarena-theme' ), $sportsarena_away_name ) ); ?></span></div>
+						</div>
+						<div class="sa-h2h-sum__bar" aria-hidden="true">
+							<?php foreach ( $sportsarena_tally as $sportsarena_key => $sportsarena_count ) : ?>
+								<span class="sa-h2h-sum__seg sa-h2h-sum__seg--<?php echo esc_attr( $sportsarena_key ); ?>" style="width:<?php echo esc_attr( (string) round( 100 * $sportsarena_count / $sportsarena_total, 2 ) ); ?>%"></span>
+							<?php endforeach; ?>
+						</div>
+					</div>
+				<?php endif; ?>
 				<ul class="sa-h2h" role="list">
-					<?php foreach ( $sportsarena_m['h2h'] as $sportsarena_game ) : ?>
+					<?php foreach ( $sportsarena_games as $sportsarena_row ) : ?>
+						<?php list( $sportsarena_game, $sportsarena_gh, $sportsarena_ga, $sportsarena_parts, $sportsarena_winner ) = $sportsarena_row; ?>
 						<li>
-							<span class="sa-h2h__date"><?php echo esc_html( wp_date( 'j/n/Y', (int) $sportsarena_game['date'] ) ); ?></span>
-							<span><?php echo esc_html( $sportsarena_game['home'] ); ?></span>
-							<strong dir="ltr"><?php echo esc_html( $sportsarena_game['score'] ); ?></strong>
-							<span><?php echo esc_html( $sportsarena_game['away'] ); ?></span>
-							<small><?php echo esc_html( $sportsarena_game['comp'] ); ?></small>
+							<span class="sa-h2h__meta">
+								<span class="sa-h2h__date"><?php echo esc_html( wp_date( 'j/n/Y', (int) $sportsarena_game['date'] ) ); ?></span>
+								<small><?php echo esc_html( sportsarena_text( (string) $sportsarena_game['comp'] ) ); ?></small>
+							</span>
+							<span class="sa-h2h__team<?php echo $sportsarena_winner === $sportsarena_gh ? ' is-winner' : ''; ?>"><?php echo esc_html( $sportsarena_gh ); ?></span>
+							<strong class="sa-h2h__score"><span><?php echo esc_html( (string) $sportsarena_parts[0] ); ?></span><span aria-hidden="true">-</span><span><?php echo esc_html( (string) $sportsarena_parts[1] ); ?></span></strong>
+							<span class="sa-h2h__team sa-h2h__team--away<?php echo $sportsarena_winner === $sportsarena_ga ? ' is-winner' : ''; ?>"><?php echo esc_html( $sportsarena_ga ); ?></span>
 						</li>
 					<?php endforeach; ?>
 				</ul>

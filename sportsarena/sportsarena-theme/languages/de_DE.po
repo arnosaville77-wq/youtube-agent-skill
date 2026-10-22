@@ -319,6 +319,34 @@ msgstr "Elfm."
 msgid "عكسي"
 msgstr "ET"
 
+#: inc/palette.php:21
+msgid "كحلي + أحمر"
+msgstr "Marine + Rot"
+
+#: inc/palette.php:26
+msgid "أخضر الملعب + ذهبي"
+msgstr "Rasengrün + Gold"
+
+#: inc/palette.php:45
+msgid "أزرق ليلي + برتقالي"
+msgstr "Nachtblau + Orange"
+
+#: inc/palette.php:64
+msgid "أزرق محيطي + فيروزي"
+msgstr "Ozeanblau + Türkis"
+
+#: inc/palette.php:83
+msgid "بنفسجي ملكي + أخضر"
+msgstr "Königsviolett + Grün"
+
+#: inc/palette.php:149
+msgid "ألوان الموقع"
+msgstr "Website-Farben"
+
+#: inc/palette.php:150
+msgid "لون الهيدر والقائمة والأزرار. لون المباريات المباشرة يبقى أحمر."
+msgstr "Farbe von Kopfzeile, Menü und Schaltflächen. Live-Spiele bleiben rot."
+
 #: inc/pwa.php:415 offline.php:16
 msgid "لا يوجد اتصال بالإنترنت"
 msgstr "Keine Internetverbindung"
@@ -446,7 +474,7 @@ msgstr "Bereiche des Wettbewerbs"
 msgid "لا توجد مباريات قادمة."
 msgstr "Keine kommenden Spiele."
 
-#: single-competition.php:67 single-match.php:256
+#: single-competition.php:67 single-match.php:298
 msgid "جدول الترتيب"
 msgstr "Tabelle"
 
@@ -532,20 +560,30 @@ msgstr "Trainer:"
 msgid "إحصائيات المباراة"
 msgstr "Spielstatistik"
 
-#: single-match.php:209
+#. translators: %s: team.
+#: single-match.php:223 single-match.php:225
+msgid "فوز %s"
+msgstr "Siege %s"
+
+#. translators: %s: team.
+#: single-match.php:224 template-parts/standings-table.php:36
+msgid "تعادل"
+msgstr "Remis"
+
+#: single-match.php:251
 msgid "لا توجد مواجهات سابقة مسجلة بين الفريقين."
 msgstr "Keine früheren Duelle zwischen diesen Teams erfasst."
 
-#: single-match.php:216
+#: single-match.php:258
 msgid "معاينة وتحليل"
 msgstr "Vorbericht und Analyse"
 
-#: single-match.php:228
+#: single-match.php:270
 msgid "أخبار مرتبطة"
 msgstr "Verwandte Nachrichten"
 
 #. translators: %s: competition.
-#: single-match.php:252
+#: single-match.php:294
 msgid "مباريات قادمة في %s"
 msgstr "Kommende Spiele in %s"
 
@@ -706,10 +744,6 @@ msgstr "Siege"
 #: template-parts/standings-table.php:35
 msgid "ف"
 msgstr "S"
-
-#: template-parts/standings-table.php:36
-msgid "تعادل"
-msgstr "Remis"
 
 #: template-parts/standings-table.php:36
 msgid "ت"

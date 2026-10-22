@@ -275,7 +275,7 @@ final class Seeder {
 	 *
 	 * @return string[]
 	 */
-	private static function player_names() {
+	public static function player_names() {
 		// Stored in Latin script like provider data; shown in Arabic on Arabic pages (see Languages::text()).
 		// 0-10 home starters, 11-21 away starters, 22-27 substitutes (see Demo_Clock).
 		return array( 'Ahmed Salem', 'Youssef Ali', 'Mohamed Hassan', 'Omar Khaled', 'Karim Nasser', 'Sami Fouad', 'Ziad Mansour', 'Majed Adel', 'Hisham Reda', 'Tarek Gamal', 'Nabil Fares', 'Rami Saeed', 'Basel Mourad', 'Walid Kamal', 'Faisal Nader', 'Gamal Issa', 'Adam Bennani', 'Ilyas Haddad', 'Hamza Tazi', 'Anas Rahimi', 'Bilal Saidi', 'Mehdi Alaoui', 'Amine Chraibi', 'Yassine Fassi', 'Khalil Amrani', 'Nizar Kabbaj', 'Soufiane Idrissi', 'Reda Bennis' );
@@ -861,6 +861,7 @@ final class Seeder {
 			wp_delete_post( $id, true );
 		}
 		delete_option( Demo_Clock::DAY );
+		delete_option( Demo_Clock::VERSION_OPTION );
 		Repository::bump_version();
 		Logger::info( 'seeder', sprintf( 'Demo data removed: %d posts.', count( $ids ) ) );
 		return count( $ids );

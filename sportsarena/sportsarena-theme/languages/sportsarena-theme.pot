@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-10-22T19:27:31+00:00\n"
+"POT-Creation-Date: 2026-10-22T19:51:03+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
 "X-Domain: sportsarena-theme\n"
@@ -331,6 +331,34 @@ msgstr ""
 msgid "عكسي"
 msgstr ""
 
+#: inc/palette.php:21
+msgid "كحلي + أحمر"
+msgstr ""
+
+#: inc/palette.php:26
+msgid "أخضر الملعب + ذهبي"
+msgstr ""
+
+#: inc/palette.php:45
+msgid "أزرق ليلي + برتقالي"
+msgstr ""
+
+#: inc/palette.php:64
+msgid "أزرق محيطي + فيروزي"
+msgstr ""
+
+#: inc/palette.php:83
+msgid "بنفسجي ملكي + أخضر"
+msgstr ""
+
+#: inc/palette.php:149
+msgid "ألوان الموقع"
+msgstr ""
+
+#: inc/palette.php:150
+msgid "لون الهيدر والقائمة والأزرار. لون المباريات المباشرة يبقى أحمر."
+msgstr ""
+
 #: inc/pwa.php:415
 #: offline.php:16
 msgid "لا يوجد اتصال بالإنترنت"
@@ -455,7 +483,7 @@ msgid "لا توجد مباريات قادمة."
 msgstr ""
 
 #: single-competition.php:67
-#: single-match.php:256
+#: single-match.php:298
 msgid "جدول الترتيب"
 msgstr ""
 
@@ -545,20 +573,33 @@ msgstr ""
 msgid "إحصائيات المباراة"
 msgstr ""
 
-#: single-match.php:209
+#. translators: %s: team.
+#: single-match.php:223
+#: single-match.php:225
+#, php-format
+msgid "فوز %s"
+msgstr ""
+
+#. translators: %s: team.
+#: single-match.php:224
+#: template-parts/standings-table.php:36
+msgid "تعادل"
+msgstr ""
+
+#: single-match.php:251
 msgid "لا توجد مواجهات سابقة مسجلة بين الفريقين."
 msgstr ""
 
-#: single-match.php:216
+#: single-match.php:258
 msgid "معاينة وتحليل"
 msgstr ""
 
-#: single-match.php:228
+#: single-match.php:270
 msgid "أخبار مرتبطة"
 msgstr ""
 
 #. translators: %s: competition.
-#: single-match.php:252
+#: single-match.php:294
 #, php-format
 msgid "مباريات قادمة في %s"
 msgstr ""
@@ -718,10 +759,6 @@ msgstr ""
 
 #: template-parts/standings-table.php:35
 msgid "ف"
-msgstr ""
-
-#: template-parts/standings-table.php:36
-msgid "تعادل"
 msgstr ""
 
 #: template-parts/standings-table.php:36

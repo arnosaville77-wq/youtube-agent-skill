@@ -170,8 +170,8 @@ function sportsarena_theme_pwa_manifest() {
 		'scope'            => $scope,
 		'display'          => 'standalone',
 		'orientation'      => 'any',
-		'background_color' => '#071a2b',
-		'theme_color'      => '#071a2b',
+		'background_color' => sportsarena_theme_palette_header(),
+		'theme_color'      => sportsarena_theme_palette_header(),
 		'categories'       => array( 'sports', 'news' ),
 		'icons'            => sportsarena_theme_pwa_icons(),
 		'shortcuts'        => $shortcuts,
@@ -347,8 +347,8 @@ JS;
  * @return void
  */
 function sportsarena_theme_pwa_head() {
-	echo '<meta name="theme-color" content="#071a2b" media="(prefers-color-scheme: light)">' . "\n";
-	echo '<meta name="theme-color" content="#020c15" media="(prefers-color-scheme: dark)">' . "\n";
+	printf( '<meta name="theme-color" content="%s" media="(prefers-color-scheme: light)">' . "\n", esc_attr( sportsarena_theme_palette_header() ) );
+	printf( '<meta name="theme-color" content="%s" media="(prefers-color-scheme: dark)">' . "\n", esc_attr( sportsarena_theme_palette_header( true ) ) );
 	if ( ! sportsarena_theme_pwa_enabled() ) {
 		return;
 	}

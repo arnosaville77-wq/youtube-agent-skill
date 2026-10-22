@@ -41,6 +41,12 @@ final class Demo_Clock {
 	const DAY = 'sportsarena_demo_day';
 
 	/**
+	 * Option / constant: version of the demo plans (bump to rebuild them).
+	 */
+	const VERSION_OPTION = 'sportsarena_demo_version';
+	const VERSION        = 2;
+
+	/**
 	 * Hook into WordPress.
 	 *
 	 * @return void
@@ -68,6 +74,10 @@ final class Demo_Clock {
 			return;
 		}
 		set_transient( 'sa_demo_tick', 1, MINUTE_IN_SECONDS );
+		if ( (int) get_option( self::VERSION_OPTION ) < self::VERSION ) {
+			// Newer plans (e.g. head-to-head history): rebuild them, the posts stay.
+			self::build_plans( Seeder::player_names() );
+		}
 		self::tick();
 	}
 
@@ -335,8 +345,61 @@ final class Demo_Clock {
 				$plan += self::football_plan( $plan['final'], $players, $seed );
 			}
 			update_post_meta( $id, self::PLAN, wp_slash( wp_json_encode( $plan ) ) );
+			$h2h = self::head_to_head( $id, $sport, $seed );
+			if ( $h2h ) {
+				update_post_meta( $id, '_sa_h2h', wp_slash( wp_json_encode( $h2h ) ) );
+			}
 		}
-		update_option( self::DAY, wp_date( 'Y-m-d' ), false );
+		if ( ! get_option( self::DAY ) ) {
+			update_option( self::DAY, wp_date( 'Y-m-d' ), false );
+		}
+		update_option( self::VERSION_OPTION, self::VERSION, false );
+	}
+
+	/**
+	 * Five earlier meetings of the two teams (newest first), in the shape the
+	 * provider sync stores: English names, shown in the page language.
+	 *
+	 * @param int    $id    Match ID.
+	 * @param string $sport Sport slug.
+	 * @param int    $seed  Seed.
+	 * @return array<int,array{date:int,home:string,away:string,score:string,comp:string}>
+	 */
+	private static function head_to_head( $id, $sport, $seed ) {
+		$home = (int) get_post_meta( $id, '_sa_home_team', true );
+		$away = (int) get_post_meta( $id, '_sa_away_team', true );
+		if ( ! $home || ! $away || ! in_array( $sport, array( 'football', 'basketball' ), true ) ) {
+			return array();
+		}
+		$name    = static function ( $team ) {
+			$english = (string) get_post_meta( $team, '_sa_name_en', true );
+			return '' !== $english ? $english : get_the_title( $team );
+		};
+		$comp_id = (int) get_post_meta( $id, '_sa_competition', true );
+		$comp    = $comp_id ? (string) get_post_meta( $comp_id, '_sa_name_en', true ) : '';
+		$comp    = '' !== $comp ? $comp : ( $comp_id ? get_the_title( $comp_id ) : '' );
+		$kickoff = (int) get_post_meta( $id, '_sa_kickoff', true );
+		$rows    = array();
+		for ( $i = 0; $i < 5; $i++ ) {
+			$seed = ( $seed * 1103515245 + 12345 ) % 2147483648;
+			$days = 120 + $i * 182 + $seed % 40;
+			$flip = 1 === $i % 2;
+			if ( 'basketball' === $sport ) {
+				$a = 92 + $seed % 30;
+				$b = 90 + intdiv( $seed, 31 ) % 30;
+			} else {
+				$a = $seed % 4;
+				$b = intdiv( $seed, 4 ) % 3;
+			}
+			$rows[] = array(
+				'date'  => $kickoff - $days * DAY_IN_SECONDS,
+				'home'  => $name( $flip ? $away : $home ),
+				'away'  => $name( $flip ? $home : $away ),
+				'score' => $a . ' - ' . $b,
+				'comp'  => $comp,
+			);
+		}
+		return $rows;
 	}
 
 	/**
